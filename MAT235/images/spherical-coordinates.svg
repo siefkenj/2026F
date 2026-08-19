@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="600"
+   height="520"
+   version="1.0"
+   id="svg69"
+   sodipodi:docname="spherical-coordinates.svg"
+   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     id="namedview69"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="1.282311"
+     inkscape:cx="62.387364"
+     inkscape:cy="168.44588"
+     inkscape:window-width="3840"
+     inkscape:window-height="2123"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g63" />
+  <metadata
+     id="metadata1">
+    <rdf:RDF>
+      <rdf:Description
+         about="3D_Spherical.svg">
+        <dc:title>Spherical coordinates</dc:title>
+        <dc:format>image/svg+xml</dc:format>
+      </rdf:Description>
+      <cc:Work
+         rdf:about="">
+        <dc:title>Spherical coordinates</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <title
+     id="title1">Spherical coordinates</title>
+  <defs
+     id="defs1" />
+  <g
+     id="grid"
+     fill="none"
+     stroke="gray"
+     stroke-width="0.5">
+    <path
+       d="m210,45 h330"
+       id="path1" />
+    <path
+       d="m210,80 h330"
+       id="path2" />
+    <path
+       d="m210,115 h330"
+       id="path3" />
+    <path
+       d="m210,150 h330"
+       id="path4" />
+    <path
+       d="m210,185 h330"
+       id="path5" />
+    <path
+       d="m210,220 h330"
+       id="path6" />
+    <path
+       d="m210,255 h330"
+       id="path7" />
+    <path
+       d="m210,290 h330"
+       id="path8" />
+    <path
+       d="m210,325 h330"
+       id="path9" />
+    <path
+       d="m245,360 v-325"
+       id="path10" />
+    <path
+       d="m280,360 v-325"
+       id="path11" />
+    <path
+       d="m315,360 v-325"
+       id="path12" />
+    <path
+       d="m350,360 v-325"
+       id="path13" />
+    <path
+       d="m385,360 v-325"
+       id="path14" />
+    <path
+       d="m420,360 v-325"
+       id="path15" />
+    <path
+       d="m455,360 v-325"
+       id="path16" />
+    <path
+       d="m490,360 v-325"
+       id="path17" />
+    <path
+       d="m525,360 v-325"
+       id="path18" />
+    <path
+       d="m210,45 l-168,140"
+       id="path19" />
+    <path
+       d="m210,80 l-168,140"
+       id="path20" />
+    <path
+       d="m210,115 l-168,140"
+       id="path21" />
+    <path
+       d="m210,150 l-168,140"
+       id="path22" />
+    <path
+       d="m210,185 l-168,140"
+       id="path23" />
+    <path
+       d="m210,220 l-168,140"
+       id="path24" />
+    <path
+       d="m210,255 l-168,140"
+       id="path25" />
+    <path
+       d="m210,290 l-168,140"
+       id="path26" />
+    <path
+       d="m210,325 l-168,140"
+       id="path27" />
+    <path
+       d="m245,360 l-168,140"
+       id="path28" />
+    <path
+       d="m280,360 l-168,140"
+       id="path29" />
+    <path
+       d="m315,360 l-168,140"
+       id="path30" />
+    <path
+       d="m350,360 l-168,140"
+       id="path31" />
+    <path
+       d="m385,360 l-168,140"
+       id="path32" />
+    <path
+       d="m420,360 l-168,140"
+       id="path33" />
+    <path
+       d="m455,360 l-168,140"
+       id="path34" />
+    <path
+       d="m490,360 l-168,140"
+       id="path35" />
+    <path
+       d="m525,360 l-168,140"
+       id="path36" />
+    <path
+       d="m186,380 h330"
+       id="path37" />
+    <path
+       d="m162,400 h330"
+       id="path38" />
+    <path
+       d="m138,420 h330"
+       id="path39" />
+    <path
+       d="m114,440 h330"
+       id="path40" />
+    <path
+       d="m90,460 h330"
+       id="path41" />
+    <path
+       d="m66,480 h330"
+       id="path42" />
+    <path
+       d="m42,500 h330"
+       id="path43" />
+    <path
+       d="m186,380 v-325"
+       id="path44" />
+    <path
+       d="m162,400 v-325"
+       id="path45" />
+    <path
+       d="m138,420 v-325"
+       id="path46" />
+    <path
+       d="m114,440 v-325"
+       id="path47" />
+    <path
+       d="m90,460 v-325"
+       id="path48" />
+    <path
+       d="m66,480 v-325"
+       id="path49" />
+    <path
+       d="m42,500 v-325"
+       id="path50" />
+  </g>
+  <g
+     id="axis"
+     fill="none"
+     stroke="black"
+     stroke-width="1.5">
+    <path
+       d="m210,360 h330"
+       id="path51" />
+    <path
+       d="m210,360 v-325"
+       id="path52" />
+    <path
+       d="m210,360 l-168,140"
+       id="path53" />
+  </g>
+  <g
+     fill="none"
+     stroke="black"
+     stroke-width="1.5"
+     stroke-dasharray="9, 9"
+     id="g54">
+    <path
+       d="m210,360 L360,90 V480z"
+       id="path54" />
+  </g>
+  <g
+     fill="none"
+     stroke="black"
+     stroke-width="2"
+     id="g56">
+    <path
+       d="m355,85 l 10,10"
+       id="path55" />
+    <path
+       d="m365,85 l -10,10"
+       id="path56" />
+  </g>
+  <!-- angle -->
+  <g
+     fill="none"
+     stroke="black"
+     stroke-width="1.5"
+     id="g58">
+    <path
+       d="m210,265 c10,5 30,22 35,32"
+       id="path57" />
+    <path
+       d="m186,380 c12,6 33,6 49,0"
+       id="path58" />
+  </g>
+  <!-- text -->
+  <g
+     font-family="serif"
+     font-style="italic"
+     font-size="48px"
+     id="g63">
+    <text
+       x="10"
+       y="515"
+       id="text58">x</text>
+    <text
+       x="545"
+       y="370"
+       font-style="italic"
+       id="text59">y</text>
+    <text
+       x="200"
+       y="30"
+       font-style="italic"
+       id="text60">z</text>
+    <text
+       x="270"
+       y="200"
+       font-style="italic"
+       id="text61">𝜌</text>
+    <text
+       x="220"
+       y="270"
+       font-style="italic"
+       id="text62">φ</text>
+    <text
+       x="195"
+       y="415"
+       font-style="italic"
+       id="text63">θ</text>
+  </g>
+  <g
+     font-family="serif"
+     font-size="48px"
+     id="g69">
+    <text
+       x="380"
+       y="90"
+       id="text69"><tspan
+         dx="0 0 0 0 0 -10 0 0 0 -5 0 -10"
+         id="tspan63">(𝜌,  <tspan
+   style="font-style:italic"
+   id="tspan69">θ</tspan> ,<tspan
+   style="font-style:italic"
+   id="tspan70">φ</tspan> )</tspan></text>
+  </g>
+</svg>
