@@ -49,7 +49,7 @@ jobs:
                       MAT235/slides-18.typ \
                       MAT235/slides-19.typ \
                       MAT235/slides-20.typ
-                  ; do
+                  do
                       echo "==> $src"
                       typst compile --root . --font-path ./fonts "$src" "${src%.typ}.pdf"
                   done
