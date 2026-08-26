@@ -20,13 +20,39 @@ jobs:
                   echo "Current directory: $(pwd)"
                   echo "Files in current directory:"
                   ls -la
-            - name: Compile Typst Files
-              # uses: siefkenj/compile-typst-action@main
-              uses: ammar-ahmed22/compile-typst-action@main
+            # `compile-typst-action` cannot pass `--root`, which the decks
+            # need: each course imports `../preamble.typ` and `../libs/`, so
+            # the project root has to be the repository, not the deck's folder.
+            - name: Install Typst
+              uses: typst-community/setup-typst@v4
               with:
-                  source_paths: "MAT336/slides-336.typ MAT246/slides-01.typ MAT246/slides-02.typ MAT246/slides-03.typ MAT246/slides-04.typ MAT246/slides-07.typ MAT246/slides-08.typ MAT246/slides-09.typ MAT235/slides-12.typ MAT235/slides-13.typ MAT235/slides-14.typ MAT235/slides-15.typ MAT235/slides-16.typ MAT235/slides-17.typ MAT235/slides-18.typ MAT235/slides-19.typ MAT235/slides-20.typ"
-                  output_paths: "MAT336/slides-336.pdf MAT246/slides-01.pdf MAT246/slides-02.pdf MAT246/slides-03.pdf MAT246/slides-04.pdf MAT246/slides-07.pdf MAT246/slides-08.pdf MAT246/slides-09.pdf MAT235/slides-12.pdf MAT235/slides-13.pdf MAT235/slides-14.pdf MAT235/slides-15.pdf MAT235/slides-16.pdf MAT235/slides-17.pdf MAT235/slides-18.pdf MAT235/slides-19.pdf MAT235/slides-20.pdf"
-                  fonts_path: "./"
+                  typst-version: "0.15.1"
+
+            - name: Compile Typst Files
+              run: |
+                  set -euo pipefail
+                  for src in \
+                      MAT336/slides-336.typ \
+                      MAT246/slides-01.typ \
+                      MAT246/slides-02.typ \
+                      MAT246/slides-03.typ \
+                      MAT246/slides-04.typ \
+                      MAT246/slides-07.typ \
+                      MAT246/slides-08.typ \
+                      MAT246/slides-09.typ \
+                      MAT235/slides-12.typ \
+                      MAT235/slides-13.typ \
+                      MAT235/slides-14.typ \
+                      MAT235/slides-15.typ \
+                      MAT235/slides-16.typ \
+                      MAT235/slides-17.typ \
+                      MAT235/slides-18.typ \
+                      MAT235/slides-19.typ \
+                      MAT235/slides-20.typ
+                  ; do
+                      echo "==> $src"
+                      typst compile --root . --font-path ./fonts "$src" "${src%.typ}.pdf"
+                  done
 
             # upload all the built PDFs as an artifact.
             - name: Upload build artifacts

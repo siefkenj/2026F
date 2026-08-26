@@ -1,5 +1,5 @@
 #import "preamble.typ": *
-#show: mat246-theme.with([Relations and Partitions])
+#show: mat246-slides.with([Relations and Partitions], sources: (practicing_proofs,))
 
 // Problems ported from *Practicing Proofs: MAT246 Handouts* (ElGarem, Gross,
 // Matos Wiederhold, Yoshinobu; University of Toronto, 2025), CC BY-SA 4.0.
@@ -12,7 +12,6 @@
 // the PDF, so the digraphs below are drawn here with `digraph` and are not
 // pixel-copies of the handout's.
 
-#title-slide()
 
 #slide(title: [Where We Are Going])[
   A *relation* is nothing more than a subset of $A times B$ --- but that bare definition supports a
@@ -37,7 +36,6 @@
   title: [Relations --- Describing Relations],
   source: 91,
   goal: [Three common ways of depicting a relation: as a set, as a digraph, and as a logical table.],
-  size: .9em,
 )[
   Let $X = {1, 2, dots, 10}$ and $Y = {a, b, c, d, e}$. Define a relation $R$ from $X$ to $Y$ by:
 
@@ -53,7 +51,6 @@
     [Draw a directed graph depicting $R$.],
     [Complete the *logical table* for $R$: the elements of $X$ label the rows and those of $Y$ the
       columns; the cell in row $x$ and column $y$ holds $1$ if $x R y$, and $0$ otherwise.],
-    threshold: 4,
   )
 ]
 
@@ -61,15 +58,12 @@
   title: [Relations --- Properties of Relations],
   source: 92,
   goal: [Practice the common properties of relations. We will meet them again in later sections.],
-  size: .9em,
 )[
   Let $S$ be the set of all students at the University of Toronto, and define relations on $S$:
-  $
-    a C b & <==> a "has taken more courses than" b; \
-    a D b & <==> a "and" b "are in the same degree program"; \
-    a N b & <==> a "and" b "have no course in common this semester"; \
-    a S b & <==> a "and" b "have at least one course in common".
-  $
+  - $a C b$ #h(.4em) iff $a$ has taken more courses than $b$.
+  - $a D b$ #h(.4em) iff $a$ and $b$ are in the same degree program.
+  - $a N b$ #h(.4em) iff $a$ and $b$ have no course in common this semester.
+  - $a S b$ #h(.4em) iff $a$ and $b$ have at least one course in common.
 
   For each relation, determine *with an explanation* which of the properties below it has.
 
@@ -85,10 +79,9 @@
 ]
 
 #exercise(
-  title: [Relations --- Describing Properties],
+  title: [Relations --- Describing Properties (reflexive)],
   source: 93,
   goal: [The same properties, seen through each of the three representations.],
-  size: .9em,
 )[
   Consider relations on the set $A := {a, b, c, d, e}$, represented either as a *logical table* or
   as a *digraph*.
@@ -99,13 +92,22 @@
     [Suppose you must determine whether a relation is reflexive. How would you do it if the relation
       is given as a set? As a digraph? As a logical table? Which description would you rather
       receive, and why?],
+  )
+]
+
+#exercise(
+  title: [Relations --- Describing Properties (symmetric, transitive)],
+  source: 93,
+  goal: [Now the same three representations, for symmetry and transitivity.],
+)[
+  #parts(
+    start: 3,
     [Suppose $S$ is a *symmetric* relation on $A$ with $b S b$, $c S d$, and $e S a$. How would you
       fill the logical table to reflect these facts? How would you modify the digraph?],
     [How would you determine whether a relation is symmetric from each of the three descriptions?
       Which would you prefer, and why?],
     [Which of the three descriptions would you prefer if you had to determine whether a relation is
       *transitive*?],
-    threshold: 2,
   )
 ]
 
@@ -113,7 +115,6 @@
   title: [Relations --- Counting Relations],
   source: 94,
   goal: [Think through the definition of a relation by counting.],
-  size: .95em,
 )[
   #parts(
     [If $R$ is a relation on ${1, 2, 3}$, then $R$ is a subset of which set?],
@@ -129,9 +130,8 @@
   title: [Relations --- Weak Ordering],
   source: 95,
   goal: [Order relations are everywhere --- you already know several examples.],
-  size: .9em,
 )[
-  #defn[Antisymmetric / Ordering][
+  #definition(title: [Antisymmetric / Ordering])[
     A relation $R$ on $A$ is *antisymmetric* if for all $a, b in A$, $a R b$ and $b R a$ together
     imply $a = b$.
 
@@ -144,7 +144,6 @@
     [The relation $<=$ on $NN$.],
     [The relation $subset$ on $cal(P)({1, 2, 3})$.],
     [The divisibility relation on $NN$ (that is, $a R b$ if and only if $a divides b$).],
-    threshold: 3,
   )
 ]
 
@@ -152,9 +151,8 @@
   title: [Relations --- Strict Ordering],
   source: 96,
   goal: [Think of the difference between $<=$ and $<$. Each definition can be derived from the other.],
-  size: .9em,
 )[
-  #defn[Asymmetric / Strict Ordering][
+  #definition(title: [Asymmetric / Strict Ordering])[
     A relation $R$ on $A$ is *asymmetric* if for all $a, b in A$, $a R b$ implies $not (b R a)$.
 
     $R$ is a *strict ordering* if it is asymmetric and transitive.
@@ -167,7 +165,6 @@
       is a strict ordering on $A$.],
     [Let $S$ be a strict ordering on $A$. Define $R$ by $a R b <==> (a S b "or" a = b)$. Prove $R$
       is a weak ordering on $A$.],
-    threshold: 2,
   )
 ]
 
@@ -176,7 +173,7 @@
 // ---------------------------------------------------------------------------
 
 #slide(title: [Equivalence Relations])[
-  #defn[Equivalence Relation][
+  #definition(title: [Equivalence Relation])[
     A relation $tilde.op$ on a set $A$ is an *equivalence relation* if it is *reflexive*,
     *symmetric*, and *transitive*.
 
@@ -194,12 +191,10 @@
   goal: [Practice the definitions of equivalence relation and equivalence class.],
 )[
   Recall the relations on the set $S$ of all students at the University of Toronto:
-  $
-    a C b & <==> a "has taken more courses than" b; \
-    a D b & <==> a "and" b "are in the same degree program"; \
-    a N b & <==> a "and" b "have no course in common this semester"; \
-    a S b & <==> a "and" b "have at least one course in common".
-  $
+  - $a C b$ #h(.4em) iff $a$ has taken more courses than $b$.
+  - $a D b$ #h(.4em) iff $a$ and $b$ are in the same degree program.
+  - $a N b$ #h(.4em) iff $a$ and $b$ have no course in common this semester.
+  - $a S b$ #h(.4em) iff $a$ and $b$ have at least one course in common.
 
   For each relation, determine whether it is an equivalence relation. If it is, describe its
   equivalence classes.
@@ -223,7 +218,6 @@
   title: [Equivalence --- Digraphs],
   source: 99,
   goal: [Interpret relations presented as digraphs.],
-  size: .9em,
 )[
   For each digraph below, determine whether the relation it depicts is an equivalence relation. If
   not, explain which properties fail. If so, list the equivalence classes.
@@ -231,25 +225,25 @@
   #v(.4em)
   #align(center, grid(
     columns: 3,
-    column-gutter: 2.5em,
+    column-gutter: 2em,
     row-gutter: .3em,
     digraph(
-      (("a", (0, 0)), ("b", (1.6, 0)), ("c", (0, -1.6)), ("d", (1.6, -1.6))),
+      (("a", (0, 0)), ("b", (1.4, 0)), ("c", (0, -1.3)), ("d", (1.4, -1.3))),
       edges: (("a", "b"), ("b", "a"), ("c", "d"), ("d", "c")),
       loops: ("a", "b", "c", "d"),
-      scale: 1.5,
+      scale: 1.1,
     ),
     digraph(
-      (("a", (0, 0)), ("b", (1.6, 0)), ("c", (0, -1.6)), ("d", (1.6, -1.6))),
+      (("a", (0, 0)), ("b", (1.4, 0)), ("c", (0, -1.3)), ("d", (1.4, -1.3))),
       edges: (("a", "b"), ("b", "a"), ("c", "d"), ("d", "c")),
       loops: ("a", "b", "c"),
-      scale: 1.5,
+      scale: 1.1,
     ),
     digraph(
-      (("a", (0, 0)), ("b", (1.6, 0)), ("c", (3.2, 0)), ("d", (1.6, -1.6))),
+      (("a", (0, 0)), ("b", (1.4, 0)), ("c", (2.8, 0)), ("d", (1.4, -1.3))),
       edges: (("a", "b"), ("b", "a"), ("b", "c"), ("c", "b")),
       loops: ("a", "b", "c", "d"),
-      scale: 1.5,
+      scale: 1.1,
     ),
     [(a)], [(b)], [(c)],
   ))
@@ -259,13 +253,12 @@
   title: [Equivalence --- A Common Misconception],
   source: 100,
   goal: [Read a short proof and spot the subtle error.],
-  size: .9em,
 )[
   Below is a "proof" that every symmetric and transitive relation is reflexive (and hence an
   equivalence relation). Explain the error, and *prove* it is an error by constructing a
   counterexample.
 
-  #boxed(accent: rgb("#7a1f1f"))[
+  #bogus_proof[
     *Proof.* Let $tilde.op$ be a relation on a set $X$ that is symmetric and transitive. We prove
     $tilde.op$ is reflexive, and therefore an equivalence relation.
 
@@ -279,7 +272,6 @@
   title: [Equivalence --- Multifunctional Relations],
   source: 101,
   goal: [Prove a new theorem about a new concept --- then use it right away on a novel relation.],
-  size: .9em,
 )[
   A relation $R$ on a set $X$ is *multifunctional* if
   $
@@ -293,7 +285,6 @@
     [Consider the relation $tilde.op$ on $M_n (RR)$ (the $n times n$ matrices with real entries)
       defined by $A tilde.op B <==> A - B$ is invertible. Which of reflexivity, symmetry,
       transitivity, and multifunctionality does $tilde.op$ have? Justify your answer.],
-    threshold: 2,
   )
 ]
 
@@ -301,9 +292,8 @@
   title: [Equivalence --- Remainders],
   source: 102,
   goal: [The most fundamental example of an equivalence relation: modular arithmetic.],
-  size: .85em,
 )[
-  #thm[Division with Remainder][
+  #theorem(title: [Division with Remainder])[
     For every $n, m in NN$ there exist unique $q in ZZ_(>=0)$ and $r in {0, 1, dots, m-1}$ such that
     $n = q m + r$.
   ]
@@ -318,7 +308,6 @@
     [What are the equivalence classes for $m = 3$? For $m = 5$? What about $m = 1$?],
     [Define $D$ on $NN$ by $a D b$ if and only if $a$ and $b$ end in the same digit. Prove that $D$
       is an equivalence relation.],
-    threshold: 2,
   )
 ]
 
@@ -332,7 +321,6 @@
       and describe its equivalence classes.],
     [Consider $Q$ on $RR$ defined by $x Q y <==> y - x in QQ$. Prove $Q$ is an equivalence relation.
       Can you describe its equivalence classes?],
-    threshold: 2,
   )
 ]
 
@@ -352,7 +340,6 @@
     [How many partitions of $emptyset$ are there?],
     [How many partitions of ${1}$ are there? What about ${1, 2}$?],
     [How many partitions of ${1, 2, 3}$ are there?],
-    threshold: 3,
   )
 ]
 
@@ -360,16 +347,12 @@
   title: [Partitions --- Find the Partitions],
   source: 105,
   goal: [Practice the definition of a set partition. Try to recall it before consulting your notes!],
-  size: .85em,
 )[
   For each set $A_i$ and each collection $Omega_j$, determine whether $Omega_j$ is a partition of
   $A_i$. If not, explain why not.
 
-  #grid(
-    columns: (1fr, 1fr),
-    column-gutter: 1.5em,
-    [
-      *(a)* Let $A_1 = {1, 2, 3, 4, 5, 6}$.
+  #parts(
+    [Let $A_1 = {1, 2, 3, 4, 5, 6}$.
       #enum(
         [$Omega_1 = {{1,2}, {2,3,4}, {4,5,6}}$],
         [$Omega_2 = {{1}, {2,3,6}, {4}, {5}}$],
@@ -377,10 +360,8 @@
         [$Omega_4 = {{1,4,5}, {2,6}}$],
         [$Omega_5 = {{1,2,3,4}, {5,6}, {}}$],
         [$Omega_6 = {{1,2,3,4,5,6}}$],
-      )
-    ],
-    [
-      *(b)* Let $A_2 = ZZ$.
+      )],
+    [Let $A_2 = ZZ$.
       #enum(
         [$Omega_7$ contains the set of even integers and the set of odd integers.],
         [$Omega_8$ contains the set of positive integers and the set of negative integers.],
@@ -388,8 +369,7 @@
           $<= 100$, and those strictly greater than $100$.],
         [$Omega_10$ contains the integers not divisible by $3$, the even integers, and the integers
           with remainder $3$ when divided by $6$.],
-      )
-    ],
+      )],
   )
 ]
 
@@ -397,33 +377,34 @@
   title: [Partitions --- Find the Partitions II],
   source: 106,
   goal: [Slightly more challenging partition-spotting. Think about the pie-chart analogy.],
-  size: .8em,
 )[
-  Again: is $Omega_j$ a partition of $A_i$? If not, why not?
+  Is $Omega_j$ a partition of $A_i$? If not, why not?
 
-  #grid(
-    columns: (1.3fr, 1fr),
-    column-gutter: 1.5em,
-    [
-      *(a)* $A_1 = ZZ times ZZ$. $Omega_j$ is the set containing the set of pairs $(x, y)$ where...
-      #enum(
-        [$x$ or $y$ is odd; $x$ is even; $y$ is even.],
-        [both $x$ and $y$ are odd; exactly one of $x$, $y$ is odd; both are even.],
-        [$x$ is positive; $y$ is positive; both $x$ and $y$ are negative.],
-        [$x > 0$ and $y > 0$; $x <= 0$ and $y > 0$; $x <= 0$ and $y <= 0$.],
-        [$x != 0$ and $y != 0$; $x = 0$ and $y != 0$; $x != 0$ and $y = 0$.],
-      )
-    ],
-    [
-      *(b)* Let $A_2 = RR$.
-      #enum(
-        [$Omega_6 = {{x in RR | x < 0}, {0}, {x in RR | x > 0}}$],
-        [$Omega_7 = {"the irrationals", "the rationals"}$],
-        [$Omega_8$ contains the intervals $[k, k+1]$, $k in ZZ$.],
-        [$Omega_9$ contains the intervals $(k, k+1)$, $k in ZZ$.],
-        [$Omega_10$ contains the intervals $(k, k+1]$, $k in ZZ$.],
-      )
-    ],
+  Let $A_1 = ZZ times ZZ$. In each case $Omega_j$ is the set containing the set of pairs $(x, y)$
+  where...
+
+  #parts(
+    [$x$ or $y$ is odd; $x$ is even; $y$ is even.],
+    [both $x$ and $y$ are odd; exactly one of $x$, $y$ is odd; both are even.],
+    [$x$ is positive; $y$ is positive; both $x$ and $y$ are negative.],
+    [$x > 0$ and $y > 0$; $x <= 0$ and $y > 0$; $x <= 0$ and $y <= 0$.],
+    [$x != 0$ and $y != 0$; $x = 0$ and $y != 0$; $x != 0$ and $y = 0$.],
+  )
+]
+
+#exercise(
+  title: [Partitions --- Find the Partitions II (cont.)],
+  source: 106,
+  goal: [The same question over the real line.],
+)[
+  Is $Omega_j$ a partition of $A_2 = RR$? If not, why not?
+
+  #parts(
+    [$Omega_6 = {{x in RR | x < 0}, {0}, {x in RR | x > 0}}$],
+    [$Omega_7 = {"the irrationals", "the rationals"}$],
+    [$Omega_8$ contains the intervals $[k, k+1]$, $k in ZZ$.],
+    [$Omega_9$ contains the intervals $(k, k+1)$, $k in ZZ$.],
+    [$Omega_10$ contains the intervals $(k, k+1]$, $k in ZZ$.],
   )
 ]
 
@@ -431,7 +412,6 @@
   title: [Partitions --- Constructing Partitions],
   source: 107,
   goal: [Among the infinitely many partitions of $NN$, find some with specific properties. (A variation on Exercise 7.56 in the text.)],
-  size: .95em,
 )[
   #parts(
     [Find a partition of $NN$ with exactly $3$ blocks, where $2$ blocks are finite and the third is
@@ -447,7 +427,6 @@
   title: [Partitions --- Relations from Subsets],
   source: 108,
   goal: [Partitions and equivalence relations are two sides of one coin. Here is the bridge.],
-  size: .9em,
 )[
   Recall (Definition 7.62 in the text) that given a collection $Omega$ of subsets of $A$, the
   *associated relation* $R_Omega$ is defined by
@@ -474,7 +453,6 @@
   title: [Partitions --- Relations and Partitions],
   source: 109,
   goal: [A capstone: prove the main theorems of §7.3 for yourself.],
-  size: .9em,
 )[
   As above, $a R_Omega b <==> exists X in Omega$ with $a, b in X$.
 
@@ -510,7 +488,6 @@
   title: [Partitions --- Refinements],
   source: 111,
   goal: [A "refinement" compares how two partitions organize the same information.],
-  size: .9em,
 )[
   Let $A$ be a set and $Omega_1$, $Omega_2$ partitions of $A$. We say $Omega_1$ is a *refinement* of
   $Omega_2$ if
@@ -527,7 +504,6 @@
       refinement of $P_3$. Prove, or give a counterexample: $P_1$ is a refinement of $P_3$.],
     [Each partition corresponds to an equivalence relation. How does "$Q_1$ is a refinement of
       $Q_2$" translate into a relationship between $R_(Q_1)$ and $R_(Q_2)$? Explain.],
-    threshold: 2,
   )
 ]
 
@@ -562,7 +538,6 @@
     [$[a] = [b]$;],
     [$a in [b]$;],
     [$a R b$.],
-    threshold: 3,
   )
 ]
 
@@ -570,7 +545,6 @@
   title: [Representatives --- Operations],
   source: 113,
   goal: [Defining an operation on classes via representatives --- carefully, because it can fail to make sense!],
-  size: .85em,
 )[
   Consider $equiv_10$ on $ZZ$: $a equiv_10 b$ if and only if $10 divides (b - a)$ (equivalently, $a$
   and $b$ have the same last digit).
@@ -594,7 +568,6 @@
   title: [Representatives --- Inherited Properties],
   source: 114,
   goal: [Properties of the operation on representatives are inherited by the operation on classes. Generalizes Theorems 7.92--7.93.],
-  size: .85em,
 )[
   Let $X$ be a set with a binary operation $plus.square$, and let $R$ be an equivalence relation on
   $X$ such that $[a] plus.o [b] = [a plus.square b]$ is well-defined.
@@ -609,7 +582,6 @@
     [Suppose every $x in X$ has an *inverse*: some $y in X$ with $x plus.square y = o$. Prove every
       class $A in X\/R$ also has an inverse.],
     [Which parts of your proofs use the fact that $plus.o$ is well-defined?],
-    threshold: 3,
   )
 ]
 
@@ -630,7 +602,6 @@
   title: [Representatives --- The Integers (I)],
   source: 115,
   goal: [Building $ZZ$ out of $NN$. The pair $(a, b)$ is standing in for the difference $a - b$.],
-  size: .85em,
 )[
   On the set $cal(Z) = (NN union {0}) times NN$, define a relation $tilde.op$ by
   $
@@ -642,7 +613,6 @@
     [Prove that $[(n, 0)]$ for $n in NN union {0}$, together with $[(0, n)]$ for $n in NN$, form a
       *complete system of representatives*: every $(a, b) in cal(Z)$ lies in one of these classes,
       and no two of these classes coincide.],
-    threshold: 2,
   )
 
   This lets us *define* the integers as the set of equivalence classes of $tilde.op$: we identify
@@ -652,8 +622,7 @@
 #exercise(
   title: [Representatives --- The Integers (II)],
   source: 115,
-  goal: [Now equip the construction with arithmetic --- and check that it deserves the name.],
-  size: .8em,
+  goal: [Now equip the construction with addition --- and check that it deserves the name.],
 )[
   #parts(
     [Define $plus.square$ on classes by $[(a,b)] plus.square [(c,d)] = [(a+c, b+d)]$. Prove this is
@@ -665,6 +634,16 @@
       $n + (-n) = 0$, interpreting this as an operation on equivalence classes.],
     [Use this identification to prove that $5 - 2 = 3$ and that $2 - 5 = -3$. (We write $x - y$ as
       shorthand for $x + (-y)$.)],
+  )
+]
+
+#exercise(
+  title: [Representatives --- The Integers (III)],
+  source: 115,
+  goal: [And now subtraction, which is the whole point of extending $NN$ to $ZZ$.],
+)[
+  #parts(
+    start: 5,
     [Prove that $[(a,b)]$ is identified with $n in NN union {0}$ if and only if $[(b,a)]$ is
       identified with $-n$.],
     [We therefore define $minus.square[(a,b)] = [(b,a)]$. Prove this is well-defined.],
@@ -672,7 +651,6 @@
       operation in terms of representatives --- find $e, f$ with
       $[(a,b)] minus.square [(c,d)] = [(e,f)]$. Is it well-defined? Check it by proving again that
       $2 - 5 = -3$.],
-    threshold: 4,
   )
 ]
 
@@ -680,7 +658,6 @@
   title: [Representatives --- The Rationals (I)],
   source: 116,
   goal: [The same idea builds $QQ$: the pair $(a, b)$ stands in for the fraction $a\/b$.],
-  size: .85em,
 )[
   When we first learn fractions we want $1/2$ to equal $2/4$, $3/6$, $(-4)/(-8)$, .... The symbol
   $1/2$ stands for infinitely many other symbols --- which is exactly what an equivalence relation
@@ -698,15 +675,13 @@
     [Prove that this operation works well with the identification of $z in ZZ$ with $[(z, 1)]$.],
     [Use the definition of the symbol $a/b$ to prove that for any $z in ZZ without {0}$ we have
       $z times 1/z = 1$.],
-    threshold: 2,
   )
 ]
 
 #exercise(
   title: [Representatives --- The Rationals (II)],
   source: 116,
-  goal: [Why the naive definition of addition fails, and why division is the point of $QQ$.],
-  size: .85em,
+  goal: [Why the naive definition of addition fails.],
 )[
   When first learning fractions one wants to try $a/b plus.square c/d = (a+c)/(b+d)$. It does not
   work.
@@ -717,6 +692,16 @@
     [We must use the common-denominator definition instead. Define $plus.o$ by
       $[(a,b)] plus.o [(c,d)] = [(a d + b c, b d)]$. Prove that $plus.o$ is well-defined.],
     [Prove that this operation works well with the identification of $z in ZZ$ with $[(z, 1)]$.],
+  )
+]
+
+#exercise(
+  title: [Representatives --- The Rationals (III)],
+  source: 116,
+  goal: [Just as $ZZ$ gave us a global subtraction, the point of $QQ$ is a global division.],
+)[
+  #parts(
+    start: 4,
     [Define $div$ on $cal(Q) without {0}$ by $div[(a,b)] = [(b,a)]$, for $a != 0$. Prove that $div$
       is well-defined.],
     [For $c != 0$, define $[(a,b)] div [(c,d)] = [(a,b)] times.o (div[(c,d)])$. Is this a
@@ -724,9 +709,6 @@
     [Use the definition of the symbol $a/b$ to prove that for $a, b in ZZ$ with $b != 0$ we have
       $a div b = a/b$. More generally, prove that for $s, t, u != 0$,
       $display(r/s div t/u = (r u)/(s t))$.],
-    threshold: 3,
   )
-
-  Just as we extended $NN$ to $ZZ$ to get a global subtraction, the point of $QQ$ is a global
-  division.
 ]
+

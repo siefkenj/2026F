@@ -1,5 +1,5 @@
 #import "preamble.typ": *
-#show: mat246-theme.with([Set Theory])
+#show: mat246-slides.with([Set Theory], sources: (practicing_proofs,))
 
 // Problems ported from *Practicing Proofs: MAT246 Handouts* (ElGarem, Gross,
 // Matos Wiederhold, Yoshinobu; University of Toronto, 2025), CC BY-SA 4.0.
@@ -8,7 +8,6 @@
 // Covers textbook Chapter 3 (Sets, Russell's Paradox, Power Sets, Indexing
 // Sets, Cartesian Products).
 
-#title-slide()
 
 #slide(title: [Where We Are Going])[
   Sets are the raw material out of which the rest of mathematics is built. In this chapter:
@@ -54,7 +53,6 @@
       $],
     [Give an example of sets $A$ and $B$ with $A psubset B$.],
     [Show that $emptyset subset A$ for every set $A$.],
-    threshold: 3,
   )
 ]
 
@@ -75,7 +73,6 @@
   title: [Sets --- Set Operations],
   source: 32,
   goal: [Compute unions, intersections, differences, and complements straight from the definitions.],
-  size: .95em,
 )[
   Let $A = {1, 2, 3}$ and $B = {2, 3, 4}$ be sets in the universe $U = {1, 2, 3, 4, 5}$. Compute the
   following (no proof needed --- just state your answer):
@@ -107,7 +104,6 @@
   title: [Sets --- Properties of Set Operations],
   source: 34,
   goal: [Some parts ask for an example (which does _not_ prove the statement); others ask for a full proof.],
-  size: .95em,
 )[
   #parts(
     [*(Transitivity of Subsets, Thm 3.10.)* Prove that if $A subset B$ and $B subset C$, then
@@ -120,7 +116,6 @@
     [Show union is associative: $A union (B union C) = (A union B) union C$.],
     [Show intersection is associative: $A inter (B inter C) = (A inter B) inter C$.],
     [Show that for any set $A$ in a universe $U$, $(A^c)^c = A$.],
-    threshold: 2,
   )
 ]
 
@@ -172,7 +167,6 @@
   title: [Sets --- Symmetric Difference],
   source: 38,
   goal: [Meeting a new definition: start from what you know, then build intuition with examples and non-examples.],
-  size: .95em,
 )[
   Define $A symdiff B := (A without B) union (B without A)$.
 
@@ -190,7 +184,7 @@
 // ---------------------------------------------------------------------------
 
 #slide(title: [Power Sets])[
-  #defn[Power Set][
+  #definition(title: [Power Set])[
     If $S$ is a set, then the *power set* of $S$, denoted $cal(P)(S)$, is the set of subsets of $S$.
   ]
 
@@ -206,7 +200,6 @@
   title: [Power Sets --- Definition],
   source: 39,
   goal: [Practice the distinction between _elements_ and _subsets_.],
-  size: .95em,
 )[
   Consider the set $A = {1, 2}$.
 
@@ -214,14 +207,19 @@
     [Find $cal(P)(A)$.],
     [For each statement below, determine whether it is true or false, and explain briefly.
 
-      #grid(
-        columns: (1fr, 1fr, 1fr),
-        column-gutter: 1em,
-        enum([$cal(P)(A) subset A$], [$emptyset subset A$], [$emptyset subset cal(P)(A)$], [$emptyset in A$]),
-        enum(start: 5, [$emptyset in cal(P)(A)$], [$1 in A$], [$1 in cal(P)(A)$], [${1} in A$]),
-        enum(start: 9, [${1} in cal(P)(A)$], [${1} subset A$], [${1} subset cal(P)(A)$]),
+      #parts(
+        [$cal(P)(A) subset A$],
+        [$emptyset subset A$],
+        [$emptyset subset cal(P)(A)$],
+        [$emptyset in A$],
+        [$emptyset in cal(P)(A)$],
+        [$1 in A$],
+        [$1 in cal(P)(A)$],
+        [${1} in A$],
+        [${1} in cal(P)(A)$],
+        [${1} subset A$],
+        [${1} subset cal(P)(A)$],
       )],
-    threshold: 1,
   )
 ]
 
@@ -286,7 +284,6 @@
   title: [Power Sets --- Closure Properties],
   source: 43,
   goal: [Power sets are closed under the set operations --- and "downward closed" under taking subsets.],
-  size: .95em,
 )[
   Suppose $S$ is a set.
 
@@ -304,7 +301,6 @@
   title: [Power Sets --- Set Operations],
   source: 44,
   goal: [How operations on the base sets affect the power set.],
-  size: .95em,
 )[
   Let $U$ be a fixed universe and $A, B subset U$. For each statement, decide whether it is true or
   false and justify briefly.
@@ -362,7 +358,6 @@
   title: [Index Sets --- Infinite Indices],
   source: 46,
   goal: [The "big" symbols really earn their keep on infinite sequences.],
-  size: .95em,
 )[
   For each $n in NN$, let $display(S_n := [0, (n-1)/n))$.
 
@@ -380,7 +375,6 @@
   title: [Index Sets --- Uncountable Unions],
   source: 47,
   goal: [Use the "big union" symbol over an uncountably large collection.],
-  size: .95em,
 )[
   For each $r in RR$, define $S_r$ as below. Compute $union.big_(r in RR) S_r$. You do not need to
   prove your answers.
@@ -421,7 +415,6 @@
   title: [Index Sets --- Uncountable Intersections],
   source: 49,
   goal: [The same, for the "big intersection" symbol.],
-  size: .95em,
 )[
   For each $r in RR$, define $S_r$ as below. Compute $inter.big_(r in RR) S_r$. You do not need to
   prove your answers.
@@ -459,7 +452,6 @@
   title: [Index Sets --- Unions and Intersections I],
   source: 51,
   goal: [A capstone sequence: complex unions and intersections of infinite sequences, and mixtures of the two.],
-  size: .95em,
 )[
   For each $n in NN$, define the interval
   $
@@ -479,7 +471,6 @@
   title: [Index Sets --- Unions and Intersections II],
   source: 52,
   goal: [A continuation of the previous exercise.],
-  size: .95em,
 )[
   Recall $display(I_n := [(-1)^n / n, #h(.2em) 2 + 1/n])$ and
   $display(J_k := inter.big_(n=k)^oo I_(2n))$.
@@ -495,7 +486,6 @@
     [For every $k in NN$, define $display(E_k := inter.big_(n=k)^oo I_n)$. Compute $E_k$. You do
       not need to prove your answer.],
     [Compute $display(union.big_(k=1)^oo E_k)$. Prove your answer.],
-    threshold: 2,
   )
 ]
 
@@ -519,7 +509,6 @@
   title: [Index Sets --- Monotone Sequences],
   source: 54,
   goal: [Generalizing Problem 3.36 from the textbook, and several of the exercises above.],
-  size: .95em,
 )[
   A sequence of sets ${S_n}_(n=1)^oo$ is *increasing* if $S_1 subset S_2 subset S_3 subset dots.c$,
   i.e. $forall m, n in NN, [(m < n) ==> (S_m subset S_n)]$. It is *decreasing* if
@@ -552,7 +541,6 @@
   title: [Index Sets --- Limits (lim inf and lim sup)],
   source: 56,
   goal: [A capstone connecting this section to Real Analysis. Exercises 51--53 are a special case.],
-  size: .8em,
 )[
   Let ${S_n}_(n in NN)$ be a sequence of sets. Define
   $
@@ -585,7 +573,7 @@
 // ---------------------------------------------------------------------------
 
 #slide(title: [Cartesian Products])[
-  #defn[Cartesian Product][
+  #definition(title: [Cartesian Product])[
     For sets $A$ and $B$,
     $
       A times B := {(a, b) | a in A "and" b in B}.
@@ -616,7 +604,6 @@
   title: [Products --- Computing Products],
   source: 58,
   goal: [Practice the definition of the Cartesian product.],
-  size: .95em,
 )[
   #parts(
     [Let $A = {0, 1}$ and $B = {-1, 1}$. Which of the following tuples are elements of $A times B$?
@@ -631,7 +618,6 @@
       )],
     [Let $A = {x, y, z}$ and $B = {1}$. List all elements of $A times B$.],
     [Let $A$ be an arbitrary set and $B = {b}$. Use set-builder notation to describe $A times B$.],
-    threshold: 2,
   )
 ]
 
@@ -653,7 +639,6 @@
   title: [Products --- Algebraic Properties],
   source: 60,
   goal: [The Cartesian "product" does not behave much like multiplication of integers or matrices.],
-  size: .95em,
 )[
   #parts(
     [*Commutativity.* Give an example of sets $A$, $B$ for which $A times B != B times A$.],
@@ -663,7 +648,6 @@
       $(A times B) times C != A times (B times C)$. What happens if one of the sets is empty?],
     [*Cancellation.* Prove that if $A != emptyset$ and $A times B = A times C$, then $B = C$. Give
       an example showing the conclusion can fail if $A = emptyset$.],
-    threshold: 2,
   )
 ]
 
@@ -680,7 +664,6 @@
       $(A times B subset C times D) ==> [(A subset C) and (B subset D)]$. Give an example showing
       the conclusion may fail if one of $A$, $B$ is empty.],
     [Prove that $A times B = B times A$ if and only if $A = B$, or one of $A$, $B$ is empty.],
-    threshold: 3,
   )
 ]
 
@@ -688,7 +671,6 @@
   title: [Products --- Projections],
   source: 62,
   goal: [Slightly more challenging --- and it sets the stage for Chapter 7.],
-  size: .9em,
 )[
   Let $A$, $B$ be sets and $S subset A times B$. Define the *projections*
   $
@@ -719,7 +701,6 @@
     [$(0, 1) times [2, 3]$],
     [$(-oo, 0] times [0, oo)$],
     [$RR times NN$ --- is this the same set as $NN times RR$?],
-    threshold: 3,
   )
 ]
 
@@ -741,7 +722,6 @@
   title: [Products --- Distributivity II],
   source: 65,
   goal: [Now prove the general rules suggested by the previous exercise.],
-  size: .9em,
 )[
   Let $A$, $B$, $C$ be arbitrary sets (possibly empty).
 
@@ -754,7 +734,6 @@
     [Does the product distribute "from the right" as well as "from the left"? Is
       $(A union B) times C = (A times C) union (B times C)$? What if $union$ is replaced by
       $inter$, $without$, or $symdiff$?],
-    threshold: 2,
   )
 ]
 
@@ -772,7 +751,6 @@
     [Suppose $A$, $B$ are nonempty and disjoint and
       $(A times C) union (B times D) = (A union B) times (C union D)$. What can you conclude about
       $C$ and $D$?],
-    threshold: 3,
   )
 ]
 
@@ -803,6 +781,5 @@
     [Prove that $(union.big_(i in I) A_i) times B = union.big_(i in I) (A_i times B)$.],
     [Prove that $(inter.big_(i in I) A_i) times B = inter.big_(i in I) (A_i times B)$.],
     [What if the "big symbols" appear on the right, as in $B times (union.big_(i in I) A_i)$?],
-    threshold: 3,
   )
 ]

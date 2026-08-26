@@ -1,86 +1,6 @@
-#import "@preview/colorful-boxes:1.4.3" as cb
-#import "@preview/touying:0.6.1": *
-#import "@preview/cetz:0.4.2"
-#import "@preview/lilaq:0.5.0" as lq
-#import "@preview/tiptoe:0.3.1"
-#import themes.metropolis: *
-#import themes.metropolis: slide as slide-orig
-#import "@preview/itemize:0.2.0"
-#import "@preview/ergo:0.2.0": *
-#import "@preview/ergo:0.2.0"
+#import "preamble.typ": *
+#show: mat336-slides.with([Slides])
 
-#show: ergo-init
-
-
-#set enum(
-  full: true, // Required to get all level numbers in the function
-  numbering: (..n) => {
-    let level = n.pos().len() - 1
-    // Define the pattern based on the nesting level
-    let pattern = ("1.", "(a)", "(i)", "(A)").at(level, default: "1.")
-
-    // Apply the numbering function with the chosen pattern and the current number
-    numbering(pattern, n.pos().last())
-  },
-)
-#show: itemize.default-enum-list
-
-#let subset = math.subset.eq
-
-#let slide(..args) = {
-  let named = args.named()
-  let title = named.at("title", default: none)
-  let autoscale = named.at("autoscale", default: true)
-  let positional = args.pos()
-  slide-orig(title: text(size: 18pt, title), ..positional.map(p => {
-    show: if autoscale {
-      utils.fit-to-height.with(100%, grow: false)
-    } else {
-      it => it
-    }
-    p
-  }))
-}
-
-#show: metropolis-theme.with(
-  aspect-ratio: "16-9",
-  footer: self => {
-    show: pad.with(x: -.51em, bottom: -.51em)
-    block(width: 100%, height: 100%, fill: self.colors.neutral-darkest)
-  },
-  config-info(
-    title: [MAT336 Slides LEC0101/2001],
-    subtitle: [Jason Siefken],
-    // author: [Jason Siefken],
-    // date: datetime.today(),
-    // institution: [University of Toronto],
-  ),
-  footer-progress: false,
-  footer-right: none,
-  config-page(margin: (top: 1.3em, bottom: 8.5cm, x: .5em)),
-)
-
-#let definition(it, title: none) = block(
-  breakable: false,
-  cb.colorbox(
-    title: title,
-    color: (
-      fill: rgb("#e3e3e3"),
-      stroke: rgb("#49164e"),
-      title: rgb("#002366"),
-    ),
-    radius: 4pt,
-    width: auto,
-    it,
-  ),
-)
-
-// SLIDES CONTENT
-
-#set text(font: "Fira Sans")
-
-
-#title-slide()
 
 #slide(title: [Setting the Stage])[
   Directions
@@ -125,10 +45,7 @@
 
 ]
 
-#slide(title: [A Troubling Sum], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: .9em)
+#slide(title: [A Troubling Sum])[
   Consider the infinite series:
   $
     G = 1 -1 +1 -1 +1 -1 + dots.c
@@ -146,10 +63,7 @@
 ]
 
 // Proof adapted from https://nseverkar.medium.com/two-proofs-that-the-sum-of-all-natural-numbers-is-1-12-a317217bb8b9
-#slide(title: [A Troubling Sum 2], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: .9em)
+#slide(title: [A Troubling Sum 2])[
   Consider
   $
     A = 1 - 2 + 3 - 4 + 5 - 6 + dots.c
@@ -166,10 +80,7 @@
 
 ]
 
-#slide(title: [A Troubling Sum 3], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: 1.0em)
+#slide(title: [A Troubling Sum 3])[
 
   Consider
   $
@@ -182,11 +93,7 @@
 ]
 
 // https://www.desmos.com/calculator/bzoda3dwhx
-#slide(title: [Fourier's Series], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: .9em)
-
+#slide(title: [Fourier's Series], force_scale: .85em)[
 
   #columns(2)[
     Fourier considered a long metal plate.
@@ -234,11 +141,7 @@
   ]
 ]
 
-#slide(title: [Fourier's Series 2], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: .9em)
-
+#slide(title: [Fourier's Series 2], force_scale: .85em)[
 
   #columns(2)[
     $
@@ -263,11 +166,7 @@
 
   ]
 ]
-#slide(title: [Fourier's Series 3], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: .9em)
-
+#slide(title: [Fourier's Series 3])[
 
   #columns(2)[
     Fourier claimed:
@@ -291,11 +190,7 @@
   ]
 ]
 
-#slide(title: [Functions and Series], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: .9em)
-
+#slide(title: [Functions and Series])[
 
   #columns(2)[
     In the 1800s:
@@ -314,11 +209,7 @@
 ]
 
 // Week 2
-#slide(title: [Language of Proofs], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: .9em)
-
+#slide(title: [Language of Proofs])[
 
   #columns(2)[
     Proofs should:
@@ -333,13 +224,8 @@
   ]
 ]
 
-#slide(title: [Quantifiers], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: .9em)
+#slide(title: [Quantifiers], force_two_column: true)[
 
-
-  #show: columns
   Modern proofs heavily employ:
   - Sets
   - Quantifiers
@@ -357,11 +243,7 @@
   + "For all $p in X$, $p$ is an armadillo."
 ]
 
-#slide(title: [Notes on Quantifiers], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: .9em)
-
+#slide(title: [Notes on Quantifiers], force_two_column: true)[
 
   #show: columns.with(3)
   In *Symbolic Logic*
@@ -376,7 +258,6 @@
   - Primarily appear at the start of a statement.
   - Are followed by the English connective (e.g. $forall x in P, exists y in P " such that "x>y$)
 
-
   #colbreak()
 
   In *Professional Mathematics*
@@ -387,13 +268,8 @@
 
 ]
 
-#slide(title: [Set-builder Notation], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: .9em)
+#slide(title: [Set-builder Notation], force_two_column: true)[
 
-
-  #show: columns
   We will use *naive set theory* (in contrast to _formal_, or ZFC set theory).
 
   A set is a collection of objects. It is
@@ -413,13 +289,8 @@
 
 ]
 
-#slide(title: [Set Practice], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: .9em)
+#slide(title: [Set Practice], force_two_column: true)[
 
-
-  #show: columns
   Definition: An _irrational_ number is a real number that is not rational.
 
   Let $W$ be the set of positive, rational numbers and negative, irrational numbers.
@@ -428,7 +299,6 @@
 
     #colbreak()
     Describe the following sets:
-
 
   + $A={x in RR:forall y in [0,1], x<y}$
   + $B = {x in RR: exists y in [0,1] "s.t." x < y}$
@@ -439,13 +309,7 @@
 
 ]
 
-#slide(title: ["Extended" Set-builder Notation], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: .9em)
-
-
-  #show: columns
+#slide(title: ["Extended" Set-builder Notation], force_two_column: true)[
 
   Let $T subset NN$ be the set of positive multiples of $2$. Let $R subset NN$ be the set of
   positive multiples of $3$.
@@ -460,13 +324,7 @@
   + Express $Q$ using set-builder notation.
 ]
 
-#slide(title: [Axioms], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: .85em)
-
-
-  #show: columns
+#slide(title: [Axioms], force_two_column: true)[
 
   Mathematicians believe:
 
@@ -493,13 +351,7 @@
   + For all $a in RR$, $a^2 >= 0$
 ]
 
-#slide(title: [A Proof about Even Numbers], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: .85em)
-
-
-  #show: columns
+#slide(title: [A Proof about Even Numbers], force_two_column: true)[
 
   Let $E$ be the set of even integers.
 
@@ -515,13 +367,7 @@
 
 ]
 
-#slide(title: [A One-to-One Proof], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: .85em)
-
-
-  #show: columns
+#slide(title: [A One-to-One Proof], force_two_column: true)[
 
   A function $f$ with domain $D$ is *one-to-one* if different inputs produce different outputs.
 
@@ -532,13 +378,7 @@
     so, do it. Prove your answer.
 ]
 
-#slide(title: [Criticizing Proofs 1], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: .85em)
-
-
-  #show: columns
+#slide(title: [Criticizing Proofs 1], force_two_column: true)[
 
   *Theorem:* The sum of two odd numbers is even.
 
@@ -552,13 +392,7 @@
   + What is wrong with the proof?
   + Can it be salvaged?
 ]
-#slide(title: [Criticizing Proofs 2], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: .85em)
-
-
-  #show: columns
+#slide(title: [Criticizing Proofs 2], force_two_column: true)[
 
   *Theorem:* The sum of two odd numbers is even.
 
@@ -576,13 +410,7 @@
   + Can it be salvaged?
 ]
 
-#slide(title: [Criticizing Proofs 3], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: .85em)
-
-
-  #show: columns
+#slide(title: [Criticizing Proofs 3], force_two_column: true)[
 
   *Theorem:* The sum of two odd numbers is even.
 
@@ -595,19 +423,12 @@
   $2a+2b+2=2n$\
   $a+b+1=n$
 
-
   #colbreak()
   + What is wrong with the proof?
   + Can it be salvaged?
 ]
 
-#slide(title: [Archimedean Underestimate], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: .85em)
-
-
-  #show: columns
+#slide(title: [Archimedean Underestimate], force_two_column: true)[
 
   #{
     let f(x) = 1 - x * x
@@ -698,13 +519,7 @@
 
 ]
 
-#slide(title: [Archimedean Overestimate], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: .85em)
-
-
-  #show: columns
+#slide(title: [Archimedean Overestimate], force_two_column: true)[
 
   #{
     let f(x) = 1 - x * x
@@ -791,11 +606,7 @@
 
 ]
 
-#slide(title: [Finding Exact Area], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: .85em)
-
+#slide(title: [Finding Exact Area], force_two_column: true)[
 
   // #show: columns
   We'd like to find the area under the parabola $1-x^2$. Call this area $A$.
@@ -808,15 +619,10 @@
     Prove $A=4/3$. Did you have to make any additional assumptions?
 ]
 
-#slide(title: [Archimedean Understanding], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: .85em)
+#slide(title: [Archimedean Understanding], force_two_column: true)[
 
-
-  #show: columns
   Your textbook states:
-  #defn[Archimedean Understanding][The _Archimedean understanding_ of an infinite series is that it
+  #definition(title: [Archimedean Understanding])[The _Archimedean understanding_ of an infinite series is that it
     is shorthand for the sequence of finite summations.
 
     The value of an infinite series, if it exists, is that number $T$ such that given any $L < T$
@@ -833,13 +639,7 @@
     what it means for a series $t_0 + t_1 + t_2 + dots.c$ to be convergent.
 ]
 
-#slide(title: [Convergence in Different Sets (Is there a there there?)], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: .8em)
-
-
-  #show: columns
+#slide(title: [Convergence in Different Sets (Is there a there there?)], force_two_column: true, force_scale: .8em)[
 
   Let $DD = {q in QQ: exists n in NN, exists b in ZZ "such that" q = b/2^n}$
 
@@ -866,15 +666,10 @@
 
 // Start of Week 4 (there was a snow day for 1 hour of class)
 
-#slide(title: [Nested Interval Principle], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: .9em)
+#slide(title: [Nested Interval Principle], force_two_column: true)[
 
-
-  #show: columns
   Your textbook states:
-  #defn[Nested Interval Principle][
+  #definition(title: [Nested Interval Principle])[
     Given an increasing sequence $x_1 <= x_2<= x_3 <= dots.c$ and a decreasing sequence
     $y_1 >= y_2 >= y_3 >= dots.c$ such that $y_n$ is always larger than $x_n$ but the difference
     between $x_n$ and $y_n$ can be made arbitrarily small by taking $n$ sufficiently large, there
@@ -893,13 +688,8 @@
 ]
 
 // Ended Week 4 with this. It was really confusing. How exactly does the nested interval principle fit in?
-#slide(title: [Putting it Together], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: 1em)
+#slide(title: [Putting it Together], force_two_column: true)[
 
-
-  #show: columns
   + Explain how every statement about a series can be converted into a statement about a sequence
     (and vice versa).
   + What should it mean for a _sequence_ to converge in the Archimedean sense?
@@ -911,23 +701,14 @@
     the Archimedean sense?
 ]
 
-#slide(title: [Divergent to Infinity], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: .9em)
+#slide(title: [Divergent to Infinity], force_two_column: true)[
 
-
-  #show: columns
   + Come up with a formal definition of what it should mean for the series
     $t_0 + t_1 + t_2 + dots.c$ to be *divergent to infinity*.
 ]
 
-#slide(title: [Geometric Series], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: .9em)
+#slide(title: [Geometric Series], force_two_column: true)[
 
-  #show: columns
   A *geometric series* $a_0 + a_1+ a_2 + dots.c$ is a series where the ratio of successive terms is
   constant.
 
@@ -940,12 +721,8 @@
   + Prove that if $a_1/a_0 in [0,1)$ then $A$ converges in the Archimedean sense.
 ]
 
-#slide(title: [Taylor Series], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: .9em)
+#slide(title: [Taylor Series], force_two_column: true)[
 
-  #show: columns
   A *power series about $x=0$* is a series of the form
   $
     a_0 + a_1 x + a_2 x^2 + dots.c
@@ -968,20 +745,16 @@
 
 // Finished first hour of week 6
 // They had lots of trouble with part 3. We'll get there eventually...
-#slide(title: [Lagrange's Theorem], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: .85em)
+#slide(title: [Lagrange's Theorem], force_two_column: true)[
 
-  #show: columns
-  #thm[Lagrange's Remainder Theorem][
+  #theorem(title: [Lagrange's Remainder Theorem])[
     Let $f$ be infinitely differentiable. Let
     $
       E_n (x) = f(x) - (f(0) + f'(0)x + f''(0)x^2/2! \ + dots.c + f^((n-1))(0)x^(n-1)/(n-1)!) = f(x) - T_(n-1) (x).
     $
     Then there exists a $c$ in the interval between $0$ and $x$ such that
     $display(E_n (x) = f^((n))(c) x^n / n!)$
-  ][]
+  ]
   + Does Lagrange's Theorem state that $forall x, exists c$ or $exists c, forall x$?
   + Give upper and lower bounds on the difference between $e^(1/2)$ and the $(n-1)$#super[st] Taylor
     approximation (centered at $0$) to $e^x$ evaluated at $x=1/2$.
@@ -989,13 +762,9 @@
     the Archimedean sense.
 ]
 
-#slide(title: [Newton and Cauchy's Limits], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: .75em)
+#slide(title: [Newton and Cauchy's Limits], force_two_column: true, force_scale: .8em)[
 
-  #show: columns
-  #defn[Newton's Limit (paraphrased)][
+  #definition(title: [Newton's Limit (paraphrased)])[
     // Synthesized from https://hsm.stackexchange.com/questions/9580/what-was-the-notion-of-limit-that-newton-used
     // and https://en.wikipedia.org/wiki/History_of_calculus
     // Not _exactly_ what Newton said.
@@ -1003,7 +772,7 @@
     given time. It is neither the value _before_ it arrives at its last time, _when_ the motion
     ceases, nor _after_, but at the very instant when it arrives.
   ]
-  #defn[Cauchy's Limit][
+  #definition(title: [Cauchy's Limit])[
     When the values successively attributed to the same variable approach indefinitely a fixed
     value, eventually differing from it by as little as one could wish, that fixed value is called
     the limit of all the others.
@@ -1017,13 +786,9 @@
   // + Rephrase Cauchy's definition using quantifiers.
 ]
 
-#slide(title: [Modern Limits], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: .9em)
+#slide(title: [Modern Limits], force_two_column: true)[
 
-  #show: columns
-  #defn[Modern Limit][
+  #definition(title: [Modern Limit])[
     The function $f$ is said to have a _limit_ $L$ as $x$ approaches $a$ if for all $epsilon > 0$,
     there exists a $delta > 0$ such that for all $x$ satisfying
     $
@@ -1042,13 +807,9 @@
 ]
 
 // Finished in last hour of week 6.
-#slide(title: [Derivatives], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: .9em)
+#slide(title: [Derivatives], force_two_column: true)[
 
-  #show: columns
-  #defn[Cauchy's Derivative (modernized)][
+  #definition(title: [Cauchy's Derivative (modernized)])[
     The _derivative_ of a function $f$ at a point $a$, denoted $f'(a)$, is a value such that for all
     $epsilon > 0$, there exists a $delta > 0$ such that for all $x$ satisfying
     $0 < |x - a| < delta$, we have
@@ -1063,12 +824,8 @@
 ]
 
 // Started week 8, finished week 9.
-#slide(title: [Problems with Derivatives], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: .9em)
+#slide(title: [Problems with Derivatives], force_two_column: true)[
 
-  #show: columns
   Recall Fourier's series:
   $
     F(x) = 4/pi [cos((pi x)/2) & - 1/3 cos((3 pi x)/2) \
@@ -1080,34 +837,26 @@
   + What went wrong? Can this be fixed by applying the Archimedean understanding?
 ]
 
-#slide(title: [Mean Value Theorem], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: .9em)
+#slide(title: [Mean Value Theorem], force_two_column: true)[
 
-  #show: columns
   Cauchy wanted to prove Lagrange's Remainder Theorem. He first needed to prove the Mean Value
   Theorem.
-  #thm[Mean Value Theorem 1][
+  #theorem(title: [Mean Value Theorem 1])[
     Let $f$ be continuous on $[a,b]$ and differentiable on $[a,b]$. Then there exists a $c in [a,b]$
     such that
     $
       f'(c) = (f(b) - f(a)) / (b - a).
     $
-  ][]
+  ]
 
   + Read through Cauchy's proof of the Mean Value Theorem. Are you convinced?
 ]
 
 // Intermediate value property, then continuity, then sups and infs?
 
-#slide(title: [Intermediate Value Property], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: .9em)
+#slide(title: [Intermediate Value Property], force_two_column: true)[
 
-  #show: columns
-  #defn[Intermediate Value Property][
+  #definition(title: [Intermediate Value Property])[
     A function $f: RR -> RR$ has the _intermediate value property_ if for all $a,b in RR$ and all
     $y$ between $f(a)$ and $f(b)$, there exists a $c in [a,b]$ such that $f(c) = y$.
   ]
@@ -1120,21 +869,16 @@
   + Does the intermediate value property match what you feel a "continuous" function should be?
 ]
 
+#slide(title: [Continuity], force_two_column: true)[
 
-#slide(title: [Continuity], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: .9em)
-
-  #show: columns
-  #defn[Continuity A][
+  #definition(title: [Continuity A])[
     $f$ is _continuous_ if a small change in the input produces a small change in the output.
   ]
-  #defn[Continuity B][
+  #definition(title: [Continuity B])[
     $f$ is _continuous_ if the change in output can be made as small as one wishes by making the
     change in input small.
   ]
-  #defn[Continuity C][
+  #definition(title: [Continuity C])[
     $f$ is _continuous_ at $a$ if $lim_(x-> a) f(x) =f(a)$.
   ]
   #colbreak()
@@ -1144,15 +888,11 @@
   + (Trivia) Do you know which definition is due to Bolzano and which is Cauchy's?
 ]
 
-#slide(title: [Intermediate Value Theorem], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: .9em)
+#slide(title: [Intermediate Value Theorem], force_two_column: true)[
 
-  #show: columns
-  #thm[Intermediate Value Theorem][
+  #theorem(title: [Intermediate Value Theorem])[
     If $f$ is continuous, then it has the intermediate value property.
-  ][]
+  ]
 
   Let $f$ be continuous. Fix $a<b$ and assume $f(a) < f(b)$. Let $c in [f(a), f(b)]$.
 
@@ -1168,12 +908,8 @@
     What can you say about $C^- union C^+$?
 ]
 
-#slide(title: [Intermediate Value Theorem 2 (Cauchy's Proof)], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: .83em)
+#slide(title: [Intermediate Value Theorem 2 (Cauchy's Proof)], force_two_column: true)[
 
-  #show: columns
   Let $f$ be continuous. Fix $a<b$ and assume $f(a) < f(b)$. Let $c in [f(a), f(b)]$.
 
   Define $C^- = {x in [a,b]: f(x) <= c}$ and $C^+ = {x in [a,b]: f(x) >= c}$.
@@ -1198,14 +934,9 @@
   + Show that $f(x_0)=c$.
 ]
 
+#slide(title: [Sups & Infs], force_two_column: true)[
 
-#slide(title: [Sups & Infs], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: .9em)
-
-  #show: columns
-  #defn[Supremum & Infimum][
+  #definition(title: [Supremum & Infimum])[
     The _supremum_ of a non-empty, bounded set $X subset.eq RR$, written $sup X$, is the smallest
     number $s in RR$ that is an upper bound for $X$. That is,
     $s = min{s in RR: forall x in X, x <= s}$.
@@ -1223,12 +954,8 @@
   + Does an empty set have a supremum? What about an unbounded set?
 ]
 
-#slide(title: [Intermediate Value Theorem 3 (Bolzano's Proof)], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: .9em)
+#slide(title: [Intermediate Value Theorem 3 (Bolzano's Proof)], force_two_column: true)[
 
-  #show: columns
   Let $f$ be continuous. Fix $a<b$ and assume $f(a) < f(b)$. Let $c in [f(a), f(b)]$.
 
   Define $y= sup {x in [a,b]:forall t in [a,x], f(t) <= c}$
@@ -1239,15 +966,11 @@
   + What proof of the intermediate value theorem do you like better?
 ]
 
-#slide(title: [Extreme Value Theorem 1], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: .77em)
+#slide(title: [Extreme Value Theorem 1], force_two_column: true, force_scale: .85em)[
 
-  #show: columns
-  #thm[][
+  #theorem(title: [])[
     If $f$ is continuous on $[a,b]$, then $f$ is bounded on $[a,b]$.
-  ][]
+  ]
 
   + If we showed that a continuous function on $[a,b]$ were bounded above, would that be sufficient
     to prove the theorem?
@@ -1267,15 +990,11 @@
   + Where does the proof go wrong if we try to show a continuous function on $RR$ is bounded?
 ]
 
-#slide(title: [Extreme Value Theorem 2], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: .77em)
+#slide(title: [Extreme Value Theorem 2], force_two_column: true)[
 
-  #show: columns
-  #thm[Extreme Value Theorem][
+  #theorem(title: [Extreme Value Theorem])[
     If $f$ is continuous on $[a,b]$, then $f$ achieves its upper and lower bounds on $[a,b]$.
-  ][]
+  ]
 
   + Write down what it means for $f$ to "achieve its bounds" using quantifiers.
   + If we showed that a continuous function on $[a,b]$ achieves its maximum, would that be
@@ -1294,16 +1013,12 @@
   + Show if $y=b$, then $f(y)=M$.
 ]
 
-#slide(title: [Correct Mean Value Theorem Proof], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: .77em)
+#slide(title: [Correct Mean Value Theorem Proof], force_two_column: true)[
 
-  #show: columns
-  #thm[Rolle's Theorem][
+  #theorem(title: [Rolle's Theorem])[
     If $f$ is continuous on $[a,b]$ and differentiable on $(a,b)$ and $f(a)=f(b)$, then there exists
     a $c in (a,b)$ such that $f'(c)=0$.
-  ][]
+  ]
 
   Assume $f$ satisfies the hypothesis of Rolle's theorem.
 
@@ -1324,16 +1039,12 @@
   + Prove Rolle's theorem.
 ]
 
-#slide(title: [Correct Mean Value Theorem Proof], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: .9em)
+#slide(title: [Correct Mean Value Theorem Proof], force_two_column: true)[
 
-  #show: columns
-  #thm[Mean Value Theorem][
+  #theorem(title: [Mean Value Theorem])[
     If $f$ is continuous on $[a,b]$ and differentiable on $(a,b)$, then there exists a $c in (a,b)$
     such that $f'(c)=(f(b)-f(a))/(b-a)$.
-  ][]
+  ]
 
   Let $f$ satisfy the hypothesis of the theorem.
 
@@ -1341,15 +1052,9 @@
   + Prove the Mean Value Theorem.
 ]
 
+#slide(title: [The Cauchy Criterion], force_two_column: true)[
 
-#slide(title: [The Cauchy Criterion], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: .9em)
-
-  #show: columns
   For a sequence $(a_i)_(i in NN)$, define $S_m^n = sum_(i=m)^n a_i$.
-
 
   If $S_0^oo = sum_(i=0)^oo a_i$ is an infinite series, the *tail sums* of $S$ are
   $S_M^oo = sum_(i=M)^oo a_i$ where $M in NN$.
@@ -1368,12 +1073,8 @@
     criterion.
 ]
 
-#slide(title: [Absolute Convergence], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: .9em)
+#slide(title: [Absolute Convergence], force_two_column: true)[
 
-  #show: columns
   Let $S_m^n = sum_(i=m)^n a_i$. Define $overline(S)_m^n = sum_(i=m)^n abs(a_i)$.
 
   We say $S_0^oo$ is *absolutely convergent* if $overline(S)_0^oo$ converges.
@@ -1386,12 +1087,8 @@
 
 ]
 
-#slide(title: [Parenthesis & Rearrangements I], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: .75em)
+#slide(title: [Parenthesis & Rearrangements I], force_two_column: true)[
 
-  #show: columns
   Consider the series $A$ given by $a_0+a_1+dots.c$ and $B$ given by $b_0 + b_1 + dots.c$ where
   $
     b_0 & = (a_0 + dots.c + a_(k_0)) \
@@ -1415,12 +1112,8 @@
   + What is a _rearrangement_ of the series $A$? Write down a rigorous definition.
 ]
 
-#slide(title: [Parenthesis & Rearrangements II], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: .8em)
+#slide(title: [Parenthesis & Rearrangements II], force_two_column: true)[
 
-  #show: columns
   Let $A$ given by $a_0+a_1+dots.c$ be _absolutely convergent_. Let $k_n : NN -> NN$ be a bijection
   and let $B$ given by $a_(k_0) + a_(k_1) + dots.c$ be a rearrangement of $A$.
 
@@ -1442,15 +1135,10 @@
   + Show that $B$ converges to the same value that $A$ converges to.
   + If the "absolutely convergent" assumption were dropped, would the result still hold?
 
-
 ]
 
-#slide(title: [Absolute Convergence of Power Series], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: .9em)
+#slide(title: [Absolute Convergence of Power Series], force_two_column: true)[
 
-  #show: columns
   Let $P(x)=sum_(i=0)^oo a_i x^i$ be a power series.
 
   Suppose $P$ converges at $x$.
@@ -1469,13 +1157,9 @@
 
 ]
 
-#slide(title: [Saving Cauchy's Proof], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: .77em)
+#slide(title: [Saving Cauchy's Proof], force_two_column: true)[
 
-  #show: columns
-  #defn[Uniform Continuity][
+  #definition(title: [Uniform Continuity])[
     If $f$ is _uniformly continuous_ on the set $X subset.eq RR$ if for all $epsilon > 0$, there
     exists a $delta > 0$ such that for all $x in X$, if $abs(x - y) < delta$ and $y in X$, then
     $abs(f(x) - f(y)) < epsilon$.
@@ -1486,15 +1170,11 @@
     how?
 ]
 
-#slide(title: [Uniform Continuity], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: 1em)
+#slide(title: [Uniform Continuity], force_two_column: true)[
 
-  #show: columns
-  #thm[Uniform Continuity on a Closed Interval][
+  #theorem(title: [Uniform Continuity on a Closed Interval])[
     If $f$ is continuous on $[a,b]$ then $f$ is uniformly continuous on $[a,b]$.
-  ][]
+  ]
 
   Let $f$ be a continuous function on $[a,b]$.
 

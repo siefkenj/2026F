@@ -1,74 +1,8 @@
-#import "@preview/colorful-boxes:1.4.3" as cb
-#import "@preview/touying:0.6.1": *
-#import themes.metropolis: *
-#import themes.metropolis: slide as slide-orig
-#import "@preview/lilaq:0.5.0" as lq
-#import "@preview/itemize:0.2.0"
-#import "@preview/cetz:0.4.2"
-
-#show: itemize.default-enum-list
-
-#let slide(..args) = {
-  let named = args.named()
-  let title = named.at("title", default: none)
-  let autoscale = named.at("autoscale", default: true)
-  let positional = args.pos()
-  slide-orig(title: text(size: 18pt, title), ..positional.map(p => {
-    show: if autoscale {
-      utils.fit-to-height.with(100%, grow: false)
-    } else {
-      it => it
-    }
-    p
-  }))
-}
-
-#show: metropolis-theme.with(
-  aspect-ratio: "16-9",
-  footer: self => {
-    show: pad.with(x: -.51em, bottom: -.51em)
-    block(width: 100%, height: 100%, fill: self.colors.neutral-darkest)
-  },
-  config-info(
-    title: [MAT235 Slides LEC0401 (Chapter 17)],
-    subtitle: [Jason Siefken],
-    // author: [Jason Siefken],
-    // date: datetime.today(),
-    // institution: [University of Toronto],
-  ),
-  footer-progress: false,
-  footer-right: none,
-  config-page(margin: (top: 1.3em, bottom: 8.5cm, x: .5em)),
-)
-
-#let definition(it, title: none) = block(
-  breakable: false,
-  cb.colorbox(
-    title: title,
-    color: (
-      fill: rgb("#e3e3e3"),
-      stroke: rgb("#49164e"),
-      title: rgb("#002366"),
-    ),
-    radius: 4pt,
-    width: auto,
-    it,
-  ),
-)
-
-// SLIDES CONTENT
-
-#set text(font: "Fira Sans")
+#import "preamble.typ": *
+#show: mat235-slides.with([Chapter 17])
 
 
-#title-slide()
-
-#slide(title: [Siefken 1], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: .9em)
-
-  #show: columns
+#slide(title: [Siefken 1])[
 
   + For each of the following situations, determine if it can be modeled by a function. If so, what
     is the *domain* and *codomain*?
@@ -80,12 +14,7 @@
     study in Calc I?
 ]
 
-#slide(title: [Siefken 2], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: .9em)
-
-  #show: columns
+#slide(title: [Siefken 2])[
 
   Let $arrow(p)=mat(1; 1)$ and $arrow(d)=mat(2; 0)$. Define
   $
@@ -101,18 +30,11 @@
     second.
 ]
 
-#slide(title: [Siefken 3], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: .9em)
-
-  #show: columns
+#slide(title: [Siefken 3])[
 
   A bee leaves a flower located at $(3,0,0)$ and flies off in a cork-screw pattern.
 
   #image("images/helix.png", width: 6cm)
-
-  #colbreak()
   Its motion is described by $arrow(p)(t)$.
 
   + Find a formula for $arrow(p)(t)$.
@@ -122,13 +44,8 @@
     remained the same. Find a formula for $arrow(p)(t)$.
 ]
 
+#slide(title: [Siefken 4])[
 
-#slide(title: [Siefken 4], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: .9em)
-
-  #show: columns
   Below is a _Lemniscate_ curve.
   #{
     let ts = lq.arange(0, 6.5, step: 0.05)
@@ -139,20 +56,14 @@
     )
     a
   }
-
-  #colbreak()
   + Could the lemniscate be the graph of a function $f:RR -> RR$? Explain.
   + Could the lemniscate be the graph of a function $f:RR -> RR^2$? Explain.
   + Make a table of values for a function that produces the lemniscate.
   + Find a formula for a function whose graph is the lemniscate. Use Desmos to check your answer.
 ]
 
-#slide(title: [Siefken 5], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: .9em)
+#slide(title: [Siefken 5])[
 
-  #show: columns
   A fish is swimming in a pond. Its position as a function of time is given by
   $arrow(f)(t) = (t^2, 2t)$.
 
@@ -161,19 +72,14 @@
     exact?
   + Estimate the average speed of the fish from time $t=1$ to $t=1+Delta t$.
   + Can you find the exact speed of the fish at time $t=1$? If so, do it.
-    #colbreak()
   + What's the difference between speed and velocity?
   + Find the velocity of the fish at time $t=1$.
   + What's the relationship between the velocity of the fish and the graph of $arrow(f)$? Should you
     draw the velocity vector at the origin or somewhere else?
 ]
 
-#slide(title: [Siefken 6], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: .8em)
+#slide(title: [Siefken 6])[
 
-  #show: columns
   $arrow(p): RR -> RR^2$ describes the motion of a particle.
 
   + How should you interpret $dif/(dif t) arrow(p)(t)$?#v(1em)
@@ -193,19 +99,14 @@
 
 ]
 
-#slide(title: [Siefken 7], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: .9em)
+#slide(title: [Siefken 7])[
 
-  #show: columns
   You are riding the _Lemniscate Coaster_, a roller coaster whose track is laid out in the shape of
   a lemniscate. A car on the coaster can be modeled by $arrow(p)(t)=(20cos t, 20sin 2t)$.
 
   + Find expressions for the velocity, speed, and the acceleration of the roller coaster.
   + Use Desmos to estimate: what is the fastest that the coaster goes? What is the most acceleration
     it experiences?
-    #colbreak()
     To make the ride safe for children, the maximum acceleration should not exceed
     $3g approx 29 "m"/"s"^2$. To achieve this, engineers will install breaking pads that slow the
     coaster down by a factor of $k$.
@@ -214,12 +115,8 @@
   + What should $k$ be to ensure the maximum acceleration is $3g$? (Hint: Use Desmos to estimate!)
 ]
 
-#slide(title: [Siefken 8], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: .9em)
+#slide(title: [Siefken 8])[
 
-  #show: columns
   You are riding the _Lemniscate Coaster_ modeled by $arrow(p)(t)=(20cos t, 20sin 2t)$. You'd like
   to find the total length of the coaster track.
 
@@ -244,28 +141,20 @@
   + How could you find the exact length of the track? Do it.
 ]
 
-#slide(title: [Siefken 9], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: .9em)
+#slide(title: [Siefken 9])[
 
-  #show: columns
   Let $W$ give the velocity of the wind at different locations on the earth's surface.
 
   + What type of mathematical object does $W$ output? Input?
   + $W$ is a function from $RR^?$ to $RR^(??)$. Fill in the question marks.
   + How might you "graph" $W$?
   + Suppose there is a constant, gentle breeze coming from the North. Draw $W$.
-    #colbreak()
   + Suppose there is a tornado located at the origin. Draw $W$.
 
     Will the arrows in your tornado drawing be longer or shorter, closer to the origin?
 ]
 
-#slide(title: [Siefken 10], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: .9em)
+#slide(title: [Siefken 10])[
 
   #{
     let width = 4cm
@@ -311,19 +200,13 @@
   $
 ]
 
-#slide(title: [Siefken 11], autoscale: false)[
-  #show: place.with(dy: 1.3cm)
-  #show: block.with(height: 10cm, breakable: false)
-  #set text(size: .9em)
-
-  #show: columns
+#slide(title: [Siefken 11])[
 
   The gradient of a function $f:RR^n -> RR$ is also a vector field.
 
   + Draw $nabla f$ where $f(x,y)=x^2+y^2$
   + Draw $nabla g$ where $g(x,y)=x + y$
   + Draw $nabla h$ (where it's defined) where $h(x,y)= abs(x) + y$
-    #colbreak()
   + Could the following vector field be the gradient of a function? Why or why not?
 
     #{

@@ -1,5 +1,5 @@
 #import "preamble.typ": *
-#show: mat246-theme.with([Cardinality])
+#show: mat246-slides.with([Cardinality], sources: (ernst_textbook,))
 
 // Covers textbook Chapter 9 (Cardinality).
 //
@@ -9,7 +9,6 @@
 //   Dana C. Ernst, *An Introduction to Proof via Inquiry-Based Learning*,
 //   CC BY-SA 4.0, https://danaernst.com/IBL-IntroToProof/IntroToProof.pdf
 
-#title-slide()
 
 #slide(title: [Where We Are Going])[
   *Cardinality* is the formalization of "size" that survives contact with infinite sets.
@@ -30,7 +29,7 @@
 // ---------------------------------------------------------------------------
 
 #slide(title: [Same Cardinality])[
-  #defn[Definition 9.1][
+  #definition(title: [Definition 9.1])[
     Let $A$ and $B$ be sets. $A$ and $B$ have the *same cardinality* if there exists a *bijection*
     between $A$ and $B$. In this case we write $"card"(A) = "card"(B)$.
   ]
@@ -58,7 +57,6 @@
 
       _Hint: try a linear function $f: (a,b) -> (c,d)$. Draw a picture._],
     [$"card"(NN) = "card"({1/2^n | n in NN})$],
-    threshold: 3,
   )
 ]
 
@@ -78,7 +76,6 @@
           _Hint: define $phi: cal(F) -> cal(P)(NN)$ so that $phi(f)$ is the subset of $NN$
           determined by where $f$ outputs a $1$._],
       )],
-    threshold: 2,
   )
 ]
 
@@ -86,7 +83,6 @@
   title: [Cardinality --- Dyck Paths],
   book: [Problem 9.8],
   goal: [A combinatorial bijection. Counting the same thing two ways is a proof technique in itself.],
-  size: .9em,
 )[
   A *North-East lattice path* from $(0,0)$ to $(n,n)$ takes unit steps North or East. Let $D_n$ be
   the collection of such paths that never drop below the line $y = x$ --- these are called *Dyck
@@ -110,7 +106,6 @@
   title: [Cardinality --- Basic Theorems],
   book: [Theorems 9.10, 9.12 and Corollary 9.11],
   goal: [The bookkeeping results. None should be surprising --- but each needs a bijection built.],
-  size: .95em,
 )[
   Let $A$, $B$, $C$, $D$ be sets.
 
@@ -128,7 +123,7 @@
 ]
 
 #slide(title: [Comparing Cardinalities])[
-  #defn[Definitions 9.13 and 9.16][
+  #definition(title: [Definitions 9.13 and 9.16])[
     If there is an *injective* function $A -> B$, we write $"card"(A) <= "card"(B)$.
 
     We write $"card"(A) < "card"(B)$ if $"card"(A) <= "card"(B)$ and
@@ -156,7 +151,6 @@
     [Prove that if $C subset A$ while $"card"(B) = "card"(C)$, then $"card"(B) <= "card"(A)$.],
     [Provide an example of sets $A$, $B$ with $"card"(A) = "card"(B)$ *despite* the existence of an
       injective function $A -> B$ that is not surjective.],
-    threshold: 2,
   )
 ]
 
@@ -165,7 +159,7 @@
 // ---------------------------------------------------------------------------
 
 #slide(title: [Finite Sets])[
-  #defn[Definitions 9.17 and 9.18][
+  #definition(title: [Definitions 9.17 and 9.18])[
     For each $n in NN$, define $[n] := {1, 2, dots, n}$.
 
     A set $A$ is *finite* if $A = emptyset$, or $"card"(A) = "card"([n])$ for some $n in NN$. We
@@ -180,7 +174,6 @@
   title: [Finite Sets --- Basic Results],
   book: [Theorems 9.19--9.23],
   goal: [Do not forget to consider the empty set in each of these.],
-  size: .95em,
 )[
   #parts(
     [Prove that if $A$ is finite and $"card"(A) = "card"(B)$, then $B$ is finite.],
@@ -191,7 +184,6 @@
       with cardinality $n - 1$.],
     [Prove that every subset of a finite set is finite. In particular, if $A$ is finite then
       $"card"(B) < "card"(A)$ for every *proper* subset $B$ of $A$.],
-    threshold: 2,
   )
 
   Note that the last statement fails badly for infinite sets --- that failure is the subject of §9.3.
@@ -207,7 +199,6 @@
       $display(union.big_(i=1)^k A_i)$ is finite.],
     [*(Pigeonhole Principle.)* Prove that if $n, k in NN$ and $f: [n] -> [k]$ with $n > k$, then $f$
       is *not* injective.],
-    threshold: 2,
   )
 
   The name comes from the idea: if $n$ pigeons roost in a house with $k$ pigeonholes and $n > k$,
@@ -220,7 +211,7 @@
 // ---------------------------------------------------------------------------
 
 #slide(title: [Infinite Sets])[
-  #defn[Definition 9.26][
+  #definition(title: [Definition 9.26])[
     A set $A$ is *infinite* if $A$ is not finite.
   ]
 
@@ -236,7 +227,6 @@
   title: [Infinite Sets --- First Results],
   book: [Theorems 9.27, 9.28 and Problem 9.29],
   goal: [Prove $NN$ is infinite, then bootstrap.],
-  size: .95em,
 )[
   #parts(
     [Prove that $NN$ is infinite.
@@ -249,7 +239,6 @@
       $g: B -> [n]$._],
     [Quickly verify that the following sets are infinite, appealing to the results above:
       the odd naturals; the even naturals; $ZZ$; ${1/2^n | n in NN}$; $NN times {a}$.],
-    threshold: 2,
   )
 ]
 
@@ -272,11 +261,10 @@
 
 #exercise(
   title: [Infinite Sets --- Three Equivalent Characterizations],
-  book: [Theorem 9.31 and Corollaries 9.32--9.33],
+  book: [Theorem 9.31],
   goal: [The central theorem of §9.3: infinite sets are exactly the ones that can be shrunk without loss.],
-  size: .85em,
 )[
-  #thm[Theorem 9.31][
+  #theorem(title: [9.31])[
     The following are equivalent for a set $A$:
     #enum(
       [$A$ is infinite;],
@@ -285,15 +273,23 @@
     )
   ]
 
+  Prove it.
+
+  _Hints: for (i) $==>$ (ii) construct $f$ recursively. For (ii) $==>$ (i) try contradiction. For
+  (ii) $==>$ (iii), let $B = A without {f(1), f(2), dots}$ and put $A$ in bijection with
+  $B union {f(2), f(3), dots}$. For (iii) $==>$ (ii), suppose $g: A -> C$ is a bijection onto a
+  proper subset $C$, pick $a in A without C$, and define $f(n) = g^n (a)$._
+]
+
+#exercise(
+  title: [Infinite Sets --- Consequences],
+  book: [Corollaries 9.32--9.33],
+  goal: [Two corollaries, and a question about what the proof quietly assumed.],
+)[
   #parts(
-    [Prove the theorem. _Hints: for (i) $==>$ (ii) construct $f$ recursively. For (ii) $==>$ (i) try
-      contradiction. For (ii) $==>$ (iii), let $B = A without {f(1), f(2), dots}$ and put $A$ in
-      bijection with $B union {f(2), f(3), dots}$. For (iii) $==>$ (ii), suppose $g: A -> C$ is a
-      bijection onto a proper subset $C$, pick $a in A without C$, and define $f(n) = g^n (a)$._],
-    [Did you use the *Axiom of Choice* in proving (i) $==>$ (ii)? If so, where?],
+    [Did you use the *Axiom of Choice* in proving (i) $==>$ (ii) of Theorem 9.31? If so, where?],
     [Prove that a set is infinite if and only if it has an infinite subset.],
     [Prove that if $A$ is infinite, then $"card"(NN) <= "card"(A)$.],
-    threshold: 1,
   )
 ]
 
@@ -301,21 +297,23 @@
   title: [Infinite Sets --- Practice],
   book: [Problems 9.34 and 9.35],
   goal: [Use the new characterizations rather than the definition.],
-  size: .95em,
 )[
   #parts(
     [Find a *new* proof that $NN$ is infinite, using (iii) $==>$ (i) of Theorem 9.31.],
     [Quickly verify that each of the following is infinite, appealing to either Theorem 9.31
       ((ii) $==>$ (i)) or Corollary 9.32:
 
-      #grid(
-        columns: (1fr, 1fr, 1fr),
-        column-gutter: 1em,
-        enum([the odd naturals], [the even naturals], [$ZZ$]),
-        enum(start: 4, [$NN times NN$], [$QQ$], [$RR$]),
-        enum(start: 7, [the perfect squares in $NN$], [$(0,1)$], [$CC = {a + b i | a, b in RR}$]),
+      #enum(
+        [the odd naturals],
+        [the even naturals],
+        [$ZZ$],
+        [$NN times NN$],
+        [$QQ$],
+        [$RR$],
+        [the perfect squares in $NN$],
+        [$(0,1)$],
+        [$CC = {a + b i | a, b in RR}$],
       )],
-    threshold: 1,
   )
 ]
 
@@ -324,7 +322,7 @@
 // ---------------------------------------------------------------------------
 
 #slide(title: [Countable Sets])[
-  #defn[Definitions 9.36 and 9.37][
+  #definition(title: [Definitions 9.36 and 9.37])[
     If $"card"(A) = "card"(NN)$, then $A$ is *denumerable* and has cardinality $aleph_0$ (read
     "aleph naught").
 
@@ -355,7 +353,6 @@
   title: [Countable --- Structural Results],
   book: [Theorems 9.39--9.43],
   goal: [The toolkit for recognizing countable sets.],
-  size: .9em,
 )[
   #parts(
     [Prove that every infinite set contains a *denumerable* subset. _(Use Theorem 9.31 or Corollary
@@ -366,7 +363,6 @@
     [Prove that a set is countable if and only if it has the same cardinality as some subset of
       $NN$.],
     [Prove that if $f: NN -> A$ is surjective, then $A$ is countable.],
-    threshold: 2,
   )
 ]
 
@@ -374,14 +370,13 @@
   title: [Countable --- The Rationals],
   book: [Theorem 9.44],
   goal: [Perhaps the most counterintuitive result so far.],
-  size: .9em,
 )[
   Prove that the set $QQ$ of rational numbers is *countable*.
 
   This may seem impossible: between any two distinct rationals there are infinitely many others
   (take repeated midpoints).
 
-  #boxed(accent: rgb("#1b4d3e"), title: [One possible approach])[
+  #aside([One possible approach])[
     Make a table with column headings $0, 1, -1, 2, -2, dots$ and row headings $1, 2, 3, 4, 5, dots$
     The entry in column $m$, row $n$ is the fraction $m\/n$.
 
@@ -397,7 +392,6 @@
   title: [Countable --- Unions],
   book: [Theorems 9.45--9.47],
   goal: [Building up to: a countable union of countable sets is countable.],
-  size: .85em,
 )[
   #parts(
     [Prove that if $A$ and $B$ are countable, then $A union B$ is countable.],
@@ -409,7 +403,6 @@
       countable collection of countable sets, then $display(union.big_(n in Delta) A_n)$ is
       countable.],
     [Did you use the Axiom of Choice in the previous part? If so, where?],
-    threshold: 2,
   )
 
   _For (c): the finite case follows from (a) by induction. For the infinite case, use (b) to get
@@ -428,7 +421,6 @@
     [Prove that the set of all *finite* sequences of $0$'s and $1$'s (for example $0110010$) is
       countable.],
     [Prove that the collection of all *finite* subsets of a countable set is countable.],
-    threshold: 3,
   )
 
   Keep the word *finite* in view --- it is exactly what makes these results true, as the next
@@ -458,7 +450,6 @@
   title: [Uncountable --- Cantor's Diagonalization Argument],
   book: [Problem 9.51 and Theorem 9.52],
   goal: [The single most important argument in this chapter.],
-  size: .9em,
 )[
   For contradiction, assume $(0,1)$ is countable, so there is a bijection $f: NN -> (0,1)$. Write
   $
@@ -474,7 +465,6 @@
     [Prove that the expansion defining $b$ is in standard decimal form.],
     [Prove that for all $n in NN$, $f(n) != b$.],
     [Explain why $f$ cannot be surjective, and why this is a contradiction.],
-    threshold: 3,
   )
 
   You have just proved that the interval $(0,1)$ is *uncountable*.
@@ -484,7 +474,6 @@
   title: [Uncountable --- Propagating Uncountability],
   book: [Theorems 9.53, 9.55--9.59 and Corollary 9.54],
   goal: [Tools for finding more uncountable sets, now that we have one.],
-  size: .9em,
 )[
   #parts(
     [Prove that if $A subset B$ and $A$ is uncountable, then $B$ is uncountable. _(Try
@@ -497,7 +486,6 @@
     [Prove that if $a, b in RR$ with $a < b$, then $(a,b)$, $[a,b]$, $(a,b]$, and $[a,b)$ are all
       uncountable.],
     [Prove that the set of irrational numbers is uncountable, and that $CC$ is uncountable.],
-    threshold: 2,
   )
 ]
 
@@ -541,7 +529,6 @@
       similar to Cantor's Diagonalization Argument will help.)_],
     [Prove that $"card"(cal(P)(NN)) = "card"(S)$.],
     [Conclude that $cal(P)(NN)$ is uncountable.],
-    threshold: 3,
   )
 ]
 
@@ -549,9 +536,8 @@
   title: [Uncountable --- Cantor's Theorem],
   book: [Theorem 9.64],
   goal: [There is no largest infinity.],
-  size: .9em,
 )[
-  #thm[Cantor's Theorem][
+  #theorem(title: [Cantor])[
     If $A$ is a set, then $"card"(A) < "card"(cal(P)(A))$.
   ]
 

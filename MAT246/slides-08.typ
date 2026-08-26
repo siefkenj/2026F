@@ -1,5 +1,5 @@
 #import "preamble.typ": *
-#show: mat246-theme.with([Functions])
+#show: mat246-slides.with([Functions], sources: (practicing_proofs,))
 
 // Problems ported from *Practicing Proofs: MAT246 Handouts* (ElGarem, Gross,
 // Matos Wiederhold, Yoshinobu; University of Toronto, 2025), CC BY-SA 4.0.
@@ -12,7 +12,6 @@
 // in the PDF. The digraphs and plots below are drawn here and are not
 // pixel-copies of the handout's.
 
-#title-slide()
 
 #slide(title: [Where We Are Going])[
   A *function* $f: X -> Y$ is a relation in which every element of $X$ is related to *exactly one*
@@ -35,7 +34,6 @@
   title: [Functions --- Non-Functions],
   source: 117,
   goal: [Non-examples show why each part of the definition matters.],
-  size: .95em,
 )[
   Determine why each of the following is *not* a function.
 
@@ -53,7 +51,6 @@
   title: [Functions --- Construction],
   source: 118,
   goal: [Build your own examples and counterexamples: what does "every input has exactly one output" really mean?],
-  size: .95em,
 )[
   #parts(
     [List all relations from $A = {1}$ to $B = {a, b}$. Which are also functions?],
@@ -63,7 +60,6 @@
     [How many different functions are there from $E$ to $F$? Explain your reasoning.],
     [Suppose $M$, $N$ are finite sets with $m$ and $n$ elements. How many functions are there from
       $M$ to $N$? What about from $N$ to $M$?],
-    threshold: 3,
   )
 ]
 
@@ -71,51 +67,41 @@
   title: [Functions --- Is This a Function? (I)],
   source: 119,
   goal: [Functions come described as formulas, graphs, tables, or sets of pairs. Recognize them in every guise.],
-  size: .95em,
 )[
-  For each of the following, determine whether the rule or relation defines a function from the
-  stated domain to the stated codomain, and explain why or why not.
+  Does each digraph below define a function from ${1, 2, 3}$ to ${1, 2, 3}$? Explain why or why not.
 
-  #grid(
-    columns: (1fr, auto),
-    column-gutter: 2em,
-    align: horizon,
-    enum(
-      [The relation on ${1,2,3}$ represented by digraph (A).],
-      [$R subset {1,2,3,4} times RR$, $R = {(1, pi), (3, 1), (4, ln 5)}$.],
-      [$f: ZZ -> ZZ$, $f(x) = x^2 + 1$.],
-      [The relation on ${1,2,3}$ represented by digraph (B).],
+  #v(.5em)
+  #align(center, grid(
+    columns: 2,
+    column-gutter: 4em,
+    row-gutter: .4em,
+    digraph(
+      (("1", (0, 0)), ("2", (1.5, 0)), ("3", (3, 0))),
+      edges: (("1", "2"), ("2", "3")),
+      loops: ("3",),
+      scale: 1.2,
     ),
-    stack(
-      dir: ttb,
-      spacing: .6em,
-      digraph(
-        (("1", (0, 0)), ("2", (1.6, 0)), ("3", (3.2, 0))),
-        edges: (("1", "2"), ("2", "3")),
-        loops: ("3",),
-        scale: 1.4,
-      ),
-      align(center)[(A)],
-      // Fanned out: laid in a row, the edge 1 -> 3 would pass straight through
-      // node 2 and read as 1 -> 2 -> 3.
-      digraph(
-        (("1", (0, 0)), ("2", (1.7, .75)), ("3", (1.7, -.75))),
-        edges: (("1", "2"), ("1", "3")),
-        gap: 0,
-        scale: 1.4,
-      ),
-      align(center)[(B)],
+    // Fanned out: laid in a row, the edge 1 -> 3 would pass straight through
+    // node 2 and read as 1 -> 2 -> 3.
+    digraph(
+      (("1", (0, 0)), ("2", (1.6, .7)), ("3", (1.6, -.7))),
+      edges: (("1", "2"), ("1", "3")),
+      gap: 0,
+      scale: 1.2,
     ),
-  )
+    [(a)], [(b)],
+  ))
 ]
 
 #exercise(
   title: [Functions --- Is This a Function? (II)],
   source: 119,
   goal: [The same question, for a curve, a set-builder description, a formula, and a table.],
-  size: .95em,
 )[
   #parts(
+    start: 3,
+    [$R subset {1,2,3,4} times RR$, $R = {(1, pi), (3, 1), (4, ln 5)}$.],
+    [$f: ZZ -> ZZ$, $f(x) = x^2 + 1$.],
     [The relation $[-1,1] times RR$ whose ordered pairs are the points of the unit circle
       $x^2 + y^2 = 1$, drawn over $x in [-1, 1]$.],
     [$S = {(x,y) in NN times NN : y = x + 1}$.],
@@ -127,7 +113,6 @@
         [$x$], [$1$], [$2$], [$3$], [$4$],
         [$y$], [$1$], [$1$], [$2$], [$3$],
       ))],
-    threshold: 2,
   )
 ]
 
@@ -146,7 +131,6 @@
     [The function assigning to each finite string of $0$'s and $1$'s the number of times $0$
       appears.],
     [The function assigning to each real number its square.],
-    threshold: 3,
   )
 ]
 
@@ -165,7 +149,6 @@
       not, give a value in one and not the other.],
     [Explain why it is possible for two functions to have exactly the same *rule* and still be
       *different functions*.],
-    threshold: 3,
   )
 ]
 
@@ -173,7 +156,6 @@
   title: [Functions --- Special Functions],
   source: 122,
   goal: [Inclusion, identity, and constant maps: three ways the domain and codomain shape a function.],
-  size: .95em,
 )[
   Let $A = {1,2,3,4}$ and $B = {0,1,2,3,4,5,6,7,8,9}$.
 
@@ -185,7 +167,6 @@
       codomain, and range of $c$.],
     [Suppose we try to define $c: A -> NN$ by $c(x) = -1$. Would $c$ be well-defined? Why or why
       not?],
-    threshold: 2,
   )
 ]
 
@@ -193,7 +174,6 @@
   title: [Functions --- Piecewise-Defined Functions],
   source: 123,
   goal: [A piecewise rule defines a function only if the pieces neither overlap nor leave gaps.],
-  size: .9em,
 )[
   Consider the following rule for $f: RR -> RR$:
   $
@@ -213,7 +193,6 @@
       $h(x) = cases(b_1 & "if" x in A_1, b_2 & "if" x in A_2, b_3 & "if" x in A_3)$ where
       $b_1, b_2, b_3 in B$. What conditions on $A_1, A_2, A_3$ (or on $b_1, b_2, b_3$) must we check
       to ensure $h$ is well-defined?],
-    threshold: 2,
   )
 ]
 
@@ -221,7 +200,6 @@
   title: [Functions --- Ceiling and Floor],
   source: 124,
   goal: [Precise wording is what makes a rounding rule into a well-defined function.],
-  size: .9em,
 )[
   For a real number $x$,
   $
@@ -245,7 +223,6 @@
   title: [Functions --- Functions and Equivalence Relations],
   source: 125,
   goal: [Operations on equivalence classes are a special case of functions defined via representatives.],
-  size: .85em,
 )[
   In each case, determine whether the function is *well-defined*. If it is, give a proof; if not, a
   counterexample.
@@ -267,7 +244,6 @@
   title: [Functions --- More on Ceiling and Floor],
   source: 126,
   goal: [A bonus exercise on the subtle behaviour of $ceil(dot)$ and $floor(dot)$ under addition and scaling.],
-  size: .9em,
 )[
   Part (f) of the previous ceiling/floor exercise may be especially useful here.
 
@@ -282,7 +258,6 @@
           ceil(x)  & "if" floor(x) "is even."
         )
       $],
-    threshold: 3,
   )
 ]
 
@@ -291,7 +266,7 @@
 // ---------------------------------------------------------------------------
 
 #slide(title: [Injective, Surjective, Bijective])[
-  #defn[Injective / Surjective / Bijective][
+  #definition(title: [Injective / Surjective / Bijective])[
     Let $f: X -> Y$.
 
     $f$ is *injective* if $f(x) = f(x') ==> x = x'$.
@@ -309,7 +284,6 @@
   title: [Injectivity --- Basic Definitions],
   source: 127,
   goal: [Compare and contrast similar-sounding statements; construct examples and non-examples.],
-  size: .9em,
 )[
   Let $f: X -> Y$ be a function. For each condition below, determine whether it guarantees $f$ is
   injective, surjective, bijective, or none of these. If none, give an example where it fails.
@@ -347,7 +321,6 @@
   title: [Injectivity --- Piecewise-Defined Functions],
   source: 129,
   goal: [Which properties survive a piecewise construction?],
-  size: .95em,
 )[
   Let $A$, $B$, $C$, $D$ be sets with $A inter C = emptyset$. Let $f: A -> B$ and $g: C -> D$ be
   functions, and define $h: A union C -> B union D$ by
@@ -363,7 +336,6 @@
       counterexample.],
     [Suppose $B inter D = emptyset$ and $f$, $g$ are bijective. Does it follow that $h$ is
       bijective? Prove or give a counterexample.],
-    threshold: 2,
   )
 ]
 
@@ -371,7 +343,6 @@
   title: [Injectivity --- Finite Sets],
   source: 130,
   goal: [Maps between sets carry information about their relative sizes. This is how we will _define_ size comparison for infinite sets.],
-  size: .9em,
 )[
   Let $m, n in NN$ and set $A = {1, 2, dots, n}$, $B = {1, 2, dots, m}$.
 
@@ -394,7 +365,6 @@
   title: [Injectivity --- Constructing a Bijection],
   source: 131,
   goal: [Even when you know a bijection must exist, finding one is not always trivial.],
-  size: .85em,
 )[
   Let $A = {1, dots, m}$ and $B = {1, dots, n}$. Since $abs(A times B) = m n$, the previous exercise
   guarantees a bijection $A times B -> {1, 2, dots, m n}$. Let us construct one.
@@ -408,7 +378,6 @@
     [Construct a map $Phi: A times B -> {1, 2, dots, m n}$ matching $(r, k)$ to its "count".],
     [Prove that $Phi$ is injective.],
     [Prove that $Phi$ is surjective.],
-    threshold: 3,
   )
 ]
 
@@ -426,7 +395,6 @@
       $f[A] without f[B] != f[A without B]$.],
     [Prove that $f$ is *injective* if and only if $f[A without B] = f[A] without f[B]$ for all
       $A, B subset X$.],
-    threshold: 3,
   )
 ]
 
@@ -434,7 +402,6 @@
   title: [Injectivity --- Cantor's Theorem],
   source: 133,
   goal: [A refined version of Russell's Paradox --- and the source of infinitely many sizes of infinity.],
-  size: .9em,
 )[
   For a finite set $X$ with $abs(X) = n$ we know $abs(cal(P)(X)) = 2^n$. Since $2^n > n$, the
   previous exercises show there is no surjection $X -> cal(P)(X)$. We now extend this to *arbitrary*
@@ -460,7 +427,6 @@
   title: [Composition --- Composing Functions],
   source: 134,
   goal: [Form and evaluate compositions in a variety of settings.],
-  size: .9em,
 )[
   Find the following compositions, if they exist. Do not forget to specify the domain and codomain.
 
@@ -476,7 +442,6 @@
       $g compose f$.],
     [$f: ZZ_5 -> ZZ_2$, $f([x]_5) = [x+1]_2$ and $g: ZZ_2 -> ZZ_2$, $g([x]_2) = [x+1]_2$. Find
       $f compose g$ and $g compose f$.],
-    threshold: 3,
   )
 ]
 
@@ -495,7 +460,6 @@
     [Is there an affine function $h$ that commutes with *every* affine function, i.e.
       $h compose f = f compose h$ no matter the values of $a, b in RR$? If so, find all such $h$; if
       not, explain why not.],
-    threshold: 3,
   )
 ]
 
@@ -513,7 +477,6 @@
     [Is it possible for *both* $f$ and $g$ to be non-injective while $g compose f$ is injective?],
     [Suppose $Z = X$ and $g compose f = i_X$, the identity on $X$. What must be true about $f$ and
       $g$?],
-    threshold: 2,
   )
 ]
 
@@ -530,7 +493,6 @@
       $g$ are surjective.],
     [Is it possible for *both* $f$ and $g$ to be non-surjective while $g compose f$ is surjective?],
     [Suppose $Z = X$ and $g compose f = i_X$. What must be true about $f$ and $g$?],
-    threshold: 2,
   )
 ]
 
@@ -538,7 +500,6 @@
   title: [Composition --- Left- and Right-Inverses],
   source: 138,
   goal: [Connect the functional property (injective/surjective) with the algebraic one (one-sided inverses).],
-  size: .8em,
 )[
   #grid(
     columns: (auto, 1fr),
@@ -569,7 +530,6 @@
     [For each function that has a left-inverse or a right-inverse, compute them.],
     [Explain how to minimally modify the domain and/or codomain so that each function has a
       left-inverse and/or right-inverse --- or explain why no such modification is possible.],
-    threshold: 3,
   )
 ]
 
@@ -577,7 +537,6 @@
   title: [Composition --- The Inverse Relation],
   source: 139,
   goal: [Any relation can be inverted; each way the inverse fails to be a function constrains the original.],
-  size: .85em,
 )[
   Given a relation $R subset A times B$, the *inverse relation* $R^(-1) subset B times A$ is defined
   by $(b, a) in R^(-1) <==> (a, b) in R$.
@@ -594,7 +553,6 @@
       most one* such $a$.],
     [Formulate and prove a necessary and sufficient condition on $R$ so that $R^(-1)$ is a
       function.],
-    threshold: 3,
   )
 ]
 
@@ -602,7 +560,6 @@
   title: [Composition --- Two-Sided Inverses],
   source: 140,
   goal: [One-sided inverses are usually not unique --- but a left and a right inverse must coincide.],
-  size: .85em,
 )[
   #parts(
     [Revisit $f_1 : {1,2} -> {a,b,c}$ with $f_1 (1) = a$, $f_1 (2) = b$. Construct two *distinct*
@@ -617,7 +574,6 @@
     [*(Theorem 8.82.)* Suppose $f: X -> Y$ and $g: Y -> Z$ both have two-sided inverses. Prove that
       $g compose f$ does too, and that
       $(g compose f)^(-1) = f^(-1) compose g^(-1)$.],
-    threshold: 3,
   )
 ]
 
@@ -625,7 +581,6 @@
   title: [Composition --- Cantor--Schröder--Bernstein (I)],
   source: 141,
   goal: [If $X$ injects into $Y$ and $Y$ injects into $X$, there is a bijection. König's elegant proof --- take it slowly.],
-  size: .8em,
 )[
   Suppose $f: X -> Y$ and $g: Y -> X$ are both injective. Our goal is to build a bijection
   $h: X -> Y$.
@@ -633,28 +588,26 @@
   #parts(
     [Suppose $phi: A -> B$ is injective. Prove that for any $b in B$ the set $phi^(-1)({b})$
       contains either $0$ or $1$ element.],
-    threshold: 1,
   )
 
   The idea is to partition the domain and the codomain into three blocks each, then match the blocks
   up. Define two sequences of functions by $phi_0 = g$, $psi_0 = f$, and for $n in NN$,
   $
-    phi_n = cases(
+    phi_n &= cases(
       phi_(n-1) compose f & "if" n "is odd", phi_(n-1) compose g & "if" n "is even",
-    )
-    #h(1.5em)
-    psi_n = cases(
+    ) \
+    psi_n &= cases(
       psi_(n-1) compose g & "if" n "is odd", psi_(n-1) compose f & "if" n "is even".
     )
   $
 
   #parts(
+    start: 2,
     [Use induction to prove that $phi_n$, $psi_n$ are well-defined injective functions for each
       $n in NN$.],
     [Prove that for each $n$ and each $x in X$, $phi_n^(-1)({x})$ has $0$ or $1$ element; similarly
       for $psi_n^(-1)({y})$, $y in Y$.],
     [Prove that for every $n in NN$, $f compose phi_(n-1) = psi_n$ and $g compose psi_(n-1) = phi_n$.],
-    threshold: 1,
   )
 ]
 
@@ -662,23 +615,23 @@
   title: [Composition --- Cantor--Schröder--Bernstein (II)],
   source: 141,
   goal: [Now build the three blocks and glue the bijection together.],
-  size: .8em,
 )[
   #parts(
     [Prove that $forall x in X, forall n in NN, (psi_(n-1)^(-1)({f(x)}) = phi_(n-1)^(-1)({x}))$.
       What is the analogous statement for $y in Y$?],
-    threshold: 1,
   )
 
-  Now partition $X$ into three sets:
+  For $x in X$, write $n_x$ for the smallest $n in ZZ_(>=0)$ with $phi_n^(-1)({x}) = emptyset$,
+  if such an $n$ exists. Now partition $X$ into
   $
-    X_"no"   &:= {x in X : "for every" n in ZZ_(>=0), phi_n^(-1)({x}) != emptyset}; \
-    X_"odd"  &:= {x in X : "the smallest" n in ZZ_(>=0) "with" phi_n^(-1)({x}) = emptyset "is odd"}; \
-    X_"even" &:= {x in X : "the smallest" n in ZZ_(>=0) "with" phi_n^(-1)({x}) = emptyset "is even"}.
+    X_"no"   &:= {x in X : n_x "does not exist"}, \
+    X_"odd"  &:= {x in X : n_x "is odd"}, \
+    X_"even" &:= {x in X : n_x "is even"}.
   $
   The sets $Y_"no"$, $Y_"odd"$, $Y_"even"$ are defined analogously, with $psi$ in place of $phi$.
 
   #parts(
+    start: 2,
     [Prove that $f(X_"no") = Y_"no"$, and that $f': X_"no" -> Y_"no"$ given by $f'(x) = f(x)$ is a
       bijection.],
     [Prove that $f(X_"even") = Y_"odd"$, and that $f'': X_"even" -> Y_"odd"$ given by
@@ -686,7 +639,6 @@
     [Prove that $g(Y_"even") = X_"odd"$, and that $g': X_"odd" -> Y_"even"$ given by
       $g'(x) = g^(-1)(x)$ is a bijection.],
     [Construct a bijection $h: X -> Y$.],
-    threshold: 2,
   )
 ]
 
@@ -725,7 +677,6 @@
     [$f^(-1)({-3})$],
     [$f^(-1)(x)$],
     [$f^(-1)([0, 1])$],
-    threshold: 5,
   )
 ]
 
@@ -733,38 +684,29 @@
   title: [Preimages --- Images and Preimages],
   source: 143,
   goal: [Build intuition for how functions transform subsets of the domain and codomain.],
-  size: .85em,
 )[
-  #grid(
-    columns: (1fr, 1fr, 1fr),
-    column-gutter: 1.2em,
-    [
-      *(a)* Let $S = {-1, 0, 2, 4, 7}$. Find $f(S)$ if
+  #parts(
+    [Let $S = {-1, 0, 2, 4, 7}$. Find $f(S)$ if
       #enum(
         [$f: RR -> RR$, $f(x) = 1$.],
         [$f: RR -> RR$, $f(x) = 2x + 1$.],
         [$f: S -> ZZ$ is the inclusion $iota: S -> ZZ$.],
         [$f: RR -> RR$, $f(x) = ceil(x/5)$.],
-      )
-    ],
-    [
-      *(b)* Let $f: RR -> RR$, $f(x) = 2x$. What is $f(S)$ if
+      )],
+    [Let $f: RR -> RR$, $f(x) = 2x$. What is $f(S)$ if
       #enum(
         [$S = {-2, -1, 0, 1/2, 5/6, pi}$],
         [$S = NN$],
         [$S = ZZ$],
         [$S = RR$],
-      )
-    ],
-    [
-      *(c)* Let $f: RR -> RR$, $f(x) = abs(x)$. Find
+      )],
+    [Let $f: RR -> RR$, $f(x) = abs(x)$. Find
       #enum(
         [$f^(-1)({4})$],
         [$f^(-1)([2, 8])$],
         [$f^(-1)(ZZ)$],
         [$f^(-1)((-oo, 0])$],
-      )
-    ],
+      )],
   )
 ]
 
@@ -783,7 +725,6 @@
         f^(-1)(S^c) = (f^(-1)(S))^c.
       $],
     [Express this equality in words: how do complements behave under preimages?],
-    threshold: 3,
   )
 ]
 
@@ -800,7 +741,6 @@
     [Find a *sufficient* condition on $f$ guaranteeing $f(A inter B) = f(A) inter f(B)$.],
     [Prove your condition is also *necessary*: if $f(A inter B) = f(A) inter f(B)$ for all
       $A, B subset X$, then $f$ must be ... ?],
-    threshold: 2,
   )
 ]
 
@@ -808,7 +748,6 @@
   title: [Preimages --- The Characteristic Function],
   source: 146,
   goal: [A bridge between set theory and algebra: set operations become arithmetic formulas.],
-  size: .9em,
 )[
   Fix a universal set $U$. Each $S subset U$ defines a *characteristic function*
   $chi_S : U -> {0, 1}$ by
@@ -837,7 +776,6 @@
   title: [Preimages --- The Characteristic Function of $ZZ$],
   source: 147,
   goal: [Describe $chi_(ZZ) : RR -> {0,1}$ using only floor, ceiling, and algebra.],
-  size: .9em,
 )[
   Recall $floor(x)$ is the greatest integer $<= x$ and $ceil(x)$ the least integer $>= x$.
 
@@ -849,7 +787,6 @@
       integers.],
     [Express $chi_(ZZ) : RR -> {0,1}$ using only the ceiling and floor functions (and algebra),
       where $chi_(ZZ)(x) = 1$ if $x in ZZ$ and $0$ otherwise.],
-    threshold: 3,
   )
 ]
 
@@ -868,6 +805,5 @@
       not, formulate a related correct statement and prove that.],
     [Suppose $f: RR -> ZZ$ is the floor function $f(x) = floor(x)$. Describe in detail the
       collection of preimages.],
-    threshold: 2,
   )
 ]

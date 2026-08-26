@@ -1,5 +1,5 @@
 #import "preamble.typ": *
-#show: mat246-theme.with([Mathematics and Logic])
+#show: mat246-slides.with([Mathematics and Logic], sources: (practicing_proofs,))
 
 // Problems in this deck are ported from
 //   *Practicing Proofs: MAT246 Handouts* by Noha ElGarem, Gal Gross,
@@ -11,7 +11,6 @@
 // Covers textbook Chapter 2 (A Taste of Number Theory, Introduction to Logic,
 // Proving Conditional Propositions, Quantification).
 
-#title-slide()
 
 // ---------------------------------------------------------------------------
 // 2.1 Definitions & a taste of number theory (Practicing Proofs, Ch. 2)
@@ -53,7 +52,7 @@
   source: 2,
   goal: [Practice mathematical definitions and how to apply them.],
 )[
-  #defn[Definition 2.1][
+  #definition(title: [Definition 2.1])[
     An integer $n$ is *even* if $n = 2k$ for some $k in ZZ$. An integer $n$ is *odd* if
     $n = 2k + 1$ for some $k in ZZ$.
   ]
@@ -72,7 +71,7 @@
 )[
   Use Definition 2.1 to prove the following theorem from the text.
 
-  #thm[Theorem 2.2][If $n$ is an even integer, then $n^2$ is an even integer.]
+  #theorem(title: [2.2])[If $n$ is an even integer, then $n^2$ is an even integer.]
 
   #parts(
     [Where in the proof have you used the definition?],
@@ -85,9 +84,8 @@
   title: [Definitions --- Divisibility],
   source: 4,
   goal: [New definitions generalize old ones --- and claims of "generalization" need proof.],
-  size: .95em,
 )[
-  #defn[Definition 2.5][
+  #definition(title: [Definition 2.5])[
     Given $n, m in ZZ$, we say $n$ *divides* $m$, written $n divides m$, if there exists $k in ZZ$
     such that $m = n k$. We may also say $m$ is *divisible by* $n$, or that $n$ is a *factor* of $m$.
   ]
@@ -122,10 +120,10 @@
   source: 5,
   goal: [Practice expressing logical ideas using the symbols of propositional logic.],
 )[
-  Let
+  Let Mai be a mathematician, and set
   $
     R &= "It is currently raining in Toronto", \
-    U &= "Mai the Mathematician is holding an umbrella".
+    U &= "Mai is holding an umbrella".
   $
 
   Use $R$, $U$, and the connectives $not, or, and, ==>, <==>$ to express the following symbolically.
@@ -155,19 +153,23 @@
   title: [Logic --- Truth Tables],
   source: 7,
   goal: [Connectives are defined by their action on truth values. Practice those definitions.],
-  size: .9em,
+  // Wide tables: they need the whole frame, not a column.
+  one-column: true,
 )[
   It is customary to write $0$ for "false" and $1$ for "true". Complete the truth tables for each
   of the following.
 
+  #let tt(head, ..rows) = table(columns: head.len(), ..head, ..rows.pos())
   #set align(center)
+  #v(.3em)
   #grid(
-    columns: 4,
-    column-gutter: 1.5em,
-    table(columns: 2, [$A$], [$not A$], [$0$], [], [$1$], []),
-    table(columns: 3, [$A$], [$B$], [$A and B$], [$0$], [$0$], [], [$0$], [$1$], [], [$1$], [$0$], [], [$1$], [$1$], []),
-    table(columns: 3, [$A$], [$B$], [$A or B$], [$0$], [$0$], [], [$0$], [$1$], [], [$1$], [$0$], [], [$1$], [$1$], []),
-    table(columns: 3, [$A$], [$B$], [$A ==> B$], [$0$], [$0$], [], [$0$], [$1$], [], [$1$], [$0$], [], [$1$], [$1$], []),
+    columns: 5,
+    column-gutter: 1.2em,
+    tt(([$A$], [$not A$]), [$0$], [], [$1$], []),
+    tt(([$A$], [$B$], [$A and B$]), [$0$], [$0$], [], [$0$], [$1$], [], [$1$], [$0$], [], [$1$], [$1$], []),
+    tt(([$A$], [$B$], [$A or B$]), [$0$], [$0$], [], [$0$], [$1$], [], [$1$], [$0$], [], [$1$], [$1$], []),
+    tt(([$A$], [$B$], [$A ==> B$]), [$0$], [$0$], [], [$0$], [$1$], [], [$1$], [$0$], [], [$1$], [$1$], []),
+    tt(([$A$], [$B$], [$A <==> B$]), [$0$], [$0$], [], [$0$], [$1$], [], [$1$], [$0$], [], [$1$], [$1$], []),
   )
 ]
 
@@ -175,12 +177,13 @@
   title: [Logic --- Truth Tables (cont.)],
   source: 7,
   goal: [Now compare columns: two propositions with identical columns are _logically equivalent_.],
-  size: .9em,
+  one-column: true,
 )[
   #set align(center)
+  #v(.5em)
   #grid(
     columns: 2,
-    column-gutter: 2em,
+    column-gutter: 2.5em,
     table(
       columns: 5,
       [$A$], [$B$], [$not A$], [$(not A) or B$], [$A ==> B$],
@@ -198,8 +201,16 @@
       [$1$], [$1$], [], [], [], [],
     ),
   )
+]
 
-  #v(.4em)
+#exercise(
+  title: [Logic --- Truth Tables (cont.)],
+  source: 7,
+  goal: [One more. What does the last pair of columns tell you about $<==>$?],
+  one-column: true,
+)[
+  #set align(center)
+  #v(.8em)
   #table(
     columns: 6,
     [$A$], [$B$], [$A ==> B$], [$B ==> A$], [$(A ==> B) and (B ==> A)$], [$A <==> B$],
@@ -214,7 +225,6 @@
   title: [Logic --- Arithmetic],
   source: 8,
   goal: [Propositional logic is the basis of digital technology: connectives are functions of $0$ and $1$.],
-  size: .95em,
 )[
   For any proposition $A$ with truth value $0$ or $1$, we can express $not A$ as the arithmetic
   function $1 - A$, since
@@ -236,12 +246,13 @@
   title: [Logic --- Propositions],
   source: 9,
   goal: [Practice translating symbolic language back into intuitive mathematical language.],
-  size: .95em,
 )[
   Let
   $
-    E &= "The integer " 2 " is an even number"; & P &= "The integer " 2 " is a prime number"; \
-    F &= "The integer " 4 " is an even number"; & Q &= "The integer " 4 " is an even number".
+    E &= "The integer " 2 " is an even number"; \
+    F &= "The integer " 4 " is an even number"; \
+    P &= "The integer " 2 " is a prime number"; \
+    Q &= "The integer " 4 " is an even number".
   $
 
   For each compound proposition below, write it in mathematical English and determine whether it is
@@ -282,7 +293,6 @@
   title: [Logic --- Nested Implications],
   source: 11,
   goal: [Continue the reflection on material implication, this time via its negation.],
-  size: .95em,
 )[
   Let $A, B, C, dots, Z$ be propositions.
 
@@ -293,7 +303,6 @@
     [Suppose $(A ==> B) ==> C$ is false. What are the truth values of $A$, $B$, and $C$?],
     [Suppose $A ==> (B ==> (C ==> ( dots.c (Y ==> Z) dots.c )))$ is false. What are the truth
       values of $A, B, dots, Z$?],
-    threshold: 5,
   )
 ]
 
@@ -323,7 +332,6 @@
   title: [Logic --- Equivalence],
   source: 13,
   goal: [Mathematicians switch between logically equivalent statements without warning. Practice spotting them.],
-  size: .95em,
 )[
   Let $A$ and $B$ be propositions. Which of the following are logically equivalent to each other?
   Collect them into groups.
@@ -340,7 +348,6 @@
   title: [Logic --- Complete Sets of Connectives],
   source: 14,
   goal: [Logic gates are built from a few simple types. Which connectives can express which?],
-  size: .95em,
 )[
   Consider the five compound propositions
   $
@@ -363,7 +370,6 @@
         [$1$], [$0$], [$1$],
         [$1$], [$1$], [$0$],
       ))],
-    threshold: 3,
   )
 ]
 
@@ -520,7 +526,6 @@
   title: [Quantifiers --- Proposition vs. Predicate],
   source: 22,
   goal: [Practice the definitions of proposition and predicate.],
-  size: .95em,
 )[
   For each expression below: (i) is it a *proposition* (does it have a definite truth value)? If
   so, which? If not, why not? (ii) Is it a *predicate*? Which variables are free, and which are

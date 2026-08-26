@@ -1,5 +1,5 @@
 #import "preamble.typ": *
-#show: mat246-theme.with([Induction])
+#show: mat246-slides.with([Induction], sources: (practicing_proofs,))
 
 // Problems ported from *Practicing Proofs: MAT246 Handouts* (ElGarem, Gross,
 // Matos Wiederhold, Yoshinobu; University of Toronto, 2025), CC BY-SA 4.0.
@@ -8,7 +8,6 @@
 // Covers textbook Chapter 4 (Introduction to Induction, More on Induction,
 // Complete Induction, The Well-Ordering Principle).
 
-#title-slide()
 
 #slide(title: [Where We Are Going])[
   Induction is the first genuinely *infinite* proof technique you will meet: a finite argument that
@@ -29,7 +28,6 @@
   title: [Induction --- Inductive Reasoning],
   source: 69,
   goal: [Reflect on the axiom of induction, and on why it is plausible.],
-  size: .95em,
 )[
   A common metaphor for induction is a chain of dominoes: if the first one falls, and each domino
   knocks over the next, then they all fall.
@@ -43,7 +41,6 @@
       that $P(n)$ is true for _all_ natural numbers $n$?],
     [A tough question worth reflecting on carefully: why do we need a whole new *axiom* of
       induction? Can we not prove $(forall n in NN) P(n)$ directly?],
-    threshold: 2,
   )
 ]
 
@@ -51,7 +48,6 @@
   title: [Induction --- Recap],
   source: 70,
   goal: [Reconstruct the key example from the textbook on your own. For this exercise, do _not_ refer back to the text or your notes!],
-  size: .95em,
 )[
   The $n$-th *triangular number* $T_n$ is defined by $display(T_n = (n(n+1))/2)$.
 
@@ -66,7 +62,6 @@
     [Use direct proof to show $P(n) ==> P(n+1)$.],
     [Can you summarize the proof pattern we have just used? What are the key steps of an inductive
       proof?],
-    threshold: 2,
   )
 ]
 
@@ -116,7 +111,6 @@
     [Why have we _not_ shown $forall n in NN, P(n)$? Is induction wrong after all?],
     [*Challenge.* Can you "correct" the claim --- find a very similar predicate that _is_ true for
       every natural number?],
-    threshold: 3,
   )
 ]
 
@@ -159,7 +153,6 @@
   title: [Induction --- Convergence],
   source: 76,
   goal: [Induction is not only about the natural numbers --- here it does work in analysis.],
-  size: .85em,
 )[
   The *double factorial* skips every other multiplicand:
   $
@@ -179,7 +172,6 @@
         1/sqrt(4n) <= a_n <= 1/sqrt(2n+1).
       $
       Conclude that $a_n$ converges to $0$.],
-    threshold: 2,
   )
 ]
 
@@ -187,7 +179,6 @@
   title: [Induction --- Convergence II],
   source: 77,
   goal: [Induction proving convergence of an infinite _product_ --- with different patterns for odd and even terms.],
-  size: .9em,
 )[
   Consider the sequence ${p_n}_(n=1)^oo$ whose $n$-th term is the product
   $
@@ -202,7 +193,6 @@
     [Prove your conjecture about the even terms $p_(2n)$.],
     [Conclude that the infinite product $display(product_(k=1)^oo (1 + (-1)^k/(k+1)))$ converges,
       and find its limit.],
-    threshold: 3,
   )
 ]
 
@@ -298,7 +288,7 @@
 // ---------------------------------------------------------------------------
 
 #slide(title: [The Well-Ordering Principle])[
-  #thm[Well-Ordering Principle][
+  #theorem(title: [Well-Ordering Principle])[
     Every *nonempty* subset of $NN$ has a *least* element.
   ]
 
@@ -339,7 +329,6 @@
     [Every subset of $NN$ has a least element.],
     [Every nonempty subset of $ZZ$ has a least element.],
     [Every nonempty subset of $NN$ has a greatest element.],
-    threshold: 3,
   )
 ]
 
@@ -396,9 +385,8 @@
   title: [Well-Ordering --- Division with Remainder],
   source: 88,
   goal: [Sometimes well-ordering is far more convenient than induction. Here is the full division theorem.],
-  size: .85em,
 )[
-  #thm[Division with Remainder][
+  #theorem(title: [Division with Remainder])[
     For every $n, m in NN$ there exist $q in ZZ_(>=0)$ and $r in {0, 1, dots, m-1}$ such that
     $n = q m + r$. Furthermore $q$ and $r$ are *unique*. We call $q$ the *quotient* and $r$ the
     *remainder* of dividing $n$ by $m$.
@@ -412,7 +400,6 @@
     [Conclude that there exist $q in ZZ_(>=0)$ and $r in {0, 1, dots, m-1}$ with $n = q m + r$.],
     [Suppose $q, q' in ZZ_(>=0)$ and $r, r' in {0, 1, dots, m-1}$ satisfy
       $n = q m + r = q' m + r'$. Prove that $q = q'$ and $r = r'$.],
-    threshold: 2,
   )
 ]
 
@@ -420,14 +407,13 @@
   title: [Well-Ordering --- Spot the Error II],
   source: 89,
   goal: [Well-ordering has its own common but not-so-obvious false steps. Can you spot this one?],
-  size: .85em,
 )[
   Recall the Fibonacci sequence $f_1 = f_2 = 1$, $f_n = f_(n-1) + f_(n-2)$ for $n >= 3$:
   $1, 1, 2, 3, 5, 8, 13, 21, 34, 55, dots$
 
   Here is a "proof" that all Fibonacci numbers are even. Identify and explain the error.
 
-  #boxed(accent: rgb("#7a1f1f"))[
+  #bogus_proof[
     *Proof attempt.* Let $S = {n in NN : f_n "is odd"}$ be the set of counterexamples. We prove $S$
     is empty using the well-ordering principle.
 

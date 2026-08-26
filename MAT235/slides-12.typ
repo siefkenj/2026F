@@ -1,57 +1,9 @@
-#import "@preview/colorful-boxes:1.4.3" as cb
-#import "@preview/touying:0.6.1": *
-#import themes.metropolis: *
-#import themes.metropolis: slide as slide-orig
+#import "preamble.typ": *
+#show: mat235-slides.with([Chapter 12])
+
+// These plots predate lilaq 0.5; keep the version they were written against.
 #import "@preview/lilaq:0.4.0" as lq
 
-#let slide(..args) = {
-  let title = args.named().at("title", default: none)
-  let positional = args.pos()
-  slide-orig(..args.named(), title: text(size: 18pt, title), ..positional.map(p => {
-    show: utils.fit-to-height.with(100%, grow: false)
-    p
-  }))
-}
-
-#show: metropolis-theme.with(
-  aspect-ratio: "16-9",
-  footer: self => {
-    show: pad.with(x: -.51em, bottom: -.51em)
-    block(width: 100%, height: 100%, fill: self.colors.neutral-darkest)
-  },
-  config-info(
-    title: [MAT235 Slides LEC0401],
-    subtitle: [Jason Siefken],
-    // author: [Jason Siefken],
-    // date: datetime.today(),
-    // institution: [University of Toronto],
-  ),
-  footer-progress: false,
-  footer-right: none,
-  config-page(margin: (top: 1.3em, bottom: 8.5cm, x: .5em)),
-)
-
-#let definition(it, title: none) = block(
-  breakable: false,
-  cb.colorbox(
-    title: title,
-    color: (
-      fill: rgb("#e3e3e3"),
-      stroke: rgb("#49164e"),
-      title: rgb("#002366"),
-    ),
-    radius: 4pt,
-    width: auto,
-    it,
-  ),
-)
-
-// SLIDES CONTENT
-
-#set text(font: "Fira Sans")
-
-
-#title-slide()
 
 #slide(title: [Siefken 1])[
   Multi-variable functions are functions from multiple inputs to multiple outputs.
@@ -63,7 +15,6 @@
 
     Come up with several ideas.
 ]
-
 
 #slide(title: [Siefken 2.1])[
   #let F(x, y) = calc.round(20 + (-(x - 1) * (x - 1) - y * y) / 5)
@@ -119,7 +70,6 @@
     Combine your slices from the previous part to sketch a _perspective drawing_ of the graph of
     $z=h(x,y)$.
 ]
-
 
 #slide(title: [Siefken 2.2])[
   #let F(x, y) = calc.round(20 + (-(x - 1) * (x - 1) - y * y) / 5)
@@ -180,8 +130,6 @@
   + Sketch a topographic map (contour map) of the campground.
 
 ]
-
-
 
 #slide(title: [Siefken 5])[
   #{
@@ -280,7 +228,6 @@
     },
     [
 
-
       + Sketch the graphs of $z=f(x,1)$, $z=f(x,2)$, $z=f(x,3)$, and $z=f(x,4)$.
       + Where is the graph of $z=f(x,y)$ the "steepest"? In what direction is it steepest?
       + Where is the graph of $z=f(x,y)$ the "flattest"? In what direction is it flattest?
@@ -289,9 +236,7 @@
     ],
   )
 
-
 ]
-
 
 #slide(title: [Siefken 8])[
   Consider the plane $cal(P)$ given by the formula $z=2x-y$.
@@ -302,7 +247,6 @@
   + Find the equation of a plane parallel to $cal(P)$ that passes through the point $(3,2,1)$.
 ]
 
-
 #slide(title: [Siefken 9])[
   Let $A=(2,0,0)$, $B=(0,3,0)$, and $C=(0,0,5)$. Let $cal(Q)$ be the plane that passes through $A$,
   $B$, and $C$.
@@ -311,7 +255,6 @@
   + Find an equation for $cal(Q)$.
   + Find a function $f$ so that $cal(Q)$ is the graph of $z=f(x,y)$.
 ]
-
 
 #slide(title: [Siefken 10])[
   Suppose the earth is centered at $(0,0,0)$. The temperature of inside the earth at position
@@ -329,7 +272,6 @@
   + Use https://www.desmos.com/3d to plot regions of constant temperature. Based on your plots, when
     does the temperature change the fastest? The slowest?
 ]
-
 
 #slide(title: [Siefken 11])[
   We say a graph is *extruded* when it is continued in the same way along a particular axis.

@@ -1,5 +1,5 @@
 #import "preamble.typ": *
-#show: mat246-theme.with([Introduction])
+#show: mat246-slides.with([Introduction], sources: (ernst_textbook, ernst_style))
 
 // Covers textbook Chapter 1 (Introduction) and Appendix A (Elements of Style
 // for Proofs), plus the opening-day activities for the course.
@@ -10,7 +10,6 @@
 //   Dana C. Ernst, *An Introduction to Proof via Inquiry-Based Learning*,
 //   CC BY-SA 4.0, https://danaernst.com/IBL-IntroToProof/IntroToProof.pdf
 
-#title-slide()
 
 // ---------------------------------------------------------------------------
 // Opening: setting the stage
