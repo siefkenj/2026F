@@ -26,17 +26,23 @@
 ]
 
 #slide(title: [Setting the Stage])[
+  #v(1fr)
   What makes an argument *convincing*?
+  #v(1fr)
 ]
 
 #slide(title: [Setting the Stage])[
+  #v(1fr)
   Is there anything you are *certain* is true?
 
   How did you become certain of it?
+  #v(1fr)
 ]
 
 #slide(title: [Setting the Stage])[
+  #v(1fr)
   What do you reasonably expect to remember from your mathematics courses in 20 years?
+  #v(1fr)
 ]
 
 #slide(title: [Class Details])[
@@ -44,10 +50,10 @@
 
   You will practice by:
   - Working problems in class, in groups.
-  - Presenting and critiquing proofs in tutorial.
-  - Working through the *Practicing Proofs* handouts and problem sets.
+  - Discussing and critiquing proofs.
+  - Working through the *Practicing Proofs* problem sets.
 
-  *AI Warning.* AI can often produce a plausible-looking proof, but *the journey is the point*. Do
+  *AI Warning:* AI can often produce a plausible-looking proof, but *the journey is the point*. Do
   not ask AI to do (or "help" with) your homework. The entire skill you are here to acquire is the
   one it would be doing for you.
 ]
@@ -79,13 +85,60 @@
   smooth path to each solution, it hands you a structured sequence of problems and asks you to build
   the path.
 
-  According to Laursen and Rasmussen (2019), the *Four Pillars of IBL* are:
+  // According to Laursen and Rasmussen (2019), the *Four Pillars of IBL* are:
 
-  - Students engage deeply with coherent and meaningful mathematical tasks.
-  - Students collaboratively process mathematical ideas.
-  - Instructors inquire into student thinking.
-  - Instructors foster equity in their design and facilitation choices.
+  // - Students engage deeply with coherent and meaningful mathematical tasks.
+  // - Students collaboratively process mathematical ideas.
+  // - Instructors inquire into student thinking.
+  // - Instructors foster equity in their design and facilitation choices.
 ]
+
+#slide(title: [*Proofs*: Is This a Proof?])[
+  Consider the claim: *the sum of any two odd integers is even.*
+
+  Below are three attempted arguments. For each, decide whether it is a proof. If not, say exactly
+  what is missing.
+
+  #v(.3em)
+  #set text(size: .9em)
+  + $3 + 5 = 8$, $7 + 11 = 18$, $1 + 9 = 10$. All even. Therefore the sum of two odd integers is
+    even.
+  + An odd number is one more than an even number. Adding two of them gives an even number plus
+    two, which is even.
+  + Let $m$ and $n$ be odd integers. Then $m = 2j + 1$ and $n = 2k + 1$ for some $j, k in ZZ$. So
+    $m + n = 2j + 2k + 2 = 2(j + k + 1)$. Since $j + k + 1 in ZZ$, $m + n$ is even.
+]
+
+#slide(title: [*Proofs*: What Are We Allowed To Use?])[
+  In the third argument on the previous slide, we used several facts without comment.
+
+  + Which facts about the integers did we assume?
+  + Which of those would you be comfortable assuming in this course? Which feel like they ought to
+    be proved first?
+  + We wrote "$m = 2j + 1$ for some $j in ZZ$". Where did that come from? Is it a *definition*, or
+    something that needs proof?
+
+  #v(.4em)
+  This is the question we will be answering for the rest of the semester: *what may we assume, and
+  what must we prove?*
+]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #slide(title: [What This Will Feel Like])[
   Expect a cycle of victory and defeat, and a full range of emotions. Sometimes exhilaration, other
@@ -131,21 +184,21 @@
   happens.
 ]
 
-#slide(title: [Our Route Through the Book])[
-  #table(
-    columns: (auto, 1fr),
-    align: (right, left),
-    stroke: none,
-    row-gutter: .45em,
-    [*Ch. 1--2*], [Introduction; Mathematics and Logic --- definitions, propositional logic,
-      proving conditionals, quantifiers.],
-    [*Ch. 3*], [Set Theory --- sets, power sets, indexed families, Cartesian products.],
-    [*Ch. 4*], [Induction --- ordinary, complete, and the Well-Ordering Principle.],
-    [*Ch. 7*], [Relations and Partitions --- equivalence relations, partitions, representatives.],
-    [*Ch. 8*], [Functions --- injections, surjections, composition, inverses, images.],
-    [*Ch. 9*], [Cardinality --- countable and uncountable, and infinitely many infinities.],
-  )
-]
+// #slide(title: [Our Route Through the Book])[
+//   #table(
+//     columns: (auto, 1fr),
+//     align: (right, left),
+//     stroke: none,
+//     row-gutter: .45em,
+//     [*Ch. 1--2*], [Introduction; Mathematics and Logic --- definitions, propositional logic,
+//       proving conditionals, quantifiers.],
+//     [*Ch. 3*], [Set Theory --- sets, power sets, indexed families, Cartesian products.],
+//     [*Ch. 4*], [Induction --- ordinary, complete, and the Well-Ordering Principle.],
+//     [*Ch. 7*], [Relations and Partitions --- equivalence relations, partitions, representatives.],
+//     [*Ch. 8*], [Functions --- injections, surjections, composition, inverses, images.],
+//     [*Ch. 9*], [Cardinality --- countable and uncountable, and infinitely many infinities.],
+//   )
+// ]
 
 // ---------------------------------------------------------------------------
 // 1.5 Some minimal guidance
@@ -227,35 +280,6 @@
 // Warm-up activity
 // ---------------------------------------------------------------------------
 
-#slide(title: [Warm-Up: Is This a Proof?])[
-  Consider the claim: *the sum of any two odd integers is even.*
-
-  Below are three attempted arguments. For each, decide whether it is a proof. If not, say exactly
-  what is missing.
-
-  #v(.3em)
-  #set text(size: .9em)
-  + $3 + 5 = 8$, $7 + 11 = 18$, $1 + 9 = 10$. All even. Therefore the sum of two odd integers is
-    even.
-  + An odd number is one more than an even number. Adding two of them gives an even number plus
-    two, which is even.
-  + Let $m$ and $n$ be odd integers. Then $m = 2j + 1$ and $n = 2k + 1$ for some $j, k in ZZ$. So
-    $m + n = 2j + 2k + 2 = 2(j + k + 1)$. Since $j + k + 1 in ZZ$, $m + n$ is even.
-]
-
-#slide(title: [Warm-Up: What Are We Allowed To Use?])[
-  In the third argument on the previous slide, we used several facts without comment.
-
-  + Which facts about the integers did we assume?
-  + Which of those would you be comfortable assuming in this course? Which feel like they ought to
-    be proved first?
-  + We wrote "$m = 2j + 1$ for some $j in ZZ$". Where did that come from? Is it a *definition*, or
-    something that needs proof?
-
-  #v(.4em)
-  This is the question we will be answering for the rest of the semester: *what may we assume, and
-  what must we prove?*
-]
 
 #slide(title: [For Next Class])[
   - Read *Chapter 1* and *§2.1* of the textbook.

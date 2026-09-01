@@ -57,7 +57,7 @@
       if intro != none {
         show: sans
         text(
-          intro + [.],
+          intro + [. ],
           fill: darker_color,
           weight: "bold",
         )
