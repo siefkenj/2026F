@@ -119,42 +119,45 @@
 // Edges are drawn before the node discs so their endpoints are hidden under
 // the discs, and each edge is nudged sideways so that a two-cycle a -> b,
 // b -> a shows as two distinct arrows rather than one overprinted pair.
-#let digraph(nodes, edges: (), loops: (), r: .3, gap: .1, scale: 1) = cetz.canvas(length: scale * 1cm, {
-  import cetz.draw: *
-  let pos = (:)
-  for (name, p) in nodes { pos.insert(name, p) }
-  for (a, b) in edges {
-    let (ax, ay) = pos.at(a)
-    let (bx, by) = pos.at(b)
-    let (dx, dy) = (bx - ax, by - ay)
-    let len = calc.sqrt(dx * dx + dy * dy)
-    let (ux, uy) = (dx / len, dy / len)
-    let (ox, oy) = (-uy * gap, ux * gap)
-    // The end is pushed slightly past the disc so the arrowhead is not hidden
-    // when the node is drawn on top.
-    line(
-      (ax + ux * r + ox, ay + uy * r + oy),
-      (bx - ux * (r + .1) + ox, by - uy * (r + .1) + oy),
-      mark: (end: "stealth", fill: black, scale: .5),
-      stroke: .6pt,
-    )
-  }
-  for name in loops {
-    let (x, y) = pos.at(name)
-    arc(
-      (x - r * .72, y + r * .82),
-      start: 205deg,
-      stop: -25deg,
-      radius: r * .8,
-      mark: (end: "stealth", fill: black, scale: .5),
-      stroke: .6pt,
-    )
-  }
-  for (name, p) in nodes {
-    circle(p, radius: r, fill: white, stroke: .7pt)
-    content(p, text(size: .75em, name))
-  }
-})
+#let digraph(nodes, edges: (), loops: (), r: .3, gap: .1, scale: 1) = cetz.canvas(
+  length: scale * 1cm,
+  {
+    import cetz.draw: *
+    let pos = (:)
+    for (name, p) in nodes { pos.insert(name, p) }
+    for (a, b) in edges {
+      let (ax, ay) = pos.at(a)
+      let (bx, by) = pos.at(b)
+      let (dx, dy) = (bx - ax, by - ay)
+      let len = calc.sqrt(dx * dx + dy * dy)
+      let (ux, uy) = (dx / len, dy / len)
+      let (ox, oy) = (-uy * gap, ux * gap)
+      // The end is pushed slightly past the disc so the arrowhead is not hidden
+      // when the node is drawn on top.
+      line(
+        (ax + ux * r + ox, ay + uy * r + oy),
+        (bx - ux * (r + .1) + ox, by - uy * (r + .1) + oy),
+        mark: (end: "stealth", fill: black, scale: .5),
+        stroke: .6pt,
+      )
+    }
+    for name in loops {
+      let (x, y) = pos.at(name)
+      arc(
+        (x - r * .72, y + r * .82),
+        start: 205deg,
+        stop: -25deg,
+        radius: r * .8,
+        mark: (end: "stealth", fill: black, scale: .5),
+        stroke: .6pt,
+      )
+    }
+    for (name, p) in nodes {
+      circle(p, radius: r, fill: white, stroke: .7pt)
+      content(p, text(size: .75em, name))
+    }
+  },
+)
 
 // ---------------------------------------------------------------------------
 // Fitting
@@ -223,7 +226,7 @@
         v(.5em)
         text(size: 26pt, weight: "bold", chapter-title)
         v(.5em)
-        text(size: 13pt, fill: gray.darken(30%))[Jason Siefken #h(.8em) · #h(.8em) Fall 2026]
+        text(size: 13pt, fill: gray.darken(30%))[Jason Siefken #h(1fr) Fall 2026]
       },
     )))
     #place(bottom + left, dx: 1.1em, box(width: 96%, text(size: 8pt, fill: gray.darken(25%), {

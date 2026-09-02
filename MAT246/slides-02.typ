@@ -24,14 +24,33 @@
   - Learn the standard techniques for proving *conditional* statements.
   - Learn to read and write statements with *quantifiers*.
 
-  Everything else in the course --- sets, induction, relations, functions,
-  cardinality --- is built on top of these four things.
+  Everything else in the course --- sets, induction, relations, functions, cardinality --- is built
+  on top of these four things.
+]
+
+#slide(title: [What Does this Class Feel Like?])[
+  On your proof-learning journey, *expect a cycle of victory and defeat*, and a full range of
+  emotions. Sometimes exhilaration, other times something close to paralysis.
+
+  *If you are doing things well, you should be confused on a regular basis.*
+
+  Productive struggle and mistakes are where the growth happens. I am here to guide and challenge
+  you, but I cannot do the learning for you --- just as a music teacher cannot move your fingers for
+  you.
+
+  #v(.4em)
+  Think of the textbook as a mountaineering guidebook: a list of summits, with a hint about which
+  trailhead to start from. There are always multiple routes. Some summits take a day; some take an
+  expedition; many are laced with false summits.
+
+  *The journey is vastly more important than the destinations.*
 ]
 
 #exercise(
   title: [Definitions --- Vocabulary],
   source: 1,
-  goal: [Practice the mathematical symbols, vocabulary, and syntax (grammar) introduced in the text.],
+  goal: [Practice the mathematical symbols, vocabulary, and syntax (grammar) introduced in the
+    text.],
 )[
   The following symbols were introduced in the text:
   $
@@ -53,12 +72,12 @@
   goal: [Practice mathematical definitions and how to apply them.],
 )[
   #definition(title: [Definition 2.1])[
-    An integer $n$ is *even* if $n = 2k$ for some $k in ZZ$. An integer $n$ is *odd* if
-    $n = 2k + 1$ for some $k in ZZ$.
+    An integer $n$ is *even* if $n = 2k$ for some $k in ZZ$. An integer $n$ is *odd* if $n = 2k + 1$
+    for some $k in ZZ$.
   ]
 
   #parts(
-    [Use the definition above to prove that $101$ is odd and $246$ is even.],
+    [Use the definition above to _prove_ that $101$ is odd and $246$ is even.],
     [Can we use the definition to prove that $101$ is _not_ even? If so, how? If not, what else
       would we need?],
   )
@@ -87,7 +106,8 @@
 )[
   #definition(title: [Definition 2.5])[
     Given $n, m in ZZ$, we say $n$ *divides* $m$, written $n divides m$, if there exists $k in ZZ$
-    such that $m = n k$. We may also say $m$ is *divisible by* $n$, or that $n$ is a *factor* of $m$.
+    such that $m = n k$. We may also say $m$ is *divisible by* $n$, or that $n$ is a *factor* of
+    $m$.
   ]
 
   #parts(
@@ -122,8 +142,8 @@
 )[
   Let Mai be a mathematician, and set
   $
-    R &= "It is currently raining in Toronto", \
-    U &= "Mai is holding an umbrella".
+    R & = "It is currently raining in Toronto", \
+    U & = "Mai is holding an umbrella".
   $
 
   Use $R$, $U$, and the connectives $not, or, and, ==>, <==>$ to express the following symbolically.
@@ -156,8 +176,8 @@
   // Wide tables: they need the whole frame, not a column.
   one-column: true,
 )[
-  It is customary to write $0$ for "false" and $1$ for "true". Complete the truth tables for each
-  of the following.
+  It is customary to write $0$ for "false" and $1$ for "true". Complete the truth tables for each of
+  the following.
 
   #let tt(head, ..rows) = table(columns: head.len(), ..head, ..rows.pos())
   #set align(center)
@@ -166,10 +186,66 @@
     columns: 5,
     column-gutter: 1.2em,
     tt(([$A$], [$not A$]), [$0$], [], [$1$], []),
-    tt(([$A$], [$B$], [$A and B$]), [$0$], [$0$], [], [$0$], [$1$], [], [$1$], [$0$], [], [$1$], [$1$], []),
-    tt(([$A$], [$B$], [$A or B$]), [$0$], [$0$], [], [$0$], [$1$], [], [$1$], [$0$], [], [$1$], [$1$], []),
-    tt(([$A$], [$B$], [$A ==> B$]), [$0$], [$0$], [], [$0$], [$1$], [], [$1$], [$0$], [], [$1$], [$1$], []),
-    tt(([$A$], [$B$], [$A <==> B$]), [$0$], [$0$], [], [$0$], [$1$], [], [$1$], [$0$], [], [$1$], [$1$], []),
+    tt(
+      ([$A$], [$B$], [$A and B$]),
+      [$0$],
+      [$0$],
+      [],
+      [$0$],
+      [$1$],
+      [],
+      [$1$],
+      [$0$],
+      [],
+      [$1$],
+      [$1$],
+      [],
+    ),
+    tt(
+      ([$A$], [$B$], [$A or B$]),
+      [$0$],
+      [$0$],
+      [],
+      [$0$],
+      [$1$],
+      [],
+      [$1$],
+      [$0$],
+      [],
+      [$1$],
+      [$1$],
+      [],
+    ),
+    tt(
+      ([$A$], [$B$], [$A ==> B$]),
+      [$0$],
+      [$0$],
+      [],
+      [$0$],
+      [$1$],
+      [],
+      [$1$],
+      [$0$],
+      [],
+      [$1$],
+      [$1$],
+      [],
+    ),
+    tt(
+      ([$A$], [$B$], [$A <==> B$]),
+      [$0$],
+      [$0$],
+      [],
+      [$0$],
+      [$1$],
+      [],
+      [$1$],
+      [$0$],
+      [],
+      [$1$],
+      [$1$],
+      [],
+    ),
   )
 ]
 
@@ -224,12 +300,18 @@
 #exercise(
   title: [Logic --- Arithmetic],
   source: 8,
-  goal: [Propositional logic is the basis of digital technology: connectives are functions of $0$ and $1$.],
+  goal: [Propositional logic is the basis of digital technology: connectives are functions of $0$
+    and $1$.],
 )[
   For any proposition $A$ with truth value $0$ or $1$, we can express $not A$ as the arithmetic
   function $1 - A$, since
 
-  #align(center, table(columns: 3, [$A$], [$not A$], [$1 - A$], [$0$], [$1$], [$1$], [$1$], [$0$], [$0$]))
+  #align(center, table(
+    columns: 3,
+    [$A$], [$not A$], [$1 - A$],
+    [$0$], [$1$], [$1$],
+    [$1$], [$0$], [$0$],
+  ))
 
   #parts(
     [Study the truth table of $and$. Can you express $A and B$ as a familiar arithmetic function of
@@ -249,18 +331,24 @@
 )[
   Let
   $
-    E &= "The integer " 2 " is an even number"; \
-    F &= "The integer " 4 " is an even number"; \
-    P &= "The integer " 2 " is a prime number"; \
-    Q &= "The integer " 4 " is an even number".
+    E & = "The integer " 2 " is an even number"; \
+    F & = "The integer " 4 " is an even number"; \
+    P & = "The integer " 2 " is a prime number"; \
+    Q & = "The integer " 4 " is a prime number".
   $
 
   For each compound proposition below, write it in mathematical English and determine whether it is
   true or false.
 
   #parts(
-    [$E and P$], [$E or P$], [$E ==> (not E)$], [$(not E) ==> E$],
-    [$P ==> E$], [$E <==> P$], [$(not E) <==> P$], [$F <==> Q$],
+    [$E and P$],
+    [$E or P$],
+    [$E ==> (not E)$],
+    [$(not E) ==> E$],
+    [$P ==> E$],
+    [$E <==> P$],
+    [$(not E) <==> P$],
+    [$F <==> Q$],
   )
 ]
 
@@ -273,9 +361,10 @@
   numerals 0--9 on the other. Four cards are on the table:
 
   #align(center, box(inset: .6em, text(size: 1.6em)[
-    #box(stroke: .5pt, inset: .5em)[1] #h(1em)
-    #box(stroke: .5pt, inset: .5em)[2] #h(1em)
-    #box(stroke: .5pt, inset: .5em)[A] #h(1em)
+    #box(stroke: .5pt, inset: .5em)[1] #h(1em) #box(stroke: .5pt, inset: .5em)[2] #h(1em) #box(
+      stroke: .5pt,
+      inset: .5em,
+    )[A] #h(1em)
     #box(stroke: .5pt, inset: .5em)[B]
   ]))
 
@@ -301,8 +390,8 @@
     [Suppose $B ==> A$ is false. What are the truth values of $A$ and $B$?],
     [Suppose $A ==> (B ==> C)$ is false. What are the truth values of $A$ and $B$?],
     [Suppose $(A ==> B) ==> C$ is false. What are the truth values of $A$, $B$, and $C$?],
-    [Suppose $A ==> (B ==> (C ==> ( dots.c (Y ==> Z) dots.c )))$ is false. What are the truth
-      values of $A, B, dots, Z$?],
+    [Suppose $A ==> (B ==> (C ==> ( dots.c (Y ==> Z) dots.c )))$ is false. What are the truth values
+      of $A, B, dots, Z$?],
   )
 ]
 
@@ -331,15 +420,25 @@
 #exercise(
   title: [Logic --- Equivalence],
   source: 13,
-  goal: [Mathematicians switch between logically equivalent statements without warning. Practice spotting them.],
+  goal: [Mathematicians switch between logically equivalent statements without warning. Practice
+    spotting them.],
 )[
   Let $A$ and $B$ be propositions. Which of the following are logically equivalent to each other?
   Collect them into groups.
 
   #parts(
-    [$A ==> B$], [$B ==> A$], [$(not A) ==> (not B)$], [$(not B) ==> (not A)$],
-    [$not (A ==> B)$], [$(not A) and (not B)$], [$(not A) or (not B)$], [$(not A) or B$],
-    [$A or (not B)$], [$(not A) and B$], [$A and (not B)$], [$not (A and B)$],
+    [$A ==> B$],
+    [$B ==> A$],
+    [$(not A) ==> (not B)$],
+    [$(not B) ==> (not A)$],
+    [$not (A ==> B)$],
+    [$(not A) and (not B)$],
+    [$(not A) or (not B)$],
+    [$(not A) or B$],
+    [$A or (not B)$],
+    [$(not A) and B$],
+    [$A and (not B)$],
+    [$not (A and B)$],
     [$not (A or B)$],
   )
 ]
@@ -527,9 +626,8 @@
   source: 22,
   goal: [Practice the definitions of proposition and predicate.],
 )[
-  For each expression below: (i) is it a *proposition* (does it have a definite truth value)? If
-  so, which? If not, why not? (ii) Is it a *predicate*? Which variables are free, and which are
-  bound?
+  For each expression below: (i) is it a *proposition* (does it have a definite truth value)? If so,
+  which? If not, why not? (ii) Is it a *predicate*? Which variables are free, and which are bound?
 
   #parts(
     [The sun is hot.],
@@ -559,8 +657,8 @@
   source: 24,
   goal: [Quantifiers can be "unpacked" when the universe is finite.],
 )[
-  Suppose the universe of discourse for a predicate $P(x)$ is the set ${1, 2, 3, 4, 5}$. Express
-  the following *without quantifiers*, using only $P$, negations, conjunctions, and disjunctions.
+  Suppose the universe of discourse for a predicate $P(x)$ is the set ${1, 2, 3, 4, 5}$. Express the
+  following *without quantifiers*, using only $P$, negations, conjunctions, and disjunctions.
 
   #parts(
     [$forall x, P(x)$],
@@ -577,7 +675,8 @@
 #exercise(
   title: [Quantifiers --- Changing the Universe],
   source: 25,
-  goal: [The meaning (and truth value) of a quantified statement depends on the universe of discourse.],
+  goal: [The meaning (and truth value) of a quantified statement depends on the universe of
+    discourse.],
 )[
   For each proposition below, evaluate its truth value when the universe of discourse is $NN$, then
   $ZZ$, then $RR$.
@@ -596,7 +695,7 @@
   source: 26,
   goal: [With more than one variable, both the type and the order of quantification matter.],
 )[
-  Let the universe of discourse be all students at UofT, and let $K(x, y) := $ "$x$ knows $y$".
+  Let the universe of discourse be all students at UofT, and let $K(x, y) :=$ "$x$ knows $y$".
   Interpret the meaning of each statement below. Pay attention to how changing the quantifiers and
   their order changes the meaning.
 

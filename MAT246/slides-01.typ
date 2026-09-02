@@ -51,7 +51,7 @@
   You will practice by:
   - Working problems in class, in groups.
   - Discussing and critiquing proofs.
-  - Working through the *Practicing Proofs* problem sets.
+  - Working through the problem sets.
 
   *AI Warning:* AI can often produce a plausible-looking proof, but *the journey is the point*. Do
   not ask AI to do (or "help" with) your homework. The entire skill you are here to acquire is the
@@ -103,8 +103,8 @@
   #set text(size: .9em)
   + $3 + 5 = 8$, $7 + 11 = 18$, $1 + 9 = 10$. All even. Therefore the sum of two odd integers is
     even.
-  + An odd number is one more than an even number. Adding two of them gives an even number plus
-    two, which is even.
+  + An odd number is one more than an even number. Adding two of them gives an even number plus two,
+    which is even.
   + Let $m$ and $n$ be odd integers. Then $m = 2j + 1$ and $n = 2k + 1$ for some $j, k in ZZ$. So
     $m + n = 2j + 2k + 2 = 2(j + k + 1)$. Since $j + k + 1 in ZZ$, $m + n$ is even.
 ]
@@ -140,49 +140,32 @@
 
 
 
-#slide(title: [What This Will Feel Like])[
-  Expect a cycle of victory and defeat, and a full range of emotions. Sometimes exhilaration, other
-  times something close to paralysis.
-
-  *If you are doing things well, you should be confused on a regular basis.*
-
-  Productive struggle and mistakes are where the growth happens. I am here to guide and challenge
-  you, but I cannot do the learning for you --- just as a music teacher cannot move your fingers for
-  you.
-
-  #v(.4em)
-  Think of the textbook as a mountaineering guidebook: a list of summits, with a hint about which
-  trailhead to start from. There are always multiple routes. Some summits take a day; some take an
-  expedition; many are laced with false summits.
-
-  *The journey is vastly more important than the destinations.*
-]
 
 // ---------------------------------------------------------------------------
 // 1.4 Structure of the textbook
 // ---------------------------------------------------------------------------
 
-#slide(title: [How to Read This Textbook])[
-  The labels in the book tell you what is expected of you.
+// #slide(title: [How to Read This Textbook])[
+//   The labels in the book tell you what is expected of you.
 
-  #v(.3em)
-  #table(
-    columns: (auto, 1fr),
-    align: (right, left),
-    stroke: none,
-    row-gutter: .5em,
-    [*Definition*, *Example*], [Read and digest these. They are given to you.],
-    [*Problem*], [Requires action. Some are computational; others ask for a proof, or for a
-      counterexample.],
-    [*Theorem*, *Corollary*], [Requires action. Produce a valid *proof*. Corollaries follow quickly
-      from an earlier theorem, so expect short proofs.],
-  )
+//   #v(.3em)
+//   #table(
+//     columns: (auto, 1fr),
+//     align: (right, left),
+//     stroke: none,
+//     row-gutter: .5em,
+//     [*Definition*, *Example*], [Read and digest these. They are given to you.],
+//     [*Problem*], [Requires action. Some are computational; others ask for a proof, or for a
+//       counterexample.],
+//     [*Theorem*, *Corollary*], [Requires action. Produce a valid *proof*. Corollaries follow quickly
+//       from an earlier theorem, so expect short proofs.],
+//   )
 
-  #v(.4em)
-  There are deliberately *very few worked examples* in this book. Producing the examples you need in
-  order to internalize a concept is part of your job --- and it is where most of the learning
-  happens.
-]
+//   #v(.4em)
+//   There are deliberately *very few worked examples* in this book. Producing the examples you need in
+//   order to internalize a concept is part of your job --- and it is where most of the learning
+//   happens.
+// ]
 
 // #slide(title: [Our Route Through the Book])[
 //   #table(
@@ -206,24 +189,47 @@
 
 #slide(title: [Some Minimal Guidance])[
   Early on it will not be clear which facts from your prior mathematics you are "allowed" to use.
-  That is genuinely hard to pin down, and we will sort it out along the way.
+  That is hard to pin down, and we will sort it out along the way.
 
-  So that you do not feel abandoned, here is a starting checklist.
+  So that you do not feel abandoned, here is a starting checklist:
 
-  - The statement you are proving should be on the *same page* as the beginning of your proof.
+  - The statement you are proving should be on the *same page* as the beginning of your proof and
+    should be labelled "*Theorem*", "*Claim*", "*Proposition*", or something similar.
   - Indicate where the proof begins by writing "*Proof.*"
-  - Make your assumptions explicit at the very beginning: "Assume...", "Suppose...", "Let..."
+  - Make your assumptions explicit at the very beginning: "*Assume*...", "*Suppose*...", "*Let*..."
   - Consider the *order* carefully. Each sentence should follow from an earlier one, or from a
     result already proved.
-  - Write in *complete sentences*, in paragraphs, with proper grammar. This is not high-school
-    two-column geometry.
+  - Write in *complete sentences*, in paragraphs, with proper grammar. (This is not high-school
+    two-column geometry.)
+]
+
+#let line_number_proof(body) = {
+  block(stroke: (paint: blue, thickness: 1pt, dash: "dashed"), inset: 1em, width: 100%)[
+    #set enum(numbering: d => text(fill: blue.darken(50%))[(#d)#h(1em)])
+
+    #body
+  ]
+}
+
+#slide(title: [Embettering a Proof])[
+  We consider the argument that the sum of two odd integers is even:
+  #line_number_proof[
+    + Let $m$ and $n$ be odd integers.
+    + Then $m = 2j + 1$ and $n = 2k + 1$ for some $j, k in ZZ$.
+    + $m + n = 2j + 2k + 2 = 2(j + k + 1)$
+    + $j + k + 1 in ZZ$ ~$==>$~ $m + n$ is even
+  ]
+
+  The argument is not written in the form of a "good" proof.
+
+  Fix it.
 ]
 
 // The textbook numbers these 1-23, so these three slides opt out of the deck's
 // (a), (b), (c) enumeration and keep the book's numbers.
 #let style-list(start, ..items) = enum(numbering: "1.", start: start, ..items)
 
-#slide(title: [Elements of Style for Proofs (1--8)])[
+#slide(title: [Elements of Style for Proofs (Part 1)])[
   #set text(size: .92em)
   #style-list(
     1,
@@ -234,33 +240,26 @@
     [*Use English words.* Real proofs consist mostly of English sentences.],
     [*Use complete sentences*, with verbs. Do not begin a sentence with a symbol.],
     [*Show the logical connections*: "Therefore", "Thus", "since", "because", "if..., then...".],
-    [*Know the difference between statements and objects.* "$x^2 + 3$" is an object;
-      "$x^2 + 3 < 7$" is a statement.],
+    [*Know the difference between statements and objects.* "$x^2 + 3$" is an object; "$x^2 + 3 < 7$"
+      is a statement.],
     [*The symbol $=$ means "equals".* Do not write $A = B$ unless $A$ really equals $B$.],
     [*Do not interchange $=$ and $==>$.* Avoid $==>$ in formal write-ups entirely.],
-  )
-]
-
-#slide(title: [Elements of Style for Proofs (9--16)])[
-  #set text(size: .92em)
-  #style-list(
-    9,
     [*Avoid logical symbols in your proofs.* $forall$, $exists$, $or$, $and$, $<==>$ belong in your
       scratch work, not your write-up.],
     [*Say exactly what you mean.* Do not write $A in B$ when you mean $A subset B$.],
     [*Do not utilize anything unproven.*],
+  )
+]
+
+#slide(title: [Elements of Style for Proofs (Part 2)])[
+  #set text(size: .92em)
+  #style-list(
+    12,
     [*Write strings of equalities (or inequalities) in the proper order.*],
     [*Avoid circularity.*],
     [*Do not write the proof backwards* --- do not start from what you are trying to prove.],
     [*Be concise.*],
     [*Introduce every symbol you use.*],
-  )
-]
-
-#slide(title: [Elements of Style for Proofs (17--23)])[
-  #set text(size: .92em)
-  #style-list(
-    17,
     [*Use appropriate quantifiers --- once.*],
     [*Use a symbol to mean only one thing.*],
     [*Do not "prove by example."* One case is not a proof (though one case _is_ enough to
@@ -270,11 +269,8 @@
     [*Do not include examples in proofs.*],
     [*Use scratch paper.* The proof you hand in is the polished result, not the search.],
   )
-
-  #v(.5em)
-  These are Appendix A of the textbook. Keep them at hand every time you write a proof this
-  semester.
 ]
+
 
 // ---------------------------------------------------------------------------
 // Warm-up activity
@@ -284,6 +280,6 @@
 #slide(title: [For Next Class])[
   - Read *Chapter 1* and *§2.1* of the textbook.
   - Skim *Appendix A: Elements of Style for Proofs*. You will refer back to it all term.
-  - Download the *Practicing Proofs* handouts --- we will work from them in class and in tutorial.
+  // - Download the *Practicing Proofs* handouts --- we will work from them in class and in tutorial.
   - Find *3--4 people* to form a study group with. Mathematics should not be done alone.
 ]
