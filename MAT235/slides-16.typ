@@ -2,7 +2,7 @@
 #show: mat235-slides.with([Chapter 16])
 
 
-#slide(title: [Siefken 1])[
+#slide(siefken_num: 1)[
 
   Let $f:RR -> RR$ be a function.
 
@@ -16,7 +16,7 @@
     where $R = space.thin ??$. What could $R$ be in this case?
 ]
 
-#slide(title: [Siefken 2])[
+#slide(siefken_num: auto)[
 
   #{
     let a = lq.diagram(
@@ -57,7 +57,7 @@
   Explain why this notation makes sense. What does the $dif A$ represent?
 ]
 
-#slide(title: [Siefken 3])[
+#slide(siefken_num: auto)[
 
   #[
     #set text(size: .9em)
@@ -77,7 +77,7 @@
   ]
 ]
 
-#slide(title: [Siefken 4])[
+#slide(siefken_num: auto)[
 
   The town of Elville has a population density given by $P(x,y)$ and a boundary shown below.
   #{
@@ -122,7 +122,7 @@
     regions? If so, do it.
 ]
 
-#slide(title: [Siefken 5])[
+#slide(siefken_num: auto)[
 
   The town of Circville has a population density given by $P(x,y)$ and a boundary shown below.
   #{
@@ -164,7 +164,7 @@
     regions? If so, do it.
 ]
 
-#slide(title: [Siefken 6])[
+#slide(siefken_num: auto)[
 
   #{
     let a = lq.diagram(
@@ -204,7 +204,7 @@
     mean geometrically? Find its exact value.
   + How can $W$ be used to find $V$?
 ]
-#slide(title: [Siefken 7])[
+#slide(siefken_num: auto)[
 
   Recall
   #{
@@ -244,7 +244,7 @@
     Do iterated integrals remind you of partial derivatives? If so, how?
 ]
 
-#slide(title: [Siefken 8])[
+#slide(siefken_num: auto)[
 
   #{
     let a = lq.diagram(
@@ -290,7 +290,7 @@
     $
 ]
 
-#slide(title: [Siefken 9])[
+#slide(siefken_num: auto)[
 
   The town of Veeville has a population density given by $P(x,y)$ and a boundary shown below.
   #{
@@ -332,7 +332,7 @@
   // _Hint:_ You may need to split the integral into two parts.
 ]
 
-#slide(title: [Siefken 10])[
+#slide(siefken_num: auto)[
 
   The town of Wackville has a population density given by $P(x,y)$ and a boundary enclosed on the
   north by $y=-x^2+4$ and on the south by $y=-x$.
@@ -348,7 +348,7 @@
     Use the integral of your choice to compute the exact population of Wackville.
 ]
 
-#slide(title: [Siefken 11])[
+#slide(siefken_num: auto)[
 
   // #columns(2)[
   The density of a $2 times 4 times 8$ wooden plank is given by $rho(x, y, z)$.
@@ -360,7 +360,7 @@
   // ]
 ]
 
-#slide(title: [Siefken 12])[
+#slide(siefken_num: auto)[
 
   #cetz.canvas(length: 3cm, {
     import cetz.draw: *
@@ -428,7 +428,7 @@
     rectangular coordinates?
 
 ]
-#slide(title: [Siefken 13])[
+#slide(siefken_num: auto)[
 
   Let $f=1$ be a constant function,
   $
@@ -448,7 +448,7 @@
 
 ]
 
-#slide(title: [Siefken 14])[
+#slide(siefken_num: auto)[
 
   #cetz.canvas(length: 3cm, {
     import cetz.draw: *
@@ -536,7 +536,7 @@
   + In polar coordinates, it is said "$dif A = r dif r dif theta$". Why?
 ]
 
-#slide(title: [Siefken 15])[
+#slide(siefken_num: auto)[
 
   We'd like to find the volume of the surface below the cone $z=sqrt(x^2+y^2)$ and above the region
   $R$, in the plane, bounded by the graph of $r(theta)=sin(theta)$.
@@ -551,7 +551,7 @@
 
 ]
 
-#slide(title: [Siefken 16])[
+#slide(siefken_num: auto)[
 
   #image("images/cylindrical-coords.png", height: 4cm)
 
@@ -566,7 +566,7 @@
 
 ]
 
-#slide(title: [Siefken 17])[
+#slide(siefken_num: auto)[
 
   #image("images/conical-pool.jpg", height: 3.5cm)
 
@@ -584,7 +584,7 @@
 
 ]
 
-#slide(title: [Siefken 18])[
+#slide(siefken_num: auto)[
 
   #image("images/spherical-coordinates.svg", height: 4cm)
 
@@ -605,7 +605,7 @@
 
 ]
 
-#slide(title: [Siefken 19])[
+#slide(siefken_num: auto)[
 
   #image("images/spherical-dv.png", height: 4cm)
 
@@ -632,7 +632,7 @@
 
 ]
 
-#slide(title: [Siefken 20])[
+#slide(siefken_num: auto)[
 
   #image("images/glass-dome2.jpg", height: 3.5cm)
 
@@ -660,7 +660,7 @@
 
 ]
 
-#slide(title: [Siefken 21])[
+#slide(siefken_num: auto)[
 
   #image("images/skew-coordinates.png", height: 4cm)
 
@@ -681,7 +681,7 @@
   + What is $dif A$ in $b$-coordinates? Use your answer to set up an integral to find $Q$.
 ]
 
-#slide(title: [Siefken 22])[
+#slide(siefken_num: auto)[
 
   The _Jacobian_ can be used to find $dif A$ for arbitrary coordinate systems.
 

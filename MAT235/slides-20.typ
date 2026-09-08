@@ -3,7 +3,7 @@
 
 
 
-#slide(title: [Siefken 1])[
+#slide(siefken_num: 1)[
 
   #{
     let width = 9cm
@@ -57,7 +57,7 @@
     force divided by $h$) using partial derivatives.
 ]
 
-#slide(title: [Siefken 2])[
+#slide(siefken_num: auto)[
 
   #{
     let width = 9cm
@@ -111,7 +111,7 @@
   + Find an approximation for the circulation around $S$ (not normalized).
 ]
 
-#slide(title: [Siefken 3])[
+#slide(siefken_num: auto)[
 
   Suppose $arrow(F):RR^(#text(fill: orange, $3$)) ->RR^(#text(fill: orange, $3$))$.
 
@@ -173,7 +173,7 @@
   + Find the circulation density at $arrow(p)$ around the axis $arrow(v)=(1,0,0)$.
 ]
 
-#slide(title: [Siefken 4])[
+#slide(siefken_num: auto)[
 
   Suppose $arrow(F):RR^3 -> RR^3$.
 
@@ -199,7 +199,7 @@
   + Why is curl of $arrow(F)$ written as $nabla times arrow(F)$ by physicists?
 ]
 
-#slide(title: [Siefken 5])[
+#slide(siefken_num: auto)[
 
   + Let $R subset.eq RR^2$ be a region and let $arrow(F):RR^2->RR^2$ be a vector field.
 
@@ -221,7 +221,7 @@
     What is the orientation of the boundary of $S$?
 ]
 
-#slide(title: [Siefken 6])[
+#slide(siefken_num: auto)[
 
   + Let $R subset.eq RR^2$ be an _annulus_ (e.g., a washer shape). What should the orientation of
     the outer boundary of $R$ be? What about the inner boundary?
@@ -235,7 +235,7 @@
     What is the orientation of each piece of the boundary of $C$?
 ]
 
-#slide(title: [Siefken 7])[
+#slide(siefken_num: auto)[
 
   + Suppose $arrow(F):RR^3 -> RR^3$ is the gradient of another function.
     #set enum(numbering: "(a)")

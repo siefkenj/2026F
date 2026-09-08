@@ -2,7 +2,7 @@
 #show: mat235-slides.with([Chapter 14])
 
 
-#slide(title: [Siefken 1])[
+#slide(siefken_num: 1)[
   Consider the function $f(x,y) = x^2-x y+1+y^2$.
 
   + Visualize the graph of this function using a contour map and slices.
@@ -12,7 +12,7 @@
   + Graph $z=s'(y)$, where $s'$ indicates the derivative of $s$.
 ]
 
-#slide(title: [Siefken 2])[
+#slide(siefken_num: auto)[
   Consider the function $f(x,y) = x^2-x y+1+y^2$.
 
   + Does $f'(x,y)$ (i.e., the derivative of $f$) make sense? Why or why not?
@@ -24,7 +24,7 @@
     Compute $s'(y)$
 ]
 
-#slide(title: [Siefken 3])[
+#slide(siefken_num: auto)[
   Consider the function $f(x,y) = x^2-x y+1+y^2$.
 
   The *partial derivative* of $f$ with respect to $y$ is notated by
@@ -36,7 +36,7 @@
   + Find $f_x$ and $f_y$ at $(2,2)$.
 ]
 
-#slide(title: [Siefken 4])[
+#slide(siefken_num: auto)[
 
   #{
     let a = lq.diagram(
@@ -71,7 +71,7 @@
     $arrow(j)$ direction, what would your elevation be?
 ]
 
-#slide(title: [Siefken 5])[
+#slide(siefken_num: auto)[
 
   For this question, $Delta$ represents a small number.
 
@@ -93,7 +93,7 @@
     Approximate $g(2-Delta, 2+Delta)$
 ]
 
-#slide(title: [Siefken 6])[
+#slide(siefken_num: auto)[
 
   Suppose the graph of $z=f(x,y)$ is a plane with normal vector $mat(1; 2; 3)$.
 
@@ -125,7 +125,7 @@
   + What does $f_L (0.3,1)$ and $f_t (0.3,1)$ mean in practical terms?
 ]
 
-#slide(title: [Siefken 7])[
+#slide(siefken_num: auto)[
 
   Recall that the temperature inside the earth at position $(x,y,z)$ is (approximately) given by
   $
@@ -143,7 +143,7 @@
 
 ]
 
-#slide(title: [Siefken 8])[
+#slide(siefken_num: auto)[
 
   #{
     let a = lq.diagram(
@@ -181,7 +181,7 @@
     would it look like?
 ]
 
-#slide(title: [Siefken 9])[
+#slide(siefken_num: auto)[
 
   #{
     let a = lq.diagram(
@@ -218,7 +218,7 @@
   + Find an equation for $cal(P)$.
 ]
 
-#slide(title: [Siefken 10])[
+#slide(siefken_num: auto)[
 
   Consider the plane $cal(P)$ with formula
   $
@@ -233,7 +233,7 @@
     previous question?
 ]
 
-#slide(title: [Siefken 11])[
+#slide(siefken_num: auto)[
 
   #show: columns.with(2)
   The *directional derivative* of a function $f: RR^2 ->RR$ at the point $arrow(p)$ *in the
@@ -259,7 +259,7 @@
   // whenever $||arrow(v)||$ is small.
 ]
 
-#slide(title: [Siefken 12])[
+#slide(siefken_num: auto)[
 
   #show: columns.with(2)
   #text(weight: "bold", [Theorem]): If function $f: RR^2 ->RR$ is *differentiable* at the point
@@ -277,7 +277,7 @@
     Find a formula for $f_(arrow(v))(1,2)$.
 ]
 
-#slide(title: [Siefken 13])[
+#slide(siefken_num: auto)[
 
   For a function $f: RR^n -> RR$, the *gradient* of $f$ (written $nabla f$ or $"grad" f$) is the
   vector
@@ -294,7 +294,7 @@
     you notice?
 ]
 
-#slide(title: [Siefken 14])[
+#slide(siefken_num: auto)[
 
   #show: columns.with(2)
   Let $arrow(v)=mat(v_1; v_2)$. Recall, for $f(x,y) = x^2 + y^2 + 3$ that
@@ -314,7 +314,7 @@
     Find a similar expression for $f(arrow(p) + Delta arrow(v))$.
 ]
 
-#slide(title: [Siefken 15])[
+#slide(siefken_num: auto)[
 
   #{
     let a = lq.diagram(
@@ -353,7 +353,7 @@
     vector.
 ]
 
-#slide(title: [Siefken 16])[
+#slide(siefken_num: auto)[
 
   #{
     let a = lq.diagram(
@@ -393,7 +393,7 @@
   + Estimate $a$ and $b$ in the following expression $nabla f(arrow(p)) = (a,b)$.
 ]
 
-#slide(title: [Siefken 17])[
+#slide(siefken_num: auto)[
 
   You are walking on a hill. The height at position $(x,y)$ is given by
   $
@@ -413,7 +413,7 @@
 
 ]
 
-#slide(title: [Siefken 18])[
+#slide(siefken_num: auto)[
 
   Let $f(x,y)=??$ be an unknown function and define $g(x,y)=f(2x,y)$.
 
@@ -432,7 +432,7 @@
 
 ]
 
-#slide(title: [Siefken 20])[
+#slide(siefken_num: 20)[
 
   Let $f(x,y)=??$ be an unknown function and define $g(x,y)=f(2x,y)$.
 
@@ -442,7 +442,7 @@
 
 ]
 
-#slide(title: [Siefken 21])[
+#slide(siefken_num: auto)[
 
   Let $f(x,y)=??$ be an unknown function and define $g(x,y)=f(h(x),y)$ for an unknown but
   differentiable function $h$.
@@ -454,7 +454,7 @@
   + How do your formulas relate to the _chain rule_ from single variable calculus? Explain.
 ]
 
-#slide(title: [Siefken 22])[
+#slide(siefken_num: auto)[
 
   The multi-variable chain rule *should not be memorized*. Instead, use tangent planes to derive
   correct expressions.
@@ -474,7 +474,7 @@
   + Differentiate your approximation to find $p'(t_0)$. Then find a formula for $p'(t)$.
 ]
 
-#slide(title: [Siefken 23])[
+#slide(siefken_num: auto)[
 
   Let $f,g,h$ be functions from $RR^2$ to $RR$. Define $p(x,y) = f(g(x,y), h(x,y))$.
 
@@ -488,7 +488,7 @@
     $(x,y)$? Explain.
 ]
 
-#slide(title: [Siefken 24])[
+#slide(siefken_num: auto)[
 
   The temperature of inside the earth at position
   The temperature at position $(x,y,z)$ inside the earth given by
@@ -505,7 +505,7 @@
     Hint: do the computation symbolically first.
 ]
 
-#slide(title: [Siefken 25])[
+#slide(siefken_num: auto)[
 
   Consider the function $f(x,y) = x^2+y^2 - 4x y$.
 
@@ -526,7 +526,7 @@
 
 ]
 
-#slide(title: [Siefken 26])[
+#slide(siefken_num: auto)[
 
   Consider the function $f(x,y) = x^2+y^2 - 4x y$.
 
@@ -548,7 +548,7 @@
     direction $arrow(u)$ at the point $(x,y)$.
 ]
 
-#slide(title: [Siefken 27])[
+#slide(siefken_num: auto)[
 
   Consider the function
   $
@@ -569,7 +569,7 @@
   + Does $f_(x y) = f_(y x)$. Explain.
 ]
 
-#slide(title: [Siefken 28])[
+#slide(siefken_num: auto)[
 
   Let $g(x,y)=cos(x+y)+cos(y)$.
 
@@ -588,7 +588,7 @@
     approximation? (How about the $n$#super("th") degree approximation?)
 ]
 
-#slide(title: [Siefken 29])[
+#slide(siefken_num: auto)[
 
   Open
 
@@ -601,7 +601,7 @@
   + Can you get a "taco" shape? (e.g., the shape of an _extruded_ parabola)?
 ]
 
-#slide(title: [Siefken 30])[
+#slide(siefken_num: auto)[
 
   A function $f:RR^2 -> RR^2$ is *differentiable* at the point $arrow(p)$ if there exists a plane
   $z=L(x,y)$ such that $f(arrow(p)) = L(arrow(p))$ _and_

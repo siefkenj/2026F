@@ -45,13 +45,11 @@
   - $4 R d$ and $8 R d$;
   - $5 R e$ and $10 R e$.
 
-  #parts(
-    [Is $R subset X times Y$ or $R subset Y times X$?],
-    [Write out the set $R$.],
-    [Draw a directed graph depicting $R$.],
-    [Complete the *logical table* for $R$: the elements of $X$ label the rows and those of $Y$ the
-      columns; the cell in row $x$ and column $y$ holds $1$ if $x R y$, and $0$ otherwise.],
-  )
+  + Is $R subset X times Y$ or $R subset Y times X$?
+  + Write out the set $R$.
+  + Draw a directed graph depicting $R$.
+  + Complete the *logical table* for $R$: the elements of $X$ label the rows and those of $Y$ the
+    columns; the cell in row $x$ and column $y$ holds $1$ if $x R y$, and $0$ otherwise.
 ]
 
 #exercise(
@@ -86,13 +84,11 @@
   Consider relations on the set $A := {a, b, c, d, e}$, represented either as a *logical table* or
   as a *digraph*.
 
-  #parts(
-    [Suppose $R$ is a *reflexive* relation on $A$. How would you fill the logical table to reflect
-      this? How would you modify the digraph?],
-    [Suppose you must determine whether a relation is reflexive. How would you do it if the relation
-      is given as a set? As a digraph? As a logical table? Which description would you rather
-      receive, and why?],
-  )
+  + Suppose $R$ is a *reflexive* relation on $A$. How would you fill the logical table to reflect
+    this? How would you modify the digraph?
+  + Suppose you must determine whether a relation is reflexive. How would you do it if the relation
+    is given as a set? As a digraph? As a logical table? Which description would you rather
+    receive, and why?
 ]
 
 #exercise(
@@ -100,15 +96,12 @@
   source: 93,
   goal: [Now the same three representations, for symmetry and transitivity.],
 )[
-  #parts(
-    start: 3,
-    [Suppose $S$ is a *symmetric* relation on $A$ with $b S b$, $c S d$, and $e S a$. How would you
-      fill the logical table to reflect these facts? How would you modify the digraph?],
-    [How would you determine whether a relation is symmetric from each of the three descriptions?
-      Which would you prefer, and why?],
-    [Which of the three descriptions would you prefer if you had to determine whether a relation is
-      *transitive*?],
-  )
+  3. Suppose $S$ is a *symmetric* relation on $A$ with $b S b$, $c S d$, and $e S a$. How would you
+    fill the logical table to reflect these facts? How would you modify the digraph?
+  + How would you determine whether a relation is symmetric from each of the three descriptions?
+    Which would you prefer, and why?
+  + Which of the three descriptions would you prefer if you had to determine whether a relation is
+    *transitive*?
 ]
 
 #exercise(
@@ -116,14 +109,12 @@
   source: 94,
   goal: [Think through the definition of a relation by counting.],
 )[
-  #parts(
-    [If $R$ is a relation on ${1, 2, 3}$, then $R$ is a subset of which set?],
-    [How many different relations on ${1, 2, 3}$ are there? What about on ${1, 2, dots, n}$?],
-    [If $R$ is a *reflexive* relation on ${1, 2, 3}$, which elements must $R$ contain?],
-    [How many different reflexive relations on ${1, 2, 3}$ are there? On ${1, 2, dots, n}$?],
-    [How many relations on ${1, 2, 3}$ are both reflexive *and* symmetric? On ${1, 2, dots, n}$?],
-    [List all relations on ${1, 2, 3}$ that are reflexive, symmetric, *and* transitive.],
-  )
+  + If $R$ is a relation on ${1, 2, 3}$, then $R$ is a subset of which set?
+  + How many different relations on ${1, 2, 3}$ are there? What about on ${1, 2, dots, n}$?
+  + If $R$ is a *reflexive* relation on ${1, 2, 3}$, which elements must $R$ contain?
+  + How many different reflexive relations on ${1, 2, 3}$ are there? On ${1, 2, dots, n}$?
+  + How many relations on ${1, 2, 3}$ are both reflexive *and* symmetric? On ${1, 2, dots, n}$?
+  + List all relations on ${1, 2, 3}$ that are reflexive, symmetric, *and* transitive.
 ]
 
 #exercise(
@@ -140,11 +131,9 @@
 
   Prove that each of the following relations is an ordering.
 
-  #parts(
-    [The relation $<=$ on $NN$.],
-    [The relation $subset$ on $cal(P)({1, 2, 3})$.],
-    [The divisibility relation on $NN$ (that is, $a R b$ if and only if $a divides b$).],
-  )
+  + The relation $<=$ on $NN$.
+  + The relation $subset$ on $cal(P)({1, 2, 3})$.
+  + The divisibility relation on $NN$ (that is, $a R b$ if and only if $a divides b$).
 ]
 
 #exercise(
@@ -158,14 +147,12 @@
     $R$ is a *strict ordering* if it is asymmetric and transitive.
   ]
 
-  #parts(
-    [Prove that $<$ on $NN$ is a strict ordering.],
-    [Prove that a strict ordering is necessarily *irreflexive*: for all $a in A$, $not (a R a)$.],
-    [Let $R$ be a weak ordering on $A$. Define $S$ by $a S b <==> (a R b "and" a != b)$. Prove $S$
-      is a strict ordering on $A$.],
-    [Let $S$ be a strict ordering on $A$. Define $R$ by $a R b <==> (a S b "or" a = b)$. Prove $R$
-      is a weak ordering on $A$.],
-  )
+  + Prove that $<$ on $NN$ is a strict ordering.
+  + Prove that a strict ordering is necessarily *irreflexive*: for all $a in A$, $not (a R a)$.
+  + Let $R$ be a weak ordering on $A$. Define $S$ by $a S b <==> (a R b "and" a != b)$. Prove $S$
+    is a strict ordering on $A$.
+  + Let $S$ be a strict ordering on $A$. Define $R$ by $a R b <==> (a S b "or" a = b)$. Prove $R$
+    is a weak ordering on $A$.
 ]
 
 // ---------------------------------------------------------------------------
@@ -279,13 +266,11 @@
   $
   For example, $R$ on $RR$ defined by $x R y <==> x^2 = y$ is multifunctional. (Do you see why?)
 
-  #parts(
-    [Prove that if $R$ is multifunctional, symmetric, and transitive, then $R$ is an equivalence
-      relation.],
-    [Consider the relation $tilde.op$ on $M_n (RR)$ (the $n times n$ matrices with real entries)
-      defined by $A tilde.op B <==> A - B$ is invertible. Which of reflexivity, symmetry,
-      transitivity, and multifunctionality does $tilde.op$ have? Justify your answer.],
-  )
+  + Prove that if $R$ is multifunctional, symmetric, and transitive, then $R$ is an equivalence
+    relation.
+  + Consider the relation $tilde.op$ on $M_n (RR)$ (the $n times n$ matrices with real entries)
+    defined by $A tilde.op B <==> A - B$ is invertible. Which of reflexivity, symmetry,
+    transitivity, and multifunctionality does $tilde.op$ have? Justify your answer.
 ]
 
 #exercise(
@@ -301,14 +286,12 @@
   Fix $m in NN$ and define $M$ on $NN$ by $a M b$ if and only if $a$ and $b$ have the same remainder
   when divided by $m$.
 
-  #parts(
-    [Suppose $a >= b$. Prove that $a M b$ if and only if $m divides (b - a)$. (Here we assume every
-      natural number divides $0$; formally, $x divides y <==> exists q in ZZ_(>=0), y = x q$.)],
-    [Prove that $M$ is an equivalence relation.],
-    [What are the equivalence classes for $m = 3$? For $m = 5$? What about $m = 1$?],
-    [Define $D$ on $NN$ by $a D b$ if and only if $a$ and $b$ end in the same digit. Prove that $D$
-      is an equivalence relation.],
-  )
+  + Suppose $a >= b$. Prove that $a M b$ if and only if $m divides (b - a)$. (Here we assume every
+    natural number divides $0$; formally, $x divides y <==> exists q in ZZ_(>=0), y = x q$.)
+  + Prove that $M$ is an equivalence relation.
+  + What are the equivalence classes for $m = 3$? For $m = 5$? What about $m = 1$?
+  + Define $D$ on $NN$ by $a D b$ if and only if $a$ and $b$ end in the same digit. Prove that $D$
+    is an equivalence relation.
 ]
 
 #exercise(
@@ -316,12 +299,10 @@
   source: 103,
   goal: [Two famous equivalence relations from more advanced courses.],
 )[
-  #parts(
-    [Consider $R$ on $RR$ defined by $x R y <==> y - x in ZZ$. Prove $R$ is an equivalence relation
-      and describe its equivalence classes.],
-    [Consider $Q$ on $RR$ defined by $x Q y <==> y - x in QQ$. Prove $Q$ is an equivalence relation.
-      Can you describe its equivalence classes?],
-  )
+  + Consider $R$ on $RR$ defined by $x R y <==> y - x in ZZ$. Prove $R$ is an equivalence relation
+    and describe its equivalence classes.
+  + Consider $Q$ on $RR$ defined by $x Q y <==> y - x in QQ$. Prove $Q$ is an equivalence relation.
+    Can you describe its equivalence classes?
 ]
 
 // ---------------------------------------------------------------------------
@@ -333,14 +314,12 @@
   source: 104,
   goal: [Practice the definition of a partition. Try this without referring back to the text!],
 )[
-  #parts(
-    [Recall the definition of a partition.],
-    [One common way of representing data is a pie chart. Explain how a pie chart corresponds to a
-      partition of the pie.],
-    [How many partitions of $emptyset$ are there?],
-    [How many partitions of ${1}$ are there? What about ${1, 2}$?],
-    [How many partitions of ${1, 2, 3}$ are there?],
-  )
+  + Recall the definition of a partition.
+  + One common way of representing data is a pie chart. Explain how a pie chart corresponds to a
+    partition of the pie.
+  + How many partitions of $emptyset$ are there?
+  + How many partitions of ${1}$ are there? What about ${1, 2}$?
+  + How many partitions of ${1, 2, 3}$ are there?
 ]
 
 #exercise(
@@ -351,26 +330,24 @@
   For each set $A_i$ and each collection $Omega_j$, determine whether $Omega_j$ is a partition of
   $A_i$. If not, explain why not.
 
-  #parts(
-    [Let $A_1 = {1, 2, 3, 4, 5, 6}$.
-      #enum(
-        [$Omega_1 = {{1,2}, {2,3,4}, {4,5,6}}$],
-        [$Omega_2 = {{1}, {2,3,6}, {4}, {5}}$],
-        [$Omega_3 = {{2,4,6}, {1,3,5}}$],
-        [$Omega_4 = {{1,4,5}, {2,6}}$],
-        [$Omega_5 = {{1,2,3,4}, {5,6}, {}}$],
-        [$Omega_6 = {{1,2,3,4,5,6}}$],
-      )],
-    [Let $A_2 = ZZ$.
-      #enum(
-        [$Omega_7$ contains the set of even integers and the set of odd integers.],
-        [$Omega_8$ contains the set of positive integers and the set of negative integers.],
-        [$Omega_9$ contains the integers strictly less than $-100$, those with absolute value
-          $<= 100$, and those strictly greater than $100$.],
-        [$Omega_10$ contains the integers not divisible by $3$, the even integers, and the integers
-          with remainder $3$ when divided by $6$.],
-      )],
-  )
+  + Let $A_1 = {1, 2, 3, 4, 5, 6}$.
+    #enum(
+      [$Omega_1 = {{1,2}, {2,3,4}, {4,5,6}}$],
+      [$Omega_2 = {{1}, {2,3,6}, {4}, {5}}$],
+      [$Omega_3 = {{2,4,6}, {1,3,5}}$],
+      [$Omega_4 = {{1,4,5}, {2,6}}$],
+      [$Omega_5 = {{1,2,3,4}, {5,6}, {}}$],
+      [$Omega_6 = {{1,2,3,4,5,6}}$],
+    )
+  + Let $A_2 = ZZ$.
+    #enum(
+      [$Omega_7$ contains the set of even integers and the set of odd integers.],
+      [$Omega_8$ contains the set of positive integers and the set of negative integers.],
+      [$Omega_9$ contains the integers strictly less than $-100$, those with absolute value
+        $<= 100$, and those strictly greater than $100$.],
+      [$Omega_10$ contains the integers not divisible by $3$, the even integers, and the integers
+        with remainder $3$ when divided by $6$.],
+    )
 ]
 
 #exercise(
@@ -383,13 +360,11 @@
   Let $A_1 = ZZ times ZZ$. In each case $Omega_j$ is the set containing the set of pairs $(x, y)$
   where...
 
-  #parts(
-    [$x$ or $y$ is odd; $x$ is even; $y$ is even.],
-    [both $x$ and $y$ are odd; exactly one of $x$, $y$ is odd; both are even.],
-    [$x$ is positive; $y$ is positive; both $x$ and $y$ are negative.],
-    [$x > 0$ and $y > 0$; $x <= 0$ and $y > 0$; $x <= 0$ and $y <= 0$.],
-    [$x != 0$ and $y != 0$; $x = 0$ and $y != 0$; $x != 0$ and $y = 0$.],
-  )
+  + $x$ or $y$ is odd; $x$ is even; $y$ is even.
+  + both $x$ and $y$ are odd; exactly one of $x$, $y$ is odd; both are even.
+  + $x$ is positive; $y$ is positive; both $x$ and $y$ are negative.
+  + $x > 0$ and $y > 0$; $x <= 0$ and $y > 0$; $x <= 0$ and $y <= 0$.
+  + $x != 0$ and $y != 0$; $x = 0$ and $y != 0$; $x != 0$ and $y = 0$.
 ]
 
 #exercise(
@@ -399,13 +374,11 @@
 )[
   Is $Omega_j$ a partition of $A_2 = RR$? If not, why not?
 
-  #parts(
-    [$Omega_6 = {{x in RR | x < 0}, {0}, {x in RR | x > 0}}$],
-    [$Omega_7 = {"the irrationals", "the rationals"}$],
-    [$Omega_8$ contains the intervals $[k, k+1]$, $k in ZZ$.],
-    [$Omega_9$ contains the intervals $(k, k+1)$, $k in ZZ$.],
-    [$Omega_10$ contains the intervals $(k, k+1]$, $k in ZZ$.],
-  )
+  + $Omega_6 = {{x in RR | x < 0}, {0}, {x in RR | x > 0}}$
+  + $Omega_7 = {"the irrationals", "the rationals"}$
+  + $Omega_8$ contains the intervals $[k, k+1]$, $k in ZZ$.
+  + $Omega_9$ contains the intervals $(k, k+1)$, $k in ZZ$.
+  + $Omega_10$ contains the intervals $(k, k+1]$, $k in ZZ$.
 ]
 
 #exercise(
@@ -413,14 +386,12 @@
   source: 107,
   goal: [Among the infinitely many partitions of $NN$, find some with specific properties. (A variation on Exercise 7.56 in the text.)],
 )[
-  #parts(
-    [Find a partition of $NN$ with exactly $3$ blocks, where $2$ blocks are finite and the third is
-      infinite.],
-    [Find a partition of $NN$ with infinitely many blocks.],
-    [Find a partition of $NN$ with exactly $3$ blocks, each of which is infinite.],
-    [Our definition of a partition requires three conditions. For *each* condition, find a
-      collection of subsets of $NN$ that fails that condition but satisfies the other two.],
-  )
+  + Find a partition of $NN$ with exactly $3$ blocks, where $2$ blocks are finite and the third is
+    infinite.
+  + Find a partition of $NN$ with infinitely many blocks.
+  + Find a partition of $NN$ with exactly $3$ blocks, each of which is infinite.
+  + Our definition of a partition requires three conditions. For *each* condition, find a
+    collection of subsets of $NN$ that fails that condition but satisfies the other two.
 ]
 
 #exercise(
@@ -439,14 +410,12 @@
   (iii) determine whether $R_(Omega_i)$ is an equivalence relation, and if so give its equivalence
   classes.
 
-  #parts(
-    [$Omega_1 = {{0}, {1,2}, {3,4,5}}$],
-    [$Omega_2 = {{0}, {1,2}, {3,4}}$],
-    [$Omega_3 = {{0,1}, {2,3}, {4,5}}$],
-    [$Omega_4 = {{0,1,2}, {3,4,5}}$],
-    [$Omega_5 = {{0,1}, {1,2,3}, {3,4,5}}$],
-    [$Omega_6 = {{0}, {1}, {2}, {3}, {4}, {5}}$],
-  )
+  + $Omega_1 = {{0}, {1,2}, {3,4,5}}$
+  + $Omega_2 = {{0}, {1,2}, {3,4}}$
+  + $Omega_3 = {{0,1}, {2,3}, {4,5}}$
+  + $Omega_4 = {{0,1,2}, {3,4,5}}$
+  + $Omega_5 = {{0,1}, {1,2,3}, {3,4,5}}$
+  + $Omega_6 = {{0}, {1}, {2}, {3}, {4}, {5}}$
 ]
 
 #exercise(
@@ -456,19 +425,17 @@
 )[
   As above, $a R_Omega b <==> exists X in Omega$ with $a, b in X$.
 
-  #parts(
-    [Prove that $R_Omega$ is always *symmetric*.],
-    [Prove that $R_Omega$ is *reflexive* if and only if $Omega$ covers $A$.],
-    [Prove that $R_Omega$ is *transitive* if the sets in $Omega$ are pairwise disjoint.],
-    [Find an example where the sets in $Omega$ are *not* pairwise disjoint but $R_Omega$ is still
-      transitive.],
-    [Conclude that if $Omega$ is a partition of $A$, then $R_Omega$ is an equivalence relation on
-      $A$.],
-    [Suppose $Omega$ is a partition of $A$, so $R_Omega$ is an equivalence relation. What are its
-      equivalence classes?],
-    [Suppose $R_Omega$ is an equivalence relation on $A$. Prove that the equivalence classes form a
-      partition of $A$.],
-  )
+  + Prove that $R_Omega$ is always *symmetric*.
+  + Prove that $R_Omega$ is *reflexive* if and only if $Omega$ covers $A$.
+  + Prove that $R_Omega$ is *transitive* if the sets in $Omega$ are pairwise disjoint.
+  + Find an example where the sets in $Omega$ are *not* pairwise disjoint but $R_Omega$ is still
+    transitive.
+  + Conclude that if $Omega$ is a partition of $A$, then $R_Omega$ is an equivalence relation on
+    $A$.
+  + Suppose $Omega$ is a partition of $A$, so $R_Omega$ is an equivalence relation. What are its
+    equivalence classes?
+  + Suppose $R_Omega$ is an equivalence relation on $A$. Prove that the equivalence classes form a
+    partition of $A$.
 ]
 
 #exercise(
@@ -495,16 +462,14 @@
     forall X in Omega_1, exists Y in Omega_2, (X subset Y).
   $
 
-  #parts(
-    [Let $A = {1,2,3,4,5,6}$, $Omega_1 = {{1,2}, {3}, {4}, {5,6}}$, and
-      $Omega_2 = {{1,2,3}, {4,5,6}}$. Is $Omega_1$ a refinement of $Omega_2$? Justify your answer.],
-    [With $A$ and $Omega_2$ as above, give an example of a partition $Omega$ of $A$ (different from
-      $Omega_1$) that is a refinement of $Omega_2$.],
-    [Let $P_1, P_2, P_3$ be partitions of a set $B$ with $P_1$ a refinement of $P_2$ and $P_2$ a
-      refinement of $P_3$. Prove, or give a counterexample: $P_1$ is a refinement of $P_3$.],
-    [Each partition corresponds to an equivalence relation. How does "$Q_1$ is a refinement of
-      $Q_2$" translate into a relationship between $R_(Q_1)$ and $R_(Q_2)$? Explain.],
-  )
+  + Let $A = {1,2,3,4,5,6}$, $Omega_1 = {{1,2}, {3}, {4}, {5,6}}$, and
+    $Omega_2 = {{1,2,3}, {4,5,6}}$. Is $Omega_1$ a refinement of $Omega_2$? Justify your answer.
+  + With $A$ and $Omega_2$ as above, give an example of a partition $Omega$ of $A$ (different from
+    $Omega_1$) that is a refinement of $Omega_2$.
+  + Let $P_1, P_2, P_3$ be partitions of a set $B$ with $P_1$ a refinement of $P_2$ and $P_2$ a
+    refinement of $P_3$. Prove, or give a counterexample: $P_1$ is a refinement of $P_3$.
+  + Each partition corresponds to an equivalence relation. How does "$Q_1$ is a refinement of
+    $Q_2$" translate into a relationship between $R_(Q_1)$ and $R_(Q_2)$? Explain.
 ]
 
 // ---------------------------------------------------------------------------
@@ -534,11 +499,9 @@
   Let $R$ be an equivalence relation on $A$. Prove that for any $a, b in A$ the following are
   equivalent:
 
-  #parts(
-    [$[a] = [b]$;],
-    [$a in [b]$;],
-    [$a R b$.],
-  )
+  + $[a] = [b]$;
+  + $a in [b]$;
+  + $a R b$.
 ]
 
 #exercise(
@@ -555,13 +518,11 @@
   In each case, determine *with proof* whether $plus.o_i$ is well-defined --- that is, whether
   $[a] = [a']$ and $[b] = [b']$ imply $[a] plus.o_i [b] = [a'] plus.o_i [b']$.
 
-  #parts(
-    [$a plus.square_1 b = a$.],
-    [$a plus.square_2 b$ is $0$ if $a + b$ is even, and $1$ if $a + b$ is odd.],
-    [$a plus.square_3 b$ is the remainder of $a + b$ when divided by $3$.],
-    [$a plus.square_4 b = min{a, b}$.],
-    [$a plus.square_5 b = 2a + 3b$.],
-  )
+  + $a plus.square_1 b = a$.
+  + $a plus.square_2 b$ is $0$ if $a + b$ is even, and $1$ if $a + b$ is odd.
+  + $a plus.square_3 b$ is the remainder of $a + b$ when divided by $3$.
+  + $a plus.square_4 b = min{a, b}$.
+  + $a plus.square_5 b = 2a + 3b$.
 ]
 
 #exercise(
@@ -572,17 +533,15 @@
   Let $X$ be a set with a binary operation $plus.square$, and let $R$ be an equivalence relation on
   $X$ such that $[a] plus.o [b] = [a plus.square b]$ is well-defined.
 
-  #parts(
-    [Suppose $plus.square$ is *associative*: $(x plus.square y) plus.square z = x plus.square (y
-      plus.square z)$ for all $x, y, z in X$. Prove $plus.o$ is associative on $X\/R$.],
-    [Suppose $plus.square$ is *commutative*: $x plus.square y = y plus.square x$. Prove
-      $plus.o$ is commutative on $X\/R$.],
-    [Suppose $o in X$ is an *identity*: $o plus.square x = x$ for all $x in X$. Prove $plus.o$
-      also has an identity element --- what is it?],
-    [Suppose every $x in X$ has an *inverse*: some $y in X$ with $x plus.square y = o$. Prove every
-      class $A in X\/R$ also has an inverse.],
-    [Which parts of your proofs use the fact that $plus.o$ is well-defined?],
-  )
+  + Suppose $plus.square$ is *associative*: $(x plus.square y) plus.square z = x plus.square (y
+    plus.square z)$ for all $x, y, z in X$. Prove $plus.o$ is associative on $X\/R$.
+  + Suppose $plus.square$ is *commutative*: $x plus.square y = y plus.square x$. Prove
+    $plus.o$ is commutative on $X\/R$.
+  + Suppose $o in X$ is an *identity*: $o plus.square x = x$ for all $x in X$. Prove $plus.o$
+    also has an identity element --- what is it?
+  + Suppose every $x in X$ has an *inverse*: some $y in X$ with $x plus.square y = o$. Prove every
+    class $A in X\/R$ also has an inverse.
+  + Which parts of your proofs use the fact that $plus.o$ is well-defined?
 ]
 
 #slide(title: [Two Capstone Exercises])[
@@ -608,12 +567,10 @@
     (a, b) tilde.op (c, d) #h(1em) <==> #h(1em) a + d = b + c.
   $
 
-  #parts(
-    [Prove that $tilde.op$ is an equivalence relation.],
-    [Prove that $[(n, 0)]$ for $n in NN union {0}$, together with $[(0, n)]$ for $n in NN$, form a
-      *complete system of representatives*: every $(a, b) in cal(Z)$ lies in one of these classes,
-      and no two of these classes coincide.],
-  )
+  + Prove that $tilde.op$ is an equivalence relation.
+  + Prove that $[(n, 0)]$ for $n in NN union {0}$, together with $[(0, n)]$ for $n in NN$, form a
+    *complete system of representatives*: every $(a, b) in cal(Z)$ lies in one of these classes,
+    and no two of these classes coincide.
 
   This lets us *define* the integers as the set of equivalence classes of $tilde.op$: we identify
   $n in NN union {0}$ with $[(n, 0)]$, and define the symbol $-n$ to mean $[(0, n)]$.
@@ -624,17 +581,15 @@
   source: 115,
   goal: [Now equip the construction with addition --- and check that it deserves the name.],
 )[
-  #parts(
-    [Define $plus.square$ on classes by $[(a,b)] plus.square [(c,d)] = [(a+c, b+d)]$. Prove this is
-      well-defined.],
-    [We think of $ZZ$ as an extension of $NN union {0}$ by finding "a copy" of $NN union {0}$ inside
-      it, identifying $n$ with $[(n, 0)]$. The operation just defined *respects* addition of natural
-      numbers. Explain in your own words what this means.],
-    [We get "a copy of $NN$ with a minus sign" by declaring $-n$ to mean $[(0, n)]$. Prove that
-      $n + (-n) = 0$, interpreting this as an operation on equivalence classes.],
-    [Use this identification to prove that $5 - 2 = 3$ and that $2 - 5 = -3$. (We write $x - y$ as
-      shorthand for $x + (-y)$.)],
-  )
+  + Define $plus.square$ on classes by $[(a,b)] plus.square [(c,d)] = [(a+c, b+d)]$. Prove this is
+    well-defined.
+  + We think of $ZZ$ as an extension of $NN union {0}$ by finding "a copy" of $NN union {0}$ inside
+    it, identifying $n$ with $[(n, 0)]$. The operation just defined *respects* addition of natural
+    numbers. Explain in your own words what this means.
+  + We get "a copy of $NN$ with a minus sign" by declaring $-n$ to mean $[(0, n)]$. Prove that
+    $n + (-n) = 0$, interpreting this as an operation on equivalence classes.
+  + Use this identification to prove that $5 - 2 = 3$ and that $2 - 5 = -3$. (We write $x - y$ as
+    shorthand for $x + (-y)$.)
 ]
 
 #exercise(
@@ -642,16 +597,13 @@
   source: 115,
   goal: [And now subtraction, which is the whole point of extending $NN$ to $ZZ$.],
 )[
-  #parts(
-    start: 5,
-    [Prove that $[(a,b)]$ is identified with $n in NN union {0}$ if and only if $[(b,a)]$ is
-      identified with $-n$.],
-    [We therefore define $minus.square[(a,b)] = [(b,a)]$. Prove this is well-defined.],
-    [Define $[(a,b)] minus.square [(c,d)] = [(a,b)] plus.square (minus.square[(c,d)])$. What is this
-      operation in terms of representatives --- find $e, f$ with
-      $[(a,b)] minus.square [(c,d)] = [(e,f)]$. Is it well-defined? Check it by proving again that
-      $2 - 5 = -3$.],
-  )
+  5. Prove that $[(a,b)]$ is identified with $n in NN union {0}$ if and only if $[(b,a)]$ is
+    identified with $-n$.
+  + We therefore define $minus.square[(a,b)] = [(b,a)]$. Prove this is well-defined.
+  + Define $[(a,b)] minus.square [(c,d)] = [(a,b)] plus.square (minus.square[(c,d)])$. What is this
+    operation in terms of representatives --- find $e, f$ with
+    $[(a,b)] minus.square [(c,d)] = [(e,f)]$. Is it well-defined? Check it by proving again that
+    $2 - 5 = -3$.
 ]
 
 #exercise(
@@ -668,14 +620,12 @@
     (a, b) tilde.op (c, d) #h(1em) <==> #h(1em) a d = b c.
   $
 
-  #parts(
-    [Prove that $tilde.op$ is an equivalence relation on $cal(Q)$.],
-    [Define $times.o$ by $[(a,b)] times.o [(c,d)] = [(a c, b d)]$. Prove $times.o$ is
-      well-defined.],
-    [Prove that this operation works well with the identification of $z in ZZ$ with $[(z, 1)]$.],
-    [Use the definition of the symbol $a/b$ to prove that for any $z in ZZ without {0}$ we have
-      $z times 1/z = 1$.],
-  )
+  + Prove that $tilde.op$ is an equivalence relation on $cal(Q)$.
+  + Define $times.o$ by $[(a,b)] times.o [(c,d)] = [(a c, b d)]$. Prove $times.o$ is
+    well-defined.
+  + Prove that this operation works well with the identification of $z in ZZ$ with $[(z, 1)]$.
+  + Use the definition of the symbol $a/b$ to prove that for any $z in ZZ without {0}$ we have
+    $z times 1/z = 1$.
 ]
 
 #exercise(
@@ -686,13 +636,11 @@
   When first learning fractions one wants to try $a/b plus.square c/d = (a+c)/(b+d)$. It does not
   work.
 
-  #parts(
-    [Define $plus.square$ on $cal(Q)$ by $[(a,b)] plus.square [(c,d)] = [(a+c, b+d)]$. Prove that
-      $plus.square$ is *not* well-defined.],
-    [We must use the common-denominator definition instead. Define $plus.o$ by
-      $[(a,b)] plus.o [(c,d)] = [(a d + b c, b d)]$. Prove that $plus.o$ is well-defined.],
-    [Prove that this operation works well with the identification of $z in ZZ$ with $[(z, 1)]$.],
-  )
+  + Define $plus.square$ on $cal(Q)$ by $[(a,b)] plus.square [(c,d)] = [(a+c, b+d)]$. Prove that
+    $plus.square$ is *not* well-defined.
+  + We must use the common-denominator definition instead. Define $plus.o$ by
+    $[(a,b)] plus.o [(c,d)] = [(a d + b c, b d)]$. Prove that $plus.o$ is well-defined.
+  + Prove that this operation works well with the identification of $z in ZZ$ with $[(z, 1)]$.
 ]
 
 #exercise(
@@ -700,15 +648,12 @@
   source: 116,
   goal: [Just as $ZZ$ gave us a global subtraction, the point of $QQ$ is a global division.],
 )[
-  #parts(
-    start: 4,
-    [Define $div$ on $cal(Q) without {0}$ by $div[(a,b)] = [(b,a)]$, for $a != 0$. Prove that $div$
-      is well-defined.],
-    [For $c != 0$, define $[(a,b)] div [(c,d)] = [(a,b)] times.o (div[(c,d)])$. Is this a
-      well-defined operation?],
-    [Use the definition of the symbol $a/b$ to prove that for $a, b in ZZ$ with $b != 0$ we have
-      $a div b = a/b$. More generally, prove that for $s, t, u != 0$,
-      $display(r/s div t/u = (r u)/(s t))$.],
-  )
+  4. Define $div$ on $cal(Q) without {0}$ by $div[(a,b)] = [(b,a)]$, for $a != 0$. Prove that $div$
+    is well-defined.
+  + For $c != 0$, define $[(a,b)] div [(c,d)] = [(a,b)] times.o (div[(c,d)])$. Is this a
+    well-defined operation?
+  + Use the definition of the symbol $a/b$ to prove that for $a, b in ZZ$ with $b != 0$ we have
+    $a div b = a/b$. More generally, prove that for $s, t, u != 0$,
+    $display(r/s div t/u = (r u)/(s t))$.
 ]
 

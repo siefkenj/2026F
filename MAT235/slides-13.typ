@@ -5,7 +5,7 @@
 #import "@preview/lilaq:0.4.0" as lq
 
 
-#slide(title: [Siefken 1])[
+#slide(siefken_num: 1)[
   Vectors represent *displacement*.
 
   You are on the prairies, where it is very flat. The vector $arrow(v)$ represents a displacement
@@ -20,7 +20,7 @@
   + What is your *distance* from $(0,0)$ after you walk?
 ]
 
-#slide(title: [Siefken 2])[
+#slide(siefken_num: auto)[
   The *standard basis vectors* (in MAT235) are called
   $
     arrow(i) wide arrow(j) wide arrow(k)
@@ -36,7 +36,7 @@
     by $arrow(d)$. What are your coordinates?
 ]
 
-#slide(title: [Siefken 3])[
+#slide(siefken_num: auto)[
   The context for this question is $RR^2$.
   + Consider the point $(a,b)$ and the vector $mat(a; b)$. What's the difference between the two?
     How can you convert from one to the other?
@@ -45,7 +45,7 @@
     $RR^2$.
 ]
 
-#slide(title: [Siefken 4])[
+#slide(siefken_num: auto)[
   The context for this question is $RR^2$.
 
   You are moving counter-clockwise around a circle X, which has a radius of 2 and is centered at the
@@ -78,7 +78,7 @@
     Give _three_ different examples of possible vectors $arrow(c)$.
 ]
 
-#slide(title: [Siefken 5])[
+#slide(siefken_num: auto)[
   If $arrow(a)=mat(a_1; a_2; dots.v; a_n)$ and $arrow(b)=mat(b_1; b_2; dots.v; b_n)$ then:
   - The *length* or *magnitude* of $arrow(a)$ is written as $||arrow(a)||$ and given by
     $||arrow(a)||=sqrt(a_1^2+a_2^2+...+a_n^2)$
@@ -95,7 +95,7 @@
   + Use your knowledge of the dot product to find the angle between $arrow(a)$ and $arrow(b)$.
 ]
 
-#slide(title: [Siefken 6])[
+#slide(siefken_num: auto)[
   Let $arrow(a)=mat(1; 1)$ and $arrow(b)=mat(3; 1)$
 
   Draw a picture of $arrow(a)$ and $arrow(b)$. On your picture, include
@@ -106,7 +106,7 @@
     $arrow(f) dot arrow(b)=0$? Explain why or why not.
 ]
 
-#slide(title: [Siefken 7])[
+#slide(siefken_num: auto)[
   Two vectors $arrow(a)$ and $arrow(b)$ are *orthogonal* if $arrow(a) dot arrow(b)=0$.
 
   + If $arrow(a)$ and $arrow(b)$ are orthogonal, what is the angle between them?
@@ -126,7 +126,7 @@
 
     Find a normal vector for the line $y=-3x$.
 ]
-#slide(title: [Siefken 7])[
+#slide(siefken_num: 7)[
 
   #{
     let a = lq.diagram(
@@ -160,7 +160,7 @@
   + Find a normal vector for $cal(P)$.
 ]
 
-#slide(title: [Siefken 8])[
+#slide(siefken_num: auto)[
 
   Let $arrow(n)=mat(1; 2; 3)$ and let $arrow(p)=mat(1; 1; 1)$. Our goal is to find the plane
   $cal(Q)$ that has normal vector $arrow(n)$ and passes through the point $arrow(p)$.
@@ -178,7 +178,7 @@
   + Find a formula for $cal(Q)$.
 ]
 
-#slide(title: [Siefken 9])[
+#slide(siefken_num: auto)[
 
   The *right hand rule* gives an *orientation* to vectors in $RR^3$.
 
@@ -235,7 +235,7 @@
 
 ]
 
-#slide(title: [Siefken 10])[
+#slide(siefken_num: auto)[
 
   The *cross product* obeys the following rules:
   - $arrow(a) times arrow(b) = - arrow(b) times arrow(a)$
@@ -249,7 +249,7 @@
   + Compute $arrow(i) times arrow(i)$ and $(arrow(i) + arrow(j)) times (arrow(i) + arrow(j))$.
 ]
 
-#slide(title: [Siefken 11])[
+#slide(siefken_num: auto)[
 
   The cross product has the following properties:
   - $arrow(a) times arrow(b)$ is orthogonal to both $arrow(a)$ and $arrow(b)$.
@@ -265,7 +265,7 @@
     this information, find $||arrow(a) times arrow(b)||$.
 ]
 
-#slide(title: [Siefken 12])[
+#slide(siefken_num: auto)[
   // #set text(size: .85em)
 
 You are fixing up an old tree-house. Unfortunately, the floor of the tree-house is missing, but it has two intact walls!

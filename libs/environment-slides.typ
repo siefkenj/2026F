@@ -11,6 +11,45 @@
 /// to avoid any stripes of background seeping through.
 #let FILL_BLEED = 2pt
 
+/// Tracks the last `siefken_num` so that `siefken_num: auto` can continue from it. The number is
+/// held as counter levels rather than as a single value, so `2.1` steps to `2.2` and not to `3.1`.
+#let _siefken_counter = counter("siefken-slide-number")
+
+/// Split a `siefken_num` into counter levels: `7` becomes `(7,)`, `2.1` becomes `(2, 1)`. Going
+/// through the string avoids the rounding a float `+ 0.1` would introduce.
+#let _siefken_levels(n) = if type(n) == int { (n,) } else { str(n).split(".").map(int) }
+
+/// Render counter levels back into a number: `(2, 1)` becomes `2.1`.
+#let _siefken_number(levels) = levels.map(str).join(".")
+
+/// Step the counter to this slide's number. `auto` advances the last level of whatever number came
+/// before; anything else sets the counter outright.
+///
+/// This is deliberately a plain update rather than a read-then-write: resolving the new value from
+/// a `counter.get()` makes each slide's number depend on the previous slide's *layout*, which
+/// advances by only one slide per introspection pass and so stops converging after five of them.
+#let _siefken_step(n) = if n == auto {
+  _siefken_counter.update((..prev) => {
+    let levels = prev.pos()
+    levels.slice(0, -1) + (levels.last() + 1,)
+  })
+} else {
+  _siefken_counter.update(_siefken_levels(n))
+}
+
+/// The number this slide ended up with, as content. Only meaningful after `_siefken_step`.
+#let _siefken_display() = context _siefken_number(_siefken_counter.get())
+
+/// The title a slide shows: a numbered slide names itself, otherwise the explicit `title` is used,
+/// which may itself be `none`.
+#let _slide_title(it) = {
+  if it.at("siefken_num", default: none) != none {
+    [Siefken #_siefken_display()]
+  } else {
+    it.at("title", default: none)
+  }
+}
+
 /// Create a slide. If `slide_settings.active` is `false`, the content of the slide will be
 /// directly passed through and no border/etc. will be shown.
 ///
@@ -18,8 +57,13 @@
 /// - `title`: The title of the slide, or `none` for an untitled slide. Defaults to `none`.
 /// - `body`: The content of the slide. Required, and normally passed as a trailing content block.
 /// - `autosize`: Whether the slide should automatically resize its content to fit. Defaults to `true`.
-/// - `force_two_column`: Whether to force the slide to be two columns, even if the content would fit
-///   better in a single column. Defaults to `false`.
+/// - `two_columns`: Whether to lay the slide out in two columns. `none` (the default) decides from
+///   the content, using one column when it fits and two when it does not; `true` and `false` pin the
+///   layout to two columns or one.
+/// - `siefken_num`: A number identifying the slide. When set, the slide is titled `Siefken X` and
+///   its top-level enumeration is numbered `X.y` rather than `1.`; deeper levels are unaffected.
+///   Takes precedence over `title`. `auto` continues from the previous numbered slide, stepping the
+///   last level of its number, so `2.1` is followed by `2.2` and `7` by `8`. Defaults to `none`.
 /// - `force_scale`: A length used as the base text size for the slide instead of `1em`. This can be
 ///   used to force the content to fit on a single slide if `autosize` is not sufficient. Defaults to
 ///   `none`.
@@ -56,6 +100,14 @@
     }
 
 
+    // Number this slide before the `set page` below, which is what breaks onto the slide's own
+    // page. A page header reads counters as they stand at the start of its page, so an update made
+    // after the break would leave the header a slide behind.
+    if it.siefken_num != none {
+      _siefken_step(it.siefken_num)
+    }
+    let slide_title = _slide_title(it)
+
     let text_size = if it.force_scale != none { it.force_scale } else { 1em }
     let (
       left: left_margin,
@@ -78,7 +130,7 @@
         )
         set text(fill: heading_text_color, weight: "bold")
         show: sans
-        if it.title == none {
+        if slide_title == none {
           [Exercise #question_counter.display()]
           // If the module counter is > 0, show the current module
           if module_counter.get().at(0, default: 0) > 0 {
@@ -86,7 +138,7 @@
             text(weight: "thin", size: .8em, baseline: -2pt)[Module #module_counter.display()]
           }
         } else {
-          it.title
+          slide_title
         }
       },
       footer-descent: 0pt,
@@ -126,7 +178,24 @@
       it
     }
     // [#body_height, #page.height]
-    let content = it.body
+    // A numbered slide numbers its top-level parts `X.y`. Levels below it keep
+    // whatever numbering is in effect, so read that rule rather than restate it.
+    let content = if it.siefken_num == none { it.body } else {
+      context {
+        let siefken_number = _siefken_number(_siefken_counter.get())
+        let outer = enum.numbering
+        set enum(numbering: (..n) => {
+          if n.pos().len() == 1 {
+            siefken_number + "." + str(n.pos().first())
+          } else if type(outer) == function {
+            outer(..n)
+          } else {
+            numbering(outer, ..n.pos())
+          }
+        })
+        it.body
+      }
+    }
     if it.autosize == false {
       content
     } else {
@@ -141,11 +210,33 @@
           },
         )
         let content_dim = measure(adjusted_content)
-        if content_dim.height < 1.0 * size.height and not it.force_two_column {
-          block(
-            breakable: false,
-            adjusted_content,
-          )
+        // `none` picks the layout from how tall the content is; `true`/`false` pin it.
+        let use_two_columns = if it.two_columns == none {
+          content_dim.height >= 1.0 * size.height
+        } else {
+          it.two_columns
+        }
+        if not use_two_columns {
+          let percent_over = content_dim.height / size.height
+          if percent_over <= 1 {
+            block(
+              breakable: false,
+              adjusted_content,
+            )
+          } else {
+            // Pinned to one column but too tall for it. Shrink the text the way the
+            // two-column branch does rather than letting it run off the slide.
+            let text_size = if it.force_scale != none { it.force_scale } else {
+              calc.max(1 / percent_over, 0.85) * 1em
+            }
+            block(
+              breakable: false,
+              {
+                set text(size: text_size)
+                content
+              },
+            )
+          }
         } else {
           let content = {
             set text(size: text_size)
@@ -191,7 +282,12 @@
       if label == none {
         return
       }
-      link(label, it.title)
+      // A numbered slide only knows its number in document order, so read it back at the label.
+      if it.at("siefken_num", default: none) != none {
+        link(label, context [Siefken #_siefken_number(_siefken_counter.at(label))])
+      } else {
+        link(label, it.title)
+      }
     },
   ),
   fields: (
@@ -204,10 +300,16 @@
       default: true,
     ),
     e.field(
-      "force_two_column",
-      bool,
-      doc: "Whether to force the slide to be two columns, even if the content would fit better in a single column.",
-      default: false,
+      "two_columns",
+      e.types.option(bool),
+      doc: "Whether to lay the slide out in two columns. `none` decides from the content; `true` and `false` pin the layout to two columns or one.",
+      default: none,
+    ),
+    e.field(
+      "siefken_num",
+      e.types.option(e.types.union(int, float, auto)),
+      doc: "A number identifying the slide. When set, the slide is titled `Siefken X` and its top-level enumeration is numbered `X.y`. `auto` continues from the previous numbered slide.",
+      default: none,
     ),
     e.field(
       "force_scale",

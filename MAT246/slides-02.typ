@@ -69,7 +69,7 @@
 
   #v(.4em)
   Think of the textbook as a mountaineering guidebook: a list of summits, with a hint about which
-  trailhead to start from. There are always multiple routes. Some summits take a day; some take an
+  trail head to start from. There are always multiple routes. Some summits take a day; some take an
   expedition; many are laced with false summits.
 
   *The journey is vastly more important than the destinations.*
@@ -88,11 +88,9 @@
 
   For each symbol above:
 
-  #parts(
-    [explain its meaning; compare and contrast it with other symbols or closely-related concepts;],
-    [give an example of correct usage, and the meaning of your example;],
-    [give an example of an _incorrect_ usage, and explain the error.],
-  )
+  + explain its meaning; compare and contrast it with other symbols or closely-related concepts;
+  + give an example of correct usage, and the meaning of your example;
+  + give an example of an _incorrect_ usage, and explain the error.
 ]
 
 #exercise(
@@ -105,11 +103,9 @@
     for some $k in ZZ$.
   ]
 
-  #parts(
-    [Use the definition above to _prove_ that $101$ is odd and $246$ is even.],
-    [Can we use the definition to prove that $101$ is _not_ even? If so, how? If not, what else
-      would we need?],
-  )
+  + Use the definition above to _prove_ that $101$ is odd and $246$ is even.
+  + Can we use the definition to prove that $101$ is _not_ even? If so, how? If not, what else would
+    we need?
 ]
 
 #exercise(
@@ -121,11 +117,9 @@
 
   #theorem(title: [2.2])[If $n$ is an even integer, then $n^2$ is an even integer.]
 
-  #parts(
-    [Where in the proof have you used the definition?],
-    [Apart from using Definition 2.1, did you make any assumptions in your proof? Can you identify
-      them and clearly state each one?],
-  )
+  + Where in the proof have you used the definition?
+  + Apart from using Definition 2.1, did you make any assumptions in your proof? Can you identify
+    them and clearly state each one?
 ]
 
 #exercise(
@@ -139,14 +133,12 @@
     $m$.
   ]
 
-  #parts(
-    [Use Definitions 2.1 and 2.5 to prove that if $n$ is even, then it is divisible by $2$.],
-    [Use Definitions 2.1 and 2.5 to prove that if $n$ is divisible by $2$, then it is even.],
-    [What is the difference between (a) and (b)? Do they mean the same thing? Are the proofs the
-      same? Can we use one to prove the other?],
-    [Use Definition 2.5 to state precisely what it means to say $n$ is _not_ divisible by $2$.],
-    [Suppose $n$ is odd. Can we conclude $n$ is not divisible by $2$? Why or why not?],
-  )
+  + Use Definitions 2.1 and 2.5 to prove that if $n$ is even, then it is divisible by $2$.
+  + Use Definitions 2.1 and 2.5 to prove that if $n$ is divisible by $2$, then it is even.
+  + What is the difference between 1 and 2? Do they mean the same thing? Are the proofs the same?
+    Can we use one to prove the other?
+  + Use Definition 2.5 to state precisely what it means to say $n$ is _not_ divisible by $2$.
+  + Suppose $n$ is odd. Can we conclude $n$ is not divisible by $2$? Why or why not?
 ]
 
 // ---------------------------------------------------------------------------
@@ -175,27 +167,18 @@
     U & = "Mai is holding an umbrella".
   $
 
-  Use $R$, $U$, and the connectives $not, or, and, ==>, <==>$ to express the following symbolically.
+  + Use $R$, $U$, and the connectives $not, or, and, ==>, <==>$ to express the following
+    symbolically.
 
-  #parts(
-    [If it is currently raining in Toronto, then Mai is holding an umbrella.],
-    [It is not currently raining in Toronto.],
-    [It is currently raining in Toronto or Mai is holding an umbrella.],
-    [Mai is holding an umbrella if and only if it is currently raining in Toronto.],
-    [It is currently raining in Toronto and Mai is holding an umbrella.],
-    [Whenever Mai is not holding an umbrella, it is not raining in Toronto.],
-  )
-]
-
-#exercise(
-  title: [Logic --- Truth Values],
-  source: 6,
-  goal: [Practice assigning truth values to compound propositions.],
-)[
-  For each compound proposition from your answer to the previous exercise, describe a situation in
-  which the proposition is *true* and a situation in which it is *false*.
-
-  (By "situation" we mean the weather conditions and the umbrella-holding.)
+    + If it is currently raining in Toronto, then Mai is holding an umbrella.
+    + It is not currently raining in Toronto.
+    + It is currently raining in Toronto or Mai is holding an umbrella.
+    + Mai is holding an umbrella if and only if it is currently raining in Toronto.
+    + It is currently raining in Toronto and Mai is holding an umbrella.
+    + Whenever Mai is not holding an umbrella, it is not raining in Toronto.
+  + For each compound proposition from your answer to the previous exercise, describe a situation in
+    which the proposition is *true* and a situation in which it is *false*. (_By "situation" we mean
+    the weather conditions and the umbrella-holding._)
 ]
 
 #exercise(
@@ -342,13 +325,11 @@
     [$1$], [$0$], [$0$],
   ))
 
-  #parts(
-    [Study the truth table of $and$. Can you express $A and B$ as a familiar arithmetic function of
-      $A$ and $B$?],
-    [Study the truth table of $or$. Can you express $A or B$ arithmetically?],
-    [Study the truth table of $==>$. Can you express $A ==> B$ arithmetically?],
-    [Study the truth table of $<==>$. Can you express $A <==> B$ arithmetically?],
-  )
+  + Study the truth table of $and$. Can you express $A and B$ as a familiar arithmetic function of
+    $A$ and $B$?
+  + Study the truth table of $or$. Can you express $A or B$ arithmetically?
+  + Study the truth table of $==>$. Can you express $A ==> B$ arithmetically?
+  + Study the truth table of $<==>$. Can you express $A <==> B$ arithmetically?
 
   This is essentially how computers represent logical operations!
 ]
@@ -369,16 +350,14 @@
   For each compound proposition below, write it in mathematical English and determine whether it is
   true or false.
 
-  #parts(
-    [$E and P$],
-    [$E or P$],
-    [$E ==> (not E)$],
-    [$(not E) ==> E$],
-    [$P ==> E$],
-    [$E <==> P$],
-    [$(not E) <==> P$],
-    [$F <==> Q$],
-  )
+  + $E and P$
+  + $E or P$
+  + $E ==> (not E)$
+  + $(not E) ==> E$
+  + $P ==> E$
+  + $E <==> P$
+  + $(not E) <==> P$
+  + $F <==> Q$
 ]
 
 #exercise(
@@ -400,11 +379,9 @@
   Your mathematician friend claims: _if a card has an even number on one side, then it has a vowel
   on the other side._
 
-  #parts(
-    [Translate this hypothesis into a compound proposition. Clearly define your component
-      propositions.],
-    [Which cards (if any) must be turned over to verify or falsify the hypothesis?],
-  )
+  + Translate this hypothesis into a compound proposition. Clearly define your component
+    propositions.
+  + Which cards (if any) must be turned over to verify or falsify the hypothesis?
 ]
 
 #exercise(
@@ -414,14 +391,12 @@
 )[
   Let $A, B, C, dots, Z$ be propositions.
 
-  #parts(
-    [Suppose $A ==> B$ is false. What are the truth values of $A$ and $B$?],
-    [Suppose $B ==> A$ is false. What are the truth values of $A$ and $B$?],
-    [Suppose $A ==> (B ==> C)$ is false. What are the truth values of $A$ and $B$?],
-    [Suppose $(A ==> B) ==> C$ is false. What are the truth values of $A$, $B$, and $C$?],
-    [Suppose $A ==> (B ==> (C ==> ( dots.c (Y ==> Z) dots.c )))$ is false. What are the truth values
-      of $A, B, dots, Z$?],
-  )
+  + Suppose $A ==> B$ is false. What are the truth values of $A$ and $B$?
+  + Suppose $B ==> A$ is false. What are the truth values of $A$ and $B$?
+  + Suppose $A ==> (B ==> C)$ is false. What are the truth values of $A$ and $B$?
+  + Suppose $(A ==> B) ==> C$ is false. What are the truth values of $A$, $B$, and $C$?
+  + Suppose $A ==> (B ==> (C ==> ( dots.c (Y ==> Z) dots.c )))$ is false. What are the truth values
+    of $A, B, dots, Z$?
 ]
 
 #exercise(
@@ -431,19 +406,17 @@
 )[
   Consider the compound proposition $A ==> B$.
 
-  #parts(
-    [Use logical connectives to express the *converse*, the *inverse*, and the *contrapositive*.
-      Which (if any) are logically equivalent to $A ==> B$?],
-    [Use $==>$ to express each of the following:
+  + Use logical connectives to express the *converse*, the *inverse*, and the *contrapositive*.
+    Which (if any) are logically equivalent to $A ==> B$?
+  + Use $==>$ to express each of the following:
 
-      #enum(
-        [$A$ is _necessary_ for $B$.],
-        [$A$ is _sufficient_ for $B$.],
-        [$A$ only if $B$.],
-        [$A$ if $B$.],
-        [$A$ whenever $B$.],
-      )],
-  )
+    #enum(
+      [$A$ is _necessary_ for $B$.],
+      [$A$ is _sufficient_ for $B$.],
+      [$A$ only if $B$.],
+      [$A$ if $B$.],
+      [$A$ whenever $B$.],
+    )
 ]
 
 #exercise(
@@ -455,21 +428,19 @@
   Let $A$ and $B$ be propositions. Which of the following are logically equivalent to each other?
   Collect them into groups.
 
-  #parts(
-    [$A ==> B$],
-    [$B ==> A$],
-    [$(not A) ==> (not B)$],
-    [$(not B) ==> (not A)$],
-    [$not (A ==> B)$],
-    [$(not A) and (not B)$],
-    [$(not A) or (not B)$],
-    [$(not A) or B$],
-    [$A or (not B)$],
-    [$(not A) and B$],
-    [$A and (not B)$],
-    [$not (A and B)$],
-    [$not (A or B)$],
-  )
+  + $A ==> B$
+  + $B ==> A$
+  + $(not A) ==> (not B)$
+  + $(not B) ==> (not A)$
+  + $not (A ==> B)$
+  + $(not A) and (not B)$
+  + $(not A) or (not B)$
+  + $(not A) or B$
+  + $A or (not B)$
+  + $(not A) and B$
+  + $A and (not B)$
+  + $not (A and B)$
+  + $not (A or B)$
 ]
 
 #exercise(
@@ -484,21 +455,19 @@
 
   For each one, find a logically equivalent proposition using only:
 
-  #parts(
-    [the connectives $not, or$;],
-    [the connectives $not, and$;],
-    [the connectives $not, ==>$;],
-    [the single connective $arrow.t$ defined by the truth table below.
+  + the connectives $not, or$;
+  + the connectives $not, and$;
+  + the connectives $not, ==>$;
+  + the single connective $arrow.t$ defined by the truth table below.
 
-      #align(center, table(
-        columns: 3,
-        [$A$], [$B$], [$A arrow.t B$],
-        [$0$], [$0$], [$1$],
-        [$0$], [$1$], [$1$],
-        [$1$], [$0$], [$1$],
-        [$1$], [$1$], [$0$],
-      ))],
-  )
+    #align(center, table(
+      columns: 3,
+      [$A$], [$B$], [$A arrow.t B$],
+      [$0$], [$0$], [$1$],
+      [$0$], [$1$], [$1$],
+      [$1$], [$0$], [$1$],
+      [$1$], [$1$], [$0$],
+    ))
 ]
 
 #exercise(
@@ -509,11 +478,9 @@
   Let $A$, $B$, and $C$ be propositions. For each compound proposition below, determine (with
   justification) whether it is a *tautology*, a *contradiction*, or neither.
 
-  #parts(
-    [$((A and B) ==> C) ==> (A ==> (B ==> C))$],
-    [$((not A) and B) ==> ((not B) or C)$],
-    [$(A ==> (B ==> C)) and (A and B and (not C))$],
-  )
+  + $((A and B) ==> C) ==> (A ==> (B ==> C))$
+  + $((not A) and B) ==> ((not B) or C)$
+  + $(A ==> (B ==> C)) and (A and B and (not C))$
 ]
 
 // ---------------------------------------------------------------------------
@@ -538,12 +505,10 @@
 )[
   Find the contrapositive of each of the following.
 
-  #parts(
-    [If $x > 3$, then $x + 2 > 5$.],
-    [If today is Wednesday, then tomorrow is Thursday.],
-    [If $f$ is differentiable at $x$, then $f$ is continuous at $x$.],
-    [If $n$ is a multiple of $6$, then $n$ is a multiple of $3$.],
-  )
+  + If $x > 3$, then $x + 2 > 5$.
+  + If today is Wednesday, then tomorrow is Thursday.
+  + If $f$ is differentiable at $x$, then $f$ is continuous at $x$.
+  + If $n$ is a multiple of $6$, then $n$ is a multiple of $3$.
 
   What is the truth value of each statement? What about its contrapositive?
 ]
@@ -555,12 +520,10 @@
 )[
   Give a *direct proof* of each of the following.
 
-  #parts(
-    [If $a$ and $b$ are integers and $a divides b$, then $a divides b c$ for every integer $c$.],
-    [If $m$ and $n$ are both odd integers, then $m + n$ is even.],
-    [If $a divides b$ and $b divides c$, then $a divides c$.],
-    [If $n$ is divisible by $6$, then $n$ is divisible by $2$ and by $3$.],
-  )
+  + If $a$ and $b$ are integers and $a divides b$, then $a divides b c$ for every integer $c$.
+  + If $m$ and $n$ are both odd integers, then $m + n$ is even.
+  + If $a divides b$ and $b divides c$, then $a divides c$.
+  + If $n$ is divisible by $6$, then $n$ is divisible by $2$ and by $3$.
 ]
 
 #exercise(
@@ -571,12 +534,10 @@
   Prove each of the following *both* by contrapositive *and* by contradiction. Throughout, $m$ and
   $n$ are integers.
 
-  #parts(
-    [If $n^2$ is even, then $n$ is even.],
-    [If $n^2$ is not divisible by $3$, then $n$ is not divisible by $3$.],
-    [If $7 n^3$ is odd, then $n$ is odd.],
-    [If $m dot n$ is even, then at least one of $m$, $n$ is even.],
-  )
+  + If $n^2$ is even, then $n$ is even.
+  + If $n^2$ is not divisible by $3$, then $n$ is not divisible by $3$.
+  + If $7 n^3$ is odd, then $n$ is odd.
+  + If $m dot n$ is even, then at least one of $m$, $n$ is even.
 ]
 
 #exercise(
@@ -587,13 +548,11 @@
   Give a direct proof of each of the following. You may use familiar facts about real numbers and
   inequalities from high-school algebra.
 
-  #parts(
-    [If $x > 3$, then $x^2 > 9$.],
-    [If $0 < x < y$, then $x^2 < y^2$.],
-    [If $0 <= x <= 1$, then $x^2 <= x$.],
-    [If $0 < x < y$, then $1/x > 1/y$.],
-    [If $abs(x) < 1$, then $x^2 < 1$.],
-  )
+  + If $x > 3$, then $x^2 > 9$.
+  + If $0 < x < y$, then $x^2 < y^2$.
+  + If $0 <= x <= 1$, then $x^2 <= x$.
+  + If $0 < x < y$, then $1/x > 1/y$.
+  + If $abs(x) < 1$, then $x^2 < 1$.
 ]
 
 #exercise(
@@ -603,13 +562,11 @@
 )[
   Prove the following by contrapositive *and* by contradiction.
 
-  #parts(
-    [If $a^2 != b^2$, then $a != b$.],
-    [If $x >= 0$, then $x <= 1 + x^2$.],
-    [If $abs(x) > 5$, then $x^2 > 25$.],
-    [If $abs(x - 3) < 2$, then $1 < x < 5$.],
-    [Use a proof by contradiction to show that if $x^2 = 2$, then $x$ is not rational.],
-  )
+  + If $a^2 != b^2$, then $a != b$.
+  + If $x >= 0$, then $x <= 1 + x^2$.
+  + If $abs(x) > 5$, then $x^2 > 25$.
+  + If $abs(x - 3) < 2$, then $1 < x < 5$.
+  + Use a proof by contradiction to show that if $x^2 = 2$, then $x$ is not rational.
 ]
 
 #exercise(
@@ -619,15 +576,12 @@
 )[
   Prove each of the following.
 
-  #parts(
-    [If $m$ and $n$ are integers and $m^2 + n^2$ is even, then $m$ and $n$ are both even or both
-      odd.],
-    [If $n$ is an integer, then $n^2 - n$ is even.],
-    [If $m$ and $n$ are integers and $m + n$ is odd, then $m^2 + n^2$ is odd.],
-    [If $m$ and $n$ are integers, then $m n$ is even if and only if $m$ is even or $n$ is even.],
-    [If $n$ is odd, then $8 divides (n^2 - 1)$.],
-    [If $x >= 0$ and $y >= 0$ are real numbers, then $x + y >= 2 sqrt(x y)$.],
-  )
+  + If $m$ and $n$ are integers and $m^2 + n^2$ is even, then $m$ and $n$ are both even or both odd.
+  + If $n$ is an integer, then $n^2 - n$ is even.
+  + If $m$ and $n$ are integers and $m + n$ is odd, then $m^2 + n^2$ is odd.
+  + If $m$ and $n$ are integers, then $m n$ is even if and only if $m$ is even or $n$ is even.
+  + If $n$ is odd, then $8 divides (n^2 - 1)$.
+  + If $x >= 0$ and $y >= 0$ are real numbers, then $x + y >= 2 sqrt(x y)$.
 ]
 
 // ---------------------------------------------------------------------------
@@ -658,15 +612,13 @@
   For each expression below: (i) is it a *proposition* (does it have a definite truth value)? If so,
   which? If not, why not? (ii) Is it a *predicate*? Which variables are free, and which are bound?
 
-  #parts(
-    [The sun is hot.],
-    [Where is Waldo?],
-    [$x^2 > 4$],
-    [$P(y)$, where $P(y) := y < 1$],
-    [$Q(0)$, where $Q(x) := x > 1$],
-    [There exists some integer $z$ such that $2 z + 1 = 1$.],
-    [For every real number $r$, $r > 1$.],
-  )
+  + The sun is hot.
+  + Where is Waldo?
+  + $x^2 > 4$
+  + $P(y)$, where $P(y) := y < 1$
+  + $Q(0)$, where $Q(x) := x > 1$
+  + There exists some integer $z$ such that $2 z + 1 = 1$.
+  + For every real number $r$, $r > 1$.
 ]
 
 #exercise(
@@ -689,13 +641,11 @@
   Suppose the universe of discourse for a predicate $P(x)$ is the set ${1, 2, 3, 4, 5}$. Express the
   following *without quantifiers*, using only $P$, negations, conjunctions, and disjunctions.
 
-  #parts(
-    [$forall x, P(x)$],
-    [$exists x, P(x)$],
-    [$not (exists x, P(x))$],
-    [$not (forall x, P(x))$],
-    [$[forall x, ((x != 3) ==> P(x))] or [exists x, (not P(x))]$],
-  )
+  + $forall x, P(x)$
+  + $exists x, P(x)$
+  + $not (exists x, P(x))$
+  + $not (forall x, P(x))$
+  + $[forall x, ((x != 3) ==> P(x))] or [exists x, (not P(x))]$
 
   *Bonus.* Suppose $P(x) := x > 0$. Interpret each statement above in plain English and determine
   its truth value.
@@ -710,13 +660,11 @@
   For each proposition below, evaluate its truth value when the universe of discourse is $NN$, then
   $ZZ$, then $RR$.
 
-  #parts(
-    [$forall x, (x^2 >= 0)$],
-    [$forall x, (x > -1)$],
-    [$exists x, (x > 0 and x < 1)$],
-    [$exists x, (x + 1 < 0)$],
-    [$forall x, ((x != 0) ==> x "is not a solution to" x^2 = 2)$],
-  )
+  + $forall x, (x^2 >= 0)$
+  + $forall x, (x > -1)$
+  + $exists x, (x > 0 and x < 1)$
+  + $exists x, (x + 1 < 0)$
+  + $forall x, ((x != 0) ==> x "is not a solution to" x^2 = 2)$
 ]
 
 #exercise(
@@ -728,14 +676,12 @@
   Interpret the meaning of each statement below. Pay attention to how changing the quantifiers and
   their order changes the meaning.
 
-  #parts(
-    [$forall x, forall y, K(x, y)$],
-    [$forall x, y, (K(x, y) ==> K(y, x))$],
-    [$forall x, exists y, K(x, y)$],
-    [$exists x, forall y, K(x, y)$],
-    [$exists x, exists y, K(x, y)$],
-    [$exists x, y, ((x != y) and K(x, y))$],
-  )
+  + $forall x, forall y, K(x, y)$
+  + $forall x, y, (K(x, y) ==> K(y, x))$
+  + $forall x, exists y, K(x, y)$
+  + $exists x, forall y, K(x, y)$
+  + $exists x, exists y, K(x, y)$
+  + $exists x, y, ((x != y) and K(x, y))$
 ]
 
 #exercise(
@@ -746,13 +692,11 @@
   For each statement below, decide whether it is true or false --- and whether it remains so if the
   order of the quantifiers is reversed. Explain your reasoning.
 
-  #parts(
-    [$forall x in RR, exists y in RR, (x + y = 0)$],
-    [$forall x in NN, exists y in NN, (x < y)$],
-    [$forall x in ZZ, exists y in ZZ, (x + y = 7)$],
-    [$forall x in RR, exists y in RR, (y^2 = x)$],
-    [$forall x in RR, exists y in RR, (y = x^2)$],
-  )
+  + $forall x in RR, exists y in RR, (x + y = 0)$
+  + $forall x in NN, exists y in NN, (x < y)$
+  + $forall x in ZZ, exists y in ZZ, (x + y = 7)$
+  + $forall x in RR, exists y in RR, (y^2 = x)$
+  + $forall x in RR, exists y in RR, (y = x^2)$
 ]
 
 #exercise(
@@ -762,14 +706,12 @@
 )[
   Let $U$ be a universe of discourse and $P(x, y)$ a predicate in the variables $x$ and $y$.
 
-  #parts(
-    [Is it possible that $forall x, exists y, P(x, y)$ is true but $exists x, forall y, P(x, y)$ is
-      false? Prove your answer.],
-    [Is it possible that $forall x, exists y, P(x, y)$ is true but $exists y, forall x, P(x, y)$ is
-      false? Prove your answer.],
-    [Is it possible that $exists x, forall y, P(x, y)$ is true but $forall x, exists y, P(x, y)$ is
-      false? Prove your answer.],
-    [Is it possible that $exists y, forall x, P(x, y)$ is true but $forall x, exists y, P(x, y)$ is
-      false? Prove your answer.],
-  )
+  + Is it possible that $forall x, exists y, P(x, y)$ is true but $exists x, forall y, P(x, y)$ is
+    false? Prove your answer.
+  + Is it possible that $forall x, exists y, P(x, y)$ is true but $exists y, forall x, P(x, y)$ is
+    false? Prove your answer.
+  + Is it possible that $exists x, forall y, P(x, y)$ is true but $forall x, exists y, P(x, y)$ is
+    false? Prove your answer.
+  + Is it possible that $exists y, forall x, P(x, y)$ is true but $forall x, exists y, P(x, y)$ is
+    false? Prove your answer.
 ]

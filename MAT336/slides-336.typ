@@ -224,7 +224,7 @@
   ]
 ]
 
-#slide(title: [Quantifiers], force_two_column: true)[
+#slide(title: [Quantifiers], two_columns: true)[
 
   Modern proofs heavily employ:
   - Sets
@@ -243,7 +243,7 @@
   + "For all $p in X$, $p$ is an armadillo."
 ]
 
-#slide(title: [Notes on Quantifiers], force_two_column: true)[
+#slide(title: [Notes on Quantifiers], two_columns: true)[
 
   #show: columns.with(3)
   In *Symbolic Logic*
@@ -268,7 +268,7 @@
 
 ]
 
-#slide(title: [Set-builder Notation], force_two_column: true)[
+#slide(title: [Set-builder Notation], two_columns: true)[
 
   We will use *naive set theory* (in contrast to _formal_, or ZFC set theory).
 
@@ -289,7 +289,7 @@
 
 ]
 
-#slide(title: [Set Practice], force_two_column: true)[
+#slide(title: [Set Practice], two_columns: true)[
 
   Definition: An _irrational_ number is a real number that is not rational.
 
@@ -309,7 +309,7 @@
 
 ]
 
-#slide(title: ["Extended" Set-builder Notation], force_two_column: true)[
+#slide(title: ["Extended" Set-builder Notation], two_columns: true)[
 
   Let $T subset NN$ be the set of positive multiples of $2$. Let $R subset NN$ be the set of
   positive multiples of $3$.
@@ -324,7 +324,7 @@
   + Express $Q$ using set-builder notation.
 ]
 
-#slide(title: [Axioms], force_two_column: true)[
+#slide(title: [Axioms], two_columns: true)[
 
   Mathematicians believe:
 
@@ -351,7 +351,7 @@
   + For all $a in RR$, $a^2 >= 0$
 ]
 
-#slide(title: [A Proof about Even Numbers], force_two_column: true)[
+#slide(title: [A Proof about Even Numbers], two_columns: true)[
 
   Let $E$ be the set of even integers.
 
@@ -367,7 +367,7 @@
 
 ]
 
-#slide(title: [A One-to-One Proof], force_two_column: true)[
+#slide(title: [A One-to-One Proof], two_columns: true)[
 
   A function $f$ with domain $D$ is *one-to-one* if different inputs produce different outputs.
 
@@ -378,7 +378,7 @@
     so, do it. Prove your answer.
 ]
 
-#slide(title: [Criticizing Proofs 1], force_two_column: true)[
+#slide(title: [Criticizing Proofs 1], two_columns: true)[
 
   *Theorem:* The sum of two odd numbers is even.
 
@@ -392,7 +392,7 @@
   + What is wrong with the proof?
   + Can it be salvaged?
 ]
-#slide(title: [Criticizing Proofs 2], force_two_column: true)[
+#slide(title: [Criticizing Proofs 2], two_columns: true)[
 
   *Theorem:* The sum of two odd numbers is even.
 
@@ -410,7 +410,7 @@
   + Can it be salvaged?
 ]
 
-#slide(title: [Criticizing Proofs 3], force_two_column: true)[
+#slide(title: [Criticizing Proofs 3], two_columns: true)[
 
   *Theorem:* The sum of two odd numbers is even.
 
@@ -428,7 +428,7 @@
   + Can it be salvaged?
 ]
 
-#slide(title: [Archimedean Underestimate], force_two_column: true)[
+#slide(title: [Archimedean Underestimate], two_columns: true)[
 
   #{
     let f(x) = 1 - x * x
@@ -519,7 +519,7 @@
 
 ]
 
-#slide(title: [Archimedean Overestimate], force_two_column: true)[
+#slide(title: [Archimedean Overestimate], two_columns: true)[
 
   #{
     let f(x) = 1 - x * x
@@ -606,7 +606,7 @@
 
 ]
 
-#slide(title: [Finding Exact Area], force_two_column: true)[
+#slide(title: [Finding Exact Area], two_columns: true)[
 
   // #show: columns
   We'd like to find the area under the parabola $1-x^2$. Call this area $A$.
@@ -619,7 +619,7 @@
     Prove $A=4/3$. Did you have to make any additional assumptions?
 ]
 
-#slide(title: [Archimedean Understanding], force_two_column: true)[
+#slide(title: [Archimedean Understanding], two_columns: true)[
 
   Your textbook states:
   #definition(title: [Archimedean Understanding])[The _Archimedean understanding_ of an infinite series is that it
@@ -639,7 +639,7 @@
     what it means for a series $t_0 + t_1 + t_2 + dots.c$ to be convergent.
 ]
 
-#slide(title: [Convergence in Different Sets (Is there a there there?)], force_two_column: true, force_scale: .8em)[
+#slide(title: [Convergence in Different Sets (Is there a there there?)], two_columns: true, force_scale: .8em)[
 
   Let $DD = {q in QQ: exists n in NN, exists b in ZZ "such that" q = b/2^n}$
 
@@ -666,7 +666,7 @@
 
 // Start of Week 4 (there was a snow day for 1 hour of class)
 
-#slide(title: [Nested Interval Principle], force_two_column: true)[
+#slide(title: [Nested Interval Principle], two_columns: true)[
 
   Your textbook states:
   #definition(title: [Nested Interval Principle])[
@@ -688,7 +688,7 @@
 ]
 
 // Ended Week 4 with this. It was really confusing. How exactly does the nested interval principle fit in?
-#slide(title: [Putting it Together], force_two_column: true)[
+#slide(title: [Putting it Together], two_columns: true)[
 
   + Explain how every statement about a series can be converted into a statement about a sequence
     (and vice versa).
@@ -701,13 +701,13 @@
     the Archimedean sense?
 ]
 
-#slide(title: [Divergent to Infinity], force_two_column: true)[
+#slide(title: [Divergent to Infinity], two_columns: true)[
 
   + Come up with a formal definition of what it should mean for the series
     $t_0 + t_1 + t_2 + dots.c$ to be *divergent to infinity*.
 ]
 
-#slide(title: [Geometric Series], force_two_column: true)[
+#slide(title: [Geometric Series], two_columns: true)[
 
   A *geometric series* $a_0 + a_1+ a_2 + dots.c$ is a series where the ratio of successive terms is
   constant.
@@ -721,7 +721,7 @@
   + Prove that if $a_1/a_0 in [0,1)$ then $A$ converges in the Archimedean sense.
 ]
 
-#slide(title: [Taylor Series], force_two_column: true)[
+#slide(title: [Taylor Series], two_columns: true)[
 
   A *power series about $x=0$* is a series of the form
   $
@@ -745,7 +745,7 @@
 
 // Finished first hour of week 6
 // They had lots of trouble with part 3. We'll get there eventually...
-#slide(title: [Lagrange's Theorem], force_two_column: true)[
+#slide(title: [Lagrange's Theorem], two_columns: true)[
 
   #theorem(title: [Lagrange's Remainder Theorem])[
     Let $f$ be infinitely differentiable. Let
@@ -762,7 +762,7 @@
     the Archimedean sense.
 ]
 
-#slide(title: [Newton and Cauchy's Limits], force_two_column: true, force_scale: .8em)[
+#slide(title: [Newton and Cauchy's Limits], two_columns: true, force_scale: .8em)[
 
   #definition(title: [Newton's Limit (paraphrased)])[
     // Synthesized from https://hsm.stackexchange.com/questions/9580/what-was-the-notion-of-limit-that-newton-used
@@ -786,7 +786,7 @@
   // + Rephrase Cauchy's definition using quantifiers.
 ]
 
-#slide(title: [Modern Limits], force_two_column: true)[
+#slide(title: [Modern Limits], two_columns: true)[
 
   #definition(title: [Modern Limit])[
     The function $f$ is said to have a _limit_ $L$ as $x$ approaches $a$ if for all $epsilon > 0$,
@@ -807,7 +807,7 @@
 ]
 
 // Finished in last hour of week 6.
-#slide(title: [Derivatives], force_two_column: true)[
+#slide(title: [Derivatives], two_columns: true)[
 
   #definition(title: [Cauchy's Derivative (modernized)])[
     The _derivative_ of a function $f$ at a point $a$, denoted $f'(a)$, is a value such that for all
@@ -824,7 +824,7 @@
 ]
 
 // Started week 8, finished week 9.
-#slide(title: [Problems with Derivatives], force_two_column: true)[
+#slide(title: [Problems with Derivatives], two_columns: true)[
 
   Recall Fourier's series:
   $
@@ -837,7 +837,7 @@
   + What went wrong? Can this be fixed by applying the Archimedean understanding?
 ]
 
-#slide(title: [Mean Value Theorem], force_two_column: true)[
+#slide(title: [Mean Value Theorem], two_columns: true)[
 
   Cauchy wanted to prove Lagrange's Remainder Theorem. He first needed to prove the Mean Value
   Theorem.
@@ -854,7 +854,7 @@
 
 // Intermediate value property, then continuity, then sups and infs?
 
-#slide(title: [Intermediate Value Property], force_two_column: true)[
+#slide(title: [Intermediate Value Property], two_columns: true)[
 
   #definition(title: [Intermediate Value Property])[
     A function $f: RR -> RR$ has the _intermediate value property_ if for all $a,b in RR$ and all
@@ -869,7 +869,7 @@
   + Does the intermediate value property match what you feel a "continuous" function should be?
 ]
 
-#slide(title: [Continuity], force_two_column: true)[
+#slide(title: [Continuity], two_columns: true)[
 
   #definition(title: [Continuity A])[
     $f$ is _continuous_ if a small change in the input produces a small change in the output.
@@ -888,7 +888,7 @@
   + (Trivia) Do you know which definition is due to Bolzano and which is Cauchy's?
 ]
 
-#slide(title: [Intermediate Value Theorem], force_two_column: true)[
+#slide(title: [Intermediate Value Theorem], two_columns: true)[
 
   #theorem(title: [Intermediate Value Theorem])[
     If $f$ is continuous, then it has the intermediate value property.
@@ -908,7 +908,7 @@
     What can you say about $C^- union C^+$?
 ]
 
-#slide(title: [Intermediate Value Theorem 2 (Cauchy's Proof)], force_two_column: true)[
+#slide(title: [Intermediate Value Theorem 2 (Cauchy's Proof)], two_columns: true)[
 
   Let $f$ be continuous. Fix $a<b$ and assume $f(a) < f(b)$. Let $c in [f(a), f(b)]$.
 
@@ -934,7 +934,7 @@
   + Show that $f(x_0)=c$.
 ]
 
-#slide(title: [Sups & Infs], force_two_column: true)[
+#slide(title: [Sups & Infs], two_columns: true)[
 
   #definition(title: [Supremum & Infimum])[
     The _supremum_ of a non-empty, bounded set $X subset.eq RR$, written $sup X$, is the smallest
@@ -954,7 +954,7 @@
   + Does an empty set have a supremum? What about an unbounded set?
 ]
 
-#slide(title: [Intermediate Value Theorem 3 (Bolzano's Proof)], force_two_column: true)[
+#slide(title: [Intermediate Value Theorem 3 (Bolzano's Proof)], two_columns: true)[
 
   Let $f$ be continuous. Fix $a<b$ and assume $f(a) < f(b)$. Let $c in [f(a), f(b)]$.
 
@@ -966,7 +966,7 @@
   + What proof of the intermediate value theorem do you like better?
 ]
 
-#slide(title: [Extreme Value Theorem 1], force_two_column: true, force_scale: .85em)[
+#slide(title: [Extreme Value Theorem 1], two_columns: true, force_scale: .85em)[
 
   #theorem(title: [])[
     If $f$ is continuous on $[a,b]$, then $f$ is bounded on $[a,b]$.
@@ -990,7 +990,7 @@
   + Where does the proof go wrong if we try to show a continuous function on $RR$ is bounded?
 ]
 
-#slide(title: [Extreme Value Theorem 2], force_two_column: true)[
+#slide(title: [Extreme Value Theorem 2], two_columns: true)[
 
   #theorem(title: [Extreme Value Theorem])[
     If $f$ is continuous on $[a,b]$, then $f$ achieves its upper and lower bounds on $[a,b]$.
@@ -1013,7 +1013,7 @@
   + Show if $y=b$, then $f(y)=M$.
 ]
 
-#slide(title: [Correct Mean Value Theorem Proof], force_two_column: true)[
+#slide(title: [Correct Mean Value Theorem Proof], two_columns: true)[
 
   #theorem(title: [Rolle's Theorem])[
     If $f$ is continuous on $[a,b]$ and differentiable on $(a,b)$ and $f(a)=f(b)$, then there exists
@@ -1039,7 +1039,7 @@
   + Prove Rolle's theorem.
 ]
 
-#slide(title: [Correct Mean Value Theorem Proof], force_two_column: true)[
+#slide(title: [Correct Mean Value Theorem Proof], two_columns: true)[
 
   #theorem(title: [Mean Value Theorem])[
     If $f$ is continuous on $[a,b]$ and differentiable on $(a,b)$, then there exists a $c in (a,b)$
@@ -1052,7 +1052,7 @@
   + Prove the Mean Value Theorem.
 ]
 
-#slide(title: [The Cauchy Criterion], force_two_column: true)[
+#slide(title: [The Cauchy Criterion], two_columns: true)[
 
   For a sequence $(a_i)_(i in NN)$, define $S_m^n = sum_(i=m)^n a_i$.
 
@@ -1073,7 +1073,7 @@
     criterion.
 ]
 
-#slide(title: [Absolute Convergence], force_two_column: true)[
+#slide(title: [Absolute Convergence], two_columns: true)[
 
   Let $S_m^n = sum_(i=m)^n a_i$. Define $overline(S)_m^n = sum_(i=m)^n abs(a_i)$.
 
@@ -1087,7 +1087,7 @@
 
 ]
 
-#slide(title: [Parenthesis & Rearrangements I], force_two_column: true)[
+#slide(title: [Parenthesis & Rearrangements I], two_columns: true)[
 
   Consider the series $A$ given by $a_0+a_1+dots.c$ and $B$ given by $b_0 + b_1 + dots.c$ where
   $
@@ -1112,7 +1112,7 @@
   + What is a _rearrangement_ of the series $A$? Write down a rigorous definition.
 ]
 
-#slide(title: [Parenthesis & Rearrangements II], force_two_column: true)[
+#slide(title: [Parenthesis & Rearrangements II], two_columns: true)[
 
   Let $A$ given by $a_0+a_1+dots.c$ be _absolutely convergent_. Let $k_n : NN -> NN$ be a bijection
   and let $B$ given by $a_(k_0) + a_(k_1) + dots.c$ be a rearrangement of $A$.
@@ -1137,7 +1137,7 @@
 
 ]
 
-#slide(title: [Absolute Convergence of Power Series], force_two_column: true)[
+#slide(title: [Absolute Convergence of Power Series], two_columns: true)[
 
   Let $P(x)=sum_(i=0)^oo a_i x^i$ be a power series.
 
@@ -1157,7 +1157,7 @@
 
 ]
 
-#slide(title: [Saving Cauchy's Proof], force_two_column: true)[
+#slide(title: [Saving Cauchy's Proof], two_columns: true)[
 
   #definition(title: [Uniform Continuity])[
     If $f$ is _uniformly continuous_ on the set $X subset.eq RR$ if for all $epsilon > 0$, there
@@ -1170,7 +1170,7 @@
     how?
 ]
 
-#slide(title: [Uniform Continuity], force_two_column: true)[
+#slide(title: [Uniform Continuity], two_columns: true)[
 
   #theorem(title: [Uniform Continuity on a Closed Interval])[
     If $f$ is continuous on $[a,b]$ then $f$ is uniformly continuous on $[a,b]$.

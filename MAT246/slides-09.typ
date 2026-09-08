@@ -49,15 +49,13 @@
 )[
   Prove each of the following.
 
-  #parts(
-    [$"card"({a,b,c}) = "card"({x,y,z})$],
-    [$"card"(NN) = "card"({2n+1 | n in NN})$],
-    [$"card"(NN) = "card"(ZZ)$],
-    [$"card"((a,b)) = "card"((c,d))$, where $(a,b)$ and $(c,d)$ are intervals.
+  + $"card"({a,b,c}) = "card"({x,y,z})$
+  + $"card"(NN) = "card"({2n+1 | n in NN})$
+  + $"card"(NN) = "card"(ZZ)$
+  + $"card"((a,b)) = "card"((c,d))$, where $(a,b)$ and $(c,d)$ are intervals.
 
-      _Hint: try a linear function $f: (a,b) -> (c,d)$. Draw a picture._],
-    [$"card"(NN) = "card"({1/2^n | n in NN})$],
-  )
+    _Hint: try a linear function $f: (a,b) -> (c,d)$. Draw a picture._
+  + $"card"(NN) = "card"({1/2^n | n in NN})$
 ]
 
 #exercise(
@@ -65,18 +63,16 @@
   book: [Problems 9.7 and 9.9],
   goal: [Two short problems that will pay off later in the chapter.],
 )[
-  #parts(
-    [If $A$ is a set, do $A$ and $A times {x}$ have the same cardinality? Justify your answer.],
-    [Let $cal(F)$ denote the set of functions from $NN$ to ${0, 1}$.
+  + If $A$ is a set, do $A$ and $A times {x}$ have the same cardinality? Justify your answer.
+  + Let $cal(F)$ denote the set of functions from $NN$ to ${0, 1}$.
 
-      #enum(
-        [Describe at least three functions in $cal(F)$.],
-        [Prove that $cal(F)$ and $cal(P)(NN)$ have the same cardinality.
+    #enum(
+      [Describe at least three functions in $cal(F)$.],
+      [Prove that $cal(F)$ and $cal(P)(NN)$ have the same cardinality.
 
-          _Hint: define $phi: cal(F) -> cal(P)(NN)$ so that $phi(f)$ is the subset of $NN$
-          determined by where $f$ outputs a $1$._],
-      )],
-  )
+        _Hint: define $phi: cal(F) -> cal(P)(NN)$ so that $phi(f)$ is the subset of $NN$
+        determined by where $f$ outputs a $1$._],
+    )
 ]
 
 #exercise(
@@ -96,10 +92,8 @@
     B_3 = {()()(), #h(.3em) ()(()), #h(.3em) (()()), #h(.3em) (())(), #h(.3em) ((()))}.
   $
 
-  #parts(
-    [Find all Dyck paths in $D_3$.],
-    [Prove that $"card"(D_n) = "card"(B_n)$.],
-  )
+  + Find all Dyck paths in $D_3$.
+  + Prove that $"card"(D_n) = "card"(B_n)$.
 ]
 
 #exercise(
@@ -109,17 +103,15 @@
 )[
   Let $A$, $B$, $C$, $D$ be sets.
 
-  #parts(
-    [Prove that $"card"(A) = "card"(A)$.],
-    [Prove that if $"card"(A) = "card"(B)$ then $"card"(B) = "card"(A)$.],
-    [Prove that if $"card"(A) = "card"(B)$ and $"card"(B) = "card"(C)$ then
-      $"card"(A) = "card"(C)$.],
-    [Conclude that "has the same cardinality as" is an *equivalence relation* on $cal(P)(X)$ for any
-      set $X$.],
-    [Suppose $"card"(A) = "card"(C)$ and $"card"(B) = "card"(D)$. Prove that if $A, B$ are disjoint
-      and $C, D$ are disjoint, then $"card"(A union B) = "card"(C union D)$.],
-    [With the same hypotheses, prove $"card"(A times B) = "card"(C times D)$.],
-  )
+  + Prove that $"card"(A) = "card"(A)$.
+  + Prove that if $"card"(A) = "card"(B)$ then $"card"(B) = "card"(A)$.
+  + Prove that if $"card"(A) = "card"(B)$ and $"card"(B) = "card"(C)$ then
+    $"card"(A) = "card"(C)$.
+  + Conclude that "has the same cardinality as" is an *equivalence relation* on $cal(P)(X)$ for any
+    set $X$.
+  + Suppose $"card"(A) = "card"(C)$ and $"card"(B) = "card"(D)$. Prove that if $A, B$ are disjoint
+    and $C, D$ are disjoint, then $"card"(A union B) = "card"(C union D)$.
+  + With the same hypotheses, prove $"card"(A times B) = "card"(C times D)$.
 ]
 
 #slide(title: [Comparing Cardinalities])[
@@ -144,14 +136,12 @@
 )[
   Let $A$, $B$, $C$ be sets.
 
-  #parts(
-    [Prove that if $A subset B$, then $"card"(A) <= "card"(B)$.],
-    [Prove that if $"card"(A) <= "card"(B)$ and $"card"(B) <= "card"(C)$, then
-      $"card"(A) <= "card"(C)$.],
-    [Prove that if $C subset A$ while $"card"(B) = "card"(C)$, then $"card"(B) <= "card"(A)$.],
-    [Provide an example of sets $A$, $B$ with $"card"(A) = "card"(B)$ *despite* the existence of an
-      injective function $A -> B$ that is not surjective.],
-  )
+  + Prove that if $A subset B$, then $"card"(A) <= "card"(B)$.
+  + Prove that if $"card"(A) <= "card"(B)$ and $"card"(B) <= "card"(C)$, then
+    $"card"(A) <= "card"(C)$.
+  + Prove that if $C subset A$ while $"card"(B) = "card"(C)$, then $"card"(B) <= "card"(A)$.
+  + Provide an example of sets $A$, $B$ with $"card"(A) = "card"(B)$ *despite* the existence of an
+    injective function $A -> B$ that is not surjective.
 ]
 
 // ---------------------------------------------------------------------------
@@ -175,16 +165,14 @@
   book: [Theorems 9.19--9.23],
   goal: [Do not forget to consider the empty set in each of these.],
 )[
-  #parts(
-    [Prove that if $A$ is finite and $"card"(A) = "card"(B)$, then $B$ is finite.],
-    [Prove that if $A$ has cardinality $n in NN union {0}$ and $x in.not A$, then $A union {x}$ is
-      finite with cardinality $n + 1$.],
-    [Prove that for every $n in NN$, every subset of $[n]$ is finite. _(Consider induction.)_],
-    [Prove that if $A$ has cardinality $n in NN$, then for all $x in A$, $A without {x}$ is finite
-      with cardinality $n - 1$.],
-    [Prove that every subset of a finite set is finite. In particular, if $A$ is finite then
-      $"card"(B) < "card"(A)$ for every *proper* subset $B$ of $A$.],
-  )
+  + Prove that if $A$ is finite and $"card"(A) = "card"(B)$, then $B$ is finite.
+  + Prove that if $A$ has cardinality $n in NN union {0}$ and $x in.not A$, then $A union {x}$ is
+    finite with cardinality $n + 1$.
+  + Prove that for every $n in NN$, every subset of $[n]$ is finite. _(Consider induction.)_
+  + Prove that if $A$ has cardinality $n in NN$, then for all $x in A$, $A without {x}$ is finite
+    with cardinality $n - 1$.
+  + Prove that every subset of a finite set is finite. In particular, if $A$ is finite then
+    $"card"(B) < "card"(A)$ for every *proper* subset $B$ of $A$.
 
   Note that the last statement fails badly for infinite sets --- that failure is the subject of §9.3.
 ]
@@ -194,12 +182,10 @@
   book: [Theorems 9.24 and 9.25],
   goal: [Induction is a sensible approach to the first; the second is surprisingly useful.],
 )[
-  #parts(
-    [Prove that if $A_1, A_2, dots, A_k$ is a finite collection of finite sets, then
-      $display(union.big_(i=1)^k A_i)$ is finite.],
-    [*(Pigeonhole Principle.)* Prove that if $n, k in NN$ and $f: [n] -> [k]$ with $n > k$, then $f$
-      is *not* injective.],
-  )
+  + Prove that if $A_1, A_2, dots, A_k$ is a finite collection of finite sets, then
+    $display(union.big_(i=1)^k A_i)$ is finite.
+  + *(Pigeonhole Principle.)* Prove that if $n, k in NN$ and $f: [n] -> [k]$ with $n > k$, then $f$
+    is *not* injective.
 
   The name comes from the idea: if $n$ pigeons roost in a house with $k$ pigeonholes and $n > k$,
   then some hole contains more than one pigeon. (Note $n = 2$ is the smallest case that makes
@@ -228,18 +214,16 @@
   book: [Theorems 9.27, 9.28 and Problem 9.29],
   goal: [Prove $NN$ is infinite, then bootstrap.],
 )[
-  #parts(
-    [Prove that $NN$ is infinite.
+  + Prove that $NN$ is infinite.
 
-      _Hint: for contradiction, suppose there is a bijection $f: [n] -> NN$. What can you say about
-      $m := max(f(1), f(2), dots, f(n)) + 1$?_],
-    [Prove that if $A$ is infinite and $"card"(A) = "card"(B)$, then $B$ is infinite.
+    _Hint: for contradiction, suppose there is a bijection $f: [n] -> NN$. What can you say about
+    $m := max(f(1), f(2), dots, f(n)) + 1$?_
+  + Prove that if $A$ is infinite and $"card"(A) = "card"(B)$, then $B$ is infinite.
 
-      _Hint: try contradiction; you should end up composing two bijections $f: A -> B$ and
-      $g: B -> [n]$._],
-    [Quickly verify that the following sets are infinite, appealing to the results above:
-      the odd naturals; the even naturals; $ZZ$; ${1/2^n | n in NN}$; $NN times {a}$.],
-  )
+    _Hint: try contradiction; you should end up composing two bijections $f: A -> B$ and
+    $g: B -> [n]$._
+  + Quickly verify that the following sets are infinite, appealing to the results above:
+    the odd naturals; the even naturals; $ZZ$; ${1/2^n | n in NN}$; $NN times {a}$.
 ]
 
 #exercise(
@@ -249,11 +233,9 @@
 )[
   The Infinite Hotel has rooms numbered $1, 2, 3, 4, dots$ Every room is currently occupied.
 
-  #parts(
-    [Is it possible to make room for one more guest (who wants a room to themselves)?],
-    [An infinite number of new guests $g_1, g_2, g_3, dots$ show up in the lobby, each demanding a
-      room. Is it possible to accommodate them all, even though the hotel is already full?],
-  )
+  + Is it possible to make room for one more guest (who wants a room to themselves)?
+  + An infinite number of new guests $g_1, g_2, g_3, dots$ show up in the lobby, each demanding a
+    room. Is it possible to accommodate them all, even though the hotel is already full?
 
   In both cases, describe your re-housing scheme precisely enough that it could be announced over
   the hotel intercom.
@@ -286,11 +268,9 @@
   book: [Corollaries 9.32--9.33],
   goal: [Two corollaries, and a question about what the proof quietly assumed.],
 )[
-  #parts(
-    [Did you use the *Axiom of Choice* in proving (i) $==>$ (ii) of Theorem 9.31? If so, where?],
-    [Prove that a set is infinite if and only if it has an infinite subset.],
-    [Prove that if $A$ is infinite, then $"card"(NN) <= "card"(A)$.],
-  )
+  + Did you use the *Axiom of Choice* in proving (i) $==>$ (ii) of Theorem 9.31? If so, where?
+  + Prove that a set is infinite if and only if it has an infinite subset.
+  + Prove that if $A$ is infinite, then $"card"(NN) <= "card"(A)$.
 ]
 
 #exercise(
@@ -298,23 +278,21 @@
   book: [Problems 9.34 and 9.35],
   goal: [Use the new characterizations rather than the definition.],
 )[
-  #parts(
-    [Find a *new* proof that $NN$ is infinite, using (iii) $==>$ (i) of Theorem 9.31.],
-    [Quickly verify that each of the following is infinite, appealing to either Theorem 9.31
-      ((ii) $==>$ (i)) or Corollary 9.32:
+  + Find a *new* proof that $NN$ is infinite, using (iii) $==>$ (i) of Theorem 9.31.
+  + Quickly verify that each of the following is infinite, appealing to either Theorem 9.31
+    ((ii) $==>$ (i)) or Corollary 9.32:
 
-      #enum(
-        [the odd naturals],
-        [the even naturals],
-        [$ZZ$],
-        [$NN times NN$],
-        [$QQ$],
-        [$RR$],
-        [the perfect squares in $NN$],
-        [$(0,1)$],
-        [$CC = {a + b i | a, b in RR}$],
-      )],
-  )
+    #enum(
+      [the odd naturals],
+      [the even naturals],
+      [$ZZ$],
+      [$NN times NN$],
+      [$QQ$],
+      [$RR$],
+      [the perfect squares in $NN$],
+      [$(0,1)$],
+      [$CC = {a + b i | a, b in RR}$],
+    )
 ]
 
 // ---------------------------------------------------------------------------
@@ -338,15 +316,13 @@
   book: [Problem 9.38],
   goal: [Quickly justify countability, appealing to earlier problems. Which of these are denumerable?],
 )[
-  #parts(
-    [${a, b, c}$],
-    [the odd natural numbers],
-    [the even natural numbers],
-    [${1/2^n | n in NN}$],
-    [the perfect squares in $NN$],
-    [$ZZ$],
-    [$NN times {a}$],
-  )
+  + ${a, b, c}$
+  + the odd natural numbers
+  + the even natural numbers
+  + ${1/2^n | n in NN}$
+  + the perfect squares in $NN$
+  + $ZZ$
+  + $NN times {a}$
 ]
 
 #exercise(
@@ -354,16 +330,14 @@
   book: [Theorems 9.39--9.43],
   goal: [The toolkit for recognizing countable sets.],
 )[
-  #parts(
-    [Prove that every infinite set contains a *denumerable* subset. _(Use Theorem 9.31 or Corollary
-      9.33.)_],
-    [Prove that if $A$ is countable and $f: A -> B$ is a bijection, then $B$ is countable.],
-    [Prove that every subset of a countable set is countable. _(Consider the cases $A$ finite versus
-      infinite; the contrapositive of Corollary 9.32 helps in the finite case.)_],
-    [Prove that a set is countable if and only if it has the same cardinality as some subset of
-      $NN$.],
-    [Prove that if $f: NN -> A$ is surjective, then $A$ is countable.],
-  )
+  + Prove that every infinite set contains a *denumerable* subset. _(Use Theorem 9.31 or Corollary
+    9.33.)_
+  + Prove that if $A$ is countable and $f: A -> B$ is a bijection, then $B$ is countable.
+  + Prove that every subset of a countable set is countable. _(Consider the cases $A$ finite versus
+    infinite; the contrapositive of Corollary 9.32 helps in the finite case.)_
+  + Prove that a set is countable if and only if it has the same cardinality as some subset of
+    $NN$.
+  + Prove that if $f: NN -> A$ is surjective, then $A$ is countable.
 ]
 
 #exercise(
@@ -393,19 +367,17 @@
   book: [Theorems 9.45--9.47],
   goal: [Building up to: a countable union of countable sets is countable.],
 )[
-  #parts(
-    [Prove that if $A$ and $B$ are countable, then $A union B$ is countable.],
-    [Let ${A_n}_(n=1)^oo$ be a collection of sets. Define $B_1 := A_1$ and, for $n > 1$,
-      $display(B_n := A_n without union.big_(i=1)^(n-1) A_i)$. Prove that ${B_n}_(n=1)^oo$ is
-      pairwise disjoint and that
-      $display(union.big_(n=1)^oo A_n = union.big_(n=1)^oo B_n)$.],
-    [Let $Delta$ be $NN$ or $[k]$ for some $k in NN$. Prove that if ${A_n}_(n in Delta)$ is a
-      countable collection of countable sets, then $display(union.big_(n in Delta) A_n)$ is
-      countable.],
-    [Did you use the Axiom of Choice in the previous part? If so, where?],
-  )
+  + Prove that if $A$ and $B$ are countable, then $A union B$ is countable.
+  + Let ${A_n}_(n=1)^oo$ be a collection of sets. Define $B_1 := A_1$ and, for $n > 1$,
+    $display(B_n := A_n without union.big_(i=1)^(n-1) A_i)$. Prove that ${B_n}_(n=1)^oo$ is
+    pairwise disjoint and that
+    $display(union.big_(n=1)^oo A_n = union.big_(n=1)^oo B_n)$.
+  + Let $Delta$ be $NN$ or $[k]$ for some $k in NN$. Prove that if ${A_n}_(n in Delta)$ is a
+    countable collection of countable sets, then $display(union.big_(n in Delta) A_n)$ is
+    countable.
+  + Did you use the Axiom of Choice in the previous part? If so, where?
 
-  _For (c): the finite case follows from (a) by induction. For the infinite case, use (b) to get
+  _For 3: the finite case follows from 1 by induction. For the infinite case, use 2 to get
   pairwise disjoint $B_n = {b_(n,1), b_(n,2), dots}$, then either build a bijection from $NN$ by
   zig-zagging, or define $f(b_(n,m)) = 2^n 3^m$, show it is injective, and appeal to Theorem 9.41.
   Try both._
@@ -416,12 +388,10 @@
   book: [Theorems 9.48--9.50],
   goal: [Three more constructions that stay inside the countable world.],
 )[
-  #parts(
-    [Prove that if $A$ and $B$ are countable, then $A times B$ is countable.],
-    [Prove that the set of all *finite* sequences of $0$'s and $1$'s (for example $0110010$) is
-      countable.],
-    [Prove that the collection of all *finite* subsets of a countable set is countable.],
-  )
+  + Prove that if $A$ and $B$ are countable, then $A times B$ is countable.
+  + Prove that the set of all *finite* sequences of $0$'s and $1$'s (for example $0110010$) is
+    countable.
+  + Prove that the collection of all *finite* subsets of a countable set is countable.
 
   Keep the word *finite* in view --- it is exactly what makes these results true, as the next
   section shows.
@@ -461,11 +431,9 @@
     b_i = cases(2 & "if" a_(i i) != 2, 3 & "if" a_(i i) = 2.)
   $
 
-  #parts(
-    [Prove that the expansion defining $b$ is in standard decimal form.],
-    [Prove that for all $n in NN$, $f(n) != b$.],
-    [Explain why $f$ cannot be surjective, and why this is a contradiction.],
-  )
+  + Prove that the expansion defining $b$ is in standard decimal form.
+  + Prove that for all $n in NN$, $f(n) != b$.
+  + Explain why $f$ cannot be surjective, and why this is a contradiction.
 
   You have just proved that the interval $(0,1)$ is *uncountable*.
 ]
@@ -475,18 +443,16 @@
   book: [Theorems 9.53, 9.55--9.59 and Corollary 9.54],
   goal: [Tools for finding more uncountable sets, now that we have one.],
 )[
-  #parts(
-    [Prove that if $A subset B$ and $A$ is uncountable, then $B$ is uncountable. _(Try
-      contradiction, and look at Theorem 9.41.)_],
-    [Prove that if $A$ is uncountable and $B$ is countable, then $A without B$ is uncountable.],
-    [Prove that if $f: A -> B$ is injective and $A$ is uncountable, then $B$ is uncountable.],
-    [Prove that $RR$ is uncountable, and in fact $"card"((0,1)) = "card"(RR)$.
+  + Prove that if $A subset B$ and $A$ is uncountable, then $B$ is uncountable. _(Try
+    contradiction, and look at Theorem 9.41.)_
+  + Prove that if $A$ is uncountable and $B$ is countable, then $A without B$ is uncountable.
+  + Prove that if $f: A -> B$ is injective and $A$ is uncountable, then $B$ is uncountable.
+  + Prove that $RR$ is uncountable, and in fact $"card"((0,1)) = "card"(RR)$.
 
-      _Hint: consider $f: (0,1) -> RR$ given by $f(x) = tan(pi x - pi/2)$._],
-    [Prove that if $a, b in RR$ with $a < b$, then $(a,b)$, $[a,b]$, $(a,b]$, and $[a,b)$ are all
-      uncountable.],
-    [Prove that the set of irrational numbers is uncountable, and that $CC$ is uncountable.],
-  )
+    _Hint: consider $f: (0,1) -> RR$ given by $f(x) = tan(pi x - pi/2)$._
+  + Prove that if $a, b in RR$ with $a < b$, then $(a,b)$, $[a,b]$, $(a,b]$, and $[a,b)$ are all
+    uncountable.
+  + Prove that the set of irrational numbers is uncountable, and that $CC$ is uncountable.
 ]
 
 #slide(title: [An Aside: The Continuum Hypothesis])[
@@ -509,12 +475,10 @@
 )[
   Let $A$ and $B$ be sets with $A$ uncountable.
 
-  #parts(
-    [$A union B$ is uncountable.],
-    [$A inter B$ is uncountable.],
-    [$A times B$ is uncountable.],
-    [$A without B$ is uncountable.],
-  )
+  + $A union B$ is uncountable.
+  + $A inter B$ is uncountable.
+  + $A times B$ is uncountable.
+  + $A without B$ is uncountable.
 ]
 
 #exercise(
@@ -524,12 +488,10 @@
 )[
   Let $S$ be the set of *infinite* sequences of $0$'s and $1$'s.
 
-  #parts(
-    [Determine whether $S$ is countable or uncountable, and prove your answer. _(An approach
-      similar to Cantor's Diagonalization Argument will help.)_],
-    [Prove that $"card"(cal(P)(NN)) = "card"(S)$.],
-    [Conclude that $cal(P)(NN)$ is uncountable.],
-  )
+  + Determine whether $S$ is countable or uncountable, and prove your answer. _(An approach
+    similar to Cantor's Diagonalization Argument will help.)_
+  + Prove that $"card"(cal(P)(NN)) = "card"(S)$.
+  + Conclude that $cal(P)(NN)$ is uncountable.
 ]
 
 #exercise(

@@ -15,6 +15,6 @@
     Problems are a mixture of Jason Siefken's own and others'; copyright in those remains with
     their authors.
   ],),
-  footer-credit: iblodes_libs_short,
+  footer-credit: credit_line_libs_short,
   body,
 )

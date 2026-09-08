@@ -2,7 +2,7 @@
 #show: mat235-slides.with([Chapter 18])
 
 
-#slide(title: [Siefken 1])[
+#slide(siefken_num: 1)[
 
   Recall that work is $"force" dot "displacement"$.
 
@@ -19,7 +19,7 @@
 
 ]
 
-#slide(title: [Siefken 2])[
+#slide(siefken_num: auto)[
 
   Let $arrow(F)(x,y)=cases((-2,0) & "if" y < 2, (-4,0) & "if" y >= 2)$ denote the force of an
   uneven wind.
@@ -35,7 +35,7 @@
 
 ]
 
-#slide(title: [Siefken 3])[
+#slide(siefken_num: auto)[
 
   Let $arrow(F)(x,y)=(y, 0)$ denote the force of an uneven wind.
 
@@ -54,7 +54,7 @@
   + Does the speed at which you move from $A$ to $B$ affect the value of $W$?
 ]
 
-#slide(title: [Siefken 4])[
+#slide(siefken_num: auto)[
 
   Let $arrow(F)(x,y)=(y, 0)$ denote the force of an uneven wind.
 
@@ -76,7 +76,7 @@
     + Is your answer the same or different compared to moving along the path of $arrow(r)$? Why?
 ]
 
-#slide(title: [Siefken 5])[
+#slide(siefken_num: auto)[
 
   Let $R subset.eq RR^2$ be a _region_ in $RR^2$ and let $P subset.eq RR^2$ be a _curve_ in
   $RR^2$.
@@ -104,7 +104,7 @@
 
 ]
 
-#slide(title: [Siefken 6])[
+#slide(siefken_num: auto)[
 
   Let $h(x,y)=-x^2-2y^2$ denote a height of a hill.
 
@@ -129,7 +129,7 @@
 
 ]
 
-#slide(title: [Siefken 7])[
+#slide(siefken_num: auto)[
 
   A vector field $arrow(F): RR^n -> RR^m$ is called *conservative* or *path independent* if for
   any points $A$ and $B$, the work done by $arrow(F)$ moving between points $A$ and $B$ does not
@@ -170,7 +170,7 @@
     or why not?
 ]
 
-#slide(title: [Siefken 8])[
+#slide(siefken_num: auto)[
 
   If $arrow(F) = nabla f$ for some $f$, then $f$ is called a *potential function* for $arrow(F)$.
 
@@ -192,7 +192,7 @@
     + Find a potential function for $arrow(F)$.
 ]
 
-#slide(title: [Siefken 9])[
+#slide(siefken_num: auto)[
 
   *Theorem:* A continuous vector field $arrow(F): RR^n -> RR^n$ is conservative if and only if it
   has a potential function.
@@ -210,7 +210,7 @@
   + Could the vector field $arrow(G)(x,y)=mat(2x y; x y)$ be path-independent? Why or why not?
 ]
 
-#slide(title: [Siefken 10])[
+#slide(siefken_num: auto)[
 
   #{
     let width = 9cm
@@ -311,7 +311,7 @@
 //   ]
 // ]
 
-#slide(title: [Siefken 11])[
+#slide(siefken_num: auto)[
 
   #{
     let width = 9cm
@@ -364,7 +364,7 @@
   //   force *per* unit length of the shorter rod.
 ]
 
-#slide(title: [Siefken 12])[
+#slide(siefken_num: auto)[
 
   Let $arrow(F): RR^2 -> RR^2$ be a vector field describing the velocity of a fluid in a pond. A
   tiny rod $R$ (with floats on its ends) is placed at location $arrow(p)$.
@@ -401,7 +401,7 @@
   //   square centered $arrow(p) = (1,2)$ would be subjected to.
 ]
 
-#slide(title: [Siefken 13])[
+#slide(siefken_num: auto)[
 
   Let $arrow(F): RR^2 -> RR^2$ be a vector field. The *curl* of $arrow(F)$ at a point $arrow(p)$,
   written as $"curl"(arrow(F))$ or $nabla times arrow(F)$ is defined as:
@@ -425,7 +425,7 @@
     figure out how to find the curl from your formula?
 ]
 
-#slide(title: [Siefken 14])[
+#slide(siefken_num: auto)[
 
   #{
     let width = 9cm
@@ -458,7 +458,7 @@
     Green's Theorem with the appropriate integrals.
 ]
 
-#slide(title: [Siefken 15])[
+#slide(siefken_num: auto)[
 
   Let $arrow(F):RR^2 -> RR^2$ and suppose $arrow(F) = nabla f$ for some $f:RR^2 -> RR$.
 
@@ -474,7 +474,7 @@
   + Can you make a converse to your theorem? I.e., a theorem about curl-free vector fields?
 ]
 
-#slide(title: [Siefken 16])[
+#slide(siefken_num: auto)[
 
   Let $S$ be a circle of radius $2$ centered at the origin.
 
@@ -492,7 +492,7 @@
   + Can you restrict the domain of $arrow(F)$ so that it is one-to-one? If so, do it.
 ]
 
-#slide(title: [Siefken 17])[
+#slide(siefken_num: auto)[
 
   Let $R$ be the surface of the cone $z = sqrt(x^2 + y^2)$.
 

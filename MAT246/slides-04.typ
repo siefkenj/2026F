@@ -32,16 +32,14 @@
   A common metaphor for induction is a chain of dominoes: if the first one falls, and each domino
   knocks over the next, then they all fall.
 
-  #parts(
-    [Let $P: NN -> {"True", "False"}$ be a predicate on $NN$. Suppose $P(1)$ is true and
-      $(forall n in NN)(P(n) ==> P(n+1))$. Prove $P(2)$, $P(3)$, $P(4)$.],
-    [How would you go about proving that $P(100)$ is true? (You are not asked to actually prove
-      it!)],
-    [Can you explain informally why, from the two assumptions above, it is plausible to conclude
-      that $P(n)$ is true for _all_ natural numbers $n$?],
-    [A tough question worth reflecting on carefully: why do we need a whole new *axiom* of
-      induction? Can we not prove $(forall n in NN) P(n)$ directly?],
-  )
+  + Let $P: NN -> {"True", "False"}$ be a predicate on $NN$. Suppose $P(1)$ is true and
+    $(forall n in NN)(P(n) ==> P(n+1))$. Prove $P(2)$, $P(3)$, $P(4)$.
+  + How would you go about proving that $P(100)$ is true? (You are not asked to actually prove
+    it!)
+  + Can you explain informally why, from the two assumptions above, it is plausible to conclude
+    that $P(n)$ is true for _all_ natural numbers $n$?
+  + A tough question worth reflecting on carefully: why do we need a whole new *axiom* of
+    induction? Can we not prove $(forall n in NN) P(n)$ directly?
 ]
 
 #exercise(
@@ -51,18 +49,16 @@
 )[
   The $n$-th *triangular number* $T_n$ is defined by $display(T_n = (n(n+1))/2)$.
 
-  #parts(
-    [Compute the first five triangular numbers.],
-    [Consider the claim: _the sum of the first $n$ natural numbers is the $n$-th triangular
-      number._ Use mathematical notation to define a predicate $P(n)$ of the form $a = b$ expressing
-      this claim. Our goal is to prove $(forall n in NN) P(n)$ by induction.],
-    [What is $P(1)$? Is it true? This is the *base case*.],
-    [What is $P(n+1)$? The *inductive step* is the proof that $P(n) ==> P(n+1)$; we call $P(n)$ the
-      *inductive hypothesis*.],
-    [Use direct proof to show $P(n) ==> P(n+1)$.],
-    [Can you summarize the proof pattern we have just used? What are the key steps of an inductive
-      proof?],
-  )
+  + Compute the first five triangular numbers.
+  + Consider the claim: _the sum of the first $n$ natural numbers is the $n$-th triangular
+    number._ Use mathematical notation to define a predicate $P(n)$ of the form $a = b$ expressing
+    this claim. Our goal is to prove $(forall n in NN) P(n)$ by induction.
+  + What is $P(1)$? Is it true? This is the *base case*.
+  + What is $P(n+1)$? The *inductive step* is the proof that $P(n) ==> P(n+1)$; we call $P(n)$ the
+    *inductive hypothesis*.
+  + Use direct proof to show $P(n) ==> P(n+1)$.
+  + Can you summarize the proof pattern we have just used? What are the key steps of an inductive
+    proof?
 ]
 
 #exercise(
@@ -72,13 +68,11 @@
 )[
   We will prove that _the sum of the first $n$ odd natural numbers is the $n$-th square number._
 
-  #parts(
-    [Verify the first five cases of the claim.],
-    [Define a predicate $P(n)$ of the form $a = b$ expressing the claim mathematically.],
-    [What is $P(1)$?],
-    [What is $P(n+1)$?],
-    [Use direct proof to prove $P(n) ==> P(n+1)$.],
-  )
+  + Verify the first five cases of the claim.
+  + Define a predicate $P(n)$ of the form $a = b$ expressing the claim mathematically.
+  + What is $P(1)$?
+  + What is $P(n+1)$?
+  + Use direct proof to prove $P(n) ==> P(n+1)$.
 ]
 
 #exercise(
@@ -104,14 +98,12 @@
     1 + 2 + 4 + dots.c + 2^n = 2^(n+1) + 1.
   $
 
-  #parts(
-    [What is the assertion $P(n+1)$?],
-    [Use direct proof to show that $forall n in NN, (P(n) ==> P(n+1))$.],
-    [What is $P(3)$? Is it true?],
-    [Why have we _not_ shown $forall n in NN, P(n)$? Is induction wrong after all?],
-    [*Challenge.* Can you "correct" the claim --- find a very similar predicate that _is_ true for
-      every natural number?],
-  )
+  + What is the assertion $P(n+1)$?
+  + Use direct proof to show that $forall n in NN, (P(n) ==> P(n+1))$.
+  + What is $P(3)$? Is it true?
+  + Why have we _not_ shown $forall n in NN, P(n)$? Is induction wrong after all?
+  + *Challenge.* Can you "correct" the claim --- find a very similar predicate that _is_ true for
+    every natural number?
 ]
 
 // ---------------------------------------------------------------------------
@@ -161,18 +153,16 @@
   where $a = 1$ if $n$ is odd and $a = 2$ if $n$ is even. (Careful: $n!! != (n!)!$. In fact
   $n!! < n! < (n!)!$ for every $n >= 2$.)
 
-  #parts(
-    [Compute $n!!$ for $n = 1, 2, dots, 10$.],
-    [The factorial has the recursive definition $(n+1)! = (n+1) dot n!$. Find a similar recursive
-      definition for the double factorial.],
-    [Define $display(a_n = ((2n-1)!!)/((2n)!!))$. Compute the first five terms of the sequence.],
-    [Derive a recurrence for $a_(n+1)$ in terms of $a_n$.],
-    [Use mathematical induction to prove
-      $
-        1/sqrt(4n) <= a_n <= 1/sqrt(2n+1).
-      $
-      Conclude that $a_n$ converges to $0$.],
-  )
+  + Compute $n!!$ for $n = 1, 2, dots, 10$.
+  + The factorial has the recursive definition $(n+1)! = (n+1) dot n!$. Find a similar recursive
+    definition for the double factorial.
+  + Define $display(a_n = ((2n-1)!!)/((2n)!!))$. Compute the first five terms of the sequence.
+  + Derive a recurrence for $a_(n+1)$ in terms of $a_n$.
+  + Use mathematical induction to prove
+    $
+      1/sqrt(4n) <= a_n <= 1/sqrt(2n+1).
+    $
+    Conclude that $a_n$ converges to $0$.
 ]
 
 #exercise(
@@ -185,15 +175,13 @@
     p_n = product_(k=1)^n (1 + (-1)^k/(k+1)).
   $
 
-  #parts(
-    [Compute the first six terms of the sequence.],
-    [Do you see a pattern? Conjecture a formula for the odd terms $p_(2n-1)$ and for the even terms
-      $p_(2n)$.],
-    [Use mathematical induction to prove your conjecture about the odd terms $p_(2n+1)$.],
-    [Prove your conjecture about the even terms $p_(2n)$.],
-    [Conclude that the infinite product $display(product_(k=1)^oo (1 + (-1)^k/(k+1)))$ converges,
-      and find its limit.],
-  )
+  + Compute the first six terms of the sequence.
+  + Do you see a pattern? Conjecture a formula for the odd terms $p_(2n-1)$ and for the even terms
+    $p_(2n)$.
+  + Use mathematical induction to prove your conjecture about the odd terms $p_(2n+1)$.
+  + Prove your conjecture about the even terms $p_(2n)$.
+  + Conclude that the infinite product $display(product_(k=1)^oo (1 + (-1)^k/(k+1)))$ converges,
+    and find its limit.
 ]
 
 // ---------------------------------------------------------------------------
@@ -307,15 +295,13 @@
   Find the maximum and minimum, if they exist, of each of the following sets. Use the *definitions*
   of maximum and minimum to prove your answers.
 
-  #parts(
-    [$NN$],
-    [$ZZ$],
-    [$emptyset$],
-    [$A = {n in NN : n "is a multiple of" 3}$],
-    [$B = {z in ZZ : z > 11}$],
-    [$C = {r in RR : 0 < r < 1} = (0, 1)$],
-    [$D = {x in RR : 0 <= x <= 1} = [0, 1]$],
-  )
+  + $NN$
+  + $ZZ$
+  + $emptyset$
+  + $A = {n in NN : n "is a multiple of" 3}$
+  + $B = {z in ZZ : z > 11}$
+  + $C = {r in RR : 0 < r < 1} = (0, 1)$
+  + $D = {x in RR : 0 <= x <= 1} = [0, 1]$
 ]
 
 #exercise(
@@ -325,11 +311,9 @@
 )[
   Identify the error in each statement below, and give a set that serves as a counterexample.
 
-  #parts(
-    [Every subset of $NN$ has a least element.],
-    [Every nonempty subset of $ZZ$ has a least element.],
-    [Every nonempty subset of $NN$ has a greatest element.],
-  )
+  + Every subset of $NN$ has a least element.
+  + Every nonempty subset of $ZZ$ has a least element.
+  + Every nonempty subset of $NN$ has a greatest element.
 ]
 
 #exercise(
@@ -339,11 +323,9 @@
 )[
   We show that the principle of mathematical induction *implies* the Well-Ordering Principle.
 
-  #parts(
-    [For the sake of contradiction, suppose $S$ is a nonempty subset of $NN$ with no least element.
-      Define the predicate $P(n) := n in.not S$. Use induction to prove $forall n in NN, P(n)$.],
-    [Why do we now have a contradiction? Conclude that $S$ must have a least element.],
-  )
+  + For the sake of contradiction, suppose $S$ is a nonempty subset of $NN$ with no least element.
+    Define the predicate $P(n) := n in.not S$. Use induction to prove $forall n in NN, P(n)$.
+  + Why do we now have a contradiction? Conclude that $S$ must have a least element.
 
   You have now proved that if the principle of mathematical induction holds, then the well-ordering
   principle holds. (Can you explain why?)
@@ -392,15 +374,13 @@
     *remainder* of dividing $n$ by $m$.
   ]
 
-  #parts(
-    [Let $m, n in NN$ be arbitrary and consider
-      $S = {x in ZZ_(>=0) : exists q in ZZ_(>=0), x = n - q m}$. Prove that $S$ is nonempty.],
-    [Let $r$ be the minimal element of $S$. Prove that $r in {0, 1, dots, m-1}$. (Here we use the
-      generalized well-ordering principle: $S$ is a subset of the integers bounded below by $0$.)],
-    [Conclude that there exist $q in ZZ_(>=0)$ and $r in {0, 1, dots, m-1}$ with $n = q m + r$.],
-    [Suppose $q, q' in ZZ_(>=0)$ and $r, r' in {0, 1, dots, m-1}$ satisfy
-      $n = q m + r = q' m + r'$. Prove that $q = q'$ and $r = r'$.],
-  )
+  + Let $m, n in NN$ be arbitrary and consider
+    $S = {x in ZZ_(>=0) : exists q in ZZ_(>=0), x = n - q m}$. Prove that $S$ is nonempty.
+  + Let $r$ be the minimal element of $S$. Prove that $r in {0, 1, dots, m-1}$. (Here we use the
+    generalized well-ordering principle: $S$ is a subset of the integers bounded below by $0$.)
+  + Conclude that there exist $q in ZZ_(>=0)$ and $r in {0, 1, dots, m-1}$ with $n = q m + r$.
+  + Suppose $q, q' in ZZ_(>=0)$ and $r, r' in {0, 1, dots, m-1}$ satisfy
+    $n = q m + r = q' m + r'$. Prove that $q = q'$ and $r = r'$.
 ]
 
 #exercise(

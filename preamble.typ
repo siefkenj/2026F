@@ -77,15 +77,16 @@
 // Lists
 // ---------------------------------------------------------------------------
 
-// Enumerated problem parts.
+// Enumerated problem parts are written as plain `+` markup enums.
 //
-// This is a plain `enum`: the `slide` element measures its body and, when it
-// does not fit in one column, reflows it into two by itself. Do not hand-roll
-// a two-column grid here — that fights the autosizer and produces columns
-// inside columns.
-// `start` is for the handful of exercises whose parts are interrupted by a
-// paragraph of set-up prose, so the numbering has to be resumed by hand.
-#let parts(..items, start: 1) = enum(start: start, ..items.pos())
+// Keep them plain: the `slide` element measures its body and, when it does not
+// fit in one column, reflows it into two by itself. Do not hand-roll a
+// two-column grid here — that fights the autosizer and produces columns inside
+// columns.
+//
+// The handful of exercises whose parts are interrupted by a paragraph of
+// set-up prose resume their numbering with an explicit marker (`3.`) on the
+// first item after the break.
 
 // ---------------------------------------------------------------------------
 // Attribution
@@ -103,7 +104,7 @@
 
 // Footer-sized version, for decks whose own content is not CC BY-SA and which
 // therefore credit only the library.
-#let iblodes_libs_short = [Slide library: _IBLODEs_ (Siefken & Galvão-Sousa), #CC_BY_SA]
+#let credit_line_libs_short = [Slide library: _IBLODEs_ (Siefken & Galvão-Sousa), #CC_BY_SA]
 
 // A small right-aligned line, for citing the source of a single problem.
 #let attribution(it) = align(right, text(size: .7em, fill: gray.darken(15%), it))
@@ -249,8 +250,8 @@
   name: none,
   credits: (),
   footer-credit: none,
-  // Nesting pattern for enumerations. MAT246 leads with (a) because the
-  // Practicing Proofs handouts do; the other courses lead with 1.
+  // Nesting pattern for enumerations: top-level parts are numbered, and the
+  // levels below them lettered.
   enum-numbering: ("1.", "(a)", "(i)", "(A)"),
   body,
 ) = {

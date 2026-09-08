@@ -56,14 +56,14 @@
   book: none,
   goal: none,
   size: none,
-  two-column: false,
+  two-column: none,
   one-column: false,
   body,
 ) = slide(
   title: title,
   autosize: not one-column,
   force_scale: size,
-  force_two_column: two-column,
+  two_columns: two-column,
 )[
   #if goal != none {
     block(
@@ -88,7 +88,6 @@
   chapter-title,
   code: [MAT246],
   name: [Concepts in Abstract Mathematics],
-  enum-numbering: ("(a)", "(i)", "1.", "(A)"),
   credits: sources.map(s => s.long) + (
     [#sym.copyright Jason Siefken, 2026. Released under #CC_BY_SA, as are all of the above.],
   ),

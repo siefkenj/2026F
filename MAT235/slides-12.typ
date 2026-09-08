@@ -5,18 +5,24 @@
 #import "@preview/lilaq:0.6.0" as lq
 
 
-#slide(title: [Siefken 1])[
-  Multi-variable functions are functions from multiple inputs to multiple outputs.
+#slide(siefken_num: 1)[
+  + Give some examples of real-world functions of one variable. (E.g., the type of functions you've
+    encountered in Calculus.)
 
-  When there is one input and one output we can visualize a function by graphing inputs on the
-  $x$-axis and outputs on the $y$-axis.
+  + Multi-variable functions are functions from multiple inputs to multiple outputs.
 
-  + What are some ways we might visualize a function with two inputs and one output?
+    Give some examples of real-world _multi-variable functions_.
 
-    Come up with several ideas.
+
+
+  + Single-variable functions can be visualized by graphing inputs on the $x$-axis and outputs on
+    the $y$-axis.
+
+    What are some ways we might visualize a function with two inputs and one output?
+    _Come up with several ideas._
 ]
 
-#slide(title: [Siefken 2.1])[
+#slide(siefken_num: auto)[
   #let F(x, y) = calc.round(20 + (-(x - 1) * (x - 1) - y * y) / 5)
 
   The following table describes the elevation of various locations in a campground (in meters) at
@@ -44,7 +50,7 @@
 ]
 
 // Did on 9-5-2025
-#slide(title: [Siefken 2.3])[
+#slide(siefken_num: auto)[
   #let F(x, y) = calc.round(20 + (-(x - 1) * (x - 1) - y * y) / 5)
 
   Recall the campground elevation.
@@ -71,7 +77,7 @@
     $z=h(x,y)$.
 ]
 
-#slide(title: [Siefken 2.2])[
+#slide(siefken_num: auto)[
   #let F(x, y) = calc.round(20 + (-(x - 1) * (x - 1) - y * y) / 5)
 
   Recall the campground elevation.
@@ -96,7 +102,7 @@
 ]
 
 // Did on 9-8-2025
-#slide(title: [Siefken 3])[
+#slide(siefken_num: auto)[
   Consider $f(x,y) = x^2 + y^2$.
 
   + Is $f$ a function? If so, how many inputs and outputs does it have?
@@ -106,7 +112,7 @@
   + Make a perspective drawing of the graph of $z=f(x,y)$.
 ]
 
-#slide(title: [Siefken 4])[
+#slide(siefken_num: auto)[
   #let F(x, y) = calc.round(20 + (-(x - 1) * (x - 1) - y * y) / 5)
 
   The following table describes the elevation of various locations in a campground (in meters) at
@@ -131,7 +137,8 @@
 
 ]
 
-#slide(title: [Siefken 5])[
+#slide(siefken_num: auto, two_columns: false)[
+  #set text(size: 0.9em)
   #{
     let a = lq.diagram(
       title: [Map A],
@@ -174,15 +181,18 @@
     )
   }
 
-  + Which of the contour maps above could represent a plane? (i.e., a flat surface)
+  #columns[
 
-    Which ones could definitely _not_ represent a plane? Explain.
+    + Which of the contour maps above could represent a plane? (i.e., a flat surface)
 
-  + For Map B, estimate the slope at $(0,0)$ moving (i) directly up, (ii) directly right, (iii)
-    along $y=x$ headed to the upper-right, and (iv) along $y=-x$ headed to the upper-left.
+      Which ones could definitely _not_ represent a plane? Explain.
+
+    + For Map B, estimate the slope at $(0,0)$ moving (i) directly up, (ii) directly right, (iii)
+      along $y=x$ headed to the upper-right, and (iv) along $y=-x$ headed to the upper-left.
+  ]
 ]
 
-#slide(title: [Siefken 6])[
+#slide(siefken_num: auto)[
   Draw a contour plot for a cone where:
   + The tip is pointing straight up.
   + The tip is pointing straight down.
@@ -191,54 +201,49 @@
 ]
 
 // Week 3
-#slide(title: [Siefken 7])[
-  #grid(
-    columns: 2,
-    gutter: 2em,
+#slide(siefken_num: auto, two_columns: true)[
 
-    {
-      let a = lq.diagram(
-        title: [$z=f(x,y)$],
-        width: 10cm,
-        height: 10cm,
-        lq.contour(
-          lq.linspace(-5, 5, num: 300),
-          lq.linspace(-5, 5, num: 300),
-          (x, y) => calc.pow(calc.abs(x * y), 1 / 2) / 100,
-          map: color.map.icefire,
-        ),
-        xlim: (-0, 4),
-        ylim: (-0, 4),
-        xaxis: (ticks: lq.arange(-4, 5, step: 1)),
-        yaxis: (ticks: lq.arange(-4, 5, step: 1)),
-        lq.place(3.6, 3.6, $1$),
-        lq.place(3.1, 3.1, $2$),
-        lq.place(2.6, 2.6, $3$),
-        lq.place(2.1, 2.1, $4$),
-        lq.place(1.6, 1.6, $5$),
-        lq.place(1.1, 1.1, $6$),
-        lq.place(.6, .6, $7$),
-      )
-      set align(center)
-      grid(
-        columns: 3,
-        gutter: 2em,
-        a,
-      )
-    },
-    [
+  #{
+    let a = lq.diagram(
+      title: [$z=f(x,y)$],
+      width: 5cm,
+      height: 5cm,
+      lq.contour(
+        lq.linspace(-5, 5, num: 300),
+        lq.linspace(-5, 5, num: 300),
+        (x, y) => calc.pow(calc.abs(x * y), 1 / 2) / 100,
+        map: color.map.icefire,
+      ),
+      xlim: (-0, 4),
+      ylim: (-0, 4),
+      xaxis: (ticks: lq.arange(-4, 5, step: 1)),
+      yaxis: (ticks: lq.arange(-4, 5, step: 1)),
+      lq.place(3.6, 3.6, $1$),
+      lq.place(3.1, 3.1, $2$),
+      lq.place(2.6, 2.6, $3$),
+      lq.place(2.1, 2.1, $4$),
+      lq.place(1.6, 1.6, $5$),
+      lq.place(1.1, 1.1, $6$),
+      lq.place(.6, .6, $7$),
+    )
+    set align(center)
+    a
+    // grid(
+    //   columns: 3,
+    //   gutter: 2em,
+    //   a,
+    // )
+  }
 
-      + Sketch the graphs of $z=f(x,1)$, $z=f(x,2)$, $z=f(x,3)$, and $z=f(x,4)$.
-      + Where is the graph of $z=f(x,y)$ the "steepest"? In what direction is it steepest?
-      + Where is the graph of $z=f(x,y)$ the "flattest"? In what direction is it flattest?
-      + You have a very long and very straight ruler that you would like to place on the surface of
-        $z=f(x,y)$. Is there anywhere you could set your ruler down on the surface? Explain.
-    ],
-  )
+  + Sketch the graphs of $z=f(x,1)$, $z=f(x,2)$, $z=f(x,3)$, and $z=f(x,4)$.
+  + Where is the graph of $z=f(x,y)$ the "steepest"? In what direction is it steepest?
+  + Where is the graph of $z=f(x,y)$ the "flattest"? In what direction is it flattest?
+  + You have a very long and very straight ruler that you would like to place on the surface of
+    $z=f(x,y)$. Is there anywhere you could set your ruler down on the surface? Explain.
 
 ]
 
-#slide(title: [Siefken 8])[
+#slide(siefken_num: auto)[
   Consider the plane $cal(P)$ given by the formula $z=2x-y$.
   + Is the point $(3,3,3)$ on $cal(P)$? What about the point $(3,2,1)$? How can you tell?
   + Sketch the contour map of $cal(P)$.
@@ -247,7 +252,7 @@
   + Find the equation of a plane parallel to $cal(P)$ that passes through the point $(3,2,1)$.
 ]
 
-#slide(title: [Siefken 9])[
+#slide(siefken_num: auto)[
   Let $A=(2,0,0)$, $B=(0,3,0)$, and $C=(0,0,5)$. Let $cal(Q)$ be the plane that passes through $A$,
   $B$, and $C$.
   + Find an equation for the *slice* of $cal(Q)$ obtained when $y=0$.
@@ -256,7 +261,7 @@
   + Find a function $f$ so that $cal(Q)$ is the graph of $z=f(x,y)$.
 ]
 
-#slide(title: [Siefken 10])[
+#slide(siefken_num: auto)[
   Suppose the earth is centered at $(0,0,0)$. The temperature of inside the earth at position
   $(x,y,z)$ (in units of thousands of km) is approximately given by
   $
@@ -273,7 +278,7 @@
     does the temperature change the fastest? The slowest?
 ]
 
-#slide(title: [Siefken 11])[
+#slide(siefken_num: auto)[
   We say a graph is *extruded* when it is continued in the same way along a particular axis.
 
   + Sketch the graph of $z=x^2$ in $RR^2$.
@@ -281,7 +286,7 @@
   + Make a contour map of the graph of $z=x^2$ *extruded* along the $y$-axis in $RR^3$.
 ]
 
-#slide(title: [Siefken 12])[
+#slide(siefken_num: auto)[
   + Draw three different graphs of discontinuous functions *in $RR^2$*.
   + For each of your graphs, sketch a contour map of the graph extruded along the $y$-axis in
     $RR^3$.
@@ -289,7 +294,7 @@
     map?
 ]
 
-#slide(title: [Siefken 13])[
+#slide(siefken_num: auto)[
   #{
     let a = lq.diagram(
       title: [Map A],

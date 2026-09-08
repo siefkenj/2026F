@@ -2,7 +2,7 @@
 #show: mat235-slides.with([Chapter 19])
 
 
-#slide(title: [Siefken 1])[
+#slide(siefken_num: 1)[
 
   #{
     let width = 9cm
@@ -63,7 +63,7 @@
   + $B$ is at a 45 degree angle relative to $A$. How many ants/hour/unit length cross counter $B$?
 ]
 
-#slide(title: [Siefken 2])[
+#slide(siefken_num: auto)[
 
   #{
     let width = 9cm
@@ -124,7 +124,7 @@
   + Find a formula for the number of ants/hour that cross counter $C$ in terms of $theta$.
 ]
 
-#slide(title: [Siefken 3])[
+#slide(siefken_num: auto)[
 
   #{
     let width = 9cm
@@ -188,7 +188,7 @@
     vector.
 ]
 
-#slide(title: [Siefken 4])[
+#slide(siefken_num: auto)[
 
   The *flux* of a vector field through a surface is the amount of material per second that the
   vector field would "push through" the surface.
@@ -211,7 +211,7 @@
     How could you find the _exact_ flux of $arrow(H)$ through $Q$?
 ]
 
-#slide(title: [Siefken 5])[
+#slide(siefken_num: auto)[
 
   #{
     let width = 9cm
@@ -255,7 +255,7 @@
     $t=1$?
 ]
 
-#slide(title: [Siefken 6])[
+#slide(siefken_num: auto)[
 
   Let $arrow(F):RR^3 -> RR^3$ be given by $arrow(F)(x,y,z)=(1,0,0)$
 
@@ -279,7 +279,7 @@
   + Set up and evaluate an integral to find the flux of $arrow(G)$ through $Q$.
 ]
 
-#slide(title: [Siefken 7])[
+#slide(siefken_num: auto)[
 
   Let $arrow(F):RR^3 -> RR^3$ be given by $arrow(F)(x,y,z)=(x,2y,3z)$
 
@@ -300,7 +300,7 @@
   + Find the flux of $arrow(F)$ through $C$.
 ]
 
-#slide(title: [Siefken 8])[
+#slide(siefken_num: auto)[
 
   Let $S$ be the surface defined by the parameterization $P(t,s) = mat(t; s; cos(t)+cos(s))$ where
   $(t,s) in [-pi, pi]^2$
@@ -320,7 +320,7 @@
     $arrow(F)$ through $S$.
 ]
 
-#slide(title: [Siefken 9])[
+#slide(siefken_num: auto)[
 
   Let $arrow(F):RR^3 -> RR^3$ be a vector field and let $S$ be a surface.
 
@@ -334,7 +334,7 @@
   + In practice, how do we "find" $dif arrow(A)$?
 ]
 
-#slide(title: [Siefken 10])[
+#slide(siefken_num: auto)[
 
   The unit sphere can be parameterized by
   $
@@ -350,7 +350,7 @@
   + Find the flux of $arrow(F)(x,y,z) = (x,2y,3z)$ through the unit sphere (oriented inward).
 ]
 
-#slide(title: [Siefken 11])[
+#slide(siefken_num: auto)[
 
   #{
     let width = 9cm
@@ -400,7 +400,7 @@
     (oriented outward).
 ]
 
-#slide(title: [Siefken 12])[
+#slide(siefken_num: auto)[
 
   #{
     let width = 9cm
@@ -455,7 +455,7 @@
   + Find an approximation for the total flux through $S$.
 ]
 
-#slide(title: [Siefken 13])[
+#slide(siefken_num: auto)[
 
   Recall $arrow(F): RR^2 -> RR^2$ is a vector field and $S$ is a square with side lengths $h$ and
   lower left corner at $arrow(p)$.
@@ -478,7 +478,7 @@
   + Why is $"div"arrow(F)(arrow(p))$ written as $nabla dot arrow(F)(arrow(p))$ by physicists?
 ]
 
-#slide(title: [Siefken 14])[
+#slide(siefken_num: auto)[
 
   Let $arrow(F): RR^2 -> RR^2$ be defined by $arrow(F)(x,y) = mat(x^2; -y)$.
 
@@ -491,7 +491,7 @@
   + Draw a vector field that has _positive_ divergence at the origin.
 ]
 
-#slide(title: [Siefken 15])[
+#slide(siefken_num: auto)[
 
   #{
     let width = 9cm
@@ -550,7 +550,7 @@
     Does the theorem make sense?
 ]
 
-#slide(title: [Siefken 16])[
+#slide(siefken_num: auto)[
 
   Let $arrow(F): RR^2 -> RR^2$ be a vector field defined by
   $

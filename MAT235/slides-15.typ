@@ -2,7 +2,7 @@
 #show: mat235-slides.with([Chapter 15])
 
 
-#slide(title: [Siefken 1])[
+#slide(siefken_num: 1)[
 
   #{
     let s = 3cm
@@ -98,7 +98,7 @@
   + There is no *local extreme* at the origin.
 ]
 
-#slide(title: [Siefken 2])[
+#slide(siefken_num: auto)[
 
   The second derivative test for multivariable functions relies on the theorem: if a function $f$
   is twice differentiable and $Q$ is a quadratic approximation to $f$ at $arrow(p)$, then
@@ -119,7 +119,7 @@
   + $f(x,y)=x^4+y^4+3$ where $Q(x,y) = 3$
 ]
 
-#slide(title: [Siefken 3])[
+#slide(siefken_num: auto)[
 
   Let $p(x,y) = a x^2 + b y^2 +c x y + d x +e y +f$ be a general quadratic.
 
@@ -136,7 +136,7 @@
     + *is no* local minimum or maximum?
 ]
 
-#slide(title: [Siefken 4])[
+#slide(siefken_num: auto)[
 
   Let $p(x,y) = a x^2 + b y^2 +c x y + d x +e y +f$.
 
@@ -164,7 +164,7 @@
 
 ]
 
-#slide(title: [Siefken 5])[
+#slide(siefken_num: auto)[
 
   We will now consider the general case where $q(x,y)=a x^2 + b y^2 + c x y$.
 
@@ -194,7 +194,7 @@
     and $q_(x y)$.
 ]
 
-#slide(title: [Siefken 6])[
+#slide(siefken_num: auto)[
 
   The height of a camp ground is given by
   $
@@ -211,7 +211,7 @@
 
     _Hint_: Feel free to use Desmos!
 ]
-#slide(title: [Siefken 6])[
+#slide(siefken_num: 6)[
 
   The height of a camp ground is given by
   $h(x,y) & =1/10 (-x^2+y(y-6)^2) = 1/10 (-x^2 +y^3 - 12y^2+36 y)$
@@ -249,7 +249,7 @@
   + Draw gradient vectors for $h$ on the contour plot.
 ]
 
-#slide(title: [Siefken 7])[
+#slide(siefken_num: auto)[
 
   The height of a camp ground is given by
   $h(x,y) & =1/10 (-x^2+y(y-6)^2) = 1/10 (-x^2 +y^3 - 12y^2+36 y)$
@@ -297,7 +297,7 @@
     + Something else
 ]
 
-#slide(title: [Siefken 7])[
+#slide(siefken_num: 7)[
 
   The height of a camp ground is given by
   $h(x,y) & =1/10 (-x^2+y(y-6)^2) = 1/10 (-x^2 +y^3 - 12y^2+36 y)$

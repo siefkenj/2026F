@@ -2,7 +2,7 @@
 #show: mat235-slides.with([Chapter 17])
 
 
-#slide(title: [Siefken 1])[
+#slide(siefken_num: 1)[
 
   + For each of the following situations, determine if it can be modeled by a function. If so, what
     is the *domain* and *codomain*?
@@ -14,7 +14,7 @@
     study in Calc I?
 ]
 
-#slide(title: [Siefken 2])[
+#slide(siefken_num: auto)[
 
   Let $arrow(p)=mat(1; 1)$ and $arrow(d)=mat(2; 0)$. Define
   $
@@ -30,7 +30,7 @@
     second.
 ]
 
-#slide(title: [Siefken 3])[
+#slide(siefken_num: auto)[
 
   A bee leaves a flower located at $(3,0,0)$ and flies off in a cork-screw pattern.
 
@@ -44,7 +44,7 @@
     remained the same. Find a formula for $arrow(p)(t)$.
 ]
 
-#slide(title: [Siefken 4])[
+#slide(siefken_num: auto)[
 
   Below is a _Lemniscate_ curve.
   #{
@@ -62,7 +62,7 @@
   + Find a formula for a function whose graph is the lemniscate. Use Desmos to check your answer.
 ]
 
-#slide(title: [Siefken 5])[
+#slide(siefken_num: auto)[
 
   A fish is swimming in a pond. Its position as a function of time is given by
   $arrow(f)(t) = (t^2, 2t)$.
@@ -78,7 +78,7 @@
     draw the velocity vector at the origin or somewhere else?
 ]
 
-#slide(title: [Siefken 6])[
+#slide(siefken_num: auto)[
 
   $arrow(p): RR -> RR^2$ describes the motion of a particle.
 
@@ -99,7 +99,7 @@
 
 ]
 
-#slide(title: [Siefken 7])[
+#slide(siefken_num: auto)[
 
   You are riding the _Lemniscate Coaster_, a roller coaster whose track is laid out in the shape of
   a lemniscate. A car on the coaster can be modeled by $arrow(p)(t)=(20cos t, 20sin 2t)$.
@@ -115,7 +115,7 @@
   + What should $k$ be to ensure the maximum acceleration is $3g$? (Hint: Use Desmos to estimate!)
 ]
 
-#slide(title: [Siefken 8])[
+#slide(siefken_num: auto)[
 
   You are riding the _Lemniscate Coaster_ modeled by $arrow(p)(t)=(20cos t, 20sin 2t)$. You'd like
   to find the total length of the coaster track.
@@ -141,7 +141,7 @@
   + How could you find the exact length of the track? Do it.
 ]
 
-#slide(title: [Siefken 9])[
+#slide(siefken_num: auto)[
 
   Let $W$ give the velocity of the wind at different locations on the earth's surface.
 
@@ -154,7 +154,7 @@
     Will the arrows in your tornado drawing be longer or shorter, closer to the origin?
 ]
 
-#slide(title: [Siefken 10])[
+#slide(siefken_num: auto)[
 
   #{
     let width = 4cm
@@ -200,7 +200,7 @@
   $
 ]
 
-#slide(title: [Siefken 11])[
+#slide(siefken_num: auto)[
 
   The gradient of a function $f:RR^n -> RR$ is also a vector field.
 
