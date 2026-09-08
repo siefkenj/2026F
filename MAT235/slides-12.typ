@@ -2,7 +2,7 @@
 #show: mat235-slides.with([Chapter 12])
 
 // These plots predate lilaq 0.5; keep the version they were written against.
-#import "@preview/lilaq:0.4.0" as lq
+#import "@preview/lilaq:0.6.0" as lq
 
 
 #slide(title: [Siefken 1])[

@@ -15,6 +15,35 @@
 // ---------------------------------------------------------------------------
 // 2.1 Definitions & a taste of number theory (Practicing Proofs, Ch. 2)
 // ---------------------------------------------------------------------------
+#let line_number_proof(body) = {
+  block(stroke: (paint: blue, thickness: 1pt, dash: "dashed"), inset: 1em, width: 100%)[
+    #set enum(numbering: d => text(fill: blue.darken(50%))[(#d)#h(1em)])
+
+    #body
+  ]
+}
+
+#let ub(..args) = {
+  let l = args.pos().at(0, default: 3em)
+  box(width: l, stroke: (bottom: 1pt + blue), fill: blue.lighten(80%), height: 1.5em)
+}
+
+#slide(title: [Warmup: Embettering a Proof 2])[
+  #block(width: 100%, height: 100%)[
+    #set text(size: .9em)
+    Fill in the missing blocks.
+    #line_number_proof[
+      *Claim:* The sum of two odd integers is even.\
+      #ub(3em)*:*
+
+      + Let $m$ and $n$ be odd integers.
+      + #ub(10em) $m = 2j + 1$ and $n = 2k + 1$ for some $j, k in ZZ$. \ #ub(3em) such an $j$ and
+        $k$.
+      + #ub(10em) $m + n = 2j + 2k + 2 = 2(j + k + 1)$ #ub(2em)
+      + #ub(8em) $j + k + 1 in ZZ$ ~#ub(7em)~ $m + n$ is even #ub(2em)
+    ]
+  ]
+]
 
 #slide(title: [Where We Are Going])[
   Chapter 2 is where the course really starts. We will:
@@ -54,7 +83,7 @@
 )[
   The following symbols were introduced in the text:
   $
-    := #h(2em) in #h(2em) divides #h(2em) NN #h(2em) ZZ #h(2em) RR
+    := #h(2em) = #h(2em) in #h(2em) divides #h(2em) NN #h(2em) ZZ #h(2em) RR
   $
 
   For each symbol above:

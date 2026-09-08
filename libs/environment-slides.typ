@@ -13,6 +13,16 @@
 
 /// Create a slide. If `slide_settings.active` is `false`, the content of the slide will be
 /// directly passed through and no border/etc. will be shown.
+///
+/// Arguments:
+/// - `title`: The title of the slide, or `none` for an untitled slide. Defaults to `none`.
+/// - `body`: The content of the slide. Required, and normally passed as a trailing content block.
+/// - `autosize`: Whether the slide should automatically resize its content to fit. Defaults to `true`.
+/// - `force_two_column`: Whether to force the slide to be two columns, even if the content would fit
+///   better in a single column. Defaults to `false`.
+/// - `force_scale`: A length used as the base text size for the slide instead of `1em`. This can be
+///   used to force the content to fit on a single slide if `autosize` is not sufficient. Defaults to
+///   `none`.
 #let slide = e.element.declare(
   "slide",
   prefix: PREFIX,
