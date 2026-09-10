@@ -37,7 +37,7 @@
       #ub(3em)*:*
 
       + Let $m$ and $n$ be odd integers.
-      + #ub(10em) $m = 2j + 1$ and $n = 2k + 1$ for some $j, k in ZZ$. \ #ub(3em) such an $j$ and
+      + #ub(10em) $m = 2j + 1$ and $n = 2k + 1$ for some $j, k in ZZ$. \ #ub(3em) such a $j$ and
         $k$.
       + #ub(10em) $m + n = 2j + 2k + 2 = 2(j + k + 1)$ #ub(2em)
       + #ub(8em) $j + k + 1 in ZZ$ ~#ub(7em)~ $m + n$ is even #ub(2em)
