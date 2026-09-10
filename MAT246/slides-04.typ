@@ -28,6 +28,7 @@
   title: [Induction --- Inductive Reasoning],
   source: 69,
   goal: [Reflect on the axiom of induction, and on why it is plausible.],
+  num_prefix: auto,
 )[
   A common metaphor for induction is a chain of dominoes: if the first one falls, and each domino
   knocks over the next, then they all fall.
@@ -46,6 +47,7 @@
   title: [Induction --- Recap],
   source: 70,
   goal: [Reconstruct the key example from the textbook on your own. For this exercise, do _not_ refer back to the text or your notes!],
+  num_prefix: auto,
 )[
   The $n$-th *triangular number* $T_n$ is defined by $display(T_n = (n(n+1))/2)$.
 
@@ -65,6 +67,7 @@
   title: [Induction --- Writing Inductive Proofs],
   source: 71,
   goal: [Translate an informal statement into a formal one, then prove it inductively.],
+  num_prefix: auto,
 )[
   We will prove that _the sum of the first $n$ odd natural numbers is the $n$-th square number._
 
@@ -79,6 +82,7 @@
   title: [Induction --- Writing Inductive Proofs II],
   source: 72,
   goal: [A problem as it would appear on an exam. Write a complete proof!],
+  num_prefix: auto,
 )[
   Use mathematical induction to prove that for every $n in NN$,
   $
@@ -92,6 +96,7 @@
   title: [Induction --- A False Proof],
   source: 73,
   goal: [Play the role of peer-reviewer: criticize an inductive argument.],
+  num_prefix: auto,
 )[
   Define the predicate $P(n)$ by
   $
@@ -114,6 +119,7 @@
   title: [Induction --- Asymptotic Growth],
   source: 74,
   goal: [Induction can prove statements that are only _eventually_ true.],
+  num_prefix: auto,
 )[
   Recall that $n!$ ("$n$ factorial") is the product of the first $n$ integers,
   $n! = 1 dot 2 dot 3 dots.c n$.
@@ -131,6 +137,7 @@
   title: [Induction --- Asymptotic Growth II],
   source: 75,
   goal: [This looks like the previous exercise, but the inductive step needs one more idea than plain substitution. Be alert!],
+  num_prefix: auto,
 )[
   Use mathematical induction to prove that *eventually* the following inequality holds:
   $
@@ -145,6 +152,7 @@
   title: [Induction --- Convergence],
   source: 76,
   goal: [Induction is not only about the natural numbers --- here it does work in analysis.],
+  num_prefix: auto,
 )[
   The *double factorial* skips every other multiplicand:
   $
@@ -169,6 +177,7 @@
   title: [Induction --- Convergence II],
   source: 77,
   goal: [Induction proving convergence of an infinite _product_ --- with different patterns for odd and even terms.],
+  num_prefix: auto,
 )[
   Consider the sequence ${p_n}_(n=1)^oo$ whose $n$-th term is the product
   $
@@ -204,6 +213,7 @@
   title: [Complete Induction --- Recurrence],
   source: 78,
   goal: [The Lucas sequence: same recurrence as Fibonacci, different starting conditions. Compare with Problem 4.29 in the text.],
+  num_prefix: auto,
 )[
   Let $a_1 = 1$, $a_2 = 3$, and $a_n = a_(n-1) + a_(n-2)$ for $n >= 3$.
 
@@ -216,6 +226,7 @@
   title: [Complete Induction --- Remainder Modulo 3],
   source: 79,
   goal: [A particular case of the Division Algorithm (the Quotient-Remainder formula).],
+  num_prefix: auto,
 )[
   Use *complete induction* to prove that every integer $n >= 2$ can be expressed as
   $
@@ -229,6 +240,7 @@
   title: [Complete Induction --- Making Change],
   source: 80,
   goal: [Practice strong induction. A variation on Problem 4.31 in the text.],
+  num_prefix: auto,
 )[
   Suppose you have an infinite supply of \$6, \$10, and \$15 bills.
 
@@ -244,6 +256,7 @@
   title: [Complete Induction --- Fibonacci],
   source: 81,
   goal: [Induction proving a closed form for a recursive relation.],
+  num_prefix: auto,
 )[
   The Fibonacci sequence is given by $f_1 = f_2 = 1$ and $f_n = f_(n-1) + f_(n-2)$ for $n >= 3$:
   $
@@ -262,6 +275,7 @@
   title: [Complete Induction --- Divisibility],
   source: 82,
   goal: [An inductive statement that holds only for _some_ natural numbers, which are not consecutive.],
+  num_prefix: auto,
 )[
   Let $a, b in NN$ be two fixed natural numbers (we do not know which).
 
@@ -291,6 +305,7 @@
   title: [Well-Ordering --- Maximum and Minimum],
   source: 83,
   goal: [Practice the definitions of minimum and maximum.],
+  num_prefix: auto,
 )[
   Find the maximum and minimum, if they exist, of each of the following sets. Use the *definitions*
   of maximum and minimum to prove your answers.
@@ -308,6 +323,7 @@
   title: [Well-Ordering --- Spot the Error],
   source: 84,
   goal: [Common errors seen on solutions. Can you identify and correct them?],
+  num_prefix: auto,
 )[
   Identify the error in each statement below, and give a set that serves as a counterexample.
 
@@ -320,6 +336,7 @@
   title: [Well-Ordering --- from Induction],
   source: 85,
   goal: [Develop carefully the proof outline given in the text.],
+  num_prefix: auto,
 )[
   We show that the principle of mathematical induction *implies* the Well-Ordering Principle.
 
@@ -335,6 +352,7 @@
   title: [Well-Ordering --- Induction from Well-Ordering],
   source: 86,
   goal: [The converse direction: well-ordering implies induction.],
+  num_prefix: auto,
 )[
   We prove that the Well-Ordering Principle implies the Axiom of Induction.
 
@@ -354,6 +372,7 @@
   title: [Well-Ordering --- Using It],
   source: 87,
   goal: [Since well-ordering is equivalent to induction, we should be able to use it wherever we would use induction.],
+  num_prefix: auto,
 )[
   Use the *well-ordering principle* to prove that
   $
@@ -367,6 +386,7 @@
   title: [Well-Ordering --- Division with Remainder],
   source: 88,
   goal: [Sometimes well-ordering is far more convenient than induction. Here is the full division theorem.],
+  num_prefix: auto,
 )[
   #theorem(title: [Division with Remainder])[
     For every $n, m in NN$ there exist $q in ZZ_(>=0)$ and $r in {0, 1, dots, m-1}$ such that
@@ -387,6 +407,7 @@
   title: [Well-Ordering --- Spot the Error II],
   source: 89,
   goal: [Well-ordering has its own common but not-so-obvious false steps. Can you spot this one?],
+  num_prefix: auto,
 )[
   Recall the Fibonacci sequence $f_1 = f_2 = 1$, $f_n = f_(n-1) + f_(n-2)$ for $n >= 3$:
   $1, 1, 2, 3, 5, 8, 13, 21, 34, 55, dots$
@@ -411,6 +432,7 @@
   title: [Well-Ordering --- Roundabout],
   source: 90,
   goal: [A classic result where well-ordering is far easier than induction. Challenge yourself!],
+  num_prefix: auto,
 )[
   The mythical country *Maths* has a finite number of cities, connected by a finite number of
   *one-way* roads, in such a way that each city is reachable from any other city (though not

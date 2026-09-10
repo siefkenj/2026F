@@ -25,13 +25,13 @@
   + *Share* a summary of each group's discussion.
 ]
 
-#slide(title: [Setting the Stage])[
+#slide(title: [Setting the Stage], num_prefix: auto)[
   #v(1fr)
   What makes an argument *convincing*?
   #v(1fr)
 ]
 
-#slide(title: [Setting the Stage])[
+#slide(title: [Setting the Stage], num_prefix: auto)[
   #v(1fr)
   Is there anything you are *certain* is true?
 
@@ -39,7 +39,7 @@
   #v(1fr)
 ]
 
-#slide(title: [Setting the Stage])[
+#slide(title: [Setting the Stage], num_prefix: auto)[
   #v(1fr)
   What do you reasonably expect to remember from your mathematics courses in 20 years?
   #v(1fr)
@@ -93,7 +93,7 @@
   // - Instructors foster equity in their design and facilitation choices.
 ]
 
-#slide(title: [*Proofs*: Is This a Proof?])[
+#slide(title: [*Proofs*: Is This a Proof?], num_prefix: auto)[
   Consider the claim: *the sum of any two odd integers is even.*
 
   Below are three attempted arguments. For each, decide whether it is a proof. If not, say exactly
@@ -109,7 +109,7 @@
     $m + n = 2j + 2k + 2 = 2(j + k + 1)$. Since $j + k + 1 in ZZ$, $m + n$ is even.
 ]
 
-#slide(title: [*Proofs*: What Are We Allowed To Use?])[
+#slide(title: [*Proofs*: What Are We Allowed To Use?], num_prefix: auto)[
   In the third argument on the previous slide, we used several facts without comment.
 
   + Which facts about the integers did we assume?
@@ -211,7 +211,7 @@
   ]
 }
 
-#slide(title: [Embettering a Proof])[
+#slide(title: [Embettering a Proof], num_prefix: auto)[
   We consider the argument that the sum of two odd integers is even:
   #line_number_proof[
     + Let $m$ and $n$ be odd integers.

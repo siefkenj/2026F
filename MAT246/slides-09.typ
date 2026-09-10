@@ -46,6 +46,7 @@
   title: [Cardinality --- Warm-Up Bijections],
   book: [Problem 9.6],
   goal: [In each case, build an explicit bijection and briefly justify that it is one.],
+  num_prefix: auto,
 )[
   Prove each of the following.
 
@@ -62,6 +63,7 @@
   title: [Cardinality --- Products and Functions],
   book: [Problems 9.7 and 9.9],
   goal: [Two short problems that will pay off later in the chapter.],
+  num_prefix: auto,
 )[
   + If $A$ is a set, do $A$ and $A times {x}$ have the same cardinality? Justify your answer.
   + Let $cal(F)$ denote the set of functions from $NN$ to ${0, 1}$.
@@ -79,6 +81,7 @@
   title: [Cardinality --- Dyck Paths],
   book: [Problem 9.8],
   goal: [A combinatorial bijection. Counting the same thing two ways is a proof technique in itself.],
+  num_prefix: auto,
 )[
   A *North-East lattice path* from $(0,0)$ to $(n,n)$ takes unit steps North or East. Let $D_n$ be
   the collection of such paths that never drop below the line $y = x$ --- these are called *Dyck
@@ -100,6 +103,7 @@
   title: [Cardinality --- Basic Theorems],
   book: [Theorems 9.10, 9.12 and Corollary 9.11],
   goal: [The bookkeeping results. None should be surprising --- but each needs a bijection built.],
+  num_prefix: auto,
 )[
   Let $A$, $B$, $C$, $D$ be sets.
 
@@ -133,6 +137,7 @@
   title: [Cardinality --- Comparison],
   book: [Theorem 9.14 and Problem 9.15],
   goal: [Practice the definition of $<=$ on cardinalities --- and see where finite intuition breaks.],
+  num_prefix: auto,
 )[
   Let $A$, $B$, $C$ be sets.
 
@@ -164,6 +169,7 @@
   title: [Finite Sets --- Basic Results],
   book: [Theorems 9.19--9.23],
   goal: [Do not forget to consider the empty set in each of these.],
+  num_prefix: auto,
 )[
   + Prove that if $A$ is finite and $"card"(A) = "card"(B)$, then $B$ is finite.
   + Prove that if $A$ has cardinality $n in NN union {0}$ and $x in.not A$, then $A union {x}$ is
@@ -181,6 +187,7 @@
   title: [Finite Sets --- Unions and the Pigeonhole Principle],
   book: [Theorems 9.24 and 9.25],
   goal: [Induction is a sensible approach to the first; the second is surprisingly useful.],
+  num_prefix: auto,
 )[
   + Prove that if $A_1, A_2, dots, A_k$ is a finite collection of finite sets, then
     $display(union.big_(i=1)^k A_i)$ is finite.
@@ -213,6 +220,7 @@
   title: [Infinite Sets --- First Results],
   book: [Theorems 9.27, 9.28 and Problem 9.29],
   goal: [Prove $NN$ is infinite, then bootstrap.],
+  num_prefix: auto,
 )[
   + Prove that $NN$ is infinite.
 
@@ -230,6 +238,7 @@
   title: [Infinite Sets --- The Infinite Hotel],
   book: [Problem 9.30],
   goal: [Hilbert's hotel, after David Hilbert (1862--1942).],
+  num_prefix: auto,
 )[
   The Infinite Hotel has rooms numbered $1, 2, 3, 4, dots$ Every room is currently occupied.
 
@@ -245,6 +254,7 @@
   title: [Infinite Sets --- Three Equivalent Characterizations],
   book: [Theorem 9.31],
   goal: [The central theorem of §9.3: infinite sets are exactly the ones that can be shrunk without loss.],
+  num_prefix: auto,
 )[
   #theorem(title: [9.31])[
     The following are equivalent for a set $A$:
@@ -267,6 +277,7 @@
   title: [Infinite Sets --- Consequences],
   book: [Corollaries 9.32--9.33],
   goal: [Two corollaries, and a question about what the proof quietly assumed.],
+  num_prefix: auto,
 )[
   + Did you use the *Axiom of Choice* in proving (i) $==>$ (ii) of Theorem 9.31? If so, where?
   + Prove that a set is infinite if and only if it has an infinite subset.
@@ -277,6 +288,7 @@
   title: [Infinite Sets --- Practice],
   book: [Problems 9.34 and 9.35],
   goal: [Use the new characterizations rather than the definition.],
+  num_prefix: auto,
 )[
   + Find a *new* proof that $NN$ is infinite, using (iii) $==>$ (i) of Theorem 9.31.
   + Quickly verify that each of the following is infinite, appealing to either Theorem 9.31
@@ -315,6 +327,7 @@
   title: [Countable --- Warm-Up],
   book: [Problem 9.38],
   goal: [Quickly justify countability, appealing to earlier problems. Which of these are denumerable?],
+  num_prefix: auto,
 )[
   + ${a, b, c}$
   + the odd natural numbers
@@ -329,6 +342,7 @@
   title: [Countable --- Structural Results],
   book: [Theorems 9.39--9.43],
   goal: [The toolkit for recognizing countable sets.],
+  num_prefix: auto,
 )[
   + Prove that every infinite set contains a *denumerable* subset. _(Use Theorem 9.31 or Corollary
     9.33.)_
@@ -344,6 +358,7 @@
   title: [Countable --- The Rationals],
   book: [Theorem 9.44],
   goal: [Perhaps the most counterintuitive result so far.],
+  num_prefix: auto,
 )[
   Prove that the set $QQ$ of rational numbers is *countable*.
 
@@ -366,6 +381,7 @@
   title: [Countable --- Unions],
   book: [Theorems 9.45--9.47],
   goal: [Building up to: a countable union of countable sets is countable.],
+  num_prefix: auto,
 )[
   + Prove that if $A$ and $B$ are countable, then $A union B$ is countable.
   + Let ${A_n}_(n=1)^oo$ be a collection of sets. Define $B_1 := A_1$ and, for $n > 1$,
@@ -387,6 +403,7 @@
   title: [Countable --- Products and Sequences],
   book: [Theorems 9.48--9.50],
   goal: [Three more constructions that stay inside the countable world.],
+  num_prefix: auto,
 )[
   + Prove that if $A$ and $B$ are countable, then $A times B$ is countable.
   + Prove that the set of all *finite* sequences of $0$'s and $1$'s (for example $0110010$) is
@@ -420,6 +437,7 @@
   title: [Uncountable --- Cantor's Diagonalization Argument],
   book: [Problem 9.51 and Theorem 9.52],
   goal: [The single most important argument in this chapter.],
+  num_prefix: auto,
 )[
   For contradiction, assume $(0,1)$ is countable, so there is a bijection $f: NN -> (0,1)$. Write
   $
@@ -442,6 +460,7 @@
   title: [Uncountable --- Propagating Uncountability],
   book: [Theorems 9.53, 9.55--9.59 and Corollary 9.54],
   goal: [Tools for finding more uncountable sets, now that we have one.],
+  num_prefix: auto,
 )[
   + Prove that if $A subset B$ and $A$ is uncountable, then $B$ is uncountable. _(Try
     contradiction, and look at Theorem 9.41.)_
@@ -472,6 +491,7 @@
   title: [Uncountable --- True or False],
   book: [Problem 9.60],
   goal: [If a statement is true, prove it. Otherwise, give a counterexample.],
+  num_prefix: auto,
 )[
   Let $A$ and $B$ be sets with $A$ uncountable.
 
@@ -485,6 +505,7 @@
   title: [Uncountable --- Infinite Binary Sequences],
   book: [Problem 9.61, Theorem 9.62 and Corollary 9.63],
   goal: [Compare with the _finite_ sequences of Theorem 9.49. One word changes everything.],
+  num_prefix: auto,
 )[
   Let $S$ be the set of *infinite* sequences of $0$'s and $1$'s.
 
@@ -498,6 +519,7 @@
   title: [Uncountable --- Cantor's Theorem],
   book: [Theorem 9.64],
   goal: [There is no largest infinity.],
+  num_prefix: auto,
 )[
   #theorem(title: [Cantor])[
     If $A$ is a set, then $"card"(A) < "card"(cal(P)(A))$.

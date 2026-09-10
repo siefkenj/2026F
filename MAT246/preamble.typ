@@ -46,6 +46,9 @@
 // A worksheet problem. `goal` is the italicised "the goal of this exercise
 // is ..." blurb; `body` is the problem itself.
 //
+// `num_prefix` is passed straight through to `slide` and keeps its default of
+// `none`. Pass `auto` to number the exercise; a warm-up simply leaves it off.
+//
 // `one-column: true` opts out of autosizing entirely (full frame width, no
 // column split, no shrinking). Use it only when a display equation or table is
 // wider than a column would be; it gives up the overflow protection, so check
@@ -58,12 +61,14 @@
   size: none,
   two-column: none,
   one-column: false,
+  num_prefix: none,
   body,
 ) = slide(
   title: title,
   autosize: not one-column,
   force_scale: size,
   two_columns: two-column,
+  num_prefix: num_prefix,
 )[
   #if goal != none {
     block(

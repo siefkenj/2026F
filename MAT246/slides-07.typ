@@ -36,6 +36,7 @@
   title: [Relations --- Describing Relations],
   source: 91,
   goal: [Three common ways of depicting a relation: as a set, as a digraph, and as a logical table.],
+  num_prefix: auto,
 )[
   Let $X = {1, 2, dots, 10}$ and $Y = {a, b, c, d, e}$. Define a relation $R$ from $X$ to $Y$ by:
 
@@ -56,6 +57,7 @@
   title: [Relations --- Properties of Relations],
   source: 92,
   goal: [Practice the common properties of relations. We will meet them again in later sections.],
+  num_prefix: auto,
 )[
   Let $S$ be the set of all students at the University of Toronto, and define relations on $S$:
   - $a C b$ #h(.4em) iff $a$ has taken more courses than $b$.
@@ -80,6 +82,7 @@
   title: [Relations --- Describing Properties (reflexive)],
   source: 93,
   goal: [The same properties, seen through each of the three representations.],
+  num_prefix: auto,
 )[
   Consider relations on the set $A := {a, b, c, d, e}$, represented either as a *logical table* or
   as a *digraph*.
@@ -95,6 +98,7 @@
   title: [Relations --- Describing Properties (symmetric, transitive)],
   source: 93,
   goal: [Now the same three representations, for symmetry and transitivity.],
+  num_prefix: auto,
 )[
   3. Suppose $S$ is a *symmetric* relation on $A$ with $b S b$, $c S d$, and $e S a$. How would you
     fill the logical table to reflect these facts? How would you modify the digraph?
@@ -108,6 +112,7 @@
   title: [Relations --- Counting Relations],
   source: 94,
   goal: [Think through the definition of a relation by counting.],
+  num_prefix: auto,
 )[
   + If $R$ is a relation on ${1, 2, 3}$, then $R$ is a subset of which set?
   + How many different relations on ${1, 2, 3}$ are there? What about on ${1, 2, dots, n}$?
@@ -121,6 +126,7 @@
   title: [Relations --- Weak Ordering],
   source: 95,
   goal: [Order relations are everywhere --- you already know several examples.],
+  num_prefix: auto,
 )[
   #definition(title: [Antisymmetric / Ordering])[
     A relation $R$ on $A$ is *antisymmetric* if for all $a, b in A$, $a R b$ and $b R a$ together
@@ -140,6 +146,7 @@
   title: [Relations --- Strict Ordering],
   source: 96,
   goal: [Think of the difference between $<=$ and $<$. Each definition can be derived from the other.],
+  num_prefix: auto,
 )[
   #definition(title: [Asymmetric / Strict Ordering])[
     A relation $R$ on $A$ is *asymmetric* if for all $a, b in A$, $a R b$ implies $not (b R a)$.
@@ -176,6 +183,7 @@
   title: [Equivalence --- Real-World Relations],
   source: 97,
   goal: [Practice the definitions of equivalence relation and equivalence class.],
+  num_prefix: auto,
 )[
   Recall the relations on the set $S$ of all students at the University of Toronto:
   - $a C b$ #h(.4em) iff $a$ has taken more courses than $b$.
@@ -191,6 +199,7 @@
   title: [Equivalence --- String Length],
   source: 98,
   goal: [The same practice, with a more mathematical example.],
+  num_prefix: auto,
 )[
   Let $S$ be the set of all words in the English language. For $w_1, w_2 in S$, define
   $w_1 tilde.op w_2$ if they have the same length (number of letters).
@@ -205,6 +214,7 @@
   title: [Equivalence --- Digraphs],
   source: 99,
   goal: [Interpret relations presented as digraphs.],
+  num_prefix: auto,
 )[
   For each digraph below, determine whether the relation it depicts is an equivalence relation. If
   not, explain which properties fail. If so, list the equivalence classes.
@@ -240,6 +250,7 @@
   title: [Equivalence --- A Common Misconception],
   source: 100,
   goal: [Read a short proof and spot the subtle error.],
+  num_prefix: auto,
 )[
   Below is a "proof" that every symmetric and transitive relation is reflexive (and hence an
   equivalence relation). Explain the error, and *prove* it is an error by constructing a
@@ -259,6 +270,7 @@
   title: [Equivalence --- Multifunctional Relations],
   source: 101,
   goal: [Prove a new theorem about a new concept --- then use it right away on a novel relation.],
+  num_prefix: auto,
 )[
   A relation $R$ on a set $X$ is *multifunctional* if
   $
@@ -277,6 +289,7 @@
   title: [Equivalence --- Remainders],
   source: 102,
   goal: [The most fundamental example of an equivalence relation: modular arithmetic.],
+  num_prefix: auto,
 )[
   #theorem(title: [Division with Remainder])[
     For every $n, m in NN$ there exist unique $q in ZZ_(>=0)$ and $r in {0, 1, dots, m-1}$ such that
@@ -298,6 +311,7 @@
   title: [Equivalence --- Advanced Mathematics],
   source: 103,
   goal: [Two famous equivalence relations from more advanced courses.],
+  num_prefix: auto,
 )[
   + Consider $R$ on $RR$ defined by $x R y <==> y - x in ZZ$. Prove $R$ is an equivalence relation
     and describe its equivalence classes.
@@ -313,6 +327,7 @@
   title: [Partitions --- Counting],
   source: 104,
   goal: [Practice the definition of a partition. Try this without referring back to the text!],
+  num_prefix: auto,
 )[
   + Recall the definition of a partition.
   + One common way of representing data is a pie chart. Explain how a pie chart corresponds to a
@@ -326,6 +341,7 @@
   title: [Partitions --- Find the Partitions],
   source: 105,
   goal: [Practice the definition of a set partition. Try to recall it before consulting your notes!],
+  num_prefix: auto,
 )[
   For each set $A_i$ and each collection $Omega_j$, determine whether $Omega_j$ is a partition of
   $A_i$. If not, explain why not.
@@ -354,6 +370,7 @@
   title: [Partitions --- Find the Partitions II],
   source: 106,
   goal: [Slightly more challenging partition-spotting. Think about the pie-chart analogy.],
+  num_prefix: auto,
 )[
   Is $Omega_j$ a partition of $A_i$? If not, why not?
 
@@ -371,6 +388,7 @@
   title: [Partitions --- Find the Partitions II (cont.)],
   source: 106,
   goal: [The same question over the real line.],
+  num_prefix: auto,
 )[
   Is $Omega_j$ a partition of $A_2 = RR$? If not, why not?
 
@@ -385,6 +403,7 @@
   title: [Partitions --- Constructing Partitions],
   source: 107,
   goal: [Among the infinitely many partitions of $NN$, find some with specific properties. (A variation on Exercise 7.56 in the text.)],
+  num_prefix: auto,
 )[
   + Find a partition of $NN$ with exactly $3$ blocks, where $2$ blocks are finite and the third is
     infinite.
@@ -398,6 +417,7 @@
   title: [Partitions --- Relations from Subsets],
   source: 108,
   goal: [Partitions and equivalence relations are two sides of one coin. Here is the bridge.],
+  num_prefix: auto,
 )[
   Recall (Definition 7.62 in the text) that given a collection $Omega$ of subsets of $A$, the
   *associated relation* $R_Omega$ is defined by
@@ -422,6 +442,7 @@
   title: [Partitions --- Relations and Partitions],
   source: 109,
   goal: [A capstone: prove the main theorems of §7.3 for yourself.],
+  num_prefix: auto,
 )[
   As above, $a R_Omega b <==> exists X in Omega$ with $a, b in X$.
 
@@ -442,6 +463,7 @@
   title: [Partitions --- Relations and Partitions II],
   source: 110,
   goal: [Every partition gives an equivalence relation. Now the converse (Theorem 7.59 in the text).],
+  num_prefix: auto,
 )[
   Suppose $R$ is an equivalence relation on $A$.
 
@@ -455,6 +477,7 @@
   title: [Partitions --- Refinements],
   source: 111,
   goal: [A "refinement" compares how two partitions organize the same information.],
+  num_prefix: auto,
 )[
   Let $A$ be a set and $Omega_1$, $Omega_2$ partitions of $A$. We say $Omega_1$ is a *refinement* of
   $Omega_2$ if
@@ -495,6 +518,7 @@
   title: [Representatives --- Three Equivalent Conditions],
   source: 112,
   goal: [Specializes and extends Theorem 7.42 in the text. Try it without looking back!],
+  num_prefix: auto,
 )[
   Let $R$ be an equivalence relation on $A$. Prove that for any $a, b in A$ the following are
   equivalent:
@@ -508,6 +532,7 @@
   title: [Representatives --- Operations],
   source: 113,
   goal: [Defining an operation on classes via representatives --- carefully, because it can fail to make sense!],
+  num_prefix: auto,
 )[
   Consider $equiv_10$ on $ZZ$: $a equiv_10 b$ if and only if $10 divides (b - a)$ (equivalently, $a$
   and $b$ have the same last digit).
@@ -529,6 +554,7 @@
   title: [Representatives --- Inherited Properties],
   source: 114,
   goal: [Properties of the operation on representatives are inherited by the operation on classes. Generalizes Theorems 7.92--7.93.],
+  num_prefix: auto,
 )[
   Let $X$ be a set with a binary operation $plus.square$, and let $R$ be an equivalence relation on
   $X$ such that $[a] plus.o [b] = [a plus.square b]$ is well-defined.
@@ -561,6 +587,7 @@
   title: [Representatives --- The Integers (I)],
   source: 115,
   goal: [Building $ZZ$ out of $NN$. The pair $(a, b)$ is standing in for the difference $a - b$.],
+  num_prefix: auto,
 )[
   On the set $cal(Z) = (NN union {0}) times NN$, define a relation $tilde.op$ by
   $
@@ -580,6 +607,7 @@
   title: [Representatives --- The Integers (II)],
   source: 115,
   goal: [Now equip the construction with addition --- and check that it deserves the name.],
+  num_prefix: auto,
 )[
   + Define $plus.square$ on classes by $[(a,b)] plus.square [(c,d)] = [(a+c, b+d)]$. Prove this is
     well-defined.
@@ -596,6 +624,7 @@
   title: [Representatives --- The Integers (III)],
   source: 115,
   goal: [And now subtraction, which is the whole point of extending $NN$ to $ZZ$.],
+  num_prefix: auto,
 )[
   5. Prove that $[(a,b)]$ is identified with $n in NN union {0}$ if and only if $[(b,a)]$ is
     identified with $-n$.
@@ -610,6 +639,7 @@
   title: [Representatives --- The Rationals (I)],
   source: 116,
   goal: [The same idea builds $QQ$: the pair $(a, b)$ stands in for the fraction $a\/b$.],
+  num_prefix: auto,
 )[
   When we first learn fractions we want $1/2$ to equal $2/4$, $3/6$, $(-4)/(-8)$, .... The symbol
   $1/2$ stands for infinitely many other symbols --- which is exactly what an equivalence relation
@@ -632,6 +662,7 @@
   title: [Representatives --- The Rationals (II)],
   source: 116,
   goal: [Why the naive definition of addition fails.],
+  num_prefix: auto,
 )[
   When first learning fractions one wants to try $a/b plus.square c/d = (a+c)/(b+d)$. It does not
   work.
@@ -647,6 +678,7 @@
   title: [Representatives --- The Rationals (III)],
   source: 116,
   goal: [Just as $ZZ$ gave us a global subtraction, the point of $QQ$ is a global division.],
+  num_prefix: auto,
 )[
   4. Define $div$ on $cal(Q) without {0}$ by $div[(a,b)] = [(b,a)]$, for $a != 0$. Prove that $div$
     is well-defined.

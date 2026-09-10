@@ -23,10 +23,11 @@ standalone document and is not built by CI.
 The slide machinery is **not** touying. It lives in [`../libs`](../libs), a copy
 of the `book/libs/` tree of <https://github.com/siefkenj/IBLODEs>, shared with
 MAT235 and MAT336; the course-agnostic helpers are in
-[`../preamble.typ`](../preamble.typ). `slide`, `definition`, `theorem`,
-`example` and `simple_table` behave exactly as they do upstream.
+[`../preamble.typ`](../preamble.typ). `definition`, `theorem`, `example` and
+`simple_table` behave exactly as they do upstream; `slide` gains one field, see
+below.
 
-Two deliberate divergences from upstream:
+Three deliberate divergences from upstream:
 
 * `../libs/cover.typ` is **removed**, and its import dropped from `lib.typ`.
   It draws a Van der Pol phase portrait over an IBLODEs background image, and
@@ -35,6 +36,54 @@ Two deliberate divergences from upstream:
   `preamble.typ` instead.
 * The `*.test.typ` files are removed; they reference IBLODEs modules we do not
   ship.
+* `slide` in `../libs/environment-slides.typ` gains a `num_prefix` field. It is
+  additive — its default is `none`, so a deck that does not set it renders
+  exactly as before, which is how MAT235 and MAT336 are left untouched.
+
+### Slide numbering
+
+Upstream's `siefken_num` *replaces* a slide's title with `Siefken X`. MAT246
+wants a number **and** a title, so `slide` also takes `num_prefix`:
+
+| `num_prefix` | Title shown | Top-level enum |
+| --- | --- | --- |
+| `none` (default) | the `title` as given | `1.`, `2.`, ... |
+| `auto` | `X. Title`, continuing from the last prefixed slide | `X.1`, `X.2`, ... |
+| a number (`7`, `2.1`) | `X. Title` with the counter set outright | `X.1`, `X.2`, ... |
+
+`num_prefix` runs on its own counter, separate from `siefken_num`'s, so the two
+schemes cannot disturb each other. If both are set on one slide, `siefken_num`
+wins. Deeper enum levels are untouched by either.
+
+`num_prefix` is **not** defaulted to `auto` anywhere — neither `slide` nor
+`exercise` numbers a slide unless the call site says so. Every slide that should
+carry a number passes `num_prefix: auto` explicitly:
+
+```typst
+#slide(title: [Where We Are Going], num_prefix: auto)[ ... ]
+
+#exercise(
+  title: [Definitions --- Vocabulary],
+  source: 1,
+  num_prefix: auto,
+)[ ... ]
+```
+
+Anything that is *not* a question leaves the argument off. It keeps its title,
+shows no number, and does not consume one — the count runs straight through it,
+so the numbered slides either side are consecutive. That covers:
+
+* **warm-ups**, which sit outside the numbering deliberately, and
+* **description slides** — `Where We Are Going`, the section openers that state
+  a definition and talk around it, `Class Details`, `For Next Class`, and so on.
+  A number on one of these is a promise of a question that is not there, and it
+  would also drag the slide's bullet list into `X.y` numbering.
+
+The upshot is that a numbered slide always has something to work on. Every
+`exercise` is numbered (bar the warm-ups); of the plain `slide` calls only the
+handful that pose a question are — the three `Setting the Stage` discussion
+prompts, the two `*Proofs*:` activities and `Embettering a Proof`, all in
+`slides-01.typ`.
 
 The library needs the fonts vendored in [`../fonts`](../fonts):
 `Nimbus-Sans-L` (sans), `Bitstream-Charter` (serif) and `Latin-Mono` (mono),

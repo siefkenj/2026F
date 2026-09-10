@@ -34,6 +34,7 @@
   title: [Functions --- Non-Functions],
   source: 117,
   goal: [Non-examples show why each part of the definition matters.],
+  num_prefix: auto,
 )[
   Determine why each of the following is *not* a function.
 
@@ -49,6 +50,7 @@
   title: [Functions --- Construction],
   source: 118,
   goal: [Build your own examples and counterexamples: what does "every input has exactly one output" really mean?],
+  num_prefix: auto,
 )[
   + List all relations from $A = {1}$ to $B = {a, b}$. Which are also functions?
   + List all functions from $C = {1, 2}$ to $D = {a, b, c}$.
@@ -63,6 +65,7 @@
   title: [Functions --- Is This a Function? (I)],
   source: 119,
   goal: [Functions come described as formulas, graphs, tables, or sets of pairs. Recognize them in every guise.],
+  num_prefix: auto,
 )[
   Does each digraph below define a function from ${1, 2, 3}$ to ${1, 2, 3}$? Explain why or why not.
 
@@ -93,6 +96,7 @@
   title: [Functions --- Is This a Function? (II)],
   source: 119,
   goal: [The same question, for a curve, a set-builder description, a formula, and a table.],
+  num_prefix: auto,
 )[
   3. $R subset {1,2,3,4} times RR$, $R = {(1, pi), (3, 1), (4, ln 5)}$.
   + $f: ZZ -> ZZ$, $f(x) = x^2 + 1$.
@@ -113,6 +117,7 @@
   title: [Functions --- Domain and Range],
   source: 120,
   goal: [Identify a function's domain and compute its range.],
+  num_prefix: auto,
 )[
   Each of the following functions has $RR$ as its codomain. In each case, determine the *domain* and
   the *range*.
@@ -129,6 +134,7 @@
   title: [Functions --- Codomain versus Range],
   source: 121,
   goal: [The codomain says where outputs _could_ live; the range says what actually appears.],
+  num_prefix: auto,
 )[
   Let $f: RR -> RR$ be defined by $f(x) = x^2 + 1$, and let $g: RR -> [1, oo)$ be defined by
   $g(x) = x^2 + 1$.
@@ -145,6 +151,7 @@
   title: [Functions --- Special Functions],
   source: 122,
   goal: [Inclusion, identity, and constant maps: three ways the domain and codomain shape a function.],
+  num_prefix: auto,
 )[
   Let $A = {1,2,3,4}$ and $B = {0,1,2,3,4,5,6,7,8,9}$.
 
@@ -161,6 +168,7 @@
   title: [Functions --- Piecewise-Defined Functions],
   source: 123,
   goal: [A piecewise rule defines a function only if the pieces neither overlap nor leave gaps.],
+  num_prefix: auto,
 )[
   Consider the following rule for $f: RR -> RR$:
   $
@@ -185,6 +193,7 @@
   title: [Functions --- Ceiling and Floor],
   source: 124,
   goal: [Precise wording is what makes a rounding rule into a well-defined function.],
+  num_prefix: auto,
 )[
   For a real number $x$,
   $
@@ -206,6 +215,7 @@
   title: [Functions --- Functions and Equivalence Relations],
   source: 125,
   goal: [Operations on equivalence classes are a special case of functions defined via representatives.],
+  num_prefix: auto,
 )[
   In each case, determine whether the function is *well-defined*. If it is, give a proof; if not, a
   counterexample.
@@ -225,6 +235,7 @@
   title: [Functions --- More on Ceiling and Floor],
   source: 126,
   goal: [A bonus exercise on the subtle behaviour of $ceil(dot)$ and $floor(dot)$ under addition and scaling.],
+  num_prefix: auto,
 )[
   Part (f) of the previous ceiling/floor exercise may be especially useful here.
 
@@ -263,6 +274,7 @@
   title: [Injectivity --- Basic Definitions],
   source: 127,
   goal: [Compare and contrast similar-sounding statements; construct examples and non-examples.],
+  num_prefix: auto,
 )[
   Let $f: X -> Y$ be a function. For each condition below, determine whether it guarantees $f$ is
   injective, surjective, bijective, or none of these. If none, give an example where it fails.
@@ -282,6 +294,7 @@
   title: [Injectivity --- Classifying Functions],
   source: 128,
   goal: [Identify these properties in concrete functions.],
+  num_prefix: auto,
 )[
   Determine, *with proof*, which of the following functions are injective, surjective, or bijective.
 
@@ -296,6 +309,7 @@
   title: [Injectivity --- Piecewise-Defined Functions],
   source: 129,
   goal: [Which properties survive a piecewise construction?],
+  num_prefix: auto,
 )[
   Let $A$, $B$, $C$, $D$ be sets with $A inter C = emptyset$. Let $f: A -> B$ and $g: C -> D$ be
   functions, and define $h: A union C -> B union D$ by
@@ -316,6 +330,7 @@
   title: [Injectivity --- Finite Sets],
   source: 130,
   goal: [Maps between sets carry information about their relative sizes. This is how we will _define_ size comparison for infinite sets.],
+  num_prefix: auto,
 )[
   Let $m, n in NN$ and set $A = {1, 2, dots, n}$, $B = {1, 2, dots, m}$.
 
@@ -336,6 +351,7 @@
   title: [Injectivity --- Constructing a Bijection],
   source: 131,
   goal: [Even when you know a bijection must exist, finding one is not always trivial.],
+  num_prefix: auto,
 )[
   Let $A = {1, dots, m}$ and $B = {1, dots, n}$. Since $abs(A times B) = m n$, the previous exercise
   guarantees a bijection $A times B -> {1, 2, dots, m n}$. Let us construct one.
@@ -354,6 +370,7 @@
   title: [Injectivity --- Set Difference],
   source: 132,
   goal: [How injective maps interact with set operations. This foreshadows the image/preimage asymmetry.],
+  num_prefix: auto,
 )[
   Let $f: X -> Y$ be a function. For $Z subset X$, write $f[Z] = {f(z) : z in Z}$ for the *image* of
   $Z$ under $f$.
@@ -369,6 +386,7 @@
   title: [Injectivity --- Cantor's Theorem],
   source: 133,
   goal: [A refined version of Russell's Paradox --- and the source of infinitely many sizes of infinity.],
+  num_prefix: auto,
 )[
   For a finite set $X$ with $abs(X) = n$ we know $abs(cal(P)(X)) = 2^n$. Since $2^n > n$, the
   previous exercises show there is no surjection $X -> cal(P)(X)$. We now extend this to *arbitrary*
@@ -394,6 +412,7 @@
   title: [Composition --- Composing Functions],
   source: 134,
   goal: [Form and evaluate compositions in a variety of settings.],
+  num_prefix: auto,
 )[
   Find the following compositions, if they exist. Do not forget to specify the domain and codomain.
 
@@ -414,6 +433,7 @@
   title: [Composition --- Order of Composition],
   source: 135,
   goal: [Commuting operators matter throughout mathematics and physics. Here: real affine maps.],
+  num_prefix: auto,
 )[
   Let $f, g: RR -> RR$ be the affine functions $f(x) = a x + b$ and $g(x) = c x + d$, where
   $a, b, c, d in RR$ are fixed constants.
@@ -430,6 +450,7 @@
   title: [Composition --- Composition and Injectivity],
   source: 136,
   goal: [How information is lost or preserved under composition.],
+  num_prefix: auto,
 )[
   Let $f: X -> Y$ and $g: Y -> Z$, so $g compose f: X -> Z$ is well-defined.
 
@@ -445,6 +466,7 @@
   title: [Composition --- Composition and Surjectivity],
   source: 137,
   goal: [The companion questions for surjectivity.],
+  num_prefix: auto,
 )[
   Let $f: X -> Y$ and $g: Y -> Z$, so $g compose f: X -> Z$ is well-defined.
 
@@ -459,6 +481,7 @@
   title: [Composition --- Left- and Right-Inverses],
   source: 138,
   goal: [Connect the functional property (injective/surjective) with the algebraic one (one-sided inverses).],
+  num_prefix: auto,
 )[
   #grid(
     columns: (auto, 1fr),
@@ -494,6 +517,7 @@
   title: [Composition --- The Inverse Relation],
   source: 139,
   goal: [Any relation can be inverted; each way the inverse fails to be a function constrains the original.],
+  num_prefix: auto,
 )[
   Given a relation $R subset A times B$, the *inverse relation* $R^(-1) subset B times A$ is defined
   by $(b, a) in R^(-1) <==> (a, b) in R$.
@@ -515,6 +539,7 @@
   title: [Composition --- Two-Sided Inverses],
   source: 140,
   goal: [One-sided inverses are usually not unique --- but a left and a right inverse must coincide.],
+  num_prefix: auto,
 )[
   + Revisit $f_1 : {1,2} -> {a,b,c}$ with $f_1 (1) = a$, $f_1 (2) = b$. Construct two *distinct*
     left-inverses $g_1$ and $g_1'$ for $f_1$.
@@ -534,6 +559,7 @@
   title: [Composition --- Cantor--Schröder--Bernstein (I)],
   source: 141,
   goal: [If $X$ injects into $Y$ and $Y$ injects into $X$, there is a bijection. König's elegant proof --- take it slowly.],
+  num_prefix: auto,
 )[
   Suppose $f: X -> Y$ and $g: Y -> X$ are both injective. Our goal is to build a bijection
   $h: X -> Y$.
@@ -563,6 +589,7 @@
   title: [Composition --- Cantor--Schröder--Bernstein (II)],
   source: 141,
   goal: [Now build the three blocks and glue the bijection together.],
+  num_prefix: auto,
 )[
   + Prove that $forall x in X, forall n in NN, (psi_(n-1)^(-1)({f(x)}) = phi_(n-1)^(-1)({x}))$.
     What is the analogous statement for $y in Y$?
@@ -608,6 +635,7 @@
   title: [Preimages --- Notation],
   source: 142,
   goal: [The same notation gets used with different meanings. Guard against confusion.],
+  num_prefix: auto,
 )[
   Let $f: RR -> RR$ be given by $f(x) = x^2$.
 
@@ -625,6 +653,7 @@
   title: [Preimages --- Images and Preimages],
   source: 143,
   goal: [Build intuition for how functions transform subsets of the domain and codomain.],
+  num_prefix: auto,
 )[
   + Let $S = {-1, 0, 2, 4, 7}$. Find $f(S)$ if
     #enum(
@@ -653,6 +682,7 @@
   title: [Preimages --- Preimages and Complements],
   source: 144,
   goal: [The logical structure of preimages and set operations. See also Problem 8.89 in the text.],
+  num_prefix: auto,
 )[
   Let $f: X -> Y$ be a function and $S subset Y$.
 
@@ -669,6 +699,7 @@
   title: [Preimages --- Images of Intersections],
   source: 145,
   goal: [An important connection between properties of functions and operations on sets.],
+  num_prefix: auto,
 )[
   Let $f: X -> Y$ be arbitrary and $A, B subset X$.
 
@@ -683,6 +714,7 @@
   title: [Preimages --- The Characteristic Function],
   source: 146,
   goal: [A bridge between set theory and algebra: set operations become arithmetic formulas.],
+  num_prefix: auto,
 )[
   Fix a universal set $U$. Each $S subset U$ defines a *characteristic function*
   $chi_S : U -> {0, 1}$ by
@@ -709,6 +741,7 @@
   title: [Preimages --- The Characteristic Function of $ZZ$],
   source: 147,
   goal: [Describe $chi_(ZZ) : RR -> {0,1}$ using only floor, ceiling, and algebra.],
+  num_prefix: auto,
 )[
   Recall $floor(x)$ is the greatest integer $<= x$ and $ceil(x)$ the least integer $>= x$.
 
@@ -725,6 +758,7 @@
   title: [Preimages --- Functions, Preimages, and Partitions],
   source: 148,
   goal: [Every function partitions its domain. Make the connection explicit.],
+  num_prefix: auto,
 )[
   Let $f: X -> Y$ be a function.
 

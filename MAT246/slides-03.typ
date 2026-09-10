@@ -30,6 +30,7 @@
   title: [Sets --- Set-Builder Notation],
   source: 29,
   goal: [Practice _packing_ sets into a rule and _unpacking_ them into a list.],
+  num_prefix: auto,
 )[
   + List the elements of the set ${n in NN | n < 5}$.
   + List the elements of the set ${x in ZZ | -2 < x <= 2}$.
@@ -41,6 +42,7 @@
   title: [Sets --- Subsets],
   source: 30,
   goal: [The definition of a subset, and how to decide whether one set is a subset of another.],
+  num_prefix: auto,
 )[
   + For each pair, decide whether $A_i subset B_i$:
     $
@@ -56,6 +58,7 @@
   title: [Sets --- Set Equality],
   source: 31,
   goal: [Prove equality from the definition rather than by listing elements --- a habit that pays off later.],
+  num_prefix: auto,
 )[
   Use the definition of set equality via *double subset inclusion* to prove that
   $
@@ -69,6 +72,7 @@
   title: [Sets --- Set Operations],
   source: 32,
   goal: [Compute unions, intersections, differences, and complements straight from the definitions.],
+  num_prefix: auto,
 )[
   Let $A = {1, 2, 3}$ and $B = {2, 3, 4}$ be sets in the universe $U = {1, 2, 3, 4, 5}$. Compute the
   following (no proof needed --- just state your answer):
@@ -92,6 +96,7 @@
   title: [Sets --- The Empty Set],
   source: 33,
   goal: [How the empty set interacts with unions, intersections, and complements.],
+  num_prefix: auto,
 )[
   Prove that for a set $A$ in the universe $U$:
 
@@ -104,6 +109,7 @@
   title: [Sets --- Properties of Set Operations],
   source: 34,
   goal: [Some parts ask for an example (which does _not_ prove the statement); others ask for a full proof.],
+  num_prefix: auto,
 )[
   + *(Transitivity of Subsets, Thm 3.10.)* Prove that if $A subset B$ and $B subset C$, then
     $A subset C$.
@@ -121,6 +127,7 @@
   title: [Sets --- Subset Equivalences],
   source: 35,
   goal: [Connect the definition of subset with two equivalent conditions on unions and intersections.],
+  num_prefix: auto,
 )[
   Show that
   $
@@ -136,6 +143,7 @@
   title: [Sets --- Set Equalities],
   source: 36,
   goal: [Translate between set operations and their complements.],
+  num_prefix: auto,
 )[
   Let $A$ and $B$ be arbitrary sets in the universe $U$. Prove each of the following.
 
@@ -150,6 +158,7 @@
   title: [Sets --- Union-Complement Form],
   source: 37,
   goal: [Practice rewriting set expressions in different forms.],
+  num_prefix: auto,
 )[
   Express the following using *only* unions and complements:
 
@@ -161,6 +170,7 @@
   title: [Sets --- Symmetric Difference],
   source: 38,
   goal: [Meeting a new definition: start from what you know, then build intuition with examples and non-examples.],
+  num_prefix: auto,
 )[
   Define $A symdiff B := (A without B) union (B without A)$.
 
@@ -192,6 +202,7 @@
   title: [Power Sets --- Definition],
   source: 39,
   goal: [Practice the distinction between _elements_ and _subsets_.],
+  num_prefix: auto,
 )[
   Consider the set $A = {1, 2}$.
 
@@ -215,6 +226,7 @@
   title: [Power Sets --- Computation],
   source: 40,
   goal: [Practice computing power sets.],
+  num_prefix: auto,
 )[
   For each of the following sets, find its power set.
 
@@ -230,6 +242,7 @@
   title: [Power Sets --- Cardinality],
   source: 41,
   goal: [The relationship between the number of elements of a set and of its power set.],
+  num_prefix: auto,
 )[
   For each set $S$ in the previous exercise, how many elements are in $S$, and how many are in
   $cal(P)(S)$?
@@ -249,6 +262,7 @@
   title: [Power Sets --- Possible Power Sets],
   source: 42,
   goal: [Start thinking systematically about the special structure of power sets.],
+  num_prefix: auto,
 )[
   For each set below, determine whether it can be the power set $cal(P)(S)$ of some set $S$. If it
   can, find $S$. If not, explain why.
@@ -266,6 +280,7 @@
   title: [Power Sets --- Closure Properties],
   source: 43,
   goal: [Power sets are closed under the set operations --- and "downward closed" under taking subsets.],
+  num_prefix: auto,
 )[
   Suppose $S$ is a set.
 
@@ -281,6 +296,7 @@
   title: [Power Sets --- Set Operations],
   source: 44,
   goal: [How operations on the base sets affect the power set.],
+  num_prefix: auto,
 )[
   Let $U$ be a fixed universe and $A, B subset U$. For each statement, decide whether it is true or
   false and justify briefly.
@@ -317,6 +333,7 @@
   title: [Index Sets --- Finite Indices],
   source: 45,
   goal: [The relationship between the new "big" symbols and the familiar "small" ones.],
+  num_prefix: auto,
 )[
   Consider the sets
   $
@@ -334,6 +351,7 @@
   title: [Index Sets --- Infinite Indices],
   source: 46,
   goal: [The "big" symbols really earn their keep on infinite sequences.],
+  num_prefix: auto,
 )[
   For each $n in NN$, let $display(S_n := [0, (n-1)/n))$.
 
@@ -349,6 +367,7 @@
   title: [Index Sets --- Uncountable Unions],
   source: 47,
   goal: [Use the "big union" symbol over an uncountably large collection.],
+  num_prefix: auto,
 )[
   For each $r in RR$, define $S_r$ as below. Compute $union.big_(r in RR) S_r$. You do not need to
   prove your answers.
@@ -369,6 +388,7 @@
   title: [Index Sets --- Uncountable Unions Revisited],
   source: 48,
   goal: [Now prove it, straight from the definition of the "big union".],
+  num_prefix: auto,
 )[
   For each $r in RR$ define
   $
@@ -385,6 +405,7 @@
   title: [Index Sets --- Uncountable Intersections],
   source: 49,
   goal: [The same, for the "big intersection" symbol.],
+  num_prefix: auto,
 )[
   For each $r in RR$, define $S_r$ as below. Compute $inter.big_(r in RR) S_r$. You do not need to
   prove your answers.
@@ -402,6 +423,7 @@
   title: [Index Sets --- Uncountable Intersections Revisited],
   source: 50,
   goal: [Prove it from the definition of the "big intersection".],
+  num_prefix: auto,
 )[
   For each $r in RR$, define
   $
@@ -418,6 +440,7 @@
   title: [Index Sets --- Unions and Intersections I],
   source: 51,
   goal: [A capstone sequence: complex unions and intersections of infinite sequences, and mixtures of the two.],
+  num_prefix: auto,
 )[
   For each $n in NN$, define the interval
   $
@@ -435,6 +458,7 @@
   title: [Index Sets --- Unions and Intersections II],
   source: 52,
   goal: [A continuation of the previous exercise.],
+  num_prefix: auto,
 )[
   Recall $display(I_n := [(-1)^n / n, #h(.2em) 2 + 1/n])$ and
   $display(J_k := inter.big_(n=k)^oo I_(2n))$.
@@ -455,6 +479,7 @@
   title: [Index Sets --- Unions and Intersections III],
   source: 53,
   goal: [A continuation of the previous two exercises.],
+  num_prefix: auto,
 )[
   Recall that for each $n in NN$ we defined
   $
@@ -471,6 +496,7 @@
   title: [Index Sets --- Monotone Sequences],
   source: 54,
   goal: [Generalizing Problem 3.36 from the textbook, and several of the exercises above.],
+  num_prefix: auto,
 )[
   A sequence of sets ${S_n}_(n=1)^oo$ is *increasing* if $S_1 subset S_2 subset S_3 subset dots.c$,
   i.e. $forall m, n in NN, [(m < n) ==> (S_m subset S_n)]$. It is *decreasing* if
@@ -488,6 +514,7 @@
   title: [Index Sets --- Pairwise Disjoint],
   source: 55,
   goal: [More challenging: the definition of pairwise disjoint, plus proof techniques from Chapter 2.],
+  num_prefix: auto,
 )[
   For each $n in NN$, let
   $
@@ -501,6 +528,7 @@
   title: [Index Sets --- Limits (lim inf and lim sup)],
   source: 56,
   goal: [A capstone connecting this section to Real Analysis. Exercises 51--53 are a special case.],
+  num_prefix: auto,
 )[
   Let ${S_n}_(n in NN)$ be a sequence of sets. Define
   $
@@ -549,6 +577,7 @@
   title: [Products --- Tuples vs. Sets],
   source: 57,
   goal: [Reflect on the difference between sets and tuples via their definitions of equality.],
+  num_prefix: auto,
 )[
   Suppose $a$ and $b$ are two *different* natural numbers.
 
@@ -562,6 +591,7 @@
   title: [Products --- Computing Products],
   source: 58,
   goal: [Practice the definition of the Cartesian product.],
+  num_prefix: auto,
 )[
   + Let $A = {0, 1}$ and $B = {-1, 1}$. Which of the following tuples are elements of $A times B$?
 
@@ -581,6 +611,7 @@
   title: [Products --- Empty Products],
   source: 59,
   goal: [Practice the definition of the Cartesian product.],
+  num_prefix: auto,
 )[
   Prove that $A times B = emptyset$ if and only if one of $A$, $B$ is the empty set. That is:
 
@@ -593,6 +624,7 @@
   title: [Products --- Algebraic Properties],
   source: 60,
   goal: [The Cartesian "product" does not behave much like multiplication of integers or matrices.],
+  num_prefix: auto,
 )[
   + *Commutativity.* Give an example of sets $A$, $B$ for which $A times B != B times A$.
   + Give an example of sets $A$, $B$ for which $A times B = B times A$. Can you formulate a
@@ -607,6 +639,7 @@
   title: [Products --- Criteria for Commutativity],
   source: 61,
   goal: [When exactly is the Cartesian product commutative?],
+  num_prefix: auto,
 )[
   Let $A$, $B$, $C$, $D$ be sets.
 
@@ -621,6 +654,7 @@
   title: [Products --- Projections],
   source: 62,
   goal: [Slightly more challenging --- and it sets the stage for Chapter 7.],
+  num_prefix: auto,
 )[
   Let $A$, $B$ be sets and $S subset A times B$. Define the *projections*
   $
@@ -641,6 +675,7 @@
   title: [Products --- Visualizing Products],
   source: 63,
   goal: [Use the Cartesian plane to visualize Cartesian products.],
+  num_prefix: auto,
 )[
   Sketch each Cartesian product below as a region of the plane $RR^2$, and describe the region in
   words. Pay special attention to the *boundary*.
@@ -654,6 +689,7 @@
   title: [Products --- Distributivity I],
   source: 64,
   goal: [Start investigating how the Cartesian product relates to the other set operations.],
+  num_prefix: auto,
 )[
   Let $A = {0, 1}$, $B = {2, 3}$, and $C = {3, 4}$.
 
@@ -666,6 +702,7 @@
   title: [Products --- Distributivity II],
   source: 65,
   goal: [Now prove the general rules suggested by the previous exercise.],
+  num_prefix: auto,
 )[
   Let $A$, $B$, $C$ be arbitrary sets (possibly empty).
 
@@ -683,6 +720,7 @@
   title: [Products --- Other Set Operations],
   source: 66,
   goal: [How two or more Cartesian products behave under union and intersection.],
+  num_prefix: auto,
 )[
   Let $A$, $B$, $C$, $D$ be sets.
 
@@ -698,6 +736,7 @@
   title: [Products --- Other Set Operations II],
   source: 67,
   goal: [How Cartesian products behave under complementation.],
+  num_prefix: auto,
 )[
   Suppose $U$, $V$ are universes with $X subset U$ and $Y subset V$, so $X^c = U without X$ and
   $Y^c = V without Y$. Then $X times Y subset U times V$, so
@@ -711,6 +750,7 @@
   title: [Products --- Distributivity Revisited],
   source: 68,
   goal: [Generalize the distributivity results to arbitrary index sets.],
+  num_prefix: auto,
 )[
   Let $I$ be an arbitrary nonempty index set (possibly infinite), ${A_i}_(i in I)$ a collection of
   sets indexed by $I$, and $B$ an arbitrary set.

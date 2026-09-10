@@ -27,7 +27,7 @@ for MAT246.
 
 | Path | What it is |
 | --- | --- |
-| [`libs/`](libs) | Slide library, a verbatim copy of `book/libs/` from [IBLODEs](https://github.com/siefkenj/IBLODEs). Keep it a straight copy so it can be re-synced. |
+| [`libs/`](libs) | Slide library, a near-verbatim copy of `book/libs/` from [IBLODEs](https://github.com/siefkenj/IBLODEs). Keep it as close to a straight copy as possible so it can be re-synced; the divergences are listed in [`MAT246/README.md`](MAT246/README.md). |
 | [`preamble.typ`](preamble.typ) | Shared course setup: the `course-slides` template, `cover`, `parts`, `fit-frame`, boxes, notation, attribution. |
 | `MATNNN/preamble.typ` | Binds the course code, name and credits; re-exports the above. |
 | `MATNNN/slides-*.typ` | The decks themselves. |

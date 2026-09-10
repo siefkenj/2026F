@@ -1,6 +1,10 @@
 #import "preamble.typ": *
 #show: mat246-slides.with([Mathematics and Logic], sources: (practicing_proofs,))
 
+// QR codes, for the Natural Number Game slide. `tiaoma` wraps Zint and emits an
+// SVG, so the code stays sharp at whatever size the autosizer settles on.
+#import "@preview/tiaoma:0.3.0"
+
 // Problems in this deck are ported from
 //   *Practicing Proofs: MAT246 Handouts* by Noha ElGarem, Gal Gross,
 //   Tonatiuh Matos Wiederhold and Stan Yoshinobu (University of Toronto, 2025),
@@ -80,6 +84,7 @@
   source: 1,
   goal: [Practice the mathematical symbols, vocabulary, and syntax (grammar) introduced in the
     text.],
+  num_prefix: auto,
 )[
   The following symbols were introduced in the text:
   $
@@ -97,6 +102,7 @@
   title: [Definitions --- Parity],
   source: 2,
   goal: [Practice mathematical definitions and how to apply them.],
+  num_prefix: auto,
 )[
   #definition(title: [Definition 2.1])[
     An integer $n$ is *even* if $n = 2k$ for some $k in ZZ$. An integer $n$ is *odd* if $n = 2k + 1$
@@ -119,13 +125,38 @@
   ]
 
   Can we use the definition to prove that $101$ is _not_ even? If so, how? If not, what else would
-    we need?
+  we need?
+]
+
+#slide(title: [Even and Oddness])[
+
+  // The Lean Game Server deep-links straight into the game; the fragment is part
+  // of the URL, so it has to survive into the QR code verbatim.
+  #let nng_url = "https://adam.math.hhu.de/#/g/leanprover-community/NNG4"
+
+  To prove that every integer is either even or odd (and never both), you need to unravel all the
+  way down to the _definition_ of the integers.
+
+  We won't do that. In this class, from now on, *we may assume every integer is either even or odd
+  but never both*.
+
+  _However_, if you want to prove that theorem, I suggest trying the *Natural Number Game* (#link(
+    nng_url,
+  )), which uses the computer-based proof system _Lean_ and guides you through proving *every single
+  detail* that allows one to prove the rules of arithmetic.
+
+  #align(center)[
+    #tiaoma.qrcode(nng_url, options: (scale: 2.0), width: 2.6cm)
+    #v(.2em)
+    #text(size: .8em, link(nng_url, raw(nng_url)))
+  ]
 ]
 
 #exercise(
   title: [Definitions --- Squaring],
   source: 3,
   goal: [Practice using definitions to prove novel results.],
+  num_prefix: auto,
 )[
   Use Definition 2.1 to prove the following theorem from the text.
 
@@ -140,6 +171,7 @@
   title: [Definitions --- Divisibility],
   source: 4,
   goal: [New definitions generalize old ones --- and claims of "generalization" need proof.],
+  num_prefix: auto,
 )[
   #definition(title: [Definition 2.5])[
     Given $n, m in ZZ$, we say $n$ *divides* $m$, written $n divides m$, if there exists $k in ZZ$
@@ -174,6 +206,7 @@
   title: [Logic --- Translation],
   source: 5,
   goal: [Practice expressing logical ideas using the symbols of propositional logic.],
+  num_prefix: auto,
 )[
   Let Mai be a mathematician, and set
   $
@@ -201,6 +234,7 @@
   goal: [Connectives are defined by their action on truth values. Practice those definitions.],
   // Wide tables: they need the whole frame, not a column.
   one-column: true,
+  num_prefix: auto,
 )[
   It is customary to write $0$ for "false" and $1$ for "true". Complete the truth tables for each of
   the following.
@@ -280,6 +314,7 @@
   source: 7,
   goal: [Now compare columns: two propositions with identical columns are _logically equivalent_.],
   one-column: true,
+  num_prefix: auto,
 )[
   #set align(center)
   #v(.5em)
@@ -310,6 +345,7 @@
   source: 7,
   goal: [One more. What does the last pair of columns tell you about $<==>$?],
   one-column: true,
+  num_prefix: 7,
 )[
   #set align(center)
   #v(.8em)
@@ -328,6 +364,7 @@
   source: 8,
   goal: [Propositional logic is the basis of digital technology: connectives are functions of $0$
     and $1$.],
+  num_prefix: auto,
 )[
   For any proposition $A$ with truth value $0$ or $1$, we can express $not A$ as the arithmetic
   function $1 - A$, since
@@ -352,6 +389,7 @@
   title: [Logic --- Propositions],
   source: 9,
   goal: [Practice translating symbolic language back into intuitive mathematical language.],
+  num_prefix: auto,
 )[
   Let
   $
@@ -378,6 +416,7 @@
   title: [Logic --- Cards],
   source: 10,
   goal: [A classic exercise on the meaning of mathematical ("material") implication.],
+  num_prefix: auto,
 )[
   An unusual deck of alphanumeric cards has one of the letters A--Z on one side and one of the
   numerals 0--9 on the other. Four cards are on the table:
@@ -402,6 +441,7 @@
   title: [Logic --- Nested Implications],
   source: 11,
   goal: [Continue the reflection on material implication, this time via its negation.],
+  num_prefix: auto,
 )[
   Let $A, B, C, dots, Z$ be propositions.
 
@@ -417,6 +457,7 @@
   title: [Logic --- Words],
   source: 12,
   goal: [Theorems are stated in words, not symbols. Practice decoding the common phrases.],
+  num_prefix: auto,
 )[
   Consider the compound proposition $A ==> B$.
 
@@ -438,6 +479,7 @@
   source: 13,
   goal: [Mathematicians switch between logically equivalent statements without warning. Practice
     spotting them.],
+  num_prefix: auto,
 )[
   Let $A$ and $B$ be propositions. Which of the following are logically equivalent to each other?
   Collect them into groups.
@@ -461,6 +503,7 @@
   title: [Logic --- Complete Sets of Connectives],
   source: 14,
   goal: [Logic gates are built from a few simple types. Which connectives can express which?],
+  num_prefix: auto,
 )[
   Consider the five compound propositions
   $
@@ -488,6 +531,7 @@
   title: [Logic --- Tautologies and Contradictions],
   source: 15,
   goal: [Practice identifying tautologies and contradictions.],
+  num_prefix: auto,
 )[
   Let $A$, $B$, and $C$ be propositions. For each compound proposition below, determine (with
   justification) whether it is a *tautology*, a *contradiction*, or neither.
@@ -516,6 +560,7 @@
   title: [Conditionals --- Contrapositive Statements],
   source: 16,
   goal: [Practice translating an implication into its logically equivalent contrapositive.],
+  num_prefix: auto,
 )[
   Find the contrapositive of each of the following.
 
@@ -531,6 +576,7 @@
   title: [Conditionals --- Direct Proofs],
   source: 17,
   goal: [Practice direct proofs and the useful technique of "unpacking" mathematical statements.],
+  num_prefix: auto,
 )[
   Give a *direct proof* of each of the following.
 
@@ -544,6 +590,7 @@
   title: [Conditionals --- Contra- Proofs],
   source: 18,
   goal: [Proofs by contradiction _add_ assumptions; proofs by contrapositive _change_ them.],
+  num_prefix: auto,
 )[
   Prove each of the following *both* by contrapositive *and* by contradiction. Throughout, $m$ and
   $n$ are integers.
@@ -558,6 +605,7 @@
   title: [Conditionals --- Direct Proofs II],
   source: 19,
   goal: [More direct proofs --- with the added benefit of practicing inequalities.],
+  num_prefix: auto,
 )[
   Give a direct proof of each of the following. You may use familiar facts about real numbers and
   inequalities from high-school algebra.
@@ -573,6 +621,7 @@
   title: [Conditionals --- Contra- Proofs II],
   source: 20,
   goal: [More contrapositive and contradiction --- now negating inequalities.],
+  num_prefix: auto,
 )[
   Prove the following by contrapositive *and* by contradiction.
 
@@ -587,6 +636,7 @@
   title: [Conditionals --- Practicing Proofs],
   source: 21,
   goal: [A capstone exercise. Use any of the techniques we have learned.],
+  num_prefix: auto,
 )[
   Prove each of the following.
 
@@ -622,6 +672,7 @@
   title: [Quantifiers --- Proposition vs. Predicate],
   source: 22,
   goal: [Practice the definitions of proposition and predicate.],
+  num_prefix: auto,
 )[
   For each expression below: (i) is it a *proposition* (does it have a definite truth value)? If so,
   which? If not, why not? (ii) Is it a *predicate*? Which variables are free, and which are bound?
@@ -639,6 +690,7 @@
   title: [Quantifiers --- Vocabulary],
   source: 23,
   goal: [Practice the definition and usage of the two common quantifiers.],
+  num_prefix: auto,
 )[
   One of your classmates has missed the lecture and asks you to explain the logical quantifiers
   $forall$ and $exists$. Help them understand how to use these symbols!
@@ -651,6 +703,7 @@
   title: [Quantifiers --- Finite Universe of Discourse],
   source: 24,
   goal: [Quantifiers can be "unpacked" when the universe is finite.],
+  num_prefix: auto,
 )[
   Suppose the universe of discourse for a predicate $P(x)$ is the set ${1, 2, 3, 4, 5}$. Express the
   following *without quantifiers*, using only $P$, negations, conjunctions, and disjunctions.
@@ -670,6 +723,7 @@
   source: 25,
   goal: [The meaning (and truth value) of a quantified statement depends on the universe of
     discourse.],
+  num_prefix: auto,
 )[
   For each proposition below, evaluate its truth value when the universe of discourse is $NN$, then
   $ZZ$, then $RR$.
@@ -685,6 +739,7 @@
   title: [Quantifiers --- Translating],
   source: 26,
   goal: [With more than one variable, both the type and the order of quantification matter.],
+  num_prefix: auto,
 )[
   Let the universe of discourse be all students at UofT, and let $K(x, y) :=$ "$x$ knows $y$".
   Interpret the meaning of each statement below. Pay attention to how changing the quantifiers and
@@ -702,6 +757,7 @@
   title: [Quantifiers --- Evaluating],
   source: 27,
   goal: [A capstone: how comfortable are you interpreting quantified statements?],
+  num_prefix: auto,
 )[
   For each statement below, decide whether it is true or false --- and whether it remains so if the
   order of the quantifiers is reversed. Explain your reasoning.
@@ -717,6 +773,7 @@
   title: [Quantifiers --- Exchanging Quantifiers],
   source: 28,
   goal: [Reflect on the order of quantification.],
+  num_prefix: auto,
 )[
   Let $U$ be a universe of discourse and $P(x, y)$ a predicate in the variables $x$ and $y$.
 
