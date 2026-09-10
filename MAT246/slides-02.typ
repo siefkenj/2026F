@@ -109,6 +109,20 @@
 ]
 
 #exercise(
+  title: [Warmup],
+  source: 2,
+  goal: [Practice mathematical definitions and how to apply them.],
+)[
+  #definition(title: [Definition 2.1])[
+    An integer $n$ is *even* if $n = 2k$ for some $k in ZZ$. An integer $n$ is *odd* if $n = 2k + 1$
+    for some $k in ZZ$.
+  ]
+
+  Can we use the definition to prove that $101$ is _not_ even? If so, how? If not, what else would
+    we need?
+]
+
+#exercise(
   title: [Definitions --- Squaring],
   source: 3,
   goal: [Practice using definitions to prove novel results.],
