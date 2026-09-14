@@ -25,7 +25,7 @@
 #slide(siefken_num: auto)[
   #let F(x, y) = calc.round(20 + (-(x - 1) * (x - 1) - y * y) / 5)
 
-  The following table describes the elevation of various locations in a campground (in meters) at
+  The following table describes the elevation of various locations in a campground (in km) at
   various distances (in km) East and North of the campground entrance.
 
   #{
