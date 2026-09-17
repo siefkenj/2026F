@@ -461,7 +461,7 @@
 )[
   Consider the compound proposition $A ==> B$.
 
-  + Use logical connectives to express the *converse*, the *inverse*, and the *contrapositive*.
+  + Use logical connectives to express the *converse* and the *contrapositive*.
     Which (if any) are logically equivalent to $A ==> B$?
   + Use $==>$ to express each of the following:
 
