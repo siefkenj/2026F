@@ -461,17 +461,27 @@
 )[
   Consider the compound proposition $A ==> B$.
 
-  + Use logical connectives to express the *converse* and the *contrapositive*.
-    Which (if any) are logically equivalent to $A ==> B$?
+  + Use logical connectives to express the *converse* and the *contrapositive*. Which (if any) are
+    logically equivalent to $A ==> B$?
   + Use $==>$ to express each of the following:
 
-    #enum(
-      [$A$ is _necessary_ for $B$.],
-      [$A$ is _sufficient_ for $B$.],
-      [$A$ only if $B$.],
-      [$A$ if $B$.],
-      [$A$ whenever $B$.],
-    )
+    + $A$ is _necessary_ for $B$.
+    + $A$ is _sufficient_ for $B$.
+    + $A$ only if $B$.
+    + $A$ if $B$.
+    + $A$ whenever $B$.
+]
+
+#slide(title: [Warmup: Words to $==>$])[
+  Use $==>$ to express each of the following:
+
+
+  #set enum(numbering: "(a)")
+  + $A$ is _necessary_ for $B$.
+  + $A$ is _sufficient_ for $B$.
+  + $A$ only if $B$.
+  + $A$ if $B$.
+  + $A$ whenever $B$.
 ]
 
 #exercise(
@@ -480,52 +490,54 @@
   goal: [Mathematicians switch between logically equivalent statements without warning. Practice
     spotting them.],
   num_prefix: auto,
+  two-column: false,
 )[
   Let $A$ and $B$ be propositions. Which of the following are logically equivalent to each other?
   Collect them into groups.
 
+  #show: columns.with(3)
   + $A ==> B$
   + $B ==> A$
   + $(not A) ==> (not B)$
   + $(not B) ==> (not A)$
-  + $not (A ==> B)$
+  + #colbreak() $not (A ==> B)$
   + $(not A) and (not B)$
   + $(not A) or (not B)$
   + $(not A) or B$
   + $A or (not B)$
-  + $(not A) and B$
+  + #colbreak() $(not A) and B$
   + $A and (not B)$
   + $not (A and B)$
   + $not (A or B)$
 ]
 
-#exercise(
-  title: [Logic --- Complete Sets of Connectives],
-  source: 14,
-  goal: [Logic gates are built from a few simple types. Which connectives can express which?],
-  num_prefix: auto,
-)[
-  Consider the five compound propositions
-  $
-    not A, #h(1em) A and B, #h(1em) A or B, #h(1em) A ==> B, #h(1em) A <==> B.
-  $
+// #exercise(
+//   title: [Logic --- Complete Sets of Connectives],
+//   source: 14,
+//   goal: [Logic gates are built from a few simple types. Which connectives can express which?],
+//   num_prefix: auto,
+// )[
+//   Consider the five compound propositions
+//   $
+//     not A, #h(1em) A and B, #h(1em) A or B, #h(1em) A ==> B, #h(1em) A <==> B.
+//   $
 
-  For each one, find a logically equivalent proposition using only:
+//   For each one, find a logically equivalent proposition using only:
 
-  + the connectives $not, or$;
-  + the connectives $not, and$;
-  + the connectives $not, ==>$;
-  + the single connective $arrow.t$ defined by the truth table below.
+//   + the connectives $not, or$;
+//   + the connectives $not, and$;
+//   + the connectives $not, ==>$;
+//   + the single connective $arrow.t$ defined by the truth table below.
 
-    #align(center, table(
-      columns: 3,
-      [$A$], [$B$], [$A arrow.t B$],
-      [$0$], [$0$], [$1$],
-      [$0$], [$1$], [$1$],
-      [$1$], [$0$], [$1$],
-      [$1$], [$1$], [$0$],
-    ))
-]
+//     #align(center, table(
+//       columns: 3,
+//       [$A$], [$B$], [$A arrow.t B$],
+//       [$0$], [$0$], [$1$],
+//       [$0$], [$1$], [$1$],
+//       [$1$], [$0$], [$1$],
+//       [$1$], [$1$], [$0$],
+//     ))
+// ]
 
 #exercise(
   title: [Logic --- Tautologies and Contradictions],
@@ -536,6 +548,7 @@
   Let $A$, $B$, and $C$ be propositions. For each compound proposition below, determine (with
   justification) whether it is a *tautology*, a *contradiction*, or neither.
 
+  + $(A ==> B) <==> (not B ==> not A)$
   + $((A and B) ==> C) ==> (A ==> (B ==> C))$
   + $((not A) and B) ==> ((not B) or C)$
   + $(A ==> (B ==> C)) and (A and B and (not C))$
@@ -552,8 +565,25 @@
   - *Contrapositive.* Assume $not B$; deduce $not A$.
   - *Contradiction.* Assume $A$ and $not B$; deduce something absurd.
 
-  The second and third are useful precisely because they hand you an _extra_ assumption to work
-  with.
+  The second and third are useful precisely because they hand you an _alternative_ assumption to
+  work with.
+]
+
+#exercise(
+  title: [Conditionals --- Direct Proofs],
+  source: 17,
+  goal: [Practice direct proofs and the useful technique of "unpacking" mathematical statements.],
+  num_prefix: auto,
+)[
+  Give a *direct proof* of each of the following.
+
+  + If $a$ and $b$ are integers and $a divides b$, then $a divides b c$ for every integer $c$.
+
+  #text(fill: gray)[_Extra Practice:_]
+  #set enum(start: 2)
+  + If $m$ and $n$ are both odd integers, then $m + n$ is even.
+  + If $a divides b$ and $b divides c$, then $a divides c$.
+  + If $n$ is divisible by $6$, then $n$ is divisible by $2$ and by $3$.
 ]
 
 #exercise(
@@ -573,20 +603,6 @@
 ]
 
 #exercise(
-  title: [Conditionals --- Direct Proofs],
-  source: 17,
-  goal: [Practice direct proofs and the useful technique of "unpacking" mathematical statements.],
-  num_prefix: auto,
-)[
-  Give a *direct proof* of each of the following.
-
-  + If $a$ and $b$ are integers and $a divides b$, then $a divides b c$ for every integer $c$.
-  + If $m$ and $n$ are both odd integers, then $m + n$ is even.
-  + If $a divides b$ and $b divides c$, then $a divides c$.
-  + If $n$ is divisible by $6$, then $n$ is divisible by $2$ and by $3$.
-]
-
-#exercise(
   title: [Conditionals --- Contra- Proofs],
   source: 18,
   goal: [Proofs by contradiction _add_ assumptions; proofs by contrapositive _change_ them.],
@@ -596,6 +612,9 @@
   $n$ are integers.
 
   + If $n^2$ is even, then $n$ is even.
+
+  #text(fill: gray)[_Extra Practice:_]
+  #set enum(start: 2)
   + If $n^2$ is not divisible by $3$, then $n$ is not divisible by $3$.
   + If $7 n^3$ is odd, then $n$ is odd.
   + If $m dot n$ is even, then at least one of $m$, $n$ is even.
@@ -607,8 +626,17 @@
   goal: [More direct proofs --- with the added benefit of practicing inequalities.],
   num_prefix: auto,
 )[
-  Give a direct proof of each of the following. You may use familiar facts about real numbers and
-  inequalities from high-school algebra.
+  Give a direct proof of each of the following. You may use the laws of inequalities from
+  high-school algebra:
+  #[
+    #set text(size: 0.9em)
+    #set enum(numbering: "(i)")
+
+    + You may add/subtract the same number to both sides of an inequality.
+    + You may multiply both sides of an inequality by a positive number.
+    + You may multiply both sides of an inequality by a negative number, but you must reverse the
+      direction of the inequality.
+  ]
 
   + If $x > 3$, then $x^2 > 9$.
   + If $0 < x < y$, then $x^2 < y^2$.
