@@ -620,6 +620,27 @@
   + If $m dot n$ is even, then at least one of $m$, $n$ is even.
 ]
 
+#slide(title: [Warmup: Embettering a Proof 3])[
+  #block(width: 100%, height: 100%)[
+    #set text(size: .9em)
+    Can you fill in the missing blocks so the proof is correct? How do you feel about the argument?
+    #line_number_proof[
+      *Claim:* Let $n in ZZ$. If $n^2$ is even, then $n$ is even.\
+      *Proof:*
+
+      + We proceed by #ub(10em).
+      + Let $n in ZZ$.
+      + Suppose $n^2$ is even and $n$ is not even.
+      + Then #ub(10em)
+        $n=2k+1 #h(1em)"and"#h(1em) n^2 = 2k'#h(2em)#ub(10em)$.
+      + Fix such a $k$ and $k'$.
+      + Computing, $n^2 = (2k+1)^2 = 4k^2+4k+1 = 2(2k^2+2k) + 1$.
+      + Since $n^2$ fits the definition of an odd integer, it is odd, and therefore not even.
+      + This contradicts the assumption that $n^2$ is even.
+    ]
+  ]
+]
+
 #exercise(
   title: [Conditionals --- Direct Proofs II],
   source: 19,
