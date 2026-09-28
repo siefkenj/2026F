@@ -319,8 +319,10 @@
     function? Explain.
 
   + Map A came from graphing
-    $f(x,y)= cases(display(x^2/(x^2 + y^2)&" if " (x,y)!=(0,0)), display(1 &" otherwise"))$. Is $f$
-    a continuous function? Explain.
+    $
+      f(x,y)= cases(display(x^2/(x^2 + y^2)&" if " (x,y)!=(0,0)), display(1 &" otherwise")).
+    $
+    Is $f$ a continuous function? Explain.
 ]
 
 #slide(title: [Hughes-Hallet 12.6 \#26])[
