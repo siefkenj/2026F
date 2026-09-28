@@ -306,6 +306,8 @@
         (x, y) => x * x / (x * x + y * y),
         map: color.map.icefire,
       ),
+      // Every contour passes through the origin; fill it in so it doesn't read as a hole.
+      lq.scatter((0,), (0,), color: black, size: 7pt),
     )
     set align(center)
     grid(

@@ -736,19 +736,6 @@
 ]
 
 #exercise(
-  title: [Quantifiers --- Vocabulary],
-  source: 23,
-  goal: [Practice the definition and usage of the two common quantifiers.],
-  num_prefix: auto,
-)[
-  One of your classmates has missed the lecture and asks you to explain the logical quantifiers
-  $forall$ and $exists$. Help them understand how to use these symbols!
-
-  In addition to explaining their meaning, make sure to provide some examples of correct
-  mathematical usage --- and also of _incorrect grammatical_ usage.
-]
-
-#exercise(
   title: [Quantifiers --- Finite Universe of Discourse],
   source: 24,
   goal: [Quantifiers can be "unpacked" when the universe is finite.],
@@ -766,6 +753,20 @@
   *Bonus.* Suppose $P(x) := x > 0$. Interpret each statement above in plain English and determine
   its truth value.
 ]
+
+#exercise(
+  title: [Warmup: Quantifiers --- Vocabulary],
+  source: 23,
+  goal: [Practice the definition and usage of the two common quantifiers.],
+  num_prefix: none,
+)[
+  One of your classmates has missed the lecture and asks you to explain the logical quantifiers
+  $forall$ and $exists$. Help them understand how to use these symbols!
+
+  In addition to explaining their meaning, make sure to provide some examples of correct
+  mathematical usage --- and also of _incorrect grammatical_ usage.
+]
+
 
 #exercise(
   title: [Quantifiers --- Changing the Universe],
@@ -790,7 +791,7 @@
   goal: [With more than one variable, both the type and the order of quantification matter.],
   num_prefix: auto,
 )[
-  Let the universe of discourse be all students at UofT, and let $K(x, y) :=$ "$x$ knows $y$".
+  Let the universe of discourse be all students at U of T, and let $K(x, y) :=$ "$x$ knows $y$".
   Interpret the meaning of each statement below. Pay attention to how changing the quantifiers and
   their order changes the meaning.
 
