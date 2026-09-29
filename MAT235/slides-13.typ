@@ -126,7 +126,7 @@
 
     Find a normal vector for the line $y=-3x$.
 ]
-#slide(siefken_num: 7)[
+#slide(siefken_num: auto)[
 
   #{
     let a = lq.diagram(
@@ -178,28 +178,13 @@
   + Find a formula for $cal(Q)$.
 ]
 
-#slide(siefken_num: auto)[
-
+// The hand picture and the six cetz diagrams are fixed-size, so the autosizer's
+// two-column split cannot fit them. Lay the slide out by hand instead.
+#slide(siefken_num: auto, two_columns: false)[
   The *right hand rule* gives an *orientation* to vectors in $RR^3$.
 
-  #block(
-    breakable: false,
-    stack(
-      [
-        #set text(size: .75em)
-        The order $a$, $b$, $a times b$ follows the right hand rule in the picture below.
-      ],
-      image("cross_produc.svg", width: 6cm),
-    ),
-  )
-
-
-  #show: block.with(breakable: false)
-
-  Which axis labelling follows the right hand rule?
-
   #let d1(x, y, z, L) = {
-    cetz.canvas({
+    cetz.canvas(length: .7cm, {
       import cetz.draw: *
 
       content((0, 1.6, 0), anchor: "south", text(size: 14pt, [(#L)]))
@@ -213,7 +198,7 @@
     })
   }
   #let d2(x, y, z, L) = {
-    cetz.canvas({
+    cetz.canvas(length: .7cm, {
       import cetz.draw: *
 
       content((.5, 1.6, 0), anchor: "south", text(size: 14pt, [(#L)]))
@@ -227,12 +212,28 @@
     })
   }
 
-  #block(breakable: false, table(
-    columns: 3,
-    d1($x$, $y$, $z$, "A"), d1($y$, $z$, $x$, "B"), d1($x$, $z$, $y$, "C"),
-    d2($x$, $y$, $z$, "D"), d2($y$, $z$, $x$, "E"), d2($x$, $z$, $y$, "F"),
-  ))
+  #grid(
+    columns: (auto, 1fr),
+    column-gutter: 1.5em,
+    stack(
+      spacing: .5em,
+      block(width: 5cm)[
+        #set text(size: .75em)
+        The order $a$, $b$, $a times b$ follows the right hand rule in the picture below.
+      ],
+      image("cross_produc.svg", width: 5cm),
+    ),
+    [
+      Which axis labelling follows the right hand rule?
 
+      #align(center, table(
+        columns: 3,
+        inset: .4em,
+        d1($x$, $y$, $z$, "A"), d1($y$, $z$, $x$, "B"), d1($x$, $z$, $y$, "C"),
+        d2($x$, $y$, $z$, "D"), d2($y$, $z$, $x$, "E"), d2($x$, $z$, $y$, "F"),
+      ))
+    ],
+  )
 ]
 
 #slide(siefken_num: auto)[
