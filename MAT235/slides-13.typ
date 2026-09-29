@@ -131,8 +131,8 @@
   #{
     let a = lq.diagram(
       title: [$z=f(x,y)$],
-      width: 6cm,
-      height: 6cm,
+      width: 5cm,
+      height: 5cm,
       lq.contour(
         lq.linspace(-5, 5, num: 20),
         lq.linspace(-5, 5, num: 20),
