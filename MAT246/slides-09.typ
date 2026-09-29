@@ -51,12 +51,12 @@
   Prove each of the following.
 
   + $"card"({a,b,c}) = "card"({x,y,z})$
-  + $"card"(NN) = "card"({2n+1 | n in NN})$
+  + $"card"(NN) = "card"({2n+1 : n in NN})$
   + $"card"(NN) = "card"(ZZ)$
   + $"card"((a,b)) = "card"((c,d))$, where $(a,b)$ and $(c,d)$ are intervals.
 
     _Hint: try a linear function $f: (a,b) -> (c,d)$. Draw a picture._
-  + $"card"(NN) = "card"({1/2^n | n in NN})$
+  + $"card"(NN) = "card"({1/2^n : n in NN})$
 ]
 
 #exercise(
@@ -231,7 +231,7 @@
     _Hint: try contradiction; you should end up composing two bijections $f: A -> B$ and
     $g: B -> [n]$._
   + Quickly verify that the following sets are infinite, appealing to the results above:
-    the odd naturals; the even naturals; $ZZ$; ${1/2^n | n in NN}$; $NN times {a}$.
+    the odd naturals; the even naturals; $ZZ$; ${1/2^n : n in NN}$; $NN times {a}$.
 ]
 
 #exercise(
@@ -303,7 +303,7 @@
       [$RR$],
       [the perfect squares in $NN$],
       [$(0,1)$],
-      [$CC = {a + b i | a, b in RR}$],
+      [$CC = {a + b i : a, b in RR}$],
     )
 ]
 
@@ -332,7 +332,7 @@
   + ${a, b, c}$
   + the odd natural numbers
   + the even natural numbers
-  + ${1/2^n | n in NN}$
+  + ${1/2^n : n in NN}$
   + the perfect squares in $NN$
   + $ZZ$
   + $NN times {a}$
@@ -529,7 +529,7 @@
 
   _Hint: first exhibit an injective function $A -> cal(P)(A)$; this gives
   $"card"(A) <= "card"(cal(P)(A))$. For the strict inequality, argue by contradiction: assume
-  $f: A -> cal(P)(A)$ is bijective and consider the set $B = {x in A | x in.not f(x)}$._
+  $f: A -> cal(P)(A)$ is bijective and consider the set $B = {x in A : x in.not f(x)}$._
 
   #v(.4em)
   Notice $NN$ is countable while $cal(P)(NN)$ is uncountable. In fact

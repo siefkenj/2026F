@@ -32,8 +32,8 @@
   goal: [Practice _packing_ sets into a rule and _unpacking_ them into a list.],
   num_prefix: auto,
 )[
-  + List the elements of the set ${n in NN | n < 5}$.
-  + List the elements of the set ${x in ZZ | -2 < x <= 2}$.
+  + List the elements of the set ${n in NN : n < 5}$.
+  + List the elements of the set ${x in ZZ : -2 < x <= 2}$.
   + Express the set ${dots, -4, -2, 0, 2, 4, dots}$ in set-builder notation.
   + Express the interval $(2, 5]$ in set-builder notation.
 ]
@@ -62,10 +62,10 @@
 )[
   Use the definition of set equality via *double subset inclusion* to prove that
   $
-    {1, 2} = {x in RR | x^2 - 3 x + 2 = 0}.
+    {1, 2} = {x in RR : x^2 - 3 x + 2 = 0}.
   $
 
-  That is: show every element of the left-hand set lies in the right-hand set, and vice versa.
+  That is: show every element of the left set lies in the right set, and vice versa.
 ]
 
 #exercise(
@@ -81,13 +81,13 @@
   + $A inter B$
   + $A without B$
   + $B without A$
-  + $A^c$
-  + $(A^c)^c$
-  + $B^c$
-  + $(A union B)^c$
-  + $A^c inter B^c$
-  + $(A inter B)^c$
-  + $A^c union B^c$
+  + $A^C$
+  + $(A^C)^C$
+  + $B^C$
+  + $(A union B)^C$
+  + $A^C inter B^C$
+  + $(A inter B)^C$
+  + $A^C union B^C$
 
   Are $A$ and $B$ disjoint? Are $A$ and $B without A$ disjoint?
 ]
@@ -102,7 +102,7 @@
 
   + $A union emptyset = A$
   + $A inter emptyset = emptyset$
-  + $emptyset^c = U$
+  + $emptyset^C = U$
 ]
 
 #exercise(
@@ -120,7 +120,7 @@
     )
   + Show union is associative: $A union (B union C) = (A union B) union C$.
   + Show intersection is associative: $A inter (B inter C) = (A inter B) inter C$.
-  + Show that for any set $A$ in a universe $U$, $(A^c)^c = A$.
+  + Show that for any set $A$ in a universe $U$, $(A^C)^C = A$.
 ]
 
 #exercise(
@@ -147,11 +147,11 @@
 )[
   Let $A$ and $B$ be arbitrary sets in the universe $U$. Prove each of the following.
 
-  + $U^c = emptyset$
-  + $A inter A^c = emptyset$
-  + $A union A^c = U$
-  + *(De Morgan)* $(A union B)^c = A^c inter B^c$
-  + *(De Morgan)* $(A inter B)^c = A^c union B^c$
+  + $U^C = emptyset$
+  + $A inter A^C = emptyset$
+  + $A union A^C = U$
+  + *(De Morgan)* $(A union B)^C = A^C inter B^C$
+  + *(De Morgan)* $(A inter B)^C = A^C union B^C$
 ]
 
 #exercise(
@@ -286,7 +286,7 @@
 
   + Prove that if $X, Y in cal(P)(S)$, then $X union Y in cal(P)(S)$.
   + Prove that if $X, Y in cal(P)(S)$, then $X inter Y in cal(P)(S)$.
-  + Prove that if $X in cal(P)(S)$, then $X^c := S without X in cal(P)(S)$.
+  + Prove that if $X in cal(P)(S)$, then $X^C := S without X in cal(P)(S)$.
   + Prove that if $X in cal(P)(S)$ and $Y subset X$, then $Y in cal(P)(S)$.
   + Revisit the previous exercise in light of this. Can you prove that ${{1}}$ is not a power set?
     How about ${emptyset, {1}, {2}}$?
@@ -307,9 +307,9 @@
   + $cal(P)(A inter B) = cal(P)(A) inter cal(P)(B)$
   + $cal(P)(A) union cal(P)(B) subset cal(P)(A union B)$
   + $cal(P)(A union B) = cal(P)(A) union cal(P)(B)$
-  + $cal(P)(A^c) = (cal(P)(A))^c$, where the complement of $cal(P)(A)$ is taken inside
+  + $cal(P)(A^C) = (cal(P)(A))^C$, where the complement of $cal(P)(A)$ is taken inside
     $cal(P)(U)$.
-  + $cal(P)(A) inter cal(P)(A^c) = {emptyset}$
+  + $cal(P)(A) inter cal(P)(A^C) = {emptyset}$
 ]
 
 // ---------------------------------------------------------------------------
@@ -319,9 +319,9 @@
 #slide(title: [Indexed Families of Sets])[
   When we have a whole family of sets ${S_i}_(i in I)$, indexed by a set $I$, we write
   $
-    union.big_(i in I) S_i := {x | exists i in I, x in S_i}
+    union.big_(i in I) S_i := {x : exists i in I, x in S_i}
     #h(2em)
-    inter.big_(i in I) S_i := {x | forall i in I, x in S_i}.
+    inter.big_(i in I) S_i := {x : forall i in I, x in S_i}.
   $
 
   The index set $I$ may be finite, countably infinite ($NN$), or uncountable ($RR$). *Every* proof
@@ -342,9 +342,10 @@
 
   Compute the following sets:
 
-  + $union.big_(i=1)^3 S_i$
-  + $inter.big_(i=1)^2 S_i$
-  + $inter.big_(i=1)^3 S_i$
+  #set enum(spacing: 1.2em)
+  + $display(union.big_(i=1)^3 S_i)$
+  + $display(inter.big_(i=1)^2 S_i)$
+  + $display(inter.big_(i=1)^3 S_i)$
 ]
 
 #exercise(
@@ -505,7 +506,7 @@
   + Suppose ${S_n}_(n=1)^oo$ is increasing. Find, with proof, $display(inter.big_(i=1)^oo S_i)$.
   + Suppose ${S_n}_(n=1)^oo$ is decreasing. Formulate a guess as to what
     $display(union.big_(i=1)^oo S_i)$ is.
-  + Prove that ${S_n}_(n=1)^oo$ is increasing if and only if ${S_n^c}_(n=1)^oo$ is decreasing.
+  + Prove that ${S_n}_(n=1)^oo$ is increasing if and only if ${S_n^C}_(n=1)^oo$ is decreasing.
   + Suppose ${S_n}_(n=1)^oo$ is decreasing. Use the generalized De Morgan laws to compute
     $display(union.big_(i=1)^oo S_i)$.
 ]
@@ -562,7 +563,7 @@
   #definition(title: [Cartesian Product])[
     For sets $A$ and $B$,
     $
-      A times B := {(a, b) | a in A "and" b in B}.
+      A times B := {(a, b) : a in A "and" b in B}.
     $
   ]
 
@@ -738,12 +739,12 @@
   goal: [How Cartesian products behave under complementation.],
   num_prefix: auto,
 )[
-  Suppose $U$, $V$ are universes with $X subset U$ and $Y subset V$, so $X^c = U without X$ and
-  $Y^c = V without Y$. Then $X times Y subset U times V$, so
-  $(X times Y)^c = (U times V) without (X times Y)$.
+  Suppose $U$, $V$ are universes with $X subset U$ and $Y subset V$, so $X^C = U without X$ and
+  $Y^C = V without Y$. Then $X times Y subset U times V$, so
+  $(X times Y)^C = (U times V) without (X times Y)$.
 
-  + Give an example to show that $(X times Y)^c != X^c times Y^c$.
-  + Prove that $(X times Y)^c = (X^c times V) union (U times Y^c)$.
+  + Give an example to show that $(X times Y)^C != X^C times Y^C$.
+  + Prove that $(X times Y)^C = (X^C times V) union (U times Y^C)$.
 ]
 
 #exercise(

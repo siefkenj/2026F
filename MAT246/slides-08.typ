@@ -686,11 +686,11 @@
 )[
   Let $f: X -> Y$ be a function and $S subset Y$.
 
-  + Write out the definitions of $f^(-1)(S)$ and $S^c$ symbolically, as logical statements about
+  + Write out the definitions of $f^(-1)(S)$ and $S^C$ symbolically, as logical statements about
     elements.
   + Using these definitions, prove that
     $
-      f^(-1)(S^c) = (f^(-1)(S))^c.
+      f^(-1)(S^C) = (f^(-1)(S))^C.
     $
   + Express this equality in words: how do complements behave under preimages?
 ]
@@ -730,7 +730,7 @@
   + Prove that for any $S subset U$ we have $(chi_S)^2 = chi_S$.
   + $chi_(A inter B) = chi_A dot chi_B$.
   + $chi_(A union B) = chi_A + chi_B - chi_A dot chi_B$.
-  + $chi_(A^c) = 1 - chi_A$.
+  + $chi_(A^C) = 1 - chi_A$.
   + Using the above, express $chi_(A symdiff B)$ in terms of $chi_A$ and $chi_B$, where
     $A symdiff B = (A union B) without (A inter B)$.
 
@@ -765,7 +765,7 @@
   + Prove that distinct values have disjoint preimages: if $y_1 != y_2$ in $Y$, then
     $f^(-1)({y_1}) inter f^(-1)({y_2}) = emptyset$.
   + Show that $display(X = union.big_(y in Y) f^(-1)({y}))$.
-  + Does the collection ${f^(-1)({y}) | y in Y}$ form a *partition* of $X$? If so, prove it; if
+  + Does the collection ${f^(-1)({y}) : y in Y}$ form a *partition* of $X$? If so, prove it; if
     not, formulate a related correct statement and prove that.
   + Suppose $f: RR -> ZZ$ is the floor function $f(x) = floor(x)$. Describe in detail the
     collection of preimages.

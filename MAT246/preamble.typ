@@ -43,8 +43,13 @@
 // Exercises
 // ---------------------------------------------------------------------------
 
+// Whether to render each exercise's `goal`. Off for now; the goals stay in the
+// source so they can be turned back on here.
+#let show-goals = false
+
 // A worksheet problem. `goal` is the italicised "the goal of this exercise
-// is ..." blurb; `body` is the problem itself.
+// is ..." blurb (rendered only when `show-goals` is on); `body` is the problem
+// itself.
 //
 // `num_prefix` is passed straight through to `slide` and keeps its default of
 // `none`. Pass `auto` to number the exercise; a warm-up simply leaves it off.
@@ -70,7 +75,7 @@
   two_columns: two-column,
   num_prefix: num_prefix,
 )[
-  #if goal != none {
+  #if show-goals and goal != none {
     block(
       inset: (bottom: .4em),
       text(size: .85em, style: "italic", fill: rgb("#00647d").darken(15%), goal),

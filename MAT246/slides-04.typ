@@ -361,7 +361,7 @@
   - $1 in S$, and
   - $forall n in NN, [(n in S) ==> (n + 1 in S)]$.
 
-  Suppose towards a contradiction that $S != NN$, and consider $S^c = {n in NN : n in.not S}$. Use
+  Suppose towards a contradiction that $S != NN$, and consider $S^C = {n in NN : n in.not S}$. Use
   the well-ordering principle to arrive at a contradiction. Be sure to carefully justify each step.
 
   You have now proved that if the well-ordering principle holds, then so does the principle of

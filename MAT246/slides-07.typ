@@ -392,7 +392,7 @@
 )[
   Is $Omega_j$ a partition of $A_2 = RR$? If not, why not?
 
-  + $Omega_6 = {{x in RR | x < 0}, {0}, {x in RR | x > 0}}$
+  + $Omega_6 = {{x in RR : x < 0}, {0}, {x in RR : x > 0}}$
   + $Omega_7 = {"the irrationals", "the rationals"}$
   + $Omega_8$ contains the intervals $[k, k+1]$, $k in ZZ$.
   + $Omega_9$ contains the intervals $(k, k+1)$, $k in ZZ$.

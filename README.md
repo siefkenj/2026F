@@ -1,6 +1,8 @@
 # 2026F
 
-Course slides for the 2026–2027 semesters.
+Course slides for the 2026–2027 academic year, written in [Typst](https://typst.app).
+
+**Built slides: <https://siefkenj.github.io/2026F/>**
 
 | Folder | Course |
 | --- | --- |
@@ -8,30 +10,36 @@ Course slides for the 2026–2027 semesters.
 | [`MAT246`](MAT246) | Concepts in Abstract Mathematics |
 | [`MAT336`](MAT336) | Elements of Analysis |
 
-Slides are written in [Typst](https://typst.app) and built by GitHub Actions on
-every push; the resulting PDFs are published to the GitHub Pages site built from
-[`website/landing-page`](website/landing-page).
+## Building
 
-To build locally, from this directory:
+GitHub Actions builds every deck on each push to `main` and publishes the PDFs,
+together with the landing page in [`website/landing-page`](website/landing-page),
+to the site above.
+
+To build a deck locally, run from this directory:
 
 ```sh
-typst compile --font-path ./fonts MAT246/slides-02.typ
+typst compile --root . --font-path ./fonts MAT246/slides-02.typ
 ```
 
-The `--font-path` flag matters: every font the decks use is vendored in
-[`fonts/`](fonts) rather than assumed to be installed — Fira Sans and Fira Mono
-for MAT235/MAT336, and Nimbus Sans L, Bitstream Charter and Latin Modern Mono
-for MAT246.
+Both flags are required:
+
+- `--root .` lets a deck reach `../preamble.typ` and `../libs/`, which sit outside
+  its own folder.
+- `--font-path ./fonts` uses the fonts vendored in [`fonts/`](fonts) rather than
+  whatever is installed: Fira Sans and Fira Mono for MAT235 and MAT336; Nimbus
+  Sans L, Bitstream Charter and Latin Modern Mono for MAT246.
+
+To publish a new deck, add it to the list in
+[`.github/workflows/on-pull-request.yml`](.github/workflows/on-pull-request.yml).
 
 ## Layout
 
 | Path | What it is |
 | --- | --- |
-| [`libs/`](libs) | Slide library, a near-verbatim copy of `book/libs/` from [IBLODEs](https://github.com/siefkenj/IBLODEs). Keep it as close to a straight copy as possible so it can be re-synced; the divergences are listed in [`MAT246/README.md`](MAT246/README.md). |
 | [`preamble.typ`](preamble.typ) | Shared course setup: the `course-slides` template, `cover`, `parts`, `fit-frame`, boxes, notation, attribution. |
-| `MATNNN/preamble.typ` | Binds the course code, name and credits; re-exports the above. |
-| `MATNNN/slides-*.typ` | The decks themselves. |
-
-Because a deck imports `../preamble.typ`, **the project root is the repository,
-not the deck's folder** — always build with `--root .` (CI does).
-
+| `MATNNN/preamble.typ` | Binds the course code, name and credits, and re-exports the shared preamble. |
+| `MATNNN/slides-*.typ` | The decks. |
+| [`libs/`](libs) | The slide library, a near-verbatim copy of `book/libs/` from [IBLODEs](https://github.com/siefkenj/IBLODEs). Keep it close to upstream so it can be re-synced; the divergences are listed in [`MAT246/README.md`](MAT246/README.md). |
+| [`fonts/`](fonts) | Vendored fonts (see above). |
+| [`website/landing-page`](website/landing-page) | The GitHub Pages landing page. |
