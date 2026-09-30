@@ -65,7 +65,7 @@
 ]
 
 // XXX: Needs to be reworked. Unclear whether looking for vector in R^2 or R^3.
-#slide(title: [Siefken 8 (Ch 12)])[
+#slide(siefken_num: auto)[
   Recall the plane $cal(P)$ given by the formula $z=2x-y$.
   + Sketch the contour map of $cal(P)$.
   + Starting from $(0,0,0)$, in what direction does $cal(P)$ have *a slope of zero*? Give your
