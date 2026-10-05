@@ -108,33 +108,35 @@
   Let $A = {1, 2, 3}$ and $B = {2, 3, 4}$ be sets in the universe $U = {1, 2, 3, 4, 5}$. Compute the
   following (no proof needed --- just state your answer):
 
+  #show: columns
   + $A union B$
   + $A inter B$
   + $A without B$
-  + $B without A$
+  // + $B without A$
   + $A^C$
   + $(A^C)^C$
-  + $B^C$
-  + $(A union B)^C$
-  + $A^C inter B^C$
-  + $(A inter B)^C$
-  + $A^C union B^C$
+  // + $B^C$
+  // + $(A union B)^C$
+  // + $A^C inter B^C$
+  // + $(A inter B)^C$
+  // + $A^C union B^C$
 
-  Are $A$ and $B$ disjoint? Are $A$ and $B without A$ disjoint?
+  + Are $A$ and $B$ disjoint?
+  + Are $A$ and $B without A$ disjoint?
 ]
 
-#exercise(
-  title: [Sets --- The Empty Set],
-  source: 33,
-  goal: [How the empty set interacts with unions, intersections, and complements.],
-  num_prefix: auto,
-)[
-  Prove that for a set $A$ in the universe $U$:
+// #exercise(
+//   title: [Sets --- The Empty Set],
+//   source: 33,
+//   goal: [How the empty set interacts with unions, intersections, and complements.],
+//   num_prefix: auto,
+// )[
+//   Prove that for a set $A$ in the universe $U$:
 
-  + $A union emptyset = A$
-  + $A inter emptyset = emptyset$
-  + $emptyset^C = U$
-]
+//   + $A union emptyset = A$
+//   + $A inter emptyset = emptyset$
+//   + $emptyset^C = U$
+// ]
 
 #exercise(
   title: [Sets --- Properties of Set Operations],
@@ -145,14 +147,16 @@
 )[
   + *(Transitivity of Subsets, Thm 3.10.)* Prove that if $A subset B$ and $B subset C$, then
     $A subset C$.
-  + *(Distribution, Thm 3.22.)* Verify with a concrete example of sets $A$, $B$, $C$ that
-    #enum(
-      [$A inter (B union C) = (A inter B) union (A inter C)$, and],
-      [$A union (B inter C) = (A union B) inter (A union C)$.],
-    )
-  + Show union is associative: $A union (B union C) = (A union B) union C$.
-  + Show intersection is associative: $A inter (B inter C) = (A inter B) inter C$.
-  + Show that for any set $A$ in a universe $U$, $(A^C)^C = A$.
+  // + *(Distribution, Thm 3.22.)* Verify with a concrete example of sets $A$, $B$, $C$ that
+  //   #enum(
+  //     [$A inter (B union C) = (A inter B) union (A inter C)$, and],
+  //     [$A union (B inter C) = (A union B) inter (A union C)$.],
+  //   )
+  + Is the operation of set union *associative*? I.e. does
+    $A union (B union C) = (A union B) union C$? Justify your answer.
+  + Is the operation of set intersection *associative*? I.e. does
+    $A inter (B inter C) = (A inter B) inter C$? Justify your answer.
+  + Is the operation of compliment *idempotent*? I.e. does $(A^C)^C = A$? Justify your answer.
 ]
 
 #exercise(
