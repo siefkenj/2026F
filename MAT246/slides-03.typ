@@ -46,18 +46,48 @@
 )[
   + For each pair, decide whether $A_i subset B_i$:
     $
-      A_1 &= {1, 2, 3},   & B_1 &= {1, 2, 3, 4}, \
-      A_2 &= {1, 3, 5},   & B_2 &= {2, 4, 6},    \
-      A_3 &= {{1}},       & B_3 &= {1, {1}}.
+      A_1 & = {1, 2, 3}, & B_1 & = {1, 2, 3, 4}, \
+      A_2 & = {1, 3, 5}, & B_2 & = {2, 4, 6}, \
+      A_3 & = {{1}},     & B_3 & = {1, {1}}.
     $
   + Give an example of sets $A$ and $B$ with $A psubset B$.
   + Show that $emptyset subset A$ for every set $A$.
 ]
 
+#let line_number_proof(body) = {
+  block(stroke: (paint: blue, thickness: 1pt, dash: "dashed"), inset: 1em, width: 100%)[
+    #set enum(numbering: d => text(fill: blue.darken(50%))[(#d)#h(1em)])
+
+    #body
+  ]
+}
+#let ub(..args) = {
+  let l = args.pos().at(0, default: 3em)
+  box(width: l, stroke: (bottom: 1pt + blue), fill: blue.lighten(80%), height: 1.5em)
+}
+
+#slide(title: [Warmup: An Equality Proof])[
+  #block(width: 100%, height: 100%)[
+    // #set text(size: .9em)
+    // Fill in the missing blocks
+
+    Critique the following proof:
+    #line_number_proof[
+      *Claim:* Let $A:={x in ZZ: x^2=1}$ and $B:= {x in ZZ: x=plus.minus 1}$. Then, $A=B$\
+      *Proof:*
+
+      + $x^2=1$ has solutions $x=plus.minus 1$.
+      + Therefore, elements of $A$ are elements of $B$ and elements of $B$ are elements of $A$.
+      + Therefore, by definition, $A=B$.
+    ]
+  ]
+]
+
 #exercise(
   title: [Sets --- Set Equality],
   source: 31,
-  goal: [Prove equality from the definition rather than by listing elements --- a habit that pays off later.],
+  goal: [Prove equality from the definition rather than by listing elements --- a habit that pays
+    off later.],
   num_prefix: auto,
 )[
   Use the definition of set equality via *double subset inclusion* to prove that
@@ -71,7 +101,8 @@
 #exercise(
   title: [Sets --- Set Operations],
   source: 32,
-  goal: [Compute unions, intersections, differences, and complements straight from the definitions.],
+  goal: [Compute unions, intersections, differences, and complements straight from the
+    definitions.],
   num_prefix: auto,
 )[
   Let $A = {1, 2, 3}$ and $B = {2, 3, 4}$ be sets in the universe $U = {1, 2, 3, 4, 5}$. Compute the
@@ -108,7 +139,8 @@
 #exercise(
   title: [Sets --- Properties of Set Operations],
   source: 34,
-  goal: [Some parts ask for an example (which does _not_ prove the statement); others ask for a full proof.],
+  goal: [Some parts ask for an example (which does _not_ prove the statement); others ask for a full
+    proof.],
   num_prefix: auto,
 )[
   + *(Transitivity of Subsets, Thm 3.10.)* Prove that if $A subset B$ and $B subset C$, then
@@ -126,16 +158,17 @@
 #exercise(
   title: [Sets --- Subset Equivalences],
   source: 35,
-  goal: [Connect the definition of subset with two equivalent conditions on unions and intersections.],
+  goal: [Connect the definition of subset with two equivalent conditions on unions and
+    intersections.],
   num_prefix: auto,
 )[
   Show that
   $
-    A subset B #h(1em) &<==> #h(1em) A union B = B,
+    A subset B #h(1em) & <==> #h(1em) A union B = B,
   $
   and that
   $
-    A subset B #h(1em) &<==> #h(1em) A inter B = A.
+    A subset B #h(1em) & <==> #h(1em) A inter B = A.
   $
 ]
 
@@ -169,7 +202,8 @@
 #exercise(
   title: [Sets --- Symmetric Difference],
   source: 38,
-  goal: [Meeting a new definition: start from what you know, then build intuition with examples and non-examples.],
+  goal: [Meeting a new definition: start from what you know, then build intuition with examples and
+    non-examples.],
   num_prefix: auto,
 )[
   Define $A symdiff B := (A without B) union (B without A)$.
@@ -279,7 +313,8 @@
 #exercise(
   title: [Power Sets --- Closure Properties],
   source: 43,
-  goal: [Power sets are closed under the set operations --- and "downward closed" under taking subsets.],
+  goal: [Power sets are closed under the set operations --- and "downward closed" under taking
+    subsets.],
   num_prefix: auto,
 )[
   Suppose $S$ is a set.
@@ -307,8 +342,7 @@
   + $cal(P)(A inter B) = cal(P)(A) inter cal(P)(B)$
   + $cal(P)(A) union cal(P)(B) subset cal(P)(A union B)$
   + $cal(P)(A union B) = cal(P)(A) union cal(P)(B)$
-  + $cal(P)(A^C) = (cal(P)(A))^C$, where the complement of $cal(P)(A)$ is taken inside
-    $cal(P)(U)$.
+  + $cal(P)(A^C) = (cal(P)(A))^C$, where the complement of $cal(P)(A)$ is taken inside $cal(P)(U)$.
   + $cal(P)(A) inter cal(P)(A^C) = {emptyset}$
 ]
 
@@ -357,11 +391,11 @@
   For each $n in NN$, let $display(S_n := [0, (n-1)/n))$.
 
   + Compute the first three sets in the sequence: $S_1$, $S_2$, $S_3$.
-  + Prove that if $m, n in NN$ with $m < n$, then $S_m subset S_n$. Start by rewriting this claim
-    in mathematical notation.
+  + Prove that if $m, n in NN$ with $m < n$, then $S_m subset S_n$. Start by rewriting this claim in
+    mathematical notation.
   + Find $inter.big_(i=1)^oo S_i$ and prove your answer.
-  + Find $union.big_(i=1)^oo S_i$ and prove your answer. You may use without proof Problem 2.70:
-    "if $epsilon > 0$, then there exists $N in NN$ such that $1\/N < epsilon$."
+  + Find $union.big_(i=1)^oo S_i$ and prove your answer. You may use without proof Problem 2.70: "if
+    $epsilon > 0$, then there exists $N in NN$ such that $1\/N < epsilon$."
 ]
 
 #exercise(
@@ -440,7 +474,8 @@
 #exercise(
   title: [Index Sets --- Unions and Intersections I],
   source: 51,
-  goal: [A capstone sequence: complex unions and intersections of infinite sequences, and mixtures of the two.],
+  goal: [A capstone sequence: complex unions and intersections of infinite sequences, and mixtures
+    of the two.],
   num_prefix: auto,
 )[
   For each $n in NN$, define the interval
@@ -467,12 +502,12 @@
   + Use proof by contradiction to prove that $(x in J_k) ==> x <= 2$. Conclude that
     $J_k subset [1/(2k), 2]$, and therefore $J_k = [1/(2k), 2]$.
 
-    You may use without proof Problem 2.70: "if $epsilon > 0$, then there exists $N in NN$ such
-    that $1\/N < epsilon$."
-  + For every $k in NN$, define $display(J'_k := inter.big_(n=k)^oo I_(2n+1))$. Compute $J'_k$.
-    You do not need to prove your answer (but you are encouraged to).
-  + For every $k in NN$, define $display(E_k := inter.big_(n=k)^oo I_n)$. Compute $E_k$. You do
-    not need to prove your answer.
+    You may use without proof Problem 2.70: "if $epsilon > 0$, then there exists $N in NN$ such that
+    $1\/N < epsilon$."
+  + For every $k in NN$, define $display(J'_k := inter.big_(n=k)^oo I_(2n+1))$. Compute $J'_k$. You
+    do not need to prove your answer (but you are encouraged to).
+  + For every $k in NN$, define $display(E_k := inter.big_(n=k)^oo I_n)$. Compute $E_k$. You do not
+    need to prove your answer.
   + Compute $display(union.big_(k=1)^oo E_k)$. Prove your answer.
 ]
 
@@ -514,7 +549,8 @@
 #exercise(
   title: [Index Sets --- Pairwise Disjoint],
   source: 55,
-  goal: [More challenging: the definition of pairwise disjoint, plus proof techniques from Chapter 2.],
+  goal: [More challenging: the definition of pairwise disjoint, plus proof techniques from
+    Chapter 2.],
   num_prefix: auto,
 )[
   For each $n in NN$, let
@@ -544,8 +580,7 @@
     condition means $forall B in NN, exists j in NN, [(j >= B) and (x in S_j)]$.
   + Revisit $I_n := [(-1)^n\/n, 2 + 1\/n]$ from Exercises 51--53. Show that
     $0 in inter.big_(k=1)^oo union.big_(n=k)^oo I_n$ but
-    $0 in.not union.big_(k=1)^oo inter.big_(n=k)^oo I_n$, without computing these sets
-    explicitly.
+    $0 in.not union.big_(k=1)^oo inter.big_(n=k)^oo I_n$, without computing these sets explicitly.
   + Prove that $liminf S_n subset limsup S_n$.
   + Suppose ${S_n}$ is a pairwise disjoint collection. Prove $limsup S_n = liminf S_n$ and find
     their common value.
@@ -570,8 +605,8 @@
   The elements are *ordered pairs*: $(a, b) = (c, d)$ exactly when $a = c$ _and_ $b = d$. Order
   matters, unlike for sets.
 
-  As a result $times$ is neither commutative nor associative --- but it distributes over
-  $union$, $inter$, $without$, and $symdiff$ beautifully.
+  As a result $times$ is neither commutative nor associative --- but it distributes over $union$,
+  $inter$, $without$, and $symdiff$ beautifully.
 ]
 
 #exercise(
@@ -632,8 +667,8 @@
     hypothesis for _which_ sets satisfy $A times B = B times A$?
   + *Associativity.* Prove that if $A, B, C != emptyset$ then
     $(A times B) times C != A times (B times C)$. What happens if one of the sets is empty?
-  + *Cancellation.* Prove that if $A != emptyset$ and $A times B = A times C$, then $B = C$. Give
-    an example showing the conclusion can fail if $A = emptyset$.
+  + *Cancellation.* Prove that if $A != emptyset$ and $A times B = A times C$, then $B = C$. Give an
+    example showing the conclusion can fail if $A = emptyset$.
 ]
 
 #exercise(
@@ -646,8 +681,8 @@
 
   + Suppose $A subset C$ and $B subset D$. Prove that $A times B subset C times D$.
   + Suppose $A, B != emptyset$. Prove that
-    $(A times B subset C times D) ==> [(A subset C) and (B subset D)]$. Give an example showing
-    the conclusion may fail if one of $A$, $B$ is empty.
+    $(A times B subset C times D) ==> [(A subset C) and (B subset D)]$. Give an example showing the
+    conclusion may fail if one of $A$, $B$ is empty.
   + Prove that $A times B = B times A$ if and only if $A = B$, or one of $A$, $B$ is empty.
 ]
 
@@ -713,8 +748,8 @@
   + *Over symmetric difference.* Prove $A times (B symdiff C) = (A times B) symdiff (A times C)$,
     where $X symdiff Y = (X without Y) union (Y without X) = (X union Y) without (X inter Y)$.
   + Does the product distribute "from the right" as well as "from the left"? Is
-    $(A union B) times C = (A times C) union (B times C)$? What if $union$ is replaced by
-    $inter$, $without$, or $symdiff$?
+    $(A union B) times C = (A times C) union (B times C)$? What if $union$ is replaced by $inter$,
+    $without$, or $symdiff$?
 ]
 
 #exercise(
@@ -726,11 +761,10 @@
   Let $A$, $B$, $C$, $D$ be sets.
 
   + Prove that $(A times C) inter (B times D) = (A inter B) times (C inter D)$.
-  + Give a counterexample showing
-    $(A times C) union (B times D) != (A union B) times (C union D)$.
+  + Give a counterexample showing $(A times C) union (B times D) != (A union B) times (C union D)$.
   + Suppose $A$, $B$ are nonempty and disjoint and
-    $(A times C) union (B times D) = (A union B) times (C union D)$. What can you conclude about
-    $C$ and $D$?
+    $(A times C) union (B times D) = (A union B) times (C union D)$. What can you conclude about $C$
+    and $D$?
 ]
 
 #exercise(
