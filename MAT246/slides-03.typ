@@ -96,6 +96,9 @@
   $
 
   That is: show every element of the left set lies in the right set, and vice versa.
+
+  You may use, without proof, _The Fundamental Theorem of Algebra_: A polynomial of degree $n$ has
+  at most $n$ roots.
 ]
 
 #exercise(
@@ -166,58 +169,63 @@
     intersections.],
   num_prefix: auto,
 )[
-  Show that
+  Let $A$ and $B$ be sets in the universe $U$ and consider the statement
   $
-    A subset B #h(1em) & <==> #h(1em) A union B = B,
+    X:= #h(3em) A subset.eq B #h(1em)<==>#h(1em) A union B = B.
   $
-  and that
-  $
-    A subset B #h(1em) & <==> #h(1em) A inter B = A.
-  $
+
+  + Do you believe $X$ is true or false? Sketch out an argument to support your position.
+  + Write a proof of whether $X$ is true or false.
+  + Prove whether or not
+    $
+      A subset B #h(1em) & <==> #h(1em) A inter B = A.
+    $
+    is true or false.
+
 ]
 
-#exercise(
-  title: [Sets --- Set Equalities],
-  source: 36,
-  goal: [Translate between set operations and their complements.],
-  num_prefix: auto,
-)[
-  Let $A$ and $B$ be arbitrary sets in the universe $U$. Prove each of the following.
+// #exercise(
+//   title: [Sets --- Set Equalities],
+//   source: 36,
+//   goal: [Translate between set operations and their complements.],
+//   num_prefix: auto,
+// )[
+//   Let $A$ and $B$ be arbitrary sets in the universe $U$. Prove each of the following.
 
-  + $U^C = emptyset$
-  + $A inter A^C = emptyset$
-  + $A union A^C = U$
-  + *(De Morgan)* $(A union B)^C = A^C inter B^C$
-  + *(De Morgan)* $(A inter B)^C = A^C union B^C$
-]
+//   + $U^C = emptyset$
+//   + $A inter A^C = emptyset$
+//   + $A union A^C = U$
+//   + *(De Morgan)* $(A union B)^C = A^C inter B^C$
+//   + *(De Morgan)* $(A inter B)^C = A^C union B^C$
+// ]
 
-#exercise(
-  title: [Sets --- Union-Complement Form],
-  source: 37,
-  goal: [Practice rewriting set expressions in different forms.],
-  num_prefix: auto,
-)[
-  Express the following using *only* unions and complements:
+// #exercise(
+//   title: [Sets --- Union-Complement Form],
+//   source: 37,
+//   goal: [Practice rewriting set expressions in different forms.],
+//   num_prefix: auto,
+// )[
+//   Express the following using *only* unions and complements:
 
-  + $A without (B inter C)$
-  + $(A without B) inter (C without D)$
-]
+//   + $A without (B inter C)$
+//   + $(A without B) inter (C without D)$
+// ]
 
-#exercise(
-  title: [Sets --- Symmetric Difference],
-  source: 38,
-  goal: [Meeting a new definition: start from what you know, then build intuition with examples and
-    non-examples.],
-  num_prefix: auto,
-)[
-  Define $A symdiff B := (A without B) union (B without A)$.
+// #exercise(
+//   title: [Sets --- Symmetric Difference],
+//   source: 38,
+//   goal: [Meeting a new definition: start from what you know, then build intuition with examples and
+//     non-examples.],
+//   num_prefix: auto,
+// )[
+//   Define $A symdiff B := (A without B) union (B without A)$.
 
-  + Compute $A symdiff B$ for $A = {1, 2, 3}$, $B = {3, 4, 5}$.
-  + Compute $B symdiff A$ for the same sets.
-  + Show $symdiff$ is commutative: for any sets $A$ and $B$, $A symdiff B = B symdiff A$.
-  + Explain in words which elements are contained in $A symdiff B$.
-  + Show that $A symdiff B = (A union B) without (A inter B)$.
-]
+//   + Compute $A symdiff B$ for $A = {1, 2, 3}$, $B = {3, 4, 5}$.
+//   + Compute $B symdiff A$ for the same sets.
+//   + Show $symdiff$ is commutative: for any sets $A$ and $B$, $A symdiff B = B symdiff A$.
+//   + Explain in words which elements are contained in $A symdiff B$.
+//   + Show that $A symdiff B = (A union B) without (A inter B)$.
+// ]
 
 // ---------------------------------------------------------------------------
 // 3.3 Power sets (Practicing Proofs, Ch. 7)
@@ -245,91 +253,119 @@
   Consider the set $A = {1, 2}$.
 
   + Find $cal(P)(A)$.
-  + For each statement below, determine whether it is true or false, and explain briefly.
+  + Which of the following statements are true? Mark each T or F.
 
-    + $cal(P)(A) subset A$
-    + $emptyset subset A$
-    + $emptyset subset cal(P)(A)$
-    + $emptyset in A$
-    + $emptyset in cal(P)(A)$
-    + $1 in A$
-    + $1 in cal(P)(A)$
-    + ${1} in A$
-    + ${1} in cal(P)(A)$
-    + ${1} subset A$
-    + ${1} subset cal(P)(A)$
+  #align(center, block(breakable: false, table(
+    columns: (auto, 3em, auto, 3em),
+    align: (left, center, left, center),
+    [Statement], [T/F], [Statement], [T/F],
+    [$cal(P)(A) subset A$], [], [$1 in cal(P)(A)$], [],
+    [$emptyset subset A$], [], [${1} in A$], [],
+    [$emptyset subset cal(P)(A)$], [], [${1} in cal(P)(A)$], [],
+    [$emptyset in A$], [], [${1} subset A$], [],
+    [$emptyset in cal(P)(A)$], [], [${1} subset cal(P)(A)$], [],
+    [$1 in A$], [], [], [],
+  )))
 ]
+
+// #exercise(
+//   title: [Power Sets --- Computation],
+//   source: 40,
+//   goal: [Practice computing power sets.],
+//   num_prefix: auto,
+// )[
+//   For each of the following sets, find its power set.
+
+//   + $A = {a}$
+//   + $B = {a, b}$
+//   + $C = {a, {b}}$
+//   + $D = {emptyset, {emptyset}}$
+//   + $E = cal(P)(A)$, where $A = {a}$
+//   + $F = {a, b, c}$
+// ]
 
 #exercise(
   title: [Power Sets --- Computation],
-  source: 40,
+  //  source: 40,
   goal: [Practice computing power sets.],
   num_prefix: auto,
 )[
-  For each of the following sets, find its power set.
-
-  + $A = {a}$
-  + $B = {a, b}$
-  + $C = {a, {b}}$
-  + $D = {emptyset, {emptyset}}$
-  + $E = cal(P)(A)$, where $A = {a}$
-  + $F = {a, b, c}$
+  + Find $cal(P)(emptyset)$.
+  + Find $cal(P)(cal(P)(emptyset))$.
+  + Find $cal(P)(cal(P)(cal(P)(emptyset)))$.
+  + If a set $S$ has $5$ elements, how many elements does $cal(P)(S)$ have?
+  + How many elements does $cal(P)(cal(P)(dots.c (cal(P)(cal(P)(emptyset))))))$ have, where the
+    power set operation is applied $n$ times?
 ]
 
 #exercise(
-  title: [Power Sets --- Cardinality],
-  source: 41,
-  goal: [The relationship between the number of elements of a set and of its power set.],
+  title: [Power Sets --- Real Numbers],
+  //  source: 40,
+  // goal: [Practice computing power sets.],
   num_prefix: auto,
 )[
-  For each set $S$ in the previous exercise, how many elements are in $S$, and how many are in
-  $cal(P)(S)$?
+  + Give two examples of elements of $cal(P)(NN)$.
 
-  + $A = {a}$
-  + $B = {a, b}$
-  + $C = {a, {b}}$
-  + $D = {emptyset, {emptyset}}$
-  + $E = cal(P)(A)$, where $A = {a}$
-  + $F = {a, b, c}$
+  + Every sequence of zeros and ones can be interpreted *in binary* as a real number in $[0,1]$. For
+    example $.110000 dots.c = 3/4$.
 
-  Can you predict how many elements are in the power set of $G = {1, 2, 3, 4}$? What about
-  $K = {1, 2, 3, dots, k}$, where $k in NN$?
+    If $r in cal(P)(NN)$, can you think of a way to identify $r$ with a real number?
 ]
 
-#exercise(
-  title: [Power Sets --- Possible Power Sets],
-  source: 42,
-  goal: [Start thinking systematically about the special structure of power sets.],
-  num_prefix: auto,
-)[
-  For each set below, determine whether it can be the power set $cal(P)(S)$ of some set $S$. If it
-  can, find $S$. If not, explain why.
+// #exercise(
+//   title: [Power Sets --- Cardinality],
+//   source: 41,
+//   goal: [The relationship between the number of elements of a set and of its power set.],
+//   num_prefix: auto,
+// )[
+//   For each set $S$ in the previous exercise, how many elements are in $S$, and how many are in
+//   $cal(P)(S)$?
 
-  + ${1}$
-  + $emptyset$
-  + ${emptyset, {1}}$
-  + ${emptyset}$
-  + ${emptyset, {1}, {emptyset, 1}}$
-  + ${emptyset, {1}, {2}}$
-  + ${emptyset, {1}, {2}, {1, 2}}$
-]
+//   + $A = {a}$
+//   + $B = {a, b}$
+//   + $C = {a, {b}}$
+//   + $D = {emptyset, {emptyset}}$
+//   + $E = cal(P)(A)$, where $A = {a}$
+//   + $F = {a, b, c}$
 
-#exercise(
-  title: [Power Sets --- Closure Properties],
-  source: 43,
-  goal: [Power sets are closed under the set operations --- and "downward closed" under taking
-    subsets.],
-  num_prefix: auto,
-)[
-  Suppose $S$ is a set.
+//   Can you predict how many elements are in the power set of $G = {1, 2, 3, 4}$? What about
+//   $K = {1, 2, 3, dots, k}$, where $k in NN$?
+// ]
 
-  + Prove that if $X, Y in cal(P)(S)$, then $X union Y in cal(P)(S)$.
-  + Prove that if $X, Y in cal(P)(S)$, then $X inter Y in cal(P)(S)$.
-  + Prove that if $X in cal(P)(S)$, then $X^C := S without X in cal(P)(S)$.
-  + Prove that if $X in cal(P)(S)$ and $Y subset X$, then $Y in cal(P)(S)$.
-  + Revisit the previous exercise in light of this. Can you prove that ${{1}}$ is not a power set?
-    How about ${emptyset, {1}, {2}}$?
-]
+// #exercise(
+//   title: [Power Sets --- Possible Power Sets],
+//   source: 42,
+//   goal: [Start thinking systematically about the special structure of power sets.],
+//   num_prefix: auto,
+// )[
+//   For each set below, determine whether it can be the power set $cal(P)(S)$ of some set $S$. If it
+//   can, find $S$. If not, explain why.
+
+//   + ${1}$
+//   + $emptyset$
+//   + ${emptyset, {1}}$
+//   + ${emptyset}$
+//   + ${emptyset, {1}, {emptyset, 1}}$
+//   + ${emptyset, {1}, {2}}$
+//   + ${emptyset, {1}, {2}, {1, 2}}$
+// ]
+
+// #exercise(
+//   title: [Power Sets --- Closure Properties],
+//   source: 43,
+//   goal: [Power sets are closed under the set operations --- and "downward closed" under taking
+//     subsets.],
+//   num_prefix: auto,
+// )[
+//   Suppose $S$ is a set.
+
+//   + Prove that if $X, Y in cal(P)(S)$, then $X union Y in cal(P)(S)$.
+//   + Prove that if $X, Y in cal(P)(S)$, then $X inter Y in cal(P)(S)$.
+//   + Prove that if $X in cal(P)(S)$, then $X^C := S without X in cal(P)(S)$.
+//   + Prove that if $X in cal(P)(S)$ and $Y subset X$, then $Y in cal(P)(S)$.
+//   + Revisit the previous exercise in light of this. Can you prove that ${{1}}$ is not a power set?
+//     How about ${emptyset, {1}, {2}}$?
+// ]
 
 #exercise(
   title: [Power Sets --- Set Operations],
@@ -337,17 +373,23 @@
   goal: [How operations on the base sets affect the power set.],
   num_prefix: auto,
 )[
-  Let $U$ be a fixed universe and $A, B subset U$. For each statement, decide whether it is true or
-  false and justify briefly.
+  Let $U$ be a fixed universe and $A, B subset U$, where complements of subsets of $cal(P)(U)$ are
+  taken inside $cal(P)(U)$. For each statement, decide whether it is true or false and justify
+  briefly.
 
-  + $emptyset in cal(P)(A)$
-  + If $X in cal(P)(A)$, then $X in A$.
-  + If $A subset B$, then $cal(P)(A) subset cal(P)(B)$.
-  + $cal(P)(A inter B) = cal(P)(A) inter cal(P)(B)$
-  + $cal(P)(A) union cal(P)(B) subset cal(P)(A union B)$
-  + $cal(P)(A union B) = cal(P)(A) union cal(P)(B)$
-  + $cal(P)(A^C) = (cal(P)(A))^C$, where the complement of $cal(P)(A)$ is taken inside $cal(P)(U)$.
-  + $cal(P)(A) inter cal(P)(A^C) = {emptyset}$
+  #align(center, block(breakable: false, table(
+    columns: (auto, 3em),
+    align: (left, center),
+    [Statement], [T/F],
+    [$emptyset in cal(P)(A)$], [],
+    [If $X in cal(P)(A)$, then $X in A$.], [],
+    [If $A subset B$, then $cal(P)(A) subset cal(P)(B)$.], [],
+    [$cal(P)(A inter B) = cal(P)(A) inter cal(P)(B)$], [],
+    [$cal(P)(A) union cal(P)(B) subset cal(P)(A union B)$], [],
+    [$cal(P)(A union B) = cal(P)(A) union cal(P)(B)$], [],
+    [$cal(P)(A^C) = (cal(P)(A))^C$], [],
+    [$cal(P)(A) inter cal(P)(A^C) = {emptyset}$], [],
+  )))
 ]
 
 // ---------------------------------------------------------------------------
