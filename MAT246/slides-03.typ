@@ -434,14 +434,18 @@
   goal: [The "big" symbols really earn their keep on infinite sequences.],
   num_prefix: auto,
 )[
-  For each $n in NN$, let $display(S_n := [0, (n-1)/n))$.
+  #v(0.5em)
+  For each $n in NN$, let $display(S_n := [0, 1 - 1/n))$.
 
   + Compute the first three sets in the sequence: $S_1$, $S_2$, $S_3$.
-  + Prove that if $m, n in NN$ with $m < n$, then $S_m subset S_n$. Start by rewriting this claim in
-    mathematical notation.
-  + Find $inter.big_(i=1)^oo S_i$ and prove your answer.
-  + Find $union.big_(i=1)^oo S_i$ and prove your answer. You may use without proof Problem 2.70: "if
-    $epsilon > 0$, then there exists $N in NN$ such that $1\/N < epsilon$."
+  + Prove that if $m, n in NN$ with $m < n$, then $S_m subset S_n$.
+
+    _Hint: Start by rewriting this claim in mathematical notation._
+  + Find $display(inter.big_(i=1)^oo S_i)$ and prove your answer. #v(1em)
+  + Find $display(union.big_(i=1)^oo S_i)$ and prove your answer.
+
+    You may use without proof Problem 2.70: "If $epsilon > 0$, then there exists $N in NN$ such that
+    $1\/N < epsilon$."
 ]
 
 #exercise(
@@ -465,176 +469,176 @@
   + $S_r := {r^m : m in NN}$
 ]
 
-#exercise(
-  title: [Index Sets --- Uncountable Unions Revisited],
-  source: 48,
-  goal: [Now prove it, straight from the definition of the "big union".],
-  num_prefix: auto,
-)[
-  For each $r in RR$ define
-  $
-    S_r := {r^2} #h(3em) T_r := {r^3}.
-  $
+// #exercise(
+//   title: [Index Sets --- Uncountable Unions Revisited],
+//   source: 48,
+//   goal: [Now prove it, straight from the definition of the "big union".],
+//   num_prefix: auto,
+// )[
+//   For each $r in RR$ define
+//   $
+//     S_r := {r^2} #h(3em) T_r := {r^3}.
+//   $
 
-  + Use the definition of the "big union" to prove $union.big_(r in RR) S_r subset [0, oo)$.
-  + Use the definition to prove $[0, oo) subset union.big_(r in RR) S_r$. Conclude that
-    $union.big_(r in RR) S_r = [0, oo)$.
-  + Compute $union.big_(r in RR) T_r$ and prove your answer is correct.
-]
+//   + Use the definition of the "big union" to prove $union.big_(r in RR) S_r subset [0, oo)$.
+//   + Use the definition to prove $[0, oo) subset union.big_(r in RR) S_r$. Conclude that
+//     $union.big_(r in RR) S_r = [0, oo)$.
+//   + Compute $union.big_(r in RR) T_r$ and prove your answer is correct.
+// ]
 
-#exercise(
-  title: [Index Sets --- Uncountable Intersections],
-  source: 49,
-  goal: [The same, for the "big intersection" symbol.],
-  num_prefix: auto,
-)[
-  For each $r in RR$, define $S_r$ as below. Compute $inter.big_(r in RR) S_r$. You do not need to
-  prove your answers.
+// #exercise(
+//   title: [Index Sets --- Uncountable Intersections],
+//   source: 49,
+//   goal: [The same, for the "big intersection" symbol.],
+//   num_prefix: auto,
+// )[
+//   For each $r in RR$, define $S_r$ as below. Compute $inter.big_(r in RR) S_r$. You do not need to
+//   prove your answers.
 
-  + $S_r := {r}$
-  + $S_r := [-abs(r), abs(r)]$
-  + $S_r := (-abs(r), abs(r))$
-  + $S_r := [0, abs(r)]$
-  + $S_r := (0, abs(r))$
-  + $S_r := (-1 - abs(r), 1 + abs(r))$
-  + $S_r := {m + r : m in ZZ}$
-]
+//   + $S_r := {r}$
+//   + $S_r := [-abs(r), abs(r)]$
+//   + $S_r := (-abs(r), abs(r))$
+//   + $S_r := [0, abs(r)]$
+//   + $S_r := (0, abs(r))$
+//   + $S_r := (-1 - abs(r), 1 + abs(r))$
+//   + $S_r := {m + r : m in ZZ}$
+// ]
 
-#exercise(
-  title: [Index Sets --- Uncountable Intersections Revisited],
-  source: 50,
-  goal: [Prove it from the definition of the "big intersection".],
-  num_prefix: auto,
-)[
-  For each $r in RR$, define
-  $
-    S_r := [-abs(r), abs(r)] #h(3em) T_r := (-1 - abs(r), 1 + abs(r)).
-  $
+// #exercise(
+//   title: [Index Sets --- Uncountable Intersections Revisited],
+//   source: 50,
+//   goal: [Prove it from the definition of the "big intersection".],
+//   num_prefix: auto,
+// )[
+//   For each $r in RR$, define
+//   $
+//     S_r := [-abs(r), abs(r)] #h(3em) T_r := (-1 - abs(r), 1 + abs(r)).
+//   $
 
-  + Use the definition of "big intersection" to prove $inter.big_(r in RR) S_r subset {0}$.
-  + Use the definition to prove ${0} subset inter.big_(r in RR) S_r$. Conclude that
-    $inter.big_(r in RR) S_r = {0}$.
-  + Compute $inter.big_(r in RR) T_r$ and prove your answer is correct.
-]
+//   + Use the definition of "big intersection" to prove $inter.big_(r in RR) S_r subset {0}$.
+//   + Use the definition to prove ${0} subset inter.big_(r in RR) S_r$. Conclude that
+//     $inter.big_(r in RR) S_r = {0}$.
+//   + Compute $inter.big_(r in RR) T_r$ and prove your answer is correct.
+// ]
 
-#exercise(
-  title: [Index Sets --- Unions and Intersections I],
-  source: 51,
-  goal: [A capstone sequence: complex unions and intersections of infinite sequences, and mixtures
-    of the two.],
-  num_prefix: auto,
-)[
-  For each $n in NN$, define the interval
-  $
-    I_n := [(-1)^n / n, #h(.2em) 2 + 1/n].
-  $
+// #exercise(
+//   title: [Index Sets --- Unions and Intersections I],
+//   source: 51,
+//   goal: [A capstone sequence: complex unions and intersections of infinite sequences, and mixtures
+//     of the two.],
+//   num_prefix: auto,
+// )[
+//   For each $n in NN$, define the interval
+//   $
+//     I_n := [(-1)^n / n, #h(.2em) 2 + 1/n].
+//   $
 
-  + What are the intervals $I_1$, $I_2$, $I_3$, $I_4$?
-  + If $k in NN$, what is $I_(2k)$? What about $I_(2k+1)$?
-  + For every $k in NN$, define $display(J_k := inter.big_(n=k)^oo I_(2n))$. Prove that
-    $[1/(2k), 2] subset J_k$.
-  + Prove that $display(J_k subset [1/(2k), (4k+1)/(2k)])$.
-]
+//   + What are the intervals $I_1$, $I_2$, $I_3$, $I_4$?
+//   + If $k in NN$, what is $I_(2k)$? What about $I_(2k+1)$?
+//   + For every $k in NN$, define $display(J_k := inter.big_(n=k)^oo I_(2n))$. Prove that
+//     $[1/(2k), 2] subset J_k$.
+//   + Prove that $display(J_k subset [1/(2k), (4k+1)/(2k)])$.
+// ]
 
-#exercise(
-  title: [Index Sets --- Unions and Intersections II],
-  source: 52,
-  goal: [A continuation of the previous exercise.],
-  num_prefix: auto,
-)[
-  Recall $display(I_n := [(-1)^n / n, #h(.2em) 2 + 1/n])$ and
-  $display(J_k := inter.big_(n=k)^oo I_(2n))$.
+// #exercise(
+//   title: [Index Sets --- Unions and Intersections II],
+//   source: 52,
+//   goal: [A continuation of the previous exercise.],
+//   num_prefix: auto,
+// )[
+//   Recall $display(I_n := [(-1)^n / n, #h(.2em) 2 + 1/n])$ and
+//   $display(J_k := inter.big_(n=k)^oo I_(2n))$.
 
-  + Use proof by contradiction to prove that $(x in J_k) ==> x <= 2$. Conclude that
-    $J_k subset [1/(2k), 2]$, and therefore $J_k = [1/(2k), 2]$.
+//   + Use proof by contradiction to prove that $(x in J_k) ==> x <= 2$. Conclude that
+//     $J_k subset [1/(2k), 2]$, and therefore $J_k = [1/(2k), 2]$.
 
-    You may use without proof Problem 2.70: "if $epsilon > 0$, then there exists $N in NN$ such that
-    $1\/N < epsilon$."
-  + For every $k in NN$, define $display(J'_k := inter.big_(n=k)^oo I_(2n+1))$. Compute $J'_k$. You
-    do not need to prove your answer (but you are encouraged to).
-  + For every $k in NN$, define $display(E_k := inter.big_(n=k)^oo I_n)$. Compute $E_k$. You do not
-    need to prove your answer.
-  + Compute $display(union.big_(k=1)^oo E_k)$. Prove your answer.
-]
+//     You may use without proof Problem 2.70: "if $epsilon > 0$, then there exists $N in NN$ such that
+//     $1\/N < epsilon$."
+//   + For every $k in NN$, define $display(J'_k := inter.big_(n=k)^oo I_(2n+1))$. Compute $J'_k$. You
+//     do not need to prove your answer (but you are encouraged to).
+//   + For every $k in NN$, define $display(E_k := inter.big_(n=k)^oo I_n)$. Compute $E_k$. You do not
+//     need to prove your answer.
+//   + Compute $display(union.big_(k=1)^oo E_k)$. Prove your answer.
+// ]
 
-#exercise(
-  title: [Index Sets --- Unions and Intersections III],
-  source: 53,
-  goal: [A continuation of the previous two exercises.],
-  num_prefix: auto,
-)[
-  Recall that for each $n in NN$ we defined
-  $
-    I_n := [(-1)^n / n, #h(.2em) 2 + 1/n].
-  $
+// #exercise(
+//   title: [Index Sets --- Unions and Intersections III],
+//   source: 53,
+//   goal: [A continuation of the previous two exercises.],
+//   num_prefix: auto,
+// )[
+//   Recall that for each $n in NN$ we defined
+//   $
+//     I_n := [(-1)^n / n, #h(.2em) 2 + 1/n].
+//   $
 
-  Find, *with proof*, the value of
-  $
-    inter.big_(k=1)^oo union.big_(n=k)^oo I_n.
-  $
-]
+//   Find, *with proof*, the value of
+//   $
+//     inter.big_(k=1)^oo union.big_(n=k)^oo I_n.
+//   $
+// ]
 
 #exercise(
   title: [Index Sets --- Monotone Sequences],
-  source: 54,
+  // source: 54,
   goal: [Generalizing Problem 3.36 from the textbook, and several of the exercises above.],
   num_prefix: auto,
 )[
-  A sequence of sets ${S_n}_(n=1)^oo$ is *increasing* if $S_1 subset S_2 subset S_3 subset dots.c$,
-  i.e. $forall m, n in NN, [(m < n) ==> (S_m subset S_n)]$. It is *decreasing* if
-  $S_1 supset S_2 supset S_3 supset dots.c$.
+  A sequence of sets ${S_n}_(n=1)^oo$ is *increasing* if $S_1 subset S_2 subset S_3 subset dots.c$.
 
-  + Suppose ${S_n}_(n=1)^oo$ is increasing. Find, with proof, $display(inter.big_(i=1)^oo S_i)$.
-  + Suppose ${S_n}_(n=1)^oo$ is decreasing. Formulate a guess as to what
-    $display(union.big_(i=1)^oo S_i)$ is.
-  + Prove that ${S_n}_(n=1)^oo$ is increasing if and only if ${S_n^C}_(n=1)^oo$ is decreasing.
-  + Suppose ${S_n}_(n=1)^oo$ is decreasing. Use the generalized De Morgan laws to compute
-    $display(union.big_(i=1)^oo S_i)$.
+  + Write down a mathematically precise definition of what it means for ${S_n}_(n=1)^oo$ to be
+    increasing (i.e., write down a definition without "$dots.c$").
+
+  + Suppose ${S_n}_(n=1)^oo$ is increasing. Do you know what $display(inter.big_(i=1)^oo S_i)$ is?
+    Prove your answer.
+  + Let ${A_i}_(i=1)^oo$ be an arbitrary collection of sets. Use the mathematical notation of
+    unions/intersections to define a new sequence ${B_i}_(i=1)^oo$ that is _increasing_. Prove your
+    answer.
 ]
 
-#exercise(
-  title: [Index Sets --- Pairwise Disjoint],
-  source: 55,
-  goal: [More challenging: the definition of pairwise disjoint, plus proof techniques from
-    Chapter 2.],
-  num_prefix: auto,
-)[
-  For each $n in NN$, let
-  $
-    S_n := {1/n + m : m in ZZ}.
-  $
+// #exercise(
+//   title: [Index Sets --- Pairwise Disjoint],
+//   source: 55,
+//   goal: [More challenging: the definition of pairwise disjoint, plus proof techniques from
+//     Chapter 2.],
+//   num_prefix: auto,
+// )[
+//   For each $n in NN$, let
+//   $
+//     S_n := {1/n + m : m in ZZ}.
+//   $
 
-  Use *proof by contradiction* to show that the collection ${S_n}_(n in NN)$ is pairwise disjoint.
-]
+//   Use *proof by contradiction* to show that the collection ${S_n}_(n in NN)$ is pairwise disjoint.
+// ]
 
-#exercise(
-  title: [Index Sets --- Limits (lim inf and lim sup)],
-  source: 56,
-  goal: [A capstone connecting this section to Real Analysis. Exercises 51--53 are a special case.],
-  num_prefix: auto,
-)[
-  Let ${S_n}_(n in NN)$ be a sequence of sets. Define
-  $
-    liminf S_n := union.big_(k=1)^oo inter.big_(n=k)^oo S_n
-    #h(2em)
-    limsup S_n := inter.big_(k=1)^oo union.big_(n=k)^oo S_n.
-  $
+// #exercise(
+//   title: [Index Sets --- Limits (lim inf and lim sup)],
+//   source: 56,
+//   goal: [A capstone connecting this section to Real Analysis. Exercises 51--53 are a special case.],
+//   num_prefix: auto,
+// )[
+//   Let ${S_n}_(n in NN)$ be a sequence of sets. Define
+//   $
+//     liminf S_n := union.big_(k=1)^oo inter.big_(n=k)^oo S_n
+//     #h(2em)
+//     limsup S_n := inter.big_(k=1)^oo union.big_(n=k)^oo S_n.
+//   $
 
-  + Prove that $liminf S_n = {x : x in S_j "for all but finitely many" j in NN}$, where the
-    right-hand condition means $exists B in NN, forall j in NN, [(j >= B) ==> (x in S_j)]$.
-  + Prove that $limsup S_n = {x : x in S_j "for infinitely many" j in NN}$, where the right-hand
-    condition means $forall B in NN, exists j in NN, [(j >= B) and (x in S_j)]$.
-  + Revisit $I_n := [(-1)^n\/n, 2 + 1\/n]$ from Exercises 51--53. Show that
-    $0 in inter.big_(k=1)^oo union.big_(n=k)^oo I_n$ but
-    $0 in.not union.big_(k=1)^oo inter.big_(n=k)^oo I_n$, without computing these sets explicitly.
-  + Prove that $liminf S_n subset limsup S_n$.
-  + Suppose ${S_n}$ is a pairwise disjoint collection. Prove $limsup S_n = liminf S_n$ and find
-    their common value.
-  + Suppose ${S_n}$ is increasing. Prove $limsup S_n = liminf S_n$ and find their common value.
-  + Suppose ${S_n}$ is decreasing. Prove $limsup S_n = liminf S_n$ and find their common value.
-  + Suppose $S_1 = S_3 = S_5 = dots.c$ and $S_2 = S_4 = S_6 = dots.c$. Compute $limsup S_n$ and
-    $liminf S_n$.
-]
+//   + Prove that $liminf S_n = {x : x in S_j "for all but finitely many" j in NN}$, where the
+//     right-hand condition means $exists B in NN, forall j in NN, [(j >= B) ==> (x in S_j)]$.
+//   + Prove that $limsup S_n = {x : x in S_j "for infinitely many" j in NN}$, where the right-hand
+//     condition means $forall B in NN, exists j in NN, [(j >= B) and (x in S_j)]$.
+//   + Revisit $I_n := [(-1)^n\/n, 2 + 1\/n]$ from Exercises 51--53. Show that
+//     $0 in inter.big_(k=1)^oo union.big_(n=k)^oo I_n$ but
+//     $0 in.not union.big_(k=1)^oo inter.big_(n=k)^oo I_n$, without computing these sets explicitly.
+//   + Prove that $liminf S_n subset limsup S_n$.
+//   + Suppose ${S_n}$ is a pairwise disjoint collection. Prove $limsup S_n = liminf S_n$ and find
+//     their common value.
+//   + Suppose ${S_n}$ is increasing. Prove $limsup S_n = liminf S_n$ and find their common value.
+//   + Suppose ${S_n}$ is decreasing. Prove $limsup S_n = liminf S_n$ and find their common value.
+//   + Suppose $S_1 = S_3 = S_5 = dots.c$ and $S_2 = S_4 = S_6 = dots.c$. Compute $limsup S_n$ and
+//     $liminf S_n$.
+// ]
 
 // ---------------------------------------------------------------------------
 // 3.5 Cartesian products (Practicing Proofs, Ch. 9)
@@ -655,19 +659,19 @@
   $inter$, $without$, and $symdiff$ beautifully.
 ]
 
-#exercise(
-  title: [Products --- Tuples vs. Sets],
-  source: 57,
-  goal: [Reflect on the difference between sets and tuples via their definitions of equality.],
-  num_prefix: auto,
-)[
-  Suppose $a$ and $b$ are two *different* natural numbers.
+// #exercise(
+//   title: [Products --- Tuples vs. Sets],
+//   source: 57,
+//   goal: [Reflect on the difference between sets and tuples via their definitions of equality.],
+//   num_prefix: auto,
+// )[
+//   Suppose $a$ and $b$ are two *different* natural numbers.
 
-  Explain in your own words why ${a, b} = {b, a}$ but $(a, b) != (b, a)$.
+//   Explain in your own words why ${a, b} = {b, a}$ but $(a, b) != (b, a)$.
 
-  Next, use the *definition of equality* (of sets, and of tuples) to prove that ${a, b} = {b, a}$
-  but $(a, b) != (b, a)$.
-]
+//   Next, use the *definition of equality* (of sets, and of tuples) to prove that ${a, b} = {b, a}$
+//   but $(a, b) != (b, a)$.
+// ]
 
 #exercise(
   title: [Products --- Computing Products],
@@ -689,48 +693,65 @@
   + Let $A$ be an arbitrary set and $B = {b}$. Use set-builder notation to describe $A times B$.
 ]
 
+
+#exercise(
+  title: [Products --- Visualizing Products],
+  source: 63,
+  goal: [Use the Cartesian plane to visualize Cartesian products.],
+  num_prefix: auto,
+)[
+  Sketch each Cartesian product below as a region of the $x y$-plane, and describe the region in
+  words. Pay special attention to the *boundary*.
+
+  + $(0, 1) times [2, 3]$
+  + $(-oo, 0] times [0, oo)$
+  + $RR times NN$ --- is this the same set as $NN times RR$?
+  + $RR^2$ is short for $RR times RR$, and $RR^3$ is short for $RR times RR times RR$, etc.. Why is
+    $RR^n$ referred to as $n$-dimensional Euclidean space?
+]
+
+
 #exercise(
   title: [Products --- Empty Products],
   source: 59,
   goal: [Practice the definition of the Cartesian product.],
   num_prefix: auto,
 )[
-  Prove that $A times B = emptyset$ if and only if one of $A$, $B$ is the empty set. That is:
-
   + Prove that if $A = emptyset$, then $A times B = emptyset$.
   + Prove that if $B = emptyset$, then $A times B = emptyset$.
   + Prove that if $A times B = emptyset$, then $A = emptyset$ or $B = emptyset$.
+  + Restate what you've learned in this question as a theorem.
 ]
 
-#exercise(
-  title: [Products --- Algebraic Properties],
-  source: 60,
-  goal: [The Cartesian "product" does not behave much like multiplication of integers or matrices.],
-  num_prefix: auto,
-)[
-  + *Commutativity.* Give an example of sets $A$, $B$ for which $A times B != B times A$.
-  + Give an example of sets $A$, $B$ for which $A times B = B times A$. Can you formulate a
-    hypothesis for _which_ sets satisfy $A times B = B times A$?
-  + *Associativity.* Prove that if $A, B, C != emptyset$ then
-    $(A times B) times C != A times (B times C)$. What happens if one of the sets is empty?
-  + *Cancellation.* Prove that if $A != emptyset$ and $A times B = A times C$, then $B = C$. Give an
-    example showing the conclusion can fail if $A = emptyset$.
-]
+// #exercise(
+//   title: [Products --- Algebraic Properties],
+//   source: 60,
+//   goal: [The Cartesian "product" does not behave much like multiplication of integers or matrices.],
+//   num_prefix: auto,
+// )[
+//   + *Commutativity.* Give an example of sets $A$, $B$ for which $A times B != B times A$.
+//   // + Give an example of sets $A$, $B$ for which $A times B = B times A$. Can you formulate a
+//   //   hypothesis for _which_ sets satisfy $A times B = B times A$?
+//   + *Associativity.* Prove that if $A, B, C != emptyset$ then
+//     $(A times B) times C != A times (B times C)$. What happens if one of the sets is empty?
+//   + *Cancellation.* Prove that if $A != emptyset$ and $A times B = A times C$, then $B = C$. Give an
+//     example showing the conclusion can fail if $A = emptyset$.
+// ]
 
-#exercise(
-  title: [Products --- Criteria for Commutativity],
-  source: 61,
-  goal: [When exactly is the Cartesian product commutative?],
-  num_prefix: auto,
-)[
-  Let $A$, $B$, $C$, $D$ be sets.
+// #exercise(
+//   title: [Products --- Criteria for Commutativity],
+//   source: 61,
+//   goal: [When exactly is the Cartesian product commutative?],
+//   num_prefix: auto,
+// )[
+//   Let $A$, $B$, $C$, $D$ be sets.
 
-  + Suppose $A subset C$ and $B subset D$. Prove that $A times B subset C times D$.
-  + Suppose $A, B != emptyset$. Prove that
-    $(A times B subset C times D) ==> [(A subset C) and (B subset D)]$. Give an example showing the
-    conclusion may fail if one of $A$, $B$ is empty.
-  + Prove that $A times B = B times A$ if and only if $A = B$, or one of $A$, $B$ is empty.
-]
+//   + Suppose $A subset C$ and $B subset D$. Prove that $A times B subset C times D$.
+//   + Suppose $A, B != emptyset$. Prove that
+//     $(A times B subset C times D) ==> [(A subset C) and (B subset D)]$. Give an example showing the
+//     conclusion may fail if one of $A$, $B$ is empty.
+//   + Prove that $A times B = B times A$ if and only if $A = B$, or one of $A$, $B$ is empty.
+// ]
 
 #exercise(
   title: [Products --- Projections],
@@ -753,90 +774,76 @@
     condition as general as possible, and try to prove it.
 ]
 
-#exercise(
-  title: [Products --- Visualizing Products],
-  source: 63,
-  goal: [Use the Cartesian plane to visualize Cartesian products.],
-  num_prefix: auto,
-)[
-  Sketch each Cartesian product below as a region of the plane $RR^2$, and describe the region in
-  words. Pay special attention to the *boundary*.
+// #exercise(
+//   title: [Products --- Distributivity I],
+//   source: 64,
+//   goal: [Start investigating how the Cartesian product relates to the other set operations.],
+//   num_prefix: auto,
+// )[
+//   Let $A = {0, 1}$, $B = {2, 3}$, and $C = {3, 4}$.
 
-  + $(0, 1) times [2, 3]$
-  + $(-oo, 0] times [0, oo)$
-  + $RR times NN$ --- is this the same set as $NN times RR$?
-]
+//   + Compute $A times (B union C)$ and $(A times B) union (A times C)$.
+//   + Compute $A times (B inter C)$ and $(A times B) inter (A times C)$.
+//   + Compute $A times (B without C)$ and $(A times B) without (A times C)$.
+// ]
 
-#exercise(
-  title: [Products --- Distributivity I],
-  source: 64,
-  goal: [Start investigating how the Cartesian product relates to the other set operations.],
-  num_prefix: auto,
-)[
-  Let $A = {0, 1}$, $B = {2, 3}$, and $C = {3, 4}$.
+// #exercise(
+//   title: [Products --- Distributivity II],
+//   source: 65,
+//   goal: [Now prove the general rules suggested by the previous exercise.],
+//   num_prefix: auto,
+// )[
+//   Let $A$, $B$, $C$ be arbitrary sets (possibly empty).
 
-  + Compute $A times (B union C)$ and $(A times B) union (A times C)$.
-  + Compute $A times (B inter C)$ and $(A times B) inter (A times C)$.
-  + Compute $A times (B without C)$ and $(A times B) without (A times C)$.
-]
+//   + *Over union.* Prove $A times (B union C) = (A times B) union (A times C)$.
+//   + *Over intersection.* Prove $A times (B inter C) = (A times B) inter (A times C)$.
+//   + *Over set-difference.* Prove $A times (B without C) = (A times B) without (A times C)$.
+//   + *Over symmetric difference.* Prove $A times (B symdiff C) = (A times B) symdiff (A times C)$,
+//     where $X symdiff Y = (X without Y) union (Y without X) = (X union Y) without (X inter Y)$.
+//   + Does the product distribute "from the right" as well as "from the left"? Is
+//     $(A union B) times C = (A times C) union (B times C)$? What if $union$ is replaced by $inter$,
+//     $without$, or $symdiff$?
+// ]
 
-#exercise(
-  title: [Products --- Distributivity II],
-  source: 65,
-  goal: [Now prove the general rules suggested by the previous exercise.],
-  num_prefix: auto,
-)[
-  Let $A$, $B$, $C$ be arbitrary sets (possibly empty).
+// #exercise(
+//   title: [Products --- Other Set Operations],
+//   source: 66,
+//   goal: [How two or more Cartesian products behave under union and intersection.],
+//   num_prefix: auto,
+// )[
+//   Let $A$, $B$, $C$, $D$ be sets.
 
-  + *Over union.* Prove $A times (B union C) = (A times B) union (A times C)$.
-  + *Over intersection.* Prove $A times (B inter C) = (A times B) inter (A times C)$.
-  + *Over set-difference.* Prove $A times (B without C) = (A times B) without (A times C)$.
-  + *Over symmetric difference.* Prove $A times (B symdiff C) = (A times B) symdiff (A times C)$,
-    where $X symdiff Y = (X without Y) union (Y without X) = (X union Y) without (X inter Y)$.
-  + Does the product distribute "from the right" as well as "from the left"? Is
-    $(A union B) times C = (A times C) union (B times C)$? What if $union$ is replaced by $inter$,
-    $without$, or $symdiff$?
-]
+//   + Prove that $(A times C) inter (B times D) = (A inter B) times (C inter D)$.
+//   + Give a counterexample showing $(A times C) union (B times D) != (A union B) times (C union D)$.
+//   + Suppose $A$, $B$ are nonempty and disjoint and
+//     $(A times C) union (B times D) = (A union B) times (C union D)$. What can you conclude about $C$
+//     and $D$?
+// ]
 
-#exercise(
-  title: [Products --- Other Set Operations],
-  source: 66,
-  goal: [How two or more Cartesian products behave under union and intersection.],
-  num_prefix: auto,
-)[
-  Let $A$, $B$, $C$, $D$ be sets.
+// #exercise(
+//   title: [Products --- Other Set Operations II],
+//   source: 67,
+//   goal: [How Cartesian products behave under complementation.],
+//   num_prefix: auto,
+// )[
+//   Suppose $U$, $V$ are universes with $X subset U$ and $Y subset V$, so $X^C = U without X$ and
+//   $Y^C = V without Y$. Then $X times Y subset U times V$, so
+//   $(X times Y)^C = (U times V) without (X times Y)$.
 
-  + Prove that $(A times C) inter (B times D) = (A inter B) times (C inter D)$.
-  + Give a counterexample showing $(A times C) union (B times D) != (A union B) times (C union D)$.
-  + Suppose $A$, $B$ are nonempty and disjoint and
-    $(A times C) union (B times D) = (A union B) times (C union D)$. What can you conclude about $C$
-    and $D$?
-]
+//   + Give an example to show that $(X times Y)^C != X^C times Y^C$.
+//   + Prove that $(X times Y)^C = (X^C times V) union (U times Y^C)$.
+// ]
 
-#exercise(
-  title: [Products --- Other Set Operations II],
-  source: 67,
-  goal: [How Cartesian products behave under complementation.],
-  num_prefix: auto,
-)[
-  Suppose $U$, $V$ are universes with $X subset U$ and $Y subset V$, so $X^C = U without X$ and
-  $Y^C = V without Y$. Then $X times Y subset U times V$, so
-  $(X times Y)^C = (U times V) without (X times Y)$.
+// #exercise(
+//   title: [Products --- Distributivity Revisited],
+//   source: 68,
+//   goal: [Generalize the distributivity results to arbitrary index sets.],
+//   num_prefix: auto,
+// )[
+//   Let $I$ be an arbitrary nonempty index set (possibly infinite), ${A_i}_(i in I)$ a collection of
+//   sets indexed by $I$, and $B$ an arbitrary set.
 
-  + Give an example to show that $(X times Y)^C != X^C times Y^C$.
-  + Prove that $(X times Y)^C = (X^C times V) union (U times Y^C)$.
-]
-
-#exercise(
-  title: [Products --- Distributivity Revisited],
-  source: 68,
-  goal: [Generalize the distributivity results to arbitrary index sets.],
-  num_prefix: auto,
-)[
-  Let $I$ be an arbitrary nonempty index set (possibly infinite), ${A_i}_(i in I)$ a collection of
-  sets indexed by $I$, and $B$ an arbitrary set.
-
-  + Prove that $(union.big_(i in I) A_i) times B = union.big_(i in I) (A_i times B)$.
-  + Prove that $(inter.big_(i in I) A_i) times B = inter.big_(i in I) (A_i times B)$.
-  + What if the "big symbols" appear on the right, as in $B times (union.big_(i in I) A_i)$?
-]
+//   + Prove that $(union.big_(i in I) A_i) times B = union.big_(i in I) (A_i times B)$.
+//   + Prove that $(inter.big_(i in I) A_i) times B = inter.big_(i in I) (A_i times B)$.
+//   + What if the "big symbols" appear on the right, as in $B times (union.big_(i in I) A_i)$?
+// ]
