@@ -1,5 +1,5 @@
 #import "preamble.typ": *
-#show: mat246-slides.with([Set Theory], sources: (practicing_proofs,))
+#show: mat246-slides.with([Set Theory], sources: (practicing_proofs, ernst_textbook))
 
 // Problems ported from *Practicing Proofs: MAT246 Handouts* (ElGarem, Gross,
 // Matos Wiederhold, Yoshinobu; University of Toronto, 2025), CC BY-SA 4.0.
@@ -705,7 +705,7 @@
 
   + $(0, 1) times [2, 3]$
   + $(-oo, 0] times [0, oo)$
-  + $RR times NN$ --- is this the same set as $NN times RR$?
+  + $RR times NN$. Is this the same set as $NN times RR$?
   + $RR^2$ is short for $RR times RR$, and $RR^3$ is short for $RR times RR times RR$, etc.. Why is
     $RR^n$ referred to as $n$-dimensional Euclidean space?
 ]
@@ -847,3 +847,25 @@
 //   + Prove that $(inter.big_(i in I) A_i) times B = inter.big_(i in I) (A_i times B)$.
 //   + What if the "big symbols" appear on the right, as in $B times (union.big_(i in I) A_i)$?
 // ]
+
+// ---------------------------------------------------------------------------
+// 3.2 Russell's Paradox (Ernst textbook; not in Practicing Proofs)
+// ---------------------------------------------------------------------------
+
+#exercise(
+  title: [Russell's Paradox],
+  book: [Problems 3.24--3.26],
+  goal: [Is there a set of all sets?],
+  num_prefix: auto,
+)[
+  _The Barber of Seville:_ In Seville, there is a barber who shaves all those men, and only those
+  men, who do not shave themselves.
+
+  + Does the barber shave himself or not?
+  + Suppose there is a set of all sets, $cal(U) := {A : A "is a set"}$. Explain why $cal(U)$ is an
+    element of itself.
+  + Let $X = {A : A "is a set and" A in A}$. Let $Y = {A : A "is a set and" A in.not A}$.
+    + Does $Y$ belong to $X$?
+    + Does $Y$ belong to $Y$?
+    + What's going on here?
+]
