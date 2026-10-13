@@ -30,36 +30,52 @@
     second.
 ]
 
-#slide(siefken_num: auto)[
+// The helix picture is fixed-size, so the autosizer's two-column split cannot
+// fit it. Lay the slide out by hand instead.
+#slide(siefken_num: auto, two_columns: false)[
+  #grid(
+    columns: (1fr, auto),
+    column-gutter: 1.5em,
+    [
+      A bee leaves a flower located at $(3,0,0)$ and flies off in a cork-screw pattern. Its motion
+      is described by $arrow(p)(t)$.
 
-  A bee leaves a flower located at $(3,0,0)$ and flies off in a cork-screw pattern.
-
-  #image("images/helix.png", width: 6cm)
-  Its motion is described by $arrow(p)(t)$.
-
-  + Find a formula for $arrow(p)(t)$.
-  + Every time the bee makes a complete circle, it gains $5$m of height. Modify your formula for
-    $arrow(p)(t)$ to incorporate this information.
-  + Suppose the flower started at position $(0,0,0)$, but the radius and height gain per circle
-    remained the same. Find a formula for $arrow(p)(t)$.
+      + Find a formula for $arrow(p)(t)$.
+      + Every time the bee makes a complete circle, it gains $5$m of height. Modify your formula
+        for $arrow(p)(t)$ to incorporate this information.
+      + Suppose the flower started at position $(0,0,0)$, but the radius and height gain per
+        circle remained the same. Find a formula for $arrow(p)(t)$.
+    ],
+    image("images/helix.png", width: 5cm),
+  )
 ]
 
-#slide(siefken_num: auto)[
+// The plot is fixed-size, so the autosizer's two-column split cannot fit it.
+// Lay the slide out by hand instead.
+#slide(siefken_num: auto, two_columns: false)[
+  #grid(
+    columns: (auto, 1fr),
+    column-gutter: 1.5em,
+    [
+      Below is a _Lemniscate_ curve.
 
-  Below is a _Lemniscate_ curve.
-  #{
-    let ts = lq.arange(0, 6.5, step: 0.05)
-    let a = lq.diagram(
-      width: 12cm,
-      height: 5cm,
-      lq.plot(ts.map(t => calc.cos(t)), ts.map(t => calc.sin(2 * t)), mark: none, stroke: 2pt),
-    )
-    a
-  }
-  + Could the lemniscate be the graph of a function $f:RR -> RR$? Explain.
-  + Could the lemniscate be the graph of a function $f:RR -> RR^2$? Explain.
-  + Make a table of values for a function that produces the lemniscate.
-  + Find a formula for a function whose graph is the lemniscate. Use Desmos to check your answer.
+      #{
+        let ts = lq.arange(0, 6.5, step: 0.05)
+        lq.diagram(
+          width: 7cm,
+          height: 4cm,
+          lq.plot(ts.map(t => calc.cos(t)), ts.map(t => calc.sin(2 * t)), mark: none, stroke: 2pt),
+        )
+      }
+    ],
+    [
+      + Could the lemniscate be the graph of a function $f:RR -> RR$? Explain.
+      + Could the lemniscate be the graph of a function $f:RR -> RR^2$? Explain.
+      + Make a table of values for a function that produces the lemniscate.
+      + Find a formula for a function whose graph is the lemniscate. Use Desmos to check your
+        answer.
+    ],
+  )
 ]
 
 #slide(siefken_num: auto)[
@@ -115,30 +131,40 @@
   + What should $k$ be to ensure the maximum acceleration is $3g$? (Hint: Use Desmos to estimate!)
 ]
 
-#slide(siefken_num: auto)[
+// The plot is fixed-size, so the autosizer's two-column split cannot fit it.
+// Lay the slide out by hand instead.
+#slide(siefken_num: auto, two_columns: false)[
+  #grid(
+    columns: (auto, 1fr),
+    column-gutter: 1.5em,
+    [
+      #block(width: 7cm)[
+        You are riding the _Lemniscate Coaster_ modeled by $arrow(p)(t)=(20cos t, 20sin 2t)$.
+        You'd like to find the total length of the coaster track.
+      ]
 
-  You are riding the _Lemniscate Coaster_ modeled by $arrow(p)(t)=(20cos t, 20sin 2t)$. You'd like
-  to find the total length of the coaster track.
+      #{
+        let ts = lq.arange(0, 6.5, step: 0.05)
+        let ts2 = lq.arange(0, 6.5, step: 0.2)
+        lq.diagram(
+          width: 7cm,
+          height: 3.5cm,
+          lq.plot(ts2.map(t => calc.cos(t)), ts2.map(t => calc.sin(2 * t)), mark: "o", stroke: none),
+          lq.plot(ts.map(t => calc.cos(t)), ts.map(t => calc.sin(2 * t)), mark: none, stroke: 2pt),
+        )
+      }
+    ],
+    [
+      Your strategy is to divide your journey into $n$ steps of length $Delta t$, find the
+      displacement between consecutive steps, and add up all the distances.
 
-  #{
-    let ts = lq.arange(0, 6.5, step: 0.05)
-    let ts2 = lq.arange(0, 6.5, step: 0.2)
-    let a = lq.diagram(
-      width: 12cm,
-      height: 5cm,
-      lq.plot(ts2.map(t => calc.cos(t)), ts2.map(t => calc.sin(2 * t)), mark: "o", stroke: none),
-      lq.plot(ts.map(t => calc.cos(t)), ts.map(t => calc.sin(2 * t)), mark: none, stroke: 2pt),
-    )
-    a
-  }
-
-  Your strategy is to divide your journey into $n$ steps of length $Delta t$, find the displacement
-  between consecutive steps, and add up all the distances.
-
-  + Write down an express for the displacement between time $t$ and time $t+Delta t$.
-  + Write down an expression that estimates the distance travelled from time $t$ to $t+ Delta t$.
-  + Write down an expression that approximates the total length of the track.
-  + How could you find the exact length of the track? Do it.
+      + Write down an express for the displacement between time $t$ and time $t+Delta t$.
+      + Write down an expression that estimates the distance travelled from time $t$ to
+        $t+ Delta t$.
+      + Write down an expression that approximates the total length of the track.
+      + How could you find the exact length of the track? Do it.
+    ],
+  )
 ]
 
 #slide(siefken_num: auto)[
@@ -154,10 +180,12 @@
     Will the arrows in your tornado drawing be longer or shorter, closer to the origin?
 ]
 
-#slide(siefken_num: auto)[
+// Six fixed-size plots are too wide for the autosizer's two-column split.
+// Lay them out in a single row instead.
+#slide(siefken_num: auto, two_columns: false)[
 
   #{
-    let width = 4cm
+    let width = 2.5cm
     let height = width
     let plot(f, title: none) = {
       lq.diagram(
@@ -174,17 +202,15 @@
       )
     }
 
-    plot((x, y) => (x, y), title: [A])
-    h(1fr)
-    plot((x, y) => (y, x), title: [B])
-    h(1fr)
-    plot((x, y) => (-y, x), title: [C])
-    h(1fr)
-    plot((x, y) => (x, -y), title: [D])
-    h(1fr)
-    plot((x, y) => (x * x, 1), title: [E])
-    h(1fr)
-    plot((x, y) => (x * x, -1), title: [F])
+    grid(
+      columns: (1fr,) * 6,
+      plot((x, y) => (x, y), title: [A]),
+      plot((x, y) => (y, x), title: [B]),
+      plot((x, y) => (-y, x), title: [C]),
+      plot((x, y) => (x, -y), title: [D]),
+      plot((x, y) => (x * x, 1), title: [E]),
+      plot((x, y) => (x * x, -1), title: [F]),
+    )
   }
 
   // #show: columns

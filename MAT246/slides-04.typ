@@ -49,18 +49,20 @@
     refer back to the text or your notes!],
   num_prefix: auto,
 )[
-  The $n$-th *triangular number* $T_n$ is defined by $display(T_n = (n(n+1))/2)$.
+  The $n$-th *triangular number* $T_n$ has a formula $display(T_n = (n(n+1))/2)$.
 
   + Compute the first five triangular numbers.
   + Consider the claim: _the sum of the first $n$ natural numbers is the $n$-th triangular number._
-    Use mathematical notation to define a predicate $P(n)$ of the form $a = b$ expressing this
-    claim. Our goal is to prove $(forall n in NN) P(n)$ by induction.
-  + What is $P(1)$? Is it true? This is the *base case*.
-  + What is $P(n+1)$? The *inductive step* is the proof that $P(n) ==> P(n+1)$; we call $P(n)$ the
-    *inductive hypothesis*.
-  + Show $P(n) ==> P(n+1)$.
-  + Can you summarize the proof pattern we have just used? What are the key steps of an inductive
-    proof?
+
+    We hope to prove this claim by induction.
+
+
+    Write down a predicate, $P(n)$, so that the claim is equivalent to "$(forall n in NN) P(n)$".
+  + What is $P(1)$? Is it true?
+  + Write down explicitly what "#box[$P(n) ==> P(n+1)$]" means. Can you prove it?
+  + How can you prove that $P(n)$ is true for all $n in NN$? Write down a proof.
+  + In a proof by induction, we often label the *base case* and the *inductive step*. Identify these
+    in your proof.
 ]
 
 #exercise(
