@@ -14,158 +14,158 @@
     study in Calc I?
 ]
 
-#slide(siefken_num: auto)[
+// #slide(siefken_num: auto)[
 
-  Let $arrow(p)=mat(1; 1)$ and $arrow(d)=mat(2; 0)$. Define
-  $
-    arrow(f)(t) = t arrow(d)+arrow(p)
-  $
+//   Let $arrow(p)=mat(1; 1)$ and $arrow(d)=mat(2; 0)$. Define
+//   $
+//     arrow(f)(t) = t arrow(d)+arrow(p)
+//   $
 
-  + What is the domain and codomain of $arrow(f)$?
-  + What is $arrow(f)(3)$?
-  + What does the graph of $arrow(f)$ look like?
-  + How long does it take (if you think of $t$ as seconds) for $arrow(f)$ to traverse from $(1,1)$
-    to $(5,1)$?
-  + Make a new function $arrow(g)$ whose graph is the same as $arrow(f)$ but traverses at 1 unit per
-    second.
-]
+//   + What is the domain and codomain of $arrow(f)$?
+//   + What is $arrow(f)(3)$?
+//   + What does the graph of $arrow(f)$ look like?
+//   + How long does it take (if you think of $t$ as seconds) for $arrow(f)$ to traverse from $(1,1)$
+//     to $(5,1)$?
+//   + Make a new function $arrow(g)$ whose graph is the same as $arrow(f)$ but traverses at 1 unit per
+//     second.
+// ]
 
-// The helix picture is fixed-size, so the autosizer's two-column split cannot
-// fit it. Lay the slide out by hand instead.
-#slide(siefken_num: auto, two_columns: false)[
-  #grid(
-    columns: (1fr, auto),
-    column-gutter: 1.5em,
-    [
-      A bee leaves a flower located at $(3,0,0)$ and flies off in a cork-screw pattern. Its motion
-      is described by $arrow(p)(t)$.
+// // The helix picture is fixed-size, so the autosizer's two-column split cannot
+// // fit it. Lay the slide out by hand instead.
+// #slide(siefken_num: auto, two_columns: false)[
+//   #grid(
+//     columns: (1fr, auto),
+//     column-gutter: 1.5em,
+//     [
+//       A bee leaves a flower located at $(3,0,0)$ and flies off in a cork-screw pattern. Its motion
+//       is described by $arrow(p)(t)$.
 
-      + Find a formula for $arrow(p)(t)$.
-      + Every time the bee makes a complete circle, it gains $5$m of height. Modify your formula
-        for $arrow(p)(t)$ to incorporate this information.
-      + Suppose the flower started at position $(0,0,0)$, but the radius and height gain per
-        circle remained the same. Find a formula for $arrow(p)(t)$.
-    ],
-    image("images/helix.png", width: 5cm),
-  )
-]
+//       + Find a formula for $arrow(p)(t)$.
+//       + Every time the bee makes a complete circle, it gains $5$m of height. Modify your formula
+//         for $arrow(p)(t)$ to incorporate this information.
+//       + Suppose the flower started at position $(0,0,0)$, but the radius and height gain per
+//         circle remained the same. Find a formula for $arrow(p)(t)$.
+//     ],
+//     image("images/helix.png", width: 5cm),
+//   )
+// ]
 
-// The plot is fixed-size, so the autosizer's two-column split cannot fit it.
-// Lay the slide out by hand instead.
-#slide(siefken_num: auto, two_columns: false)[
-  #grid(
-    columns: (auto, 1fr),
-    column-gutter: 1.5em,
-    [
-      Below is a _Lemniscate_ curve.
+// // The plot is fixed-size, so the autosizer's two-column split cannot fit it.
+// // Lay the slide out by hand instead.
+// #slide(siefken_num: auto, two_columns: false)[
+//   #grid(
+//     columns: (auto, 1fr),
+//     column-gutter: 1.5em,
+//     [
+//       Below is a _Lemniscate_ curve.
 
-      #{
-        let ts = lq.arange(0, 6.5, step: 0.05)
-        lq.diagram(
-          width: 7cm,
-          height: 4cm,
-          lq.plot(ts.map(t => calc.cos(t)), ts.map(t => calc.sin(2 * t)), mark: none, stroke: 2pt),
-        )
-      }
-    ],
-    [
-      + Could the lemniscate be the graph of a function $f:RR -> RR$? Explain.
-      + Could the lemniscate be the graph of a function $f:RR -> RR^2$? Explain.
-      + Make a table of values for a function that produces the lemniscate.
-      + Find a formula for a function whose graph is the lemniscate. Use Desmos to check your
-        answer.
-    ],
-  )
-]
+//       #{
+//         let ts = lq.arange(0, 6.5, step: 0.05)
+//         lq.diagram(
+//           width: 7cm,
+//           height: 4cm,
+//           lq.plot(ts.map(t => calc.cos(t)), ts.map(t => calc.sin(2 * t)), mark: none, stroke: 2pt),
+//         )
+//       }
+//     ],
+//     [
+//       + Could the lemniscate be the graph of a function $f:RR -> RR$? Explain.
+//       + Could the lemniscate be the graph of a function $f:RR -> RR^2$? Explain.
+//       + Make a table of values for a function that produces the lemniscate.
+//       + Find a formula for a function whose graph is the lemniscate. Use Desmos to check your
+//         answer.
+//     ],
+//   )
+// ]
 
-#slide(siefken_num: auto)[
+// #slide(siefken_num: auto)[
 
-  A fish is swimming in a pond. Its position as a function of time is given by
-  $arrow(f)(t) = (t^2, 2t)$.
+//   A fish is swimming in a pond. Its position as a function of time is given by
+//   $arrow(f)(t) = (t^2, 2t)$.
 
-  + Graph $arrow(f)$.
-  + Estimate how far has the fish travelled from time $t=1$ to $t=1+Delta t$. Is your estimate
-    exact?
-  + Estimate the average speed of the fish from time $t=1$ to $t=1+Delta t$.
-  + Can you find the exact speed of the fish at time $t=1$? If so, do it.
-  + What's the difference between speed and velocity?
-  + Find the velocity of the fish at time $t=1$.
-  + What's the relationship between the velocity of the fish and the graph of $arrow(f)$? Should you
-    draw the velocity vector at the origin or somewhere else?
-]
+//   + Graph $arrow(f)$.
+//   + Estimate how far has the fish travelled from time $t=1$ to $t=1+Delta t$. Is your estimate
+//     exact?
+//   + Estimate the average speed of the fish from time $t=1$ to $t=1+Delta t$.
+//   + Can you find the exact speed of the fish at time $t=1$? If so, do it.
+//   + What's the difference between speed and velocity?
+//   + Find the velocity of the fish at time $t=1$.
+//   + What's the relationship between the velocity of the fish and the graph of $arrow(f)$? Should you
+//     draw the velocity vector at the origin or somewhere else?
+// ]
 
-#slide(siefken_num: auto)[
+// #slide(siefken_num: auto)[
 
-  $arrow(p): RR -> RR^2$ describes the motion of a particle.
+//   $arrow(p): RR -> RR^2$ describes the motion of a particle.
 
-  + How should you interpret $dif/(dif t) arrow(p)(t)$?#v(1em)
-  + How should you interpret $dif^2/(dif t^2) arrow(p)(t)$?
+//   + How should you interpret $dif/(dif t) arrow(p)(t)$?#v(1em)
+//   + How should you interpret $dif^2/(dif t^2) arrow(p)(t)$?
 
-    You are on a playground toy that spins very fast.
-    #set align(center)
-    #image("images/merry-go-round.jpg", width: 5cm)
+//     You are on a playground toy that spins very fast.
+//     #set align(center)
+//     #image("images/merry-go-round.jpg", width: 5cm)
 
-  + Make a diagram of this situation. Draw your *velocity* vector on the diagram.
-  + Draw your *acceleration* vector on the diagram.
-  + Come up with a mathematical model (i.e. a function) that describes your position vs. time on the
-    ride.
+//   + Make a diagram of this situation. Draw your *velocity* vector on the diagram.
+//   + Draw your *acceleration* vector on the diagram.
+//   + Come up with a mathematical model (i.e. a function) that describes your position vs. time on the
+//     ride.
 
-    Using your model, compute your velocity and acceleration vectors. Do they match your
-    predictions?
+//     Using your model, compute your velocity and acceleration vectors. Do they match your
+//     predictions?
 
-]
+// ]
 
-#slide(siefken_num: auto)[
+// #slide(siefken_num: auto)[
 
-  You are riding the _Lemniscate Coaster_, a roller coaster whose track is laid out in the shape of
-  a lemniscate. A car on the coaster can be modeled by $arrow(p)(t)=(20cos t, 20sin 2t)$.
+//   You are riding the _Lemniscate Coaster_, a roller coaster whose track is laid out in the shape of
+//   a lemniscate. A car on the coaster can be modeled by $arrow(p)(t)=(20cos t, 20sin 2t)$.
 
-  + Find expressions for the velocity, speed, and the acceleration of the roller coaster.
-  + Use Desmos to estimate: what is the fastest that the coaster goes? What is the most acceleration
-    it experiences?
-    To make the ride safe for children, the maximum acceleration should not exceed
-    $3g approx 29 "m"/"s"^2$. To achieve this, engineers will install breaking pads that slow the
-    coaster down by a factor of $k$.
+//   + Find expressions for the velocity, speed, and the acceleration of the roller coaster.
+//   + Use Desmos to estimate: what is the fastest that the coaster goes? What is the most acceleration
+//     it experiences?
+//     To make the ride safe for children, the maximum acceleration should not exceed
+//     $3g approx 29 "m"/"s"^2$. To achieve this, engineers will install breaking pads that slow the
+//     coaster down by a factor of $k$.
 
-  + Model the slowed-down coaster's position with a new function $arrow(q)(t)$.
-  + What should $k$ be to ensure the maximum acceleration is $3g$? (Hint: Use Desmos to estimate!)
-]
+//   + Model the slowed-down coaster's position with a new function $arrow(q)(t)$.
+//   + What should $k$ be to ensure the maximum acceleration is $3g$? (Hint: Use Desmos to estimate!)
+// ]
 
-// The plot is fixed-size, so the autosizer's two-column split cannot fit it.
-// Lay the slide out by hand instead.
-#slide(siefken_num: auto, two_columns: false)[
-  #grid(
-    columns: (auto, 1fr),
-    column-gutter: 1.5em,
-    [
-      #block(width: 7cm)[
-        You are riding the _Lemniscate Coaster_ modeled by $arrow(p)(t)=(20cos t, 20sin 2t)$.
-        You'd like to find the total length of the coaster track.
-      ]
+// // The plot is fixed-size, so the autosizer's two-column split cannot fit it.
+// // Lay the slide out by hand instead.
+// #slide(siefken_num: auto, two_columns: false)[
+//   #grid(
+//     columns: (auto, 1fr),
+//     column-gutter: 1.5em,
+//     [
+//       #block(width: 7cm)[
+//         You are riding the _Lemniscate Coaster_ modeled by $arrow(p)(t)=(20cos t, 20sin 2t)$.
+//         You'd like to find the total length of the coaster track.
+//       ]
 
-      #{
-        let ts = lq.arange(0, 6.5, step: 0.05)
-        let ts2 = lq.arange(0, 6.5, step: 0.2)
-        lq.diagram(
-          width: 7cm,
-          height: 3.5cm,
-          lq.plot(ts2.map(t => calc.cos(t)), ts2.map(t => calc.sin(2 * t)), mark: "o", stroke: none),
-          lq.plot(ts.map(t => calc.cos(t)), ts.map(t => calc.sin(2 * t)), mark: none, stroke: 2pt),
-        )
-      }
-    ],
-    [
-      Your strategy is to divide your journey into $n$ steps of length $Delta t$, find the
-      displacement between consecutive steps, and add up all the distances.
+//       #{
+//         let ts = lq.arange(0, 6.5, step: 0.05)
+//         let ts2 = lq.arange(0, 6.5, step: 0.2)
+//         lq.diagram(
+//           width: 7cm,
+//           height: 3.5cm,
+//           lq.plot(ts2.map(t => calc.cos(t)), ts2.map(t => calc.sin(2 * t)), mark: "o", stroke: none),
+//           lq.plot(ts.map(t => calc.cos(t)), ts.map(t => calc.sin(2 * t)), mark: none, stroke: 2pt),
+//         )
+//       }
+//     ],
+//     [
+//       Your strategy is to divide your journey into $n$ steps of length $Delta t$, find the
+//       displacement between consecutive steps, and add up all the distances.
 
-      + Write down an express for the displacement between time $t$ and time $t+Delta t$.
-      + Write down an expression that estimates the distance travelled from time $t$ to
-        $t+ Delta t$.
-      + Write down an expression that approximates the total length of the track.
-      + How could you find the exact length of the track? Do it.
-    ],
-  )
-]
+//       + Write down an express for the displacement between time $t$ and time $t+Delta t$.
+//       + Write down an expression that estimates the distance travelled from time $t$ to
+//         $t+ Delta t$.
+//       + Write down an expression that approximates the total length of the track.
+//       + How could you find the exact length of the track? Do it.
+//     ],
+//   )
+// ]
 
 #slide(siefken_num: auto)[
 
