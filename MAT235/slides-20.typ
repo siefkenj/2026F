@@ -3,112 +3,121 @@
 
 
 
-#slide(siefken_num: 1)[
+#slide(siefken_num: 1, two_columns: false)[
+  #grid(
+    columns: (auto, 1fr),
+    column-gutter: 1.5em,
+    {
+      let width = 5.5cm
+      let height = width
+      let plot(f, title: none) = {
+        lq.diagram(
+          title: title,
+          width: width,
+          height: height,
+          lq.quiver(
+            lq.arange(-2, 3, step: .5),
+            lq.arange(-2, 3, step: .5),
+            f,
+          ),
+          xaxis: none,
+          yaxis: none,
+          lq.place(1, 0, {
+            cetz.canvas(length: .8cm, {
+              import cetz.draw: *
 
-  #{
-    let width = 9cm
-    let height = width
-    let plot(f, title: none) = {
-      lq.diagram(
-        title: title,
-        width: width,
-        height: height,
-        lq.quiver(
-          lq.arange(-2, 3, step: .5),
-          lq.arange(-2, 3, step: .5),
-          f,
-        ),
-        xaxis: none,
-        yaxis: none,
-        lq.place(1, 0, {
-          cetz.canvas({
-            import cetz.draw: *
+              group(name: "figure", {
+                let shift = 0.1
 
-            group(name: "figure", {
-              let shift = 0.1
+                line((0, 0), (0, 1), mark: (symbol: "[]"), stroke: 2pt, name: "rod")
+                line((0, .13), (1, .13), mark: (end: (symbol: "[]")), stroke: 2pt)
 
-              line((0, 0), (0, 1), mark: (symbol: "[]"), stroke: 2pt, name: "rod")
-              line((0, .13), (1, .13), mark: (end: (symbol: "[]")), stroke: 2pt)
-
-              content("rod.mid", [$R$], anchor: "east", padding: .5em)
-              content("rod.start", [$arrow(p)$], anchor: "north", padding: .2em)
+                content("rod.mid", [$R$], anchor: "east", padding: .5em)
+                content("rod.start", [$arrow(p)$], anchor: "north", padding: .2em)
+              })
             })
-          })
-        }),
-      )
-    }
+          }),
+        )
+      }
 
-    plot((x, y) => (-y, calc.sin(y + 1) + x / 5), title: $arrow(F):RR^2 -> RR^2$)
-  }
-  The orthogonal frame, $R$, with side lengths $h$, is being pushed at its ends by a field
-  $arrow(F)$.
+      plot((x, y) => (-y, calc.sin(y + 1) + x / 5), title: $arrow(F):RR^2 -> RR^2$)
+    },
+    [
+      The orthogonal frame, $R$, with side lengths $h$, is being pushed at its ends by a field
+      $arrow(F)$.
 
-  Its bottom-left corner is located at $arrow(p)$.
+      Its bottom-left corner is located at $arrow(p)$.
 
-  + The rotational force on $R$ is given by
-    $
-      (arrow(F)(p + mat(h; 0)) - & arrow(F)(p))dot mat(0; 1) \
-                                 & + (arrow(F)(p + mat(0; h)) - arrow(F)(p))dot mat(-1; 0)
-    $
+      + The rotational force on $R$ is given by
+        $
+          (arrow(F)(p + mat(h; 0)) - & arrow(F)(p))dot mat(0; 1) \
+                                     & + (arrow(F)(p + mat(0; h)) - arrow(F)(p))dot mat(-1; 0)
+        $
 
-    Why is the vector $mat(-1; 0)$ used instead of $mat(1; 0)$?
+        Why is the vector $mat(-1; 0)$ used instead of $mat(1; 0)$?
 
-  + Write a formula that approximates the _normalized_ rotational force (i.e., the rotational
-    force divided by $h$) using partial derivatives.
+      + Write a formula that approximates the _normalized_ rotational force (i.e., the rotational
+        force divided by $h$) using partial derivatives.
+    ],
+  )
 ]
 
-#slide(siefken_num: auto)[
+#slide(siefken_num: auto, two_columns: false)[
+  #grid(
+    columns: (auto, 1fr),
+    column-gutter: 1.5em,
+    {
+      let width = 5.5cm
+      let height = width
+      let plot(f, title: none) = {
+        lq.diagram(
+          title: title,
+          width: width,
+          height: height,
+          lq.quiver(
+            lq.arange(-2, 3, step: .5),
+            lq.arange(-2, 3, step: .5),
+            f,
+          ),
+          xaxis: none,
+          yaxis: none,
+          lq.place(1, 0, {
+            cetz.canvas(length: .8cm, {
+              import cetz.draw: *
 
-  #{
-    let width = 9cm
-    let height = width
-    let plot(f, title: none) = {
-      lq.diagram(
-        title: title,
-        width: width,
-        height: height,
-        lq.quiver(
-          lq.arange(-2, 3, step: .5),
-          lq.arange(-2, 3, step: .5),
-          f,
-        ),
-        xaxis: none,
-        yaxis: none,
-        lq.place(1, 0, {
-          cetz.canvas({
-            import cetz.draw: *
+              group(name: "figure", {
+                let shift = 0.1
 
-            group(name: "figure", {
-              let shift = 0.1
+                rect((0, 0), (1, 1), name: "square")
 
-              rect((0, 0), (1, 1), name: "square")
+                // line((0, 0), (0, 1), mark: (symbol: "[]"), stroke: 2pt, name: "rod")
+                // line((0, .13), (1, .13), mark: (end: (symbol: "[]")), stroke: 2pt)
 
-              // line((0, 0), (0, 1), mark: (symbol: "[]"), stroke: 2pt, name: "rod")
-              // line((0, .13), (1, .13), mark: (end: (symbol: "[]")), stroke: 2pt)
-
-              // content("square.mid", [$R$], anchor: "east", padding: .5em)
-              content((0, 0), [$arrow(p)$], anchor: "north", padding: .2em)
+                // content("square.mid", [$R$], anchor: "east", padding: .5em)
+                content((0, 0), [$arrow(p)$], anchor: "north", padding: .2em)
+              })
             })
-          })
-        }),
-      )
-    }
+          }),
+        )
+      }
 
-    plot((x, y) => (-y, calc.sin(y + 1) + x / 5), title: $arrow(F):RR^2 -> RR^2$)
-  }
+      plot((x, y) => (-y, calc.sin(y + 1) + x / 5), title: $arrow(F):RR^2 -> RR^2$)
+    },
+    [
+      Let $S$ be a square of side length $h$ with lower-left corner at $arrow(p)$.
 
-  Let $S$ be a square of side length $h$ with lower-left corner at $arrow(p)$.
+      *Theorem*: The (counter-clockwise) circulation per unit area around $S$ is approximately the
+      (counter-clockwise) normalized rotational force on an orthogonal frame aligned with $S$.
 
-  *Theorem*: The (counter-clockwise) circulation per unit area around $S$ is approximately the
-  (counter-clockwise) normalized rotational force on an orthogonal frame aligned with $S$.
+      The limit of circulation per unit area as the area shrinks to zero is called the *circulation
+      density*.
 
-  The limit of circulation per unit area as the area shrinks to zero is called the *circulation
-  density*.
-
-  + Use what you know about rotational forces to write down an approximation for the circulation
-    per unit area around $S$.
-  + Find the circulation density at $arrow(p)$.
-  + Find an approximation for the circulation around $S$ (not normalized).
+      + Use what you know about rotational forces to write down an approximation for the circulation
+        per unit area around $S$.
+      + Find the circulation density at $arrow(p)$.
+      + Find an approximation for the circulation around $S$ (not normalized).
+    ],
+  )
 ]
 
 #slide(siefken_num: auto)[
@@ -132,7 +141,7 @@
     #stack(
       dir: ltr,
       spacing: 1em,
-      cetz.canvas({
+      cetz.canvas(length: .7cm, {
         import cetz.draw: *
 
         // content((0, 1.6, 0), anchor: "south", text(size: 14pt, [()]))
@@ -150,7 +159,7 @@
         content("y.end", anchor: "north", $x$)
         content("z.end", anchor: "north", $z$)
       }),
-      cetz.canvas({
+      cetz.canvas(length: .7cm, {
         import cetz.draw: *
 
         // content((0, 1.6, 0), anchor: "south", text(size: 14pt, [()]))
@@ -216,7 +225,7 @@
 
     #{
       set align(center)
-      image("images/cut-sphere.png", width: 50%)
+      image("images/cut-sphere.png", width: 35%)
     }
     What is the orientation of the boundary of $S$?
 ]

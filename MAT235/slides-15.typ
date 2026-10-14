@@ -2,10 +2,10 @@
 #show: mat235-slides.with([Chapter 15])
 
 
-#slide(siefken_num: 1)[
+#slide(siefken_num: 1, two_columns: false)[
 
   #{
-    let s = 3cm
+    let s = 2.3cm
     let a = lq.diagram(
       title: [A],
       width: s,
@@ -84,10 +84,9 @@
     )
     show: block.with(breakable: false)
     table(
-      columns: 2,
+      columns: 4,
       stroke: none,
-      a, b,
-      c, d,
+      a, b, c, d,
     )
   }
 
@@ -165,6 +164,7 @@
 ]
 
 #slide(siefken_num: auto)[
+  #set text(size: 0.9em)
 
   We will now consider the general case where $q(x,y)=a x^2 + b y^2 + c x y$.
 
@@ -178,7 +178,7 @@
   + How does the graph of $z=q(x, m y)$ relate to the graph of $z=q(x,y)$? Does the behaviour at
     $arrow(0)$ change depending on what $m$ is?
 
-  + Consider the *new* polynomial
+  + #colbreak()Consider the *new* polynomial
     $
       r(x,w) = 1/a q(x, sqrt(a)/sqrt(b) w)
     $
@@ -211,130 +211,139 @@
 
     _Hint_: Feel free to use Desmos!
 ]
-#slide(siefken_num: 6)[
+#slide(siefken_num: 6, two_columns: false)[
+  #grid(
+    columns: (auto, 1fr),
+    column-gutter: 1.5em,
+    {
+      let s = 4.5cm
+      let a = lq.diagram(
+        title: [Camp Ground],
+        width: s,
+        height: s,
+        lq.contour(
+          // levels: (4, 8, 12, 16, 20, 24, 28, 32),
+          levels: (-1, 0, 1, 2, 3, 4),
+          lq.linspace(-4.5, 4.5, num: 60),
+          lq.linspace(-0.5, 8.5, num: 80),
+          (x, y) => 1 / 10 * (-x * x + y * (y - 6) * (y - 6)),
+          map: color.map.icefire,
+        ),
+        xlim: (-4.5, 4.5),
+        ylim: (-0.5, 8.5),
+        xaxis: (ticks: lq.arange(-8, 10, step: 2)),
+        yaxis: (ticks: lq.arange(-9, 10, step: 1)),
+        // lq.place(3.5, 3.5, $5$),
+        // lq.place(1.5, 1.5, $2$),
+        // lq.place(.9, .9, $1$),
+      )
+      a
+    },
+    [
+      The height of a camp ground is given by
+      $h(x,y) & =1/10 (-x^2+y(y-6)^2) = 1/10 (-x^2 +y^3 - 12y^2+36 y)$
 
-  The height of a camp ground is given by
-  $h(x,y) & =1/10 (-x^2+y(y-6)^2) = 1/10 (-x^2 +y^3 - 12y^2+36 y)$
+      + On the contour plot, label the critical points you found.
+      + The lines of the contour plot are at integer levels (e.g., $1$, $2$, $-1$, etc.). Label the
+        height of each curve appropriately.
 
-  #{
-    let s = 6cm
-    let a = lq.diagram(
-      title: [Camp Ground],
-      width: s,
-      height: s,
-      lq.contour(
-        // levels: (4, 8, 12, 16, 20, 24, 28, 32),
-        levels: (-1, 0, 1, 2, 3, 4),
-        lq.linspace(-4.5, 4.5, num: 60),
-        lq.linspace(-0.5, 8.5, num: 80),
-        (x, y) => 1 / 10 * (-x * x + y * (y - 6) * (y - 6)),
-        map: color.map.icefire,
-      ),
-      xlim: (-4.5, 4.5),
-      ylim: (-0.5, 8.5),
-      xaxis: (ticks: lq.arange(-9, 10, step: 1)),
-      yaxis: (ticks: lq.arange(-9, 10, step: 1)),
-      // lq.place(3.5, 3.5, $5$),
-      // lq.place(1.5, 1.5, $2$),
-      // lq.place(.9, .9, $1$),
-    )
-    set align(center)
-    a
-  }
-
-  + On the contour plot, label the critical points you found.
-  + The lines of the contour plot are at integer levels (e.g., $1$, $2$, $-1$, etc.). Label the
-    height of each curve appropriately.
-
-  + Draw gradient vectors for $h$ on the contour plot.
+      + Draw gradient vectors for $h$ on the contour plot.
+    ],
+  )
 ]
 
-#slide(siefken_num: auto)[
+#slide(siefken_num: auto, two_columns: false)[
+  #grid(
+    columns: (auto, 1fr),
+    column-gutter: 1.5em,
+    {
+      let s = 4.5cm
+      let a = lq.diagram(
+        title: [Camp Ground],
+        width: s,
+        height: s,
+        lq.contour(
+          // levels: (4, 8, 12, 16, 20, 24, 28, 32),
+          levels: (-1, 0, 1, 2, 3, 4),
+          lq.linspace(-4.5, 4.5, num: 60),
+          lq.linspace(-0.5, 8.5, num: 80),
+          (x, y) => 1 / 10 * (-x * x + y * (y - 6) * (y - 6)),
+          map: color.map.icefire,
+        ),
+        xlim: (-4.5, 4.5),
+        ylim: (-0.5, 8.5),
+        xaxis: (ticks: lq.arange(-8, 10, step: 2)),
+        yaxis: (ticks: lq.arange(-9, 10, step: 1)),
+        // lq.place(3.5, 3.5, $5$),
+        // lq.place(1.5, 1.5, $2$),
+        // lq.place(.9, .9, $1$),
+        lq.ellipse(0, 4, width: 8, height: 8, align: center + horizon, stroke: 2pt + blue),
+      )
+      a
+    },
+    [
+      The height of a camp ground is given by
+      $h(x,y) & =1/10 (-x^2+y(y-6)^2) = 1/10 (-x^2 +y^3 - 12y^2+36 y)$
 
-  The height of a camp ground is given by
-  $h(x,y) & =1/10 (-x^2+y(y-6)^2) = 1/10 (-x^2 +y^3 - 12y^2+36 y)$
+      The boundary of the camp ground is given by $x^2 + (y - 4)^2 = 4^2$ and is plotted to the left.
 
-  #{
-    let s = 6cm
-    let a = lq.diagram(
-      title: [Camp Ground],
-      width: s,
-      height: s,
-      lq.contour(
-        // levels: (4, 8, 12, 16, 20, 24, 28, 32),
-        levels: (-1, 0, 1, 2, 3, 4),
-        lq.linspace(-4.5, 4.5, num: 60),
-        lq.linspace(-0.5, 8.5, num: 80),
-        (x, y) => 1 / 10 * (-x * x + y * (y - 6) * (y - 6)),
-        map: color.map.icefire,
-      ),
-      xlim: (-4.5, 4.5),
-      ylim: (-0.5, 8.5),
-      xaxis: (ticks: lq.arange(-9, 10, step: 1)),
-      yaxis: (ticks: lq.arange(-9, 10, step: 1)),
-      // lq.place(3.5, 3.5, $5$),
-      // lq.place(1.5, 1.5, $2$),
-      // lq.place(.9, .9, $1$),
-      lq.ellipse(0, 4, width: 8, height: 8, align: center + horizon, stroke: 2pt + blue),
-    )
-    set align(center)
-    a
-  }
-
-  The boundary of the camp ground is given by $x^2 + (y - 4)^2 = 4^2$ and is plotted to the left.
-
-  + Identify all places *on the boundary* where $h$ could have a local extreme.
-  + At the places you identified, what is the relationship between the boundary and the level
-    curve?
-    #set enum(numbering: "(i)")
-    + Tangent
-    + Orthogonal
-    + Something else
-  + At the places you identified, is the gradient of $h$
-    #set enum(numbering: "(i)")
-    + Tangent
-    + Orthogonal
-    + Something else
+      + Identify all places *on the boundary* where $h$ could have a local extreme.
+      + At the places you identified, what is the relationship between the boundary and the level
+        curve?
+        #set enum(numbering: "(i)")
+        + Tangent
+        + Orthogonal
+        + Something else
+      + At the places you identified, is the gradient of $h$
+        #set enum(numbering: "(i)")
+        + Tangent
+        + Orthogonal
+        + Something else
+    ],
+  )
 ]
 
-#slide(siefken_num: 7)[
+#slide(siefken_num: 7, two_columns: false)[
+  #grid(
+    columns: (auto, 1fr),
+    column-gutter: 1.5em,
+    {
+      let s = 4.5cm
+      let a = lq.diagram(
+        title: [Camp Ground],
+        width: s,
+        height: s,
+        lq.contour(
+          // levels: (4, 8, 12, 16, 20, 24, 28, 32),
+          levels: (-1, 0, 1, 2, 3, 4),
+          lq.linspace(-4.5, 4.5, num: 60),
+          lq.linspace(-0.5, 8.5, num: 80),
+          (x, y) => 1 / 10 * (-x * x + y * (y - 6) * (y - 6)),
+          map: color.map.icefire,
+        ),
+        xlim: (-4.5, 4.5),
+        ylim: (-0.5, 8.5),
+        xaxis: (ticks: lq.arange(-8, 10, step: 2)),
+        yaxis: (ticks: lq.arange(-9, 10, step: 1)),
+        // lq.place(3.5, 3.5, $5$),
+        // lq.place(1.5, 1.5, $2$),
+        // lq.place(.9, .9, $1$),
+        lq.ellipse(0, 4, width: 8, height: 8, align: center + horizon, stroke: 2pt + blue),
+      )
+      a
+    },
+    [
+      The height of a camp ground is given by
+      $h(x,y) & =1/10 (-x^2+y(y-6)^2) = 1/10 (-x^2 +y^3 - 12y^2+36 y)$
 
-  The height of a camp ground is given by
-  $h(x,y) & =1/10 (-x^2+y(y-6)^2) = 1/10 (-x^2 +y^3 - 12y^2+36 y)$
+      The boundary of the camp ground is given by $x^2 + (y - 4)^2 = 4^2$ and is plotted to the left.
 
-  #{
-    let s = 6cm
-    let a = lq.diagram(
-      title: [Camp Ground],
-      width: s,
-      height: s,
-      lq.contour(
-        // levels: (4, 8, 12, 16, 20, 24, 28, 32),
-        levels: (-1, 0, 1, 2, 3, 4),
-        lq.linspace(-4.5, 4.5, num: 60),
-        lq.linspace(-0.5, 8.5, num: 80),
-        (x, y) => 1 / 10 * (-x * x + y * (y - 6) * (y - 6)),
-        map: color.map.icefire,
-      ),
-      xlim: (-4.5, 4.5),
-      ylim: (-0.5, 8.5),
-      xaxis: (ticks: lq.arange(-9, 10, step: 1)),
-      yaxis: (ticks: lq.arange(-9, 10, step: 1)),
-      // lq.place(3.5, 3.5, $5$),
-      // lq.place(1.5, 1.5, $2$),
-      // lq.place(.9, .9, $1$),
-      lq.ellipse(0, 4, width: 8, height: 8, align: center + horizon, stroke: 2pt + blue),
-    )
-    set align(center)
-    a
-  }
+      Define $g(x,y)=x^2+(y-4)^2$.
 
-  The boundary of the camp ground is given by $x^2 + (y - 4)^2 = 4^2$ and is plotted to the left.
-
-  Define $g(x,y)=x^2+(y-4)^2$.
-
-  + The boundary is the graph of *some* level curve for $g$. Which level curve?
-  + What is the relationship between $nabla g$ and the boundary?
-  + What is the relationship between $nabla h$ and $nabla g$ on the boundary?
-  + Solve for all the locations where $nabla g = nabla h$ on the boundary.
+      + The boundary is the graph of *some* level curve for $g$. Which level curve?
+      + What is the relationship between $nabla g$ and the boundary?
+      + What is the relationship between $nabla h$ and $nabla g$ on the boundary?
+      + Solve for all the locations where $nabla g = nabla h$ on the boundary.
+    ],
+  )
 ]

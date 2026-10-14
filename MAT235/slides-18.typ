@@ -104,7 +104,7 @@
 
 ]
 
-#slide(siefken_num: auto)[
+#slide(siefken_num: auto, force_scale: 0.8em)[
 
   Let $h(x,y)=-x^2-2y^2$ denote a height of a hill.
 
@@ -129,14 +129,14 @@
 
 ]
 
-#slide(siefken_num: auto)[
+#slide(siefken_num: auto, two_columns: false)[
 
   A vector field $arrow(F): RR^n -> RR^m$ is called *conservative* or *path independent* if for
   any points $A$ and $B$, the work done by $arrow(F)$ moving between points $A$ and $B$ does not
   depend on the path taken from $A$ to $B$.
 
   #{
-    let width = 4cm
+    let width = 3cm
     let height = width
     let plot(f, title: none) = {
       lq.diagram(
@@ -153,17 +153,13 @@
       )
     }
 
-    plot((x, y) => (x, y), title: [X])
-    h(1fr)
-    // plot((x, y) => (y, x), title: [B])
-    // h(1fr)
-    plot((x, y) => (-y, x), title: [Y])
-    h(1fr)
-    // plot((x, y) => (x, -y), title: [D])
-    // h(1fr)
-    // plot((x, y) => (x * x, 1), title: [E])
-    // h(1fr)
-    plot((x, y) => ((1.5 + calc.abs(y)), 0), title: [Z])
+    grid(
+      columns: (1fr,) * 3,
+      align: center,
+      plot((x, y) => (x, y), title: [X]),
+      plot((x, y) => (-y, x), title: [Y]),
+      plot((x, y) => ((1.5 + calc.abs(y)), 0), title: [Z]),
+    )
   }
   + Based on the pictures, which vector fields are _conservative_?
   + Suppose $arrow(F)= nabla f$ for some function $f: RR^2 -> RR$. Is $arrow(F)$ conservative? Why
@@ -210,40 +206,45 @@
   + Could the vector field $arrow(G)(x,y)=mat(2x y; x y)$ be path-independent? Why or why not?
 ]
 
-#slide(siefken_num: auto)[
+#slide(siefken_num: auto, two_columns: false)[
+  #grid(
+    columns: (auto, 1fr),
+    column-gutter: 1.5em,
+    {
+      let width = 5.5cm
+      let height = width
+      let plot(f, title: none) = {
+        lq.diagram(
+          title: title,
+          width: width,
+          height: height,
+          lq.quiver(
+            lq.arange(-2, 3, step: .5),
+            lq.arange(-2, 3, step: .5),
+            f,
+          ),
+          xaxis: none,
+          yaxis: none,
+          lq.place(1, 0, image("images/leaf.svg", width: 2em)),
+        )
+      }
 
-  #{
-    let width = 9cm
-    let height = width
-    let plot(f, title: none) = {
-      lq.diagram(
-        title: title,
-        width: width,
-        height: height,
-        lq.quiver(
-          lq.arange(-2, 3, step: .5),
-          lq.arange(-2, 3, step: .5),
-          f,
-        ),
-        xaxis: none,
-        yaxis: none,
-        lq.place(1, 0, image("images/leaf.svg", width: 3em)),
-      )
-    }
+      plot((x, y) => (-y, calc.sin(y + 1) + x / 5), title: $arrow(F):RR^2 -> RR^2$)
+    },
+    [
+      A leaf is floating in a pond. The surface of the pond is moving with a velocity at each position
+      given by $arrow(F)$.
 
-    plot((x, y) => (-y, calc.sin(y + 1) + x / 5), title: $arrow(F):RR^2 -> RR^2$)
-  }
-  A leaf is floating in a pond. The surface of the pond is moving with a velocity at each position
-  given by $arrow(F)$.
+      + Describe the motion of the leaf over the next few seconds.
+      + Besides moving, what other motions could the leaf undergo?
+      + If you integrated $arrow(F)$ on the *interior* of the leaf, what mathematical object would you
+        get? (vector/scalar/etc.?) What would it tell you?
+      + If you integrated $arrow(F)$ along the *boundary* of the leaf, what mathematical object would
+        you get? (vector/scalar/etc.?) What would it tell you?
 
-  + Describe the motion of the leaf over the next few seconds.
-  + Besides moving, what other motions could the leaf undergo?
-  + If you integrated $arrow(F)$ on the *interior* of the leaf, what mathematical object would you
-    get? (vector/scalar/etc.?) What would it tell you?
-  + If you integrated $arrow(F)$ along the *boundary* of the leaf, what mathematical object would
-    you get? (vector/scalar/etc.?) What would it tell you?
-
-    Are there different ways to do this integral?
+        Are there different ways to do this integral?
+    ],
+  )
 ]
 
 // #slide(title: [Siefken 11])[
@@ -311,57 +312,62 @@
 //   ]
 // ]
 
-#slide(siefken_num: auto)[
+#slide(siefken_num: auto, two_columns: false)[
+  #grid(
+    columns: (auto, 1fr),
+    column-gutter: 1.5em,
+    {
+      let width = 5.5cm
+      let height = width
+      let plot(f, title: none) = {
+        lq.diagram(
+          title: title,
+          width: width,
+          height: height,
+          lq.quiver(
+            lq.arange(-2, 3, step: .5),
+            lq.arange(-2, 3, step: .5),
+            f,
+          ),
+          xaxis: none,
+          yaxis: none,
+          lq.place(1, 0, {
+            cetz.canvas(length: .8cm, {
+              import cetz.draw: *
 
-  #{
-    let width = 9cm
-    let height = width
-    let plot(f, title: none) = {
-      lq.diagram(
-        title: title,
-        width: width,
-        height: height,
-        lq.quiver(
-          lq.arange(-2, 3, step: .5),
-          lq.arange(-2, 3, step: .5),
-          f,
-        ),
-        xaxis: none,
-        yaxis: none,
-        lq.place(1, 0, {
-          cetz.canvas({
-            import cetz.draw: *
+              group(name: "figure", {
+                let shift = 0.1
 
-            group(name: "figure", {
-              let shift = 0.1
+                line((0, 0), (0, 1), mark: (symbol: "[]"), stroke: 2pt, name: "rod")
 
-              line((0, 0), (0, 1), mark: (symbol: "[]"), stroke: 2pt, name: "rod")
-
-              content("rod.mid", [$R$], anchor: "west", padding: .5em)
-              content("rod.start", [$arrow(p)$], anchor: "north", padding: .2em)
+                content("rod.mid", [$R$], anchor: "west", padding: .5em)
+                content("rod.start", [$arrow(p)$], anchor: "north", padding: .2em)
+              })
             })
-          })
-        }),
-      )
-    }
+          }),
+        )
+      }
 
-    plot((x, y) => (-y, calc.sin(y + 1) + x / 5), title: $arrow(F):RR^2 -> RR^2$)
-  }
-  The rod $R$ has length $h$ and has floats on each of its ends. It is placed, oriented
-  vertically, in a pond described by $arrow(F)$ such that only its floats actually touch the
-  water.
+      plot((x, y) => (-y, calc.sin(y + 1) + x / 5), title: $arrow(F):RR^2 -> RR^2$)
+    },
+    [
+      The rod $R$ has length $h$ and has floats on each of its ends. It is placed, oriented
+      vertically, in a pond described by $arrow(F)$ such that only its floats actually touch the
+      water.
 
-  Its bottom end is at location $arrow(p)$.
+      Its bottom end is at location $arrow(p)$.
 
-  + How could you determine if the rod will move in the pond? (I.e., what force should you
-    compute?)
-  + How could you determine if the rod will rotate in the pond?
-  + Write down a formula for the *rotational* force acting on the rod.
+      + How could you determine if the rod will move in the pond? (I.e., what force should you
+        compute?)
+      + How could you determine if the rod will rotate in the pond?
+      + Write down a formula for the *rotational* force acting on the rod.
 
-    _Hint:_ a dot product might be useful.
-  + How can $partial/(partial y) arrow(F)$ be used to estimate the rotational force on the rod?
-  // + Suppose you made the rod much shorter (by a factor of $t$). Write a formula for the rotational
-  //   force *per* unit length of the shorter rod.
+        _Hint:_ a dot product might be useful.
+      + How can $partial/(partial y) arrow(F)$ be used to estimate the rotational force on the rod?
+      // + Suppose you made the rod much shorter (by a factor of $t$). Write a formula for the rotational
+      //   force *per* unit length of the shorter rod.
+    ],
+  )
 ]
 
 #slide(siefken_num: auto)[
@@ -425,37 +431,42 @@
     figure out how to find the curl from your formula?
 ]
 
-#slide(siefken_num: auto)[
+#slide(siefken_num: auto, two_columns: false)[
+  #grid(
+    columns: (auto, 1fr),
+    column-gutter: 1.5em,
+    {
+      let width = 5.5cm
+      let height = width
+      let plot(f, title: none) = {
+        lq.diagram(
+          title: title,
+          width: width,
+          height: height,
+          lq.quiver(
+            lq.arange(-2, 3, step: .5),
+            lq.arange(-2, 3, step: .5),
+            f,
+          ),
+          xaxis: none,
+          yaxis: none,
+          lq.place(1, 0, image("images/leaf.svg", width: 2em)),
+        )
+      }
 
-  #{
-    let width = 9cm
-    let height = width
-    let plot(f, title: none) = {
-      lq.diagram(
-        title: title,
-        width: width,
-        height: height,
-        lq.quiver(
-          lq.arange(-2, 3, step: .5),
-          lq.arange(-2, 3, step: .5),
-          f,
-        ),
-        xaxis: none,
-        yaxis: none,
-        lq.place(1, 0, image("images/leaf.svg", width: 3em)),
-      )
-    }
+      plot((x, y) => (-y, calc.sin(y + 1) + x / 5), title: $arrow(F):RR^2 -> RR^2$)
+    },
+    [
+      Recall the leaf floating in a pond whose surface velocity is given by $arrow(F)$.
 
-    plot((x, y) => (-y, calc.sin(y + 1) + x / 5), title: $arrow(F):RR^2 -> RR^2$)
-  }
-  Recall the leaf floating in a pond whose surface velocity is given by $arrow(F)$.
+      + What does the integral of $arrow(F)$ over the *area* of the leaf tell you?
+      + What does the (path) integral of $arrow(F)$ along the *boundary* of the leaf tell you?
+      + What does the integral of $"curl"thin arrow(F)$ over the *area* of the leaf tell you?
 
-  + What does the integral of $arrow(F)$ over the *area* of the leaf tell you?
-  + What does the (path) integral of $arrow(F)$ along the *boundary* of the leaf tell you?
-  + What does the integral of $"curl"thin arrow(F)$ over the *area* of the leaf tell you?
-
-  + *Green's Theorem* states that "a certain path integral = a certain area integral". Fill in
-    Green's Theorem with the appropriate integrals.
+      + *Green's Theorem* states that "a certain path integral = a certain area integral". Fill in
+        Green's Theorem with the appropriate integrals.
+    ],
+  )
 ]
 
 #slide(siefken_num: auto)[

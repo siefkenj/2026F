@@ -16,152 +16,164 @@
     where $R = space.thin ??$. What could $R$ be in this case?
 ]
 
-#slide(siefken_num: auto)[
+#slide(siefken_num: auto, two_columns: false)[
+  #grid(
+    columns: (auto, 1fr),
+    column-gutter: 1.5em,
+    {
+      let a = lq.diagram(
+        title: [$z=f(x,y)$],
+        width: 4.5cm,
+        height: 4.5cm,
+        lq.contour(
+          lq.linspace(-5, 5, num: 20),
+          lq.linspace(-5, 5, num: 20),
+          (x, y) => 2 * x + y,
+          map: color.map.icefire,
+        ),
+        xlim: (-0, 4),
+        ylim: (-0, 4),
+        xaxis: (ticks: lq.arange(-4, 5, step: 1)),
+        yaxis: (ticks: lq.arange(-4, 5, step: 1)),
+        lq.place(3.5, 3.5, $5$),
+        lq.place(2.8, 2.8, $4$),
+        lq.place(2.2, 2.2, $3$),
+        lq.place(1.5, 1.5, $2$),
+        lq.place(.9, .9, $1$),
+      )
+      a
+    },
+    [
+      We'd like to find *volume*, $V$, under the surface $z=f(x,y)$ on the region
+      $R=[0,4] times [0,4]$.
 
-  #{
-    let a = lq.diagram(
-      title: [$z=f(x,y)$],
-      width: 6cm,
-      height: 6cm,
-      lq.contour(
-        lq.linspace(-5, 5, num: 20),
-        lq.linspace(-5, 5, num: 20),
-        (x, y) => 2 * x + y,
-        map: color.map.icefire,
-      ),
-      xlim: (-0, 4),
-      ylim: (-0, 4),
-      xaxis: (ticks: lq.arange(-4, 5, step: 1)),
-      yaxis: (ticks: lq.arange(-4, 5, step: 1)),
-      lq.place(3.5, 3.5, $5$),
-      lq.place(2.8, 2.8, $4$),
-      lq.place(2.2, 2.2, $3$),
-      lq.place(1.5, 1.5, $2$),
-      lq.place(.9, .9, $1$),
-    )
-    set align(center)
-    a
-  }
-  // #colbreak()
-
-  We'd like to find *volume*, $V$, under the surface $z=f(x,y)$ on the region
-  $R=[0,4] times [0,4]$.
-
-  + What would a "left-endpoint approximation" to $V$ look like? How could you find it?
-  + Using $2 times 2$ squares, find an over estimate and under estimate for $V$.
-  + How could you use a limit to get an exact value for $V$?
-  + In multi-variable calculus,
-  $
-    V = integral_R f dif A
-  $
-  Explain why this notation makes sense. What does the $dif A$ represent?
+      + What would a "left-endpoint approximation" to $V$ look like? How could you find it?
+      + Using $2 times 2$ squares, find an over estimate and under estimate for $V$.
+      + How could you use a limit to get an exact value for $V$?
+      + In multi-variable calculus,
+      $
+        V = integral_R f dif A
+      $
+      Explain why this notation makes sense. What does the $dif A$ represent?
+    ],
+  )
 ]
 
-#slide(siefken_num: auto)[
+#slide(siefken_num: auto, two_columns: false)[
+  #grid(
+    columns: (auto, 1fr),
+    column-gutter: 1.5em,
+    image("images/density-1.png", width: 7cm),
+    [
+      $P(x,y)$ represents the population *density* (people per square kilometer) on the $3 times 2$
+      km town of Rectville.
 
-  #[
-    #set text(size: .9em)
-    $P(x,y)$ represents the population *density* (people per square kilometer) on the $3 times 2$
-    km town of Rectville.
-    #image("images/density-1.png", width: 9cm)
-  ]
+      + Write down a set that defines the *region* that Rectville occupies.
+      + At $(0,0)$, $P=1000$. What does that mean?
+      + About how many people are in the $1/10 times 1/10$ km region near $(0,0)$?
+      + Set up an integral to find the total population of Rectville.
+      + Estimate the total population of Rectville.
 
-  + Write down a set that defines the *region* that Rectville occupies.
-  + At $(0,0)$, $P=1000$. What does that mean?
-  + About how many people are in the $1/10 times 1/10$ km region near $(0,0)$?
-  + Set up an integral to find the total population of Rectville.
-  + Estimate the total population of Rectville.
-
-  #text(size: .8em)[
-    The figure for Rectville came from Calculus: Multivariable by Hughes-Hallett et al.
-  ]
+      #text(size: .8em)[
+        The figure for Rectville came from Calculus: Multivariable by Hughes-Hallett et al.
+      ]
+    ],
+  )
 ]
 
-#slide(siefken_num: auto)[
+#slide(siefken_num: auto, two_columns: false)[
+  #grid(
+    columns: (auto, 1fr),
+    column-gutter: 1.5em,
+    {
+      let a = lq.diagram(
+        // title: [$z=f(x,y)$],
+        width: 5.5cm,
+        height: 4.4cm,
+        // lq.contour(
+        //   lq.linspace(-5, 5, num: 20),
+        //   lq.linspace(-5, 5, num: 20),
+        //   (x, y) => 2 * x + y,
+        //   map: color.map.icefire,
+        // ),
+        xlim: (-0, 5),
+        ylim: (-0, 4),
+        xaxis: (ticks: lq.arange(-4, 5, step: 1)),
+        yaxis: (ticks: lq.arange(-4, 5, step: 1)),
+        // lq.place(3.5, 3.5, $5$),
+        // lq.place(2.8, 2.8, $4$),
+        // lq.place(2.2, 2.2, $3$),
+        // lq.place(1.5, 1.5, $2$),
+        // lq.place(.9, .9, $1$),
+        lq.path(
+          (1, 0),
+          (1, 3),
+          (4, 3),
+          (4, 1),
+          (3, 1),
+          (3, 0),
+          (1, 0),
+          stroke: 2pt + blue,
+          fill: blue.lighten(60%).transparentize(50%),
+        ),
+      )
+      a
+    },
+    [
+      The town of Elville has a population density given by $P(x,y)$ and a boundary shown to the left.
 
-  The town of Elville has a population density given by $P(x,y)$ and a boundary shown below.
-  #{
-    let a = lq.diagram(
-      // title: [$z=f(x,y)$],
-      width: 7.5cm,
-      height: 6cm,
-      // lq.contour(
-      //   lq.linspace(-5, 5, num: 20),
-      //   lq.linspace(-5, 5, num: 20),
-      //   (x, y) => 2 * x + y,
-      //   map: color.map.icefire,
-      // ),
-      xlim: (-0, 5),
-      ylim: (-0, 4),
-      xaxis: (ticks: lq.arange(-4, 5, step: 1)),
-      yaxis: (ticks: lq.arange(-4, 5, step: 1)),
-      // lq.place(3.5, 3.5, $5$),
-      // lq.place(2.8, 2.8, $4$),
-      // lq.place(2.2, 2.2, $3$),
-      // lq.place(1.5, 1.5, $2$),
-      // lq.place(.9, .9, $1$),
-      lq.path(
-        (1, 0),
-        (1, 3),
-        (4, 3),
-        (4, 1),
-        (3, 1),
-        (3, 0),
-        (1, 0),
-        stroke: 2pt + blue,
-        fill: blue.lighten(60%).transparentize(50%),
-      ),
-    )
-    set align(center)
-    a
-  }
-
-  + Describe the region that defines Elville as a set.
-  + Write down an integral that would give the total population of Elville.
-  + Can you express the total population of Elville in terms of integrals over rectangular
-    regions? If so, do it.
+      + Describe the region that defines Elville as a set.
+      + Write down an integral that would give the total population of Elville.
+      + Can you express the total population of Elville in terms of integrals over rectangular
+        regions? If so, do it.
+    ],
+  )
 ]
 
-#slide(siefken_num: auto)[
+#slide(siefken_num: auto, two_columns: false)[
+  #grid(
+    columns: (auto, 1fr),
+    column-gutter: 1.5em,
+    {
+      let a = lq.diagram(
+        // title: [$z=f(x,y)$],
+        width: 4.5cm,
+        height: 4.5cm,
+        // lq.contour(
+        //   lq.linspace(-5, 5, num: 20),
+        //   lq.linspace(-5, 5, num: 20),
+        //   (x, y) => 2 * x + y,
+        //   map: color.map.icefire,
+        // ),
+        xlim: (-0, 4),
+        ylim: (-0, 4),
+        xaxis: (ticks: lq.arange(-4, 5, step: 1)),
+        yaxis: (ticks: lq.arange(-4, 5, step: 1)),
+        // lq.place(3.5, 3.5, $5$),
+        // lq.place(2.8, 2.8, $4$),
+        // lq.place(2.2, 2.2, $3$),
+        // lq.place(1.5, 1.5, $2$),
+        // lq.place(.9, .9, $1$),
+        lq.ellipse(
+          1,
+          1,
+          width: 2,
+          height: 2,
+          stroke: 2pt + blue,
+          fill: blue.lighten(60%).transparentize(50%),
+        ),
+      )
+      a
+    },
+    [
+      The town of Circville has a population density given by $P(x,y)$ and a boundary shown to the left.
 
-  The town of Circville has a population density given by $P(x,y)$ and a boundary shown below.
-  #{
-    let a = lq.diagram(
-      // title: [$z=f(x,y)$],
-      width: 6cm,
-      height: 6cm,
-      // lq.contour(
-      //   lq.linspace(-5, 5, num: 20),
-      //   lq.linspace(-5, 5, num: 20),
-      //   (x, y) => 2 * x + y,
-      //   map: color.map.icefire,
-      // ),
-      xlim: (-0, 4),
-      ylim: (-0, 4),
-      xaxis: (ticks: lq.arange(-4, 5, step: 1)),
-      yaxis: (ticks: lq.arange(-4, 5, step: 1)),
-      // lq.place(3.5, 3.5, $5$),
-      // lq.place(2.8, 2.8, $4$),
-      // lq.place(2.2, 2.2, $3$),
-      // lq.place(1.5, 1.5, $2$),
-      // lq.place(.9, .9, $1$),
-      lq.ellipse(
-        1,
-        1,
-        width: 2,
-        height: 2,
-        stroke: 2pt + blue,
-        fill: blue.lighten(60%).transparentize(50%),
-      ),
-    )
-    set align(center)
-    a
-  }
-
-  + Describe the region that defines Circville as a set.
-  + Write down an integral that would give the total population of Circville.
-  + Can you express the total population of Circville in terms of integrals over rectangular
-    regions? If so, do it.
+      + Describe the region that defines Circville as a set.
+      + Write down an integral that would give the total population of Circville.
+      + Can you express the total population of Circville in terms of integrals over rectangular
+        regions? If so, do it.
+    ],
+  )
 ]
 
 #slide(siefken_num: auto)[
@@ -204,53 +216,57 @@
     mean geometrically? Find its exact value.
   + How can $W$ be used to find $V$?
 ]
-#slide(siefken_num: auto)[
+#slide(siefken_num: auto, two_columns: false)[
+  #grid(
+    columns: (auto, 1fr),
+    column-gutter: 1.5em,
+    {
+      let a = lq.diagram(
+        title: [$z=f(x,y)=2x$],
+        width: 5cm,
+        height: 3.3cm,
+        lq.contour(
+          lq.linspace(-5, 5, num: 20),
+          lq.linspace(-5, 5, num: 20),
+          (x, y) => 2 * x,
+          map: color.map.icefire,
+        ),
+        xlim: (-0, 4),
+        ylim: (-0, 3),
+        xaxis: (ticks: lq.arange(-4, 5, step: 1)),
+        yaxis: (ticks: lq.arange(-4, 5, step: 1)),
+        lq.place(2.8, .9, $6$),
+        lq.place(1.8, .9, $4$),
+        lq.place(.8, .9, $2$),
+      )
+      a
+    },
+    [
+      Recall
 
-  Recall
-  #{
-    let a = lq.diagram(
-      title: [$z=f(x,y)=2x$],
-      width: 6cm,
-      height: 4cm,
-      lq.contour(
-        lq.linspace(-5, 5, num: 20),
-        lq.linspace(-5, 5, num: 20),
-        (x, y) => 2 * x,
-        map: color.map.icefire,
-      ),
-      xlim: (-0, 4),
-      ylim: (-0, 3),
-      xaxis: (ticks: lq.arange(-4, 5, step: 1)),
-      yaxis: (ticks: lq.arange(-4, 5, step: 1)),
-      lq.place(2.8, .9, $6$),
-      lq.place(1.8, .9, $4$),
-      lq.place(.8, .9, $2$),
-    )
-    set align(center)
-    a
-  }
+      + Compute
+        $
+          integral_([0,3]) (integral_([0,4]) f(x,c) dif x) dif c
+        $
+      + Compute
+        $
+          integral_([0,4]) (integral_([0,3]) f(x,c) dif c) dif x
+        $
+      + Integrals like the above are called *iterated integrals*. How do the iterated integrals relate
+        to $display(integral_([0,4] times [0,3]) f dif A)$?
 
-  + Compute
-    $
-      integral_([0,3]) (integral_([0,4]) f(x,c) dif x) dif c
-    $
-  + Compute
-    $
-      integral_([0,4]) (integral_([0,3]) f(x,c) dif c) dif x
-    $
-  + Integrals like the above are called *iterated integrals*. How do the iterated integrals relate
-    to $display(integral_([0,4] times [0,3]) f dif A)$?
-
-    Do iterated integrals remind you of partial derivatives? If so, how?
+        Do iterated integrals remind you of partial derivatives? If so, how?
+    ],
+  )
 ]
 
-#slide(siefken_num: auto)[
+#slide(siefken_num: auto, force_scale: 0.8em)[
 
   #{
     let a = lq.diagram(
       title: [$z=f(x,y)=2x+y$],
-      width: 6cm,
-      height: 4cm,
+      width: 5cm,
+      height: 3cm,
       lq.contour(
         lq.linspace(-5, 5, num: 20),
         lq.linspace(-5, 5, num: 20),
@@ -290,46 +306,50 @@
     $
 ]
 
-#slide(siefken_num: auto)[
+#slide(siefken_num: auto, two_columns: false)[
+  #grid(
+    columns: (auto, 1fr),
+    column-gutter: 1.5em,
+    {
+      let a = lq.diagram(
+        // title: [$z=f(x,y)$],
+        width: 4.5cm,
+        height: 4.5cm,
+        xlim: (-0, 4),
+        ylim: (-0, 4),
+        xaxis: (ticks: lq.arange(-4, 5, step: 1)),
+        yaxis: (ticks: lq.arange(-4, 5, step: 1)),
+        lq.path(
+          (2, 0),
+          (1, 3),
+          (3, 3),
+          (2, 0),
+          stroke: 2pt + blue,
+          fill: blue.lighten(60%).transparentize(50%),
+        ),
+      )
+      a
+    },
+    [
+      The town of Veeville has a population density given by $P(x,y)$ and a boundary shown to the left.
 
-  The town of Veeville has a population density given by $P(x,y)$ and a boundary shown below.
-  #{
-    let a = lq.diagram(
-      // title: [$z=f(x,y)$],
-      width: 6cm,
-      height: 6cm,
-      xlim: (-0, 4),
-      ylim: (-0, 4),
-      xaxis: (ticks: lq.arange(-4, 5, step: 1)),
-      yaxis: (ticks: lq.arange(-4, 5, step: 1)),
-      lq.path(
-        (2, 0),
-        (1, 3),
-        (3, 3),
-        (2, 0),
-        stroke: 2pt + blue,
-        fill: blue.lighten(60%).transparentize(50%),
-      ),
-    )
-    set align(center)
-    a
-  }
+      Let $D$ be the region defining Veeville and let $Q$ be its total population.
 
-  Let $D$ be the region defining Veeville and let $Q$ be its total population.
+      + Find a formulas for $L(y)$ and $R(y)$ that give the $x$ coordinates of the *leftmost* and
+        *rightmost* points in $D$ with $y$-coordinate equal to $y$. (E.g., $L(3)=1$ and $R(3)=3$)
 
-  + Find a formulas for $L(y)$ and $R(y)$ that give the $x$ coordinates of the *leftmost* and
-    *rightmost* points in $D$ with $y$-coordinate equal to $y$. (E.g., $L(3)=1$ and $R(3)=3$)
+        What is the domain of $L$ and $R$?
 
-    What is the domain of $L$ and $R$?
+      + Fill in the ? in the population integral:
+        $
+          Q= integral_(?=?)^(?=?) integral_(?=L(y))^(?=R(y)) P(x,y) dif ? dif ?
+        $
 
-  + Fill in the ? in the population integral:
-    $
-      Q= integral_(?=?)^(?=?) integral_(?=L(y))^(?=R(y)) P(x,y) dif ? dif ?
-    $
+      + Find an iterated integral to compute $Q$ in terms of $dif y dif x$.
 
-  + Find an iterated integral to compute $Q$ in terms of $dif y dif x$.
-
-  // _Hint:_ You may need to split the integral into two parts.
+      // _Hint:_ You may need to split the integral into two parts.
+    ],
+  )
 ]
 
 #slide(siefken_num: auto)[
@@ -360,73 +380,76 @@
   // ]
 ]
 
-#slide(siefken_num: auto)[
+#slide(siefken_num: auto, two_columns: false)[
+  #grid(
+    columns: (auto, 1fr),
+    column-gutter: 1.5em,
+    cetz.canvas(length: 1.6cm, {
+      import cetz.draw: *
 
-  #cetz.canvas(length: 3cm, {
-    import cetz.draw: *
+      set-style(
+        mark: (fill: black, scale: 2),
+        stroke: (thickness: 0.4pt, cap: "round"),
+        angle: (
+          radius: 0.3,
+          label-radius: .22,
+          fill: green.lighten(80%),
+          stroke: (paint: green.darken(50%)),
+        ),
+        content: (padding: 1pt),
+      )
 
-    set-style(
-      mark: (fill: black, scale: 2),
-      stroke: (thickness: 0.4pt, cap: "round"),
-      angle: (
-        radius: 0.3,
-        label-radius: .22,
-        fill: green.lighten(80%),
-        stroke: (paint: green.darken(50%)),
-      ),
-      content: (padding: 1pt),
-    )
+      grid(
+        (-1.5, -1.5),
+        (1.4, 1.4),
+        step: 0.5,
+        stroke: gray + 0.2pt,
+      )
 
-    grid(
-      (-1.5, -1.5),
-      (1.4, 1.4),
-      step: 0.5,
-      stroke: gray + 0.2pt,
-    )
+      circle((0, 0), radius: 1, stroke: (dash: "dashed"))
 
-    circle((0, 0), radius: 1, stroke: (dash: "dashed"))
+      line((-1.5, 0), (1.5, 0), mark: (end: "stealth"))
+      // content((), $ x $, anchor: "west")
+      line((0, -1.5), (0, 1.5), mark: (end: "stealth"))
+      // content((), $ y $, anchor: "south")
 
-    line((-1.5, 0), (1.5, 0), mark: (end: "stealth"))
-    // content((), $ x $, anchor: "west")
-    line((0, -1.5), (0, 1.5), mark: (end: "stealth"))
-    // content((), $ y $, anchor: "south")
+      for (x, ct) in ((-1, $ -1 $), (1, $ 1 $)) {
+        line((x, 3pt), (x, -3pt))
+        content((), anchor: "north", ct)
+      }
 
-    for (x, ct) in ((-1, $ -1 $), (1, $ 1 $)) {
-      line((x, 3pt), (x, -3pt))
-      content((), anchor: "north", ct)
-    }
+      for (y, ct) in ((-1, $ -1 $), (-0.5, $ -1/2 $), (0.5, $ 1/2 $), (1, $ 1 $)) {
+        line((3pt, y), (-3pt, y))
+        // content((), anchor: "east", ct)
+      }
 
-    for (y, ct) in ((-1, $ -1 $), (-0.5, $ -1/2 $), (0.5, $ 1/2 $), (1, $ 1 $)) {
-      line((3pt, y), (-3pt, y))
-      // content((), anchor: "east", ct)
-    }
+      // Draw the green angle
+      // cetz.angle.angle((0, 0), (1, 0), (1, calc.tan(30deg)), label: text(green, [#sym.alpha]))
 
-    // Draw the green angle
-    // cetz.angle.angle((0, 0), (1, 0), (1, calc.tan(30deg)), label: text(green, [#sym.alpha]))
+      // line((0, 0), (1, calc.tan(30deg)))
 
-    // line((0, 0), (1, calc.tan(30deg)))
+      set-style(stroke: (thickness: 1.2pt))
 
-    set-style(stroke: (thickness: 1.2pt))
+      circle((.71, .71), radius: 2pt, fill: black)
+      content((), anchor: "south-west", $space arrow(p)$)
 
-    circle((.71, .71), radius: 2pt, fill: black)
-    content((), anchor: "south-west", $space arrow(p)$)
+      circle((-1, 1), radius: 2pt, fill: black)
+      content((), anchor: "south-west", $space arrow(q)$)
 
-    circle((-1, 1), radius: 2pt, fill: black)
-    content((), anchor: "south-west", $space arrow(q)$)
+      circle((0, -1.5), radius: 2pt, fill: black)
+      content((), anchor: "south-west", $space arrow(r)$)
+    }),
+    [
+      *Polar coordinates* describe points in terms of $(r, theta)$, where $r$ is the distance from the
+      origin and $theta$ is the angle, measured counter-clockwise from the positive $x$-axis.
 
-    circle((0, -1.5), radius: 2pt, fill: black)
-    content((), anchor: "south-west", $space arrow(r)$)
-  })
-
-  *Polar coordinates* describe points in terms of $(r, theta)$, where $r$ is the distance from the
-  origin and $theta$ is the angle, measured counter-clockwise from the positive $x$-axis.
-
-  + Describe the points $arrow(p)$, $arrow(q)$, and $arrow(r)$ in polar coordinates.
-  + Describe the points $arrow(p)$, $arrow(q)$, and $arrow(r)$ in rectangular coordinates.
-  + Draw the graph of $r(theta)=2theta$ in polar coordinates.
-  + Draw the graph of $r(theta)=3$ in polar coordinates. How can you draw the same graph in
-    rectangular coordinates?
-
+      + Describe the points $arrow(p)$, $arrow(q)$, and $arrow(r)$ in polar coordinates.
+      + Describe the points $arrow(p)$, $arrow(q)$, and $arrow(r)$ in rectangular coordinates.
+      + Draw the graph of $r(theta)=2theta$ in polar coordinates.
+      + Draw the graph of $r(theta)=3$ in polar coordinates. How can you draw the same graph in
+        rectangular coordinates?
+    ],
+  )
 ]
 #slide(siefken_num: auto)[
 
@@ -448,92 +471,96 @@
 
 ]
 
-#slide(siefken_num: auto)[
+#slide(siefken_num: auto, two_columns: false)[
+  #grid(
+    columns: (auto, 1fr),
+    column-gutter: 1.5em,
+    cetz.canvas(length: 1.6cm, {
+      import cetz.draw: *
 
-  #cetz.canvas(length: 3cm, {
-    import cetz.draw: *
-
-    set-style(
-      mark: (fill: black, scale: 2),
-      stroke: (thickness: 0.4pt, cap: "round"),
-      angle: (
-        radius: 0.3,
-        label-radius: .22,
-        fill: green.lighten(80%),
-        stroke: (paint: green.darken(50%)),
-      ),
-      content: (padding: 1pt),
-    )
-
-    circle((0, 0), radius: 1, stroke: (dash: "dashed"))
-    circle((0, 0), radius: .5, stroke: (dash: "dashed"))
-    circle((0, 0), radius: 1.5, stroke: (dash: "dashed"))
-
-    line((-1.5, 0), (1.5, 0), mark: (end: "stealth"))
-    // content((), $ x $, anchor: "west")
-    line((0, -1.5), (0, 1.5), mark: (end: "stealth"))
-    // content((), $ y $, anchor: "south")
-
-    for (x, ct) in ((-1, $ -1 $), (1, $ 1 $)) {
-      line((x, 3pt), (x, -3pt))
-      // content((), anchor: "north", ct)
-    }
-
-    for (y, ct) in ((-1, $ -1 $), (-0.5, $ -1/2 $), (0.5, $ 1/2 $), (1, $ 1 $)) {
-      // line((3pt, y), (-3pt, y))
-      // content((), anchor: "east", ct)
-    }
-
-    // Draw the green angle
-    // cetz.angle.angle((0, 0), (1, 0), (1, calc.tan(30deg)), label: text(green, [#sym.alpha]))
-
-    // line((0, 0), (1, calc.tan(30deg)))
-
-    set-style(stroke: (thickness: 1.2pt))
-
-    let newArc = (c: (0, 0), radius: 1, start: 0deg, stop: 90deg, ..rest) => {
-      let (cx, cy) = c
-      arc-through(
-        (cx + radius * calc.cos(start), cy + radius * calc.sin(start)),
-        (cx + radius * calc.cos((start + stop) / 2), cy + radius * calc.sin((start + stop) / 2)),
-        (cx + radius * calc.cos(stop), cy + radius * calc.sin(stop)),
-        ..rest,
+      set-style(
+        mark: (fill: black, scale: 2),
+        stroke: (thickness: 0.4pt, cap: "round"),
+        angle: (
+          radius: 0.3,
+          label-radius: .22,
+          fill: green.lighten(80%),
+          stroke: (paint: green.darken(50%)),
+        ),
+        content: (padding: 1pt),
       )
-    }
-    let ray = (c: (0, 0), radius-start: .5, radius-end: 1, angle: 0deg, ..rest) => {
-      let (cx, cy) = c
-      line(
-        (cx + radius-end * calc.cos(angle), cy + radius-end * calc.sin(angle)),
-        (cx + radius-start * calc.cos(angle), cy + radius-start * calc.sin(angle)),
-        ..rest,
-      )
-    }
 
-    newArc(start: 30deg, stop: 60deg, radius: 1.)
-    newArc(start: 30deg, stop: 60deg, radius: .5)
-    ray(angle: 30deg, radius-start: .5, radius-end: 1.)
-    ray(angle: 60deg, radius-start: .5, radius-end: 1.)
-    content((), anchor: "south-west", $space space R$)
-    ray(angle: 30deg, radius-start: 0, radius-end: 1.7, stroke: (
-      dash: "dashed",
-      paint: gray,
-      thickness: 0.8pt,
-    ))
-    ray(angle: 60deg, radius-start: 0, radius-end: 1.7, stroke: (
-      dash: "dashed",
-      paint: gray,
-      thickness: 0.8pt,
-    ))
-  })
+      circle((0, 0), radius: 1, stroke: (dash: "dashed"))
+      circle((0, 0), radius: .5, stroke: (dash: "dashed"))
+      circle((0, 0), radius: 1.5, stroke: (dash: "dashed"))
 
-  The region $R$ is a _polar sector_ based on the following boundary curves:
-  - $theta = theta_0$ and $theta = theta_0 + Delta theta$
-  - $r = r_0$ and $r = r_0 + Delta r$
+      line((-1.5, 0), (1.5, 0), mark: (end: "stealth"))
+      // content((), $ x $, anchor: "west")
+      line((0, -1.5), (0, 1.5), mark: (end: "stealth"))
+      // content((), $ y $, anchor: "south")
 
-  + What is the area of the annulus ("donut") between the curves $r=r_0$ and $r=r_0 + Delta r$?
-  + What portion of the annulus that you just calculated does $R$ take up?
-  + Find the area of $R$.
-  + In polar coordinates, it is said "$dif A = r dif r dif theta$". Why?
+      for (x, ct) in ((-1, $ -1 $), (1, $ 1 $)) {
+        line((x, 3pt), (x, -3pt))
+        // content((), anchor: "north", ct)
+      }
+
+      for (y, ct) in ((-1, $ -1 $), (-0.5, $ -1/2 $), (0.5, $ 1/2 $), (1, $ 1 $)) {
+        // line((3pt, y), (-3pt, y))
+        // content((), anchor: "east", ct)
+      }
+
+      // Draw the green angle
+      // cetz.angle.angle((0, 0), (1, 0), (1, calc.tan(30deg)), label: text(green, [#sym.alpha]))
+
+      // line((0, 0), (1, calc.tan(30deg)))
+
+      set-style(stroke: (thickness: 1.2pt))
+
+      let newArc = (c: (0, 0), radius: 1, start: 0deg, stop: 90deg, ..rest) => {
+        let (cx, cy) = c
+        arc-through(
+          (cx + radius * calc.cos(start), cy + radius * calc.sin(start)),
+          (cx + radius * calc.cos((start + stop) / 2), cy + radius * calc.sin((start + stop) / 2)),
+          (cx + radius * calc.cos(stop), cy + radius * calc.sin(stop)),
+          ..rest,
+        )
+      }
+      let ray = (c: (0, 0), radius-start: .5, radius-end: 1, angle: 0deg, ..rest) => {
+        let (cx, cy) = c
+        line(
+          (cx + radius-end * calc.cos(angle), cy + radius-end * calc.sin(angle)),
+          (cx + radius-start * calc.cos(angle), cy + radius-start * calc.sin(angle)),
+          ..rest,
+        )
+      }
+
+      newArc(start: 30deg, stop: 60deg, radius: 1.)
+      newArc(start: 30deg, stop: 60deg, radius: .5)
+      ray(angle: 30deg, radius-start: .5, radius-end: 1.)
+      ray(angle: 60deg, radius-start: .5, radius-end: 1.)
+      content((), anchor: "south-west", $space space R$)
+      ray(angle: 30deg, radius-start: 0, radius-end: 1.7, stroke: (
+        dash: "dashed",
+        paint: gray,
+        thickness: 0.8pt,
+      ))
+      ray(angle: 60deg, radius-start: 0, radius-end: 1.7, stroke: (
+        dash: "dashed",
+        paint: gray,
+        thickness: 0.8pt,
+      ))
+    }),
+    [
+      The region $R$ is a _polar sector_ based on the following boundary curves:
+      - $theta = theta_0$ and $theta = theta_0 + Delta theta$
+      - $r = r_0$ and $r = r_0 + Delta r$
+
+      + What is the area of the annulus ("donut") between the curves $r=r_0$ and $r=r_0 + Delta r$?
+      + What portion of the annulus that you just calculated does $R$ take up?
+      + Find the area of $R$.
+      + In polar coordinates, it is said "$dif A = r dif r dif theta$". Why?
+    ],
+  )
 ]
 
 #slide(siefken_num: auto)[
@@ -594,9 +621,7 @@
   - an angle in the $x y$-plane, measured counter-clockwise from the positive $x$-axis $theta$
 
   + Write the following _spherical coordinates_ in both _rectangular coordinates_ and _cylindrical
-    coordinates_: $(rho, theta, phi) = (2, 0, 0)$ #h(1em) $(rho, theta, phi) = (2, 0, pi/4)$ #h(
-      1em,
-    )\
+    coordinates_: $(rho, theta, phi) = (2, 0, 0)$ #h(1em) $(rho, theta, phi) = (2, 0, pi/4)$ #h(1em)\
     $(rho, theta, phi) = (2, pi, 0)$ #h(1em) $(rho, theta, phi) = (2, pi, pi/4)$ #h(1em)\
     $(rho, theta, phi) = (2, pi/2, pi/3)$ #h(1em)
 
@@ -660,25 +685,29 @@
 
 ]
 
-#slide(siefken_num: auto)[
+#slide(siefken_num: auto, two_columns: false)[
+  #grid(
+    columns: (auto, 1fr),
+    column-gutter: 1.5em,
+    image("images/skew-coordinates.png", width: 5cm),
+    [
+      In a particular Amazon warehouse, locations are referenced with tape on the floor. The tape is
+      laid out in the directions $arrow(b)_1=mat(4; 1)$ and $arrow(b)_1=mat(1; 3)$.
 
-  #image("images/skew-coordinates.png", height: 4cm)
+      At the warehouse, the position of items uses $b$-coordinates. That is if an item is at
+      $b$-coordinates $(u,v)$, then its physical location is at $u arrow(b)_1 + v arrow(b)_2$.
 
-  In a particular Amazon warehouse, locations are referenced with tape on the floor. The tape is
-  laid out in the directions $arrow(b)_1=mat(4; 1)$ and $arrow(b)_1=mat(1; 3)$.
+      The average weight of packages at location $(u,v)$ (in $b$-coordinates) is given by
+      $
+        W(u,v)=2 + sin(u)+v
+      $
 
-  At the warehouse, the position of items uses $b$-coordinates. That is if an item is at
-  $b$-coordinates $(u,v)$, then its physical location is at $u arrow(b)_1 + v arrow(b)_2$.
-
-  The average weight of packages at location $(u,v)$ (in $b$-coordinates) is given by
-  $
-    W(u,v)=2 + sin(u)+v
-  $
-
-  + The warehouse is a parallelogram with sides $20 arrow(b)_1$ and $30 arrow(b)_2$. Let $R$ be the
-    region defining the warehouse. What does $Q= display(integral_R W dif A)$ represent?
-  + Is $Q = display(integral integral 2+sin(x)+y dif x dif y)$ for appropriate bounds?
-  + What is $dif A$ in $b$-coordinates? Use your answer to set up an integral to find $Q$.
+      + The warehouse is a parallelogram with sides $20 arrow(b)_1$ and $30 arrow(b)_2$. Let $R$ be the
+        region defining the warehouse. What does $Q= display(integral_R W dif A)$ represent?
+      + Is $Q = display(integral integral 2+sin(x)+y dif x dif y)$ for appropriate bounds?
+      + What is $dif A$ in $b$-coordinates? Use your answer to set up an integral to find $Q$.
+    ],
+  )
 ]
 
 #slide(siefken_num: auto)[

@@ -2,190 +2,205 @@
 #show: mat235-slides.with([Chapter 19])
 
 
-#slide(siefken_num: 1)[
+#slide(siefken_num: 1, two_columns: false)[
+  #grid(
+    columns: (auto, 1fr),
+    column-gutter: 1.5em,
+    {
+      let width = 5.5cm
+      let height = width
+      let plot(f, title: none) = {
+        lq.diagram(
+          title: title,
+          width: width,
+          height: height,
+          lq.quiver(
+            lq.arange(-2, 3, step: .5),
+            lq.arange(-2, 3, step: .5),
+            f,
+          ),
+          xaxis: none,
+          yaxis: none,
+          lq.place(-1, 0, {
+            cetz.canvas(length: .6cm, {
+              import cetz.draw: *
 
-  #{
-    let width = 9cm
-    let height = width
-    let plot(f, title: none) = {
-      lq.diagram(
-        title: title,
-        width: width,
-        height: height,
-        lq.quiver(
-          lq.arange(-2, 3, step: .5),
-          lq.arange(-2, 3, step: .5),
-          f,
-        ),
-        xaxis: none,
-        yaxis: none,
-        lq.place(-1, 0, {
-          cetz.canvas({
-            import cetz.draw: *
+              group(name: "figure", {
+                let shift = 0.1
 
-            group(name: "figure", {
-              let shift = 0.1
+                line((0, 0), (0, 2), mark: (symbol: "o"), stroke: 2pt, name: "rod")
 
-              line((0, 0), (0, 2), mark: (symbol: "o"), stroke: 2pt, name: "rod")
-
-              // content("rod.mid", [$R$], anchor: "west", padding: .5em)
-              content("rod.start", [$A$], anchor: "north", padding: .2em)
+                // content("rod.mid", [$R$], anchor: "west", padding: .5em)
+                content("rod.start", [$A$], anchor: "north", padding: .2em)
+              })
             })
-          })
-        }),
-        lq.place(1, 0, {
-          cetz.canvas({
-            import cetz.draw: *
+          }),
+          lq.place(1, 0, {
+            cetz.canvas(length: .6cm, {
+              import cetz.draw: *
 
-            group(name: "figure", {
-              let shift = 0.1
+              group(name: "figure", {
+                let shift = 0.1
 
-              line((0, 0), (2, 2), mark: (symbol: "o"), stroke: 2pt, name: "rod")
+                line((0, 0), (2, 2), mark: (symbol: "o"), stroke: 2pt, name: "rod")
 
-              // content("rod.mid", [$R$], anchor: "west", padding: .5em)
-              content("rod.start", [$B$], anchor: "north", padding: .2em)
+                // content("rod.mid", [$R$], anchor: "west", padding: .5em)
+                content("rod.start", [$B$], anchor: "north", padding: .2em)
+              })
             })
-          })
-        }),
-      )
-    }
+          }),
+        )
+      }
 
-    plot((x, y) => (1, 0))
-  }
-  Some ants are having a race! But, it is a very boring race. They are all travelling at the same
-  speed (5 m/hour) due east and the density of ants is 1000 ants per square metre.
+      plot((x, y) => (1, 0))
+    },
+    [
+      Some ants are having a race! But, it is a very boring race. They are all travelling at the same
+      speed (5 m/hour) due east and the density of ants is 1000 ants per square metre.
 
-  You set up two ant counters, $A$ and $B$.
+      You set up two ant counters, $A$ and $B$.
 
-  + If $A$ is 2 metre long, how many ants cross counter $A$ in one hour?
-  + How many ants cross counter $B$ in one hour *compared to* counter $A$?
-  + How many ants/hour/unit length cross counter $A$?
-  + $B$ is at a 45 degree angle relative to $A$. How many ants/hour/unit length cross counter $B$?
+      + If $A$ is 2 metre long, how many ants cross counter $A$ in one hour?
+      + How many ants cross counter $B$ in one hour *compared to* counter $A$?
+      + How many ants/hour/unit length cross counter $A$?
+      + $B$ is at a 45 degree angle relative to $A$. How many ants/hour/unit length cross counter $B$?
+    ],
+  )
 ]
 
-#slide(siefken_num: auto)[
+#slide(siefken_num: auto, two_columns: false)[
+  #grid(
+    columns: (auto, 1fr),
+    column-gutter: 1.5em,
+    {
+      let width = 5.5cm
+      let height = width
+      let plot(f, title: none) = {
+        lq.diagram(
+          title: title,
+          width: width,
+          height: height,
+          lq.quiver(
+            lq.arange(-2, 3, step: .5),
+            lq.arange(-2, 3, step: .5),
+            f,
+          ),
+          xaxis: none,
+          yaxis: none,
+          // lq.place(-1, 0, {
+          //   cetz.canvas(length: .6cm, {
+          //     import cetz.draw: *
 
-  #{
-    let width = 9cm
-    let height = width
-    let plot(f, title: none) = {
-      lq.diagram(
-        title: title,
-        width: width,
-        height: height,
-        lq.quiver(
-          lq.arange(-2, 3, step: .5),
-          lq.arange(-2, 3, step: .5),
-          f,
-        ),
-        xaxis: none,
-        yaxis: none,
-        // lq.place(-1, 0, {
-        //   cetz.canvas({
-        //     import cetz.draw: *
+          //     group(name: "figure", {
+          //       let shift = 0.1
 
-        //     group(name: "figure", {
-        //       let shift = 0.1
+          //       line((0, 0), (0, 2), mark: (symbol: "o"), stroke: 2pt, name: "rod")
 
-        //       line((0, 0), (0, 2), mark: (symbol: "o"), stroke: 2pt, name: "rod")
+          //       // content("rod.mid", [$R$], anchor: "west", padding: .5em)
+          //       content("rod.start", [$A$], anchor: "north", padding: .2em)
+          //     })
+          //   })
+          // }),
+          lq.place(0, 0, {
+            cetz.canvas(length: .6cm, {
+              import cetz.draw: *
 
-        //       // content("rod.mid", [$R$], anchor: "west", padding: .5em)
-        //       content("rod.start", [$A$], anchor: "north", padding: .2em)
-        //     })
-        //   })
-        // }),
-        lq.place(0, 0, {
-          cetz.canvas({
-            import cetz.draw: *
+              group(name: "figure", {
+                let shift = 0.1
 
-            group(name: "figure", {
-              let shift = 0.1
+                line((0, 0), (2, 2), mark: (symbol: "o"), stroke: 2pt, name: "rod")
 
-              line((0, 0), (2, 2), mark: (symbol: "o"), stroke: 2pt, name: "rod")
-
-              // content("rod.mid", [$R$], anchor: "west", padding: .5em)
-              content("rod.start", [$C$], anchor: "north", padding: .2em)
+                // content("rod.mid", [$R$], anchor: "west", padding: .5em)
+                content("rod.start", [$C$], anchor: "north", padding: .2em)
+              })
             })
-          })
-        }),
-      )
-    }
+          }),
+        )
+      }
 
-    plot((x, y) => (1, 0))
-  }
-  Some ants are having a race! There are 1000 ants per square metre and they are all travelling
-  5m/hour due east.
+      plot((x, y) => (1, 0))
+    },
+    [
+      Some ants are having a race! There are 1000 ants per square metre and they are all travelling
+      5m/hour due east.
 
-  Counter $C$ is 2 metres long and is oriented at angle $theta$ (measured counter clockwise from
-  due east).
+      Counter $C$ is 2 metres long and is oriented at angle $theta$ (measured counter clockwise from
+      due east).
 
-  + At what angle will counter $C$ count the *maximum* number of ants/hour?
-  + At what angle will counter $C$ count the *minimum* number of ants/hour?
-  + Find a formula for the number of ants/hour that cross counter $C$ in terms of $theta$.
+      + At what angle will counter $C$ count the *maximum* number of ants/hour?
+      + At what angle will counter $C$ count the *minimum* number of ants/hour?
+      + Find a formula for the number of ants/hour that cross counter $C$ in terms of $theta$.
+    ],
+  )
 ]
 
-#slide(siefken_num: auto)[
+#slide(siefken_num: auto, two_columns: false)[
+  #grid(
+    columns: (auto, 1fr),
+    column-gutter: 1.5em,
+    {
+      let width = 5.5cm
+      let height = width
+      let plot(f, title: none) = {
+        lq.diagram(
+          title: title,
+          width: width,
+          height: height,
+          lq.quiver(
+            lq.arange(-2, 3, step: .5),
+            lq.arange(-2, 3, step: .5),
+            f,
+          ),
+          xaxis: none,
+          yaxis: none,
+          // lq.place(-1, 0, {
+          //   cetz.canvas(length: .6cm, {
+          //     import cetz.draw: *
 
-  #{
-    let width = 9cm
-    let height = width
-    let plot(f, title: none) = {
-      lq.diagram(
-        title: title,
-        width: width,
-        height: height,
-        lq.quiver(
-          lq.arange(-2, 3, step: .5),
-          lq.arange(-2, 3, step: .5),
-          f,
-        ),
-        xaxis: none,
-        yaxis: none,
-        // lq.place(-1, 0, {
-        //   cetz.canvas({
-        //     import cetz.draw: *
+          //     group(name: "figure", {
+          //       let shift = 0.1
 
-        //     group(name: "figure", {
-        //       let shift = 0.1
+          //       line((0, 0), (0, 2), mark: (symbol: "o"), stroke: 2pt, name: "rod")
 
-        //       line((0, 0), (0, 2), mark: (symbol: "o"), stroke: 2pt, name: "rod")
+          //       // content("rod.mid", [$R$], anchor: "west", padding: .5em)
+          //       content("rod.start", [$A$], anchor: "north", padding: .2em)
+          //     })
+          //   })
+          // }),
+          lq.place(0, 0, {
+            cetz.canvas(length: .6cm, {
+              import cetz.draw: *
 
-        //       // content("rod.mid", [$R$], anchor: "west", padding: .5em)
-        //       content("rod.start", [$A$], anchor: "north", padding: .2em)
-        //     })
-        //   })
-        // }),
-        lq.place(0, 0, {
-          cetz.canvas({
-            import cetz.draw: *
+              group(name: "figure", {
+                let shift = 0.1
 
-            group(name: "figure", {
-              let shift = 0.1
+                line((0, 0), (2, 2), mark: (symbol: "o"), stroke: 2pt, name: "rod")
 
-              line((0, 0), (2, 2), mark: (symbol: "o"), stroke: 2pt, name: "rod")
-
-              // content("rod.mid", [$R$], anchor: "west", padding: .5em)
-              content("rod.start", [$C$], anchor: "north", padding: .2em)
+                // content("rod.mid", [$R$], anchor: "west", padding: .5em)
+                content("rod.start", [$C$], anchor: "north", padding: .2em)
+              })
             })
-          })
-        }),
-      )
-    }
+          }),
+        )
+      }
 
-    plot((x, y) => (1, 0))
-  }
-  Some ants are having a race! There are 1000 ants per square metre and they are all travelling
-  5m/hour due east.
+      plot((x, y) => (1, 0))
+    },
+    [
+      Some ants are having a race! There are 1000 ants per square metre and they are all travelling
+      5m/hour due east.
 
-  Counter $C$ is 2 metres long and is oriented at angle $theta$ (measured counter clockwise from
-  due east).
+      Counter $C$ is 2 metres long and is oriented at angle $theta$ (measured counter clockwise from
+      due east).
 
-  A *normal vector* to a point on a surface is a non-zero vector orthogonal to the surface.
+      A *normal vector* to a point on a surface is a non-zero vector orthogonal to the surface.
 
-  + Find a normal vector to counter $C$ (your answer will depend on theta).
-  + Find a *unit normal* vector to counter $C$ (i.e., a normal vector of length 1).
-  + Find a formula for the number of ants/hour that cross counter $C$ in terms of the unit normal
-    vector.
+      + Find a normal vector to counter $C$ (your answer will depend on theta).
+      + Find a *unit normal* vector to counter $C$ (i.e., a normal vector of length 1).
+      + Find a formula for the number of ants/hour that cross counter $C$ in terms of the unit normal
+        vector.
+    ],
+  )
 ]
 
 #slide(siefken_num: auto)[
@@ -211,48 +226,52 @@
     How could you find the _exact_ flux of $arrow(H)$ through $Q$?
 ]
 
-#slide(siefken_num: auto)[
+#slide(siefken_num: auto, two_columns: false)[
+  #grid(
+    columns: (auto, 1fr),
+    column-gutter: 1.5em,
+    {
+      let width = 5.5cm
+      let height = width
+      let plot(f, title: none) = {
+        let ts = lq.arange(-1, 1.1, step: 0.1)
+        lq.diagram(
+          title: title,
+          width: width,
+          height: height,
+          lq.quiver(
+            lq.arange(-2, 3, step: .5),
+            lq.arange(-2, 3, step: .5),
+            f,
+          ),
+          xaxis: none,
+          yaxis: none,
+          lq.plot(
+            ts.map(t => -t * t + 1),
+            ts,
+            mark: none,
+            stroke: 3pt,
+          ),
+        )
+      }
 
-  #{
-    let width = 9cm
-    let height = width
-    let plot(f, title: none) = {
-      let ts = lq.arange(-1, 1.1, step: 0.1)
-      lq.diagram(
-        title: title,
-        width: width,
-        height: height,
-        lq.quiver(
-          lq.arange(-2, 3, step: .5),
-          lq.arange(-2, 3, step: .5),
-          f,
-        ),
-        xaxis: none,
-        yaxis: none,
-        lq.plot(
-          ts.map(t => -t * t + 1),
-          ts,
-          mark: none,
-          stroke: 3pt,
-        ),
+      plot(
+        (x, y) => (3, 1), //, title: [$arrow(F)(x,y)=(3,1)$]
       )
-    }
+    },
+    [
+      On the left is the vector field $arrow(F)(x,y)=(3, 1)$ and the curve $C$ parameterized by
+      $
+        arrow(r)(t)=(-t^2 + 1, t) wide "for" wide t in [-1,1].
+      $
 
-    plot(
-      (x, y) => (3, 1), //, title: [$arrow(F)(x,y)=(3,1)$]
-    )
-  }
-
-  On the left is the vector field $arrow(F)(x,y)=(3, 1)$ and the curve $C$ parameterized by
-  $
-    arrow(r)(t)=(-t^2 + 1, t) wide "for" wide t in [-1,1].
-  $
-
-  + Draw the segment of $C$ from $t=0$ to $t=0.5$.
-  + Estimate the flux through the segment of $C$ from $t=0$ to $t=0.5$.
-  + How can $arrow(r)'(0)$ be used to get an estimate similar to the previous part?
-  + Can you set up an integral to find the exact flux through the segment of $C$ from $t=-1$ to
-    $t=1$?
+      + Draw the segment of $C$ from $t=0$ to $t=0.5$.
+      + Estimate the flux through the segment of $C$ from $t=0$ to $t=0.5$.
+      + How can $arrow(r)'(0)$ be used to get an estimate similar to the previous part?
+      + Can you set up an integral to find the exact flux through the segment of $C$ from $t=-1$ to
+        $t=1$?
+    ],
+  )
 ]
 
 #slide(siefken_num: auto)[
@@ -350,109 +369,117 @@
   + Find the flux of $arrow(F)(x,y,z) = (x,2y,3z)$ through the unit sphere (oriented inward).
 ]
 
-#slide(siefken_num: auto)[
+#slide(siefken_num: auto, two_columns: false)[
+  #grid(
+    columns: (auto, 1fr),
+    column-gutter: 1.5em,
+    {
+      let width = 5.5cm
+      let height = width
+      let plot(f, title: none) = {
+        let ts = lq.arange(-1, 1.1, step: 0.1)
+        lq.diagram(
+          title: title,
+          width: width,
+          height: height,
+          lq.quiver(
+            lq.arange(-2, 3, step: .5),
+            lq.arange(-2, 3, step: .5),
+            f,
+          ),
+          xaxis: none,
+          yaxis: none,
+          lq.place(0, 0, {
+            cetz.canvas(length: .6cm, {
+              import cetz.draw: *
 
-  #{
-    let width = 9cm
-    let height = width
-    let plot(f, title: none) = {
-      let ts = lq.arange(-1, 1.1, step: 0.1)
-      lq.diagram(
-        title: title,
-        width: width,
-        height: height,
-        lq.quiver(
-          lq.arange(-2, 3, step: .5),
-          lq.arange(-2, 3, step: .5),
-          f,
-        ),
-        xaxis: none,
-        yaxis: none,
-        lq.place(0, 0, {
-          cetz.canvas({
-            import cetz.draw: *
+              group(name: "figure", {
+                let shift = 0.1
 
-            group(name: "figure", {
-              let shift = 0.1
-
-              rect((0, 0), (3, 3), stroke: blue + 2pt, name: "rod")
-              content("rod.center", [$S$], anchor: "center", padding: .2em)
-              content("rod.south-west", [$arrow(p)$], anchor: "north", padding: .2em)
+                rect((0, 0), (3, 3), stroke: blue + 2pt, name: "rod")
+                content("rod.center", [$S$], anchor: "center", padding: .2em)
+                content("rod.south-west", [$arrow(p)$], anchor: "north", padding: .2em)
+              })
             })
-          })
-        }),
+          }),
+        )
+      }
+
+      plot(
+        (x, y) => (3, 1), //, title: [$arrow(F)(x,y)=(3,1)$]
       )
-    }
+    },
+    [
+      Let $arrow(F): RR^2 -> RR^2$ be a vector field.
 
-    plot(
-      (x, y) => (3, 1), //, title: [$arrow(F)(x,y)=(3,1)$]
-    )
-  }
+      Consider the square $S$ with side lengths $h$ and lower left corner at $arrow(p)$.
 
-  Let $arrow(F): RR^2 -> RR^2$ be a vector field.
-
-  Consider the square $S$ with side lengths $h$ and lower left corner at $arrow(p)$.
-
-  + What are the options for the orientation of $S$ for a *path integral*? What about for a *flux
-    integral*?
-  + Write down the coordinates of the corners of $S$ in terms of $arrow(p)$ and $h$.
-  + Write down an integral (or sum of integrals) for the total flux of $arrow(F)$ through $S$
-    (oriented outward).
+      + What are the options for the orientation of $S$ for a *path integral*? What about for a *flux
+        integral*?
+      + Write down the coordinates of the corners of $S$ in terms of $arrow(p)$ and $h$.
+      + Write down an integral (or sum of integrals) for the total flux of $arrow(F)$ through $S$
+        (oriented outward).
+    ],
+  )
 ]
 
-#slide(siefken_num: auto)[
+#slide(siefken_num: auto, two_columns: false)[
+  #grid(
+    columns: (auto, 1fr),
+    column-gutter: 1.5em,
+    {
+      let width = 5.5cm
+      let height = width
+      let plot(f, title: none) = {
+        let ts = lq.arange(-1, 1.1, step: 0.1)
+        lq.diagram(
+          title: title,
+          width: width,
+          height: height,
+          lq.quiver(
+            lq.arange(-2, 3, step: .5),
+            lq.arange(-2, 3, step: .5),
+            f,
+          ),
+          xaxis: none,
+          yaxis: none,
+          lq.place(0, 0, {
+            cetz.canvas(length: .6cm, {
+              import cetz.draw: *
 
-  #{
-    let width = 9cm
-    let height = width
-    let plot(f, title: none) = {
-      let ts = lq.arange(-1, 1.1, step: 0.1)
-      lq.diagram(
-        title: title,
-        width: width,
-        height: height,
-        lq.quiver(
-          lq.arange(-2, 3, step: .5),
-          lq.arange(-2, 3, step: .5),
-          f,
-        ),
-        xaxis: none,
-        yaxis: none,
-        lq.place(0, 0, {
-          cetz.canvas({
-            import cetz.draw: *
+              group(name: "figure", {
+                let shift = 0.1
 
-            group(name: "figure", {
-              let shift = 0.1
-
-              rect((0, 0), (3, 3), stroke: blue + 2pt, name: "rod")
-              content("rod.center", [$S$], anchor: "center", padding: .2em)
-              content("rod.south-west", [$arrow(p)$], anchor: "north", padding: .2em)
+                rect((0, 0), (3, 3), stroke: blue + 2pt, name: "rod")
+                content("rod.center", [$S$], anchor: "center", padding: .2em)
+                content("rod.south-west", [$arrow(p)$], anchor: "north", padding: .2em)
+              })
             })
-          })
-        }),
+          }),
+        )
+      }
+
+      plot(
+        (x, y) => (3, 1), //, title: [$arrow(F)(x,y)=(3,1)$]
       )
-    }
+    },
+    [
+      Let $arrow(F): RR^2 -> RR^2$ be a vector field.
 
-    plot(
-      (x, y) => (3, 1), //, title: [$arrow(F)(x,y)=(3,1)$]
-    )
-  }
+      Consider the square $S$ with side lengths $h$ and lower left corner at $arrow(p)$.
 
-  Let $arrow(F): RR^2 -> RR^2$ be a vector field.
-
-  Consider the square $S$ with side lengths $h$ and lower left corner at $arrow(p)$.
-
-  + Consider
-    $
-      arrow(F)(arrow(p)) dot arrow(p) wide
-      arrow(F)(arrow(p)) dot mat(-h; 0) wide
-      arrow(F)(arrow(p)) dot mat(0; -h)
-    $
-    Which best approximates the flux through the _left_ side of $S$? When is the approximation
-    good?
-  + Find approximations of the flux through the other sides of $S$.
-  + Find an approximation for the total flux through $S$.
+      + Consider
+        $
+          arrow(F)(arrow(p)) dot arrow(p) wide
+          arrow(F)(arrow(p)) dot mat(-h; 0) wide
+          arrow(F)(arrow(p)) dot mat(0; -h)
+        $
+        Which best approximates the flux through the _left_ side of $S$? When is the approximation
+        good?
+      + Find approximations of the flux through the other sides of $S$.
+      + Find an approximation for the total flux through $S$.
+    ],
+  )
 ]
 
 #slide(siefken_num: auto)[
@@ -491,107 +518,115 @@
   + Draw a vector field that has _positive_ divergence at the origin.
 ]
 
-#slide(siefken_num: auto)[
+#slide(siefken_num: auto, two_columns: false)[
+  #grid(
+    columns: (auto, 1fr),
+    column-gutter: 1.5em,
+    {
+      let width = 5.5cm
+      let height = width
+      let plot(f, title: none) = {
+        let ts = lq.arange(-1, 1.1, step: 0.1)
+        lq.diagram(
+          title: title,
+          width: width,
+          height: height,
+          lq.quiver(
+            lq.arange(-2, 3, step: .5),
+            lq.arange(-2, 3, step: .5),
+            f,
+          ),
+          xaxis: none,
+          yaxis: none,
+          lq.place(0, 0, {
+            cetz.canvas(length: .6cm, {
+              import cetz.draw: *
 
-  #{
-    let width = 9cm
-    let height = width
-    let plot(f, title: none) = {
-      let ts = lq.arange(-1, 1.1, step: 0.1)
-      lq.diagram(
-        title: title,
-        width: width,
-        height: height,
-        lq.quiver(
-          lq.arange(-2, 3, step: .5),
-          lq.arange(-2, 3, step: .5),
-          f,
-        ),
-        xaxis: none,
-        yaxis: none,
-        lq.place(0, 0, {
-          cetz.canvas({
-            import cetz.draw: *
+              group(name: "figure", {
+                rect((0, 0), (3, 3), stroke: blue + 2pt, name: "rod")
+                content("rod.center", box(fill: white)[$S_1$], anchor: "center", padding: .2em)
+                // content("rod.south-west", [$arrow(p)$], anchor: "north", padding: .2em)
+              })
+              group(name: "figure2", {
+                translate((3, 0))
 
-            group(name: "figure", {
-              rect((0, 0), (3, 3), stroke: blue + 2pt, name: "rod")
-              content("rod.center", box(fill: white)[$S_1$], anchor: "center", padding: .2em)
-              // content("rod.south-west", [$arrow(p)$], anchor: "north", padding: .2em)
+                rect((0, 0), (3, 3), stroke: blue + 2pt, name: "rod")
+                content("rod.center", box(fill: white)[$S_2$], anchor: "center", padding: .2em)
+                // content("rod.south-west", [$arrow(p)$], anchor: "north", padding: .2em)
+              })
             })
-            group(name: "figure2", {
-              translate((3, 0))
+          }),
+        )
+      }
 
-              rect((0, 0), (3, 3), stroke: blue + 2pt, name: "rod")
-              content("rod.center", box(fill: white)[$S_2$], anchor: "center", padding: .2em)
-              // content("rod.south-west", [$arrow(p)$], anchor: "north", padding: .2em)
-            })
-          })
-        }),
+      plot(
+        (x, y) => (3, 1), //, title: [$arrow(F)(x,y)=(3,1)$]
       )
-    }
+    },
+    [
+      Let $arrow(F): RR^2 -> RR^2$ be a vector field.
 
-    plot(
-      (x, y) => (3, 1), //, title: [$arrow(F)(x,y)=(3,1)$]
-    )
-  }
+      Consider the regions $S_1$, $S_2$, and $S_3 = S_1 union S_2$, all oriented outward.
 
-  Let $arrow(F): RR^2 -> RR^2$ be a vector field.
+      + How does the flux through $S_1$ and $S_2$ relate to the flux through $S_3$?
+      + The *divergence theorem* states that for a region $R$ and a smooth vector field $arrow(F)$,
+        that
+        $
+          integral_R ? wide = integral_(partial R) ??
+        $
+        Fill in $?$ and $??$.
 
-  Consider the regions $S_1$, $S_2$, and $S_3 = S_1 union S_2$, all oriented outward.
-
-  + How does the flux through $S_1$ and $S_2$ relate to the flux through $S_3$?
-  + The *divergence theorem* states that for a region $R$ and a smooth vector field $arrow(F)$,
-    that
-    $
-      integral_R ? wide = integral_(partial R) ??
-    $
-    Fill in $?$ and $??$.
-
-    Does the theorem make sense?
+        Does the theorem make sense?
+    ],
+  )
 ]
 
-#slide(siefken_num: auto)[
+#slide(siefken_num: auto, two_columns: false)[
+  #grid(
+    columns: (auto, 1fr),
+    column-gutter: 1.5em,
+    {
+      let width = 4.5cm
+      let height = width
+      let plot(f, title: none) = {
+        let ts = lq.arange(-1, 1.1, step: 0.1)
+        lq.diagram(
+          title: title,
+          width: width,
+          height: height,
+          lq.quiver(
+            lq.arange(-2, 3, step: .5),
+            lq.arange(-2, 3, step: .5),
+            f,
+          ),
+          xaxis: none,
+          yaxis: none,
+        )
+      }
 
-  Let $arrow(F): RR^2 -> RR^2$ be a vector field defined by
-  $
-    arrow(F)(x,y) = (x/(x^2+y^2), y/(x^2+y^2))
-  $
-  #{
-    set align(center)
-    let width = 6cm
-    let height = width
-    let plot(f, title: none) = {
-      let ts = lq.arange(-1, 1.1, step: 0.1)
-      lq.diagram(
-        title: title,
-        width: width,
-        height: height,
-        lq.quiver(
-          lq.arange(-2, 3, step: .5),
-          lq.arange(-2, 3, step: .5),
-          f,
-        ),
-        xaxis: none,
-        yaxis: none,
+      plot(
+        (x, y) => (
+          x / calc.pow(x * x + y * y + 0.1, 3 / 2),
+          y / calc.pow(x * x + y * y + 0.1, 3 / 2),
+        ), //, title: [$arrow(F)(x,y)=(3,1)$]
       )
-    }
+    },
+    [
+      Let $arrow(F): RR^2 -> RR^2$ be a vector field defined by
+      $
+        arrow(F)(x,y) = (x/(x^2+y^2), y/(x^2+y^2))
+      $
 
-    plot(
-      (x, y) => (
-        x / calc.pow(x * x + y * y + 0.1, 3 / 2),
-        y / calc.pow(x * x + y * y + 0.1, 3 / 2),
-      ), //, title: [$arrow(F)(x,y)=(3,1)$]
-    )
-  }
+      + Find the divergence of $arrow(F)$.
+      + Should the flux of $arrow(F)$ through a circle centered at the origin be positive, negative,
+        or zero? Why?
+      + What does the divergence theorem say about the flux of $arrow(F)$ through a circle centered at
+        the origin? Is the divergence theorem wrong?
+      + Let $C_1$ and $C_2$ be circles of radius $1$ and $2$ centered at the origin.
 
-  + Find the divergence of $arrow(F)$.
-  + Should the flux of $arrow(F)$ through a circle centered at the origin be positive, negative,
-    or zero? Why?
-  + What does the divergence theorem say about the flux of $arrow(F)$ through a circle centered at
-    the origin? Is the divergence theorem wrong?
-  + Let $C_1$ and $C_2$ be circles of radius $1$ and $2$ centered at the origin.
-
-    Find the flux of $arrow(F)$ through $C_1$ and $C_2$.
-  + Can the divergence theorem be used to explain the result from the previous part? What should
-    the flux through a circle of radius $k$ be?
+        Find the flux of $arrow(F)$ through $C_1$ and $C_2$.
+      + Can the divergence theorem be used to explain the result from the previous part? What should
+        the flux through a circle of radius $k$ be?
+    ],
+  )
 ]

@@ -36,39 +36,43 @@
   + Find $f_x$ and $f_y$ at $(2,2)$.
 ]
 
-#slide(siefken_num: auto)[
+#slide(siefken_num: auto, two_columns: false)[
+  #grid(
+    columns: (auto, 1fr),
+    column-gutter: 1.5em,
+    {
+      let a = lq.diagram(
+        title: [$z=f(x,y)$],
+        width: 4.5cm,
+        height: 4.5cm,
+        lq.contour(
+          lq.linspace(-5, 5, num: 20),
+          lq.linspace(-5, 5, num: 20),
+          (x, y) => 2 * x + y,
+          map: color.map.icefire,
+        ),
+        xlim: (-0, 4),
+        ylim: (-0, 4),
+        xaxis: (ticks: lq.arange(-4, 5, step: 1)),
+        yaxis: (ticks: lq.arange(-4, 5, step: 1)),
+        lq.place(3.5, 3.5, $5$),
+        lq.place(2.8, 2.8, $4$),
+        lq.place(2.2, 2.2, $3$),
+        lq.place(1.5, 1.5, $2$),
+        lq.place(.9, .9, $1$),
+      )
+      a
+    },
+    [
+      To the left is a contour plot of $f$.
 
-  #{
-    let a = lq.diagram(
-      title: [$z=f(x,y)$],
-      width: 6cm,
-      height: 6cm,
-      lq.contour(
-        lq.linspace(-5, 5, num: 20),
-        lq.linspace(-5, 5, num: 20),
-        (x, y) => 2 * x + y,
-        map: color.map.icefire,
-      ),
-      xlim: (-0, 4),
-      ylim: (-0, 4),
-      xaxis: (ticks: lq.arange(-4, 5, step: 1)),
-      yaxis: (ticks: lq.arange(-4, 5, step: 1)),
-      lq.place(3.5, 3.5, $5$),
-      lq.place(2.8, 2.8, $4$),
-      lq.place(2.2, 2.2, $3$),
-      lq.place(1.5, 1.5, $2$),
-      lq.place(.9, .9, $1$),
-    )
-    set align(center)
-    a
-  }
-  To the left is a contour plot of $f$.
-
-  + Estimate $partial/(partial x) f(2,2)$.#v(1em)
-  + Estimate $partial/(partial y) f(2,2)$.#v(1em)
-  + Find formulas for $partial/(partial x) f(x,y)$ and $partial/(partial y) f(x,y)$.#v(.7em)
-  + Starting at $(2,2)$, if you moved $10$ units in the $arrow(i)$ direction and $3$ units in the
-    $arrow(j)$ direction, what would your elevation be?
+      + Estimate $partial/(partial x) f(2,2)$.#v(1em)
+      + Estimate $partial/(partial y) f(2,2)$.#v(1em)
+      + Find formulas for $partial/(partial x) f(x,y)$ and $partial/(partial y) f(x,y)$.#v(.7em)
+      + Starting at $(2,2)$, if you moved $10$ units in the $arrow(i)$ direction and $3$ units in the
+        $arrow(j)$ direction, what would your elevation be?
+    ],
+  )
 ]
 
 #slide(siefken_num: auto)[
@@ -107,22 +111,28 @@
   + Find a normal vector for the plane.
 ]
 
-#slide(title: [Hughes-Hallett et al. Ex. 4])[
+#slide(title: [Hughes-Hallett et al. Ex. 4], two_columns: false)[
+  #grid(
+    columns: (auto, 1fr),
+    column-gutter: 1.5em,
+    block(width: 7cm)[
+      A guitar string is vibrating.
 
-  A guitar string is vibrating.
-  #{
-    set align(center)
-    image("images/guitar-neck.jpg", height: 3cm)
-  }
-  Let $L$ be the distance down the down the fret board and let $W$ be distance across the neck.
+      #image("images/guitar-neck.jpg", width: 7cm)
 
-  The displacement of a guitar string at time t (seconds) is given by
-  $
-    W(t) = 0.003 sin(pi L) sin(2765 t)
-  $
+      Let $L$ be the distance down the down the fret board and let $W$ be distance across the
+      neck.
+    ],
+    [
+      The displacement of a guitar string at time t (seconds) is given by
+      $
+        W(t) = 0.003 sin(pi L) sin(2765 t)
+      $
 
-  + Find $f_L (0.3,1)$ and $f_t (0.3, 1)$ (you can use a calculator).
-  + What does $f_L (0.3,1)$ and $f_t (0.3,1)$ mean in practical terms?
+      + Find $f_L (0.3,1)$ and $f_t (0.3, 1)$ (you can use a calculator).
+      + What does $f_L (0.3,1)$ and $f_t (0.3,1)$ mean in practical terms?
+    ],
+  )
 ]
 
 #slide(siefken_num: auto)[
@@ -143,79 +153,87 @@
 
 ]
 
-#slide(siefken_num: auto)[
+#slide(siefken_num: auto, two_columns: false)[
+  #grid(
+    columns: (auto, 1fr),
+    column-gutter: 1.5em,
+    {
+      let a = lq.diagram(
+        title: [$z=f(x,y)$],
+        width: 4.5cm,
+        height: 4.5cm,
+        lq.contour(
+          levels: (4, 8, 12, 16, 20, 24, 28, 32),
+          lq.linspace(-2, 5, num: 40),
+          lq.linspace(-2, 5, num: 40),
+          (x, y) => x * x + y * y,
+          map: color.map.icefire,
+        ),
+        xlim: (-0, 4),
+        ylim: (-0, 4),
+        xaxis: (ticks: lq.arange(-4, 5, step: 1)),
+        yaxis: (ticks: lq.arange(-4, 5, step: 1)),
+        // lq.place(3.5, 3.5, $5$),
+        lq.place(2.9, 2.9, $16$),
+        lq.place(2.1, 2.1, $8$),
+        lq.place(2., 2.9, $12$),
+        // lq.place(1.5, 1.5, $2$),
+        // lq.place(.9, .9, $1$),
+      )
+      a
+    },
+    [
+      To the left is a contour plot of $f(x,y)=x^2+y^2$.
 
-  #{
-    let a = lq.diagram(
-      title: [$z=f(x,y)$],
-      width: 6cm,
-      height: 6cm,
-      lq.contour(
-        levels: (4, 8, 12, 16, 20, 24, 28, 32),
-        lq.linspace(-2, 5, num: 40),
-        lq.linspace(-2, 5, num: 40),
-        (x, y) => x * x + y * y,
-        map: color.map.icefire,
-      ),
-      xlim: (-0, 4),
-      ylim: (-0, 4),
-      xaxis: (ticks: lq.arange(-4, 5, step: 1)),
-      yaxis: (ticks: lq.arange(-4, 5, step: 1)),
-      // lq.place(3.5, 3.5, $5$),
-      lq.place(2.9, 2.9, $16$),
-      lq.place(2.1, 2.1, $8$),
-      lq.place(2., 2.9, $12$),
-      // lq.place(1.5, 1.5, $2$),
-      // lq.place(.9, .9, $1$),
-    )
-    set align(center)
-    a
-  }
-  To the left is a contour plot of $f(x,y)=x^2+y^2$.
-
-  + Add a contour line for height $10$ to the diagram. Should it lie exactly half way between the
-    lines of height $8$ and $12$? Explain.
-  + Draw a zoomed in version of the contour plot in the region $2 <= x <= 3$ and $2 <= y <= 3$.
-    Include contours of height $8$, $9$, ..., $16$.
-  + If you drew a contour plot zoomed into the region $2 <= x <= 2.1$ and $2 <= y <= 2.1$, what
-    would it look like?
+      + Add a contour line for height $10$ to the diagram. Should it lie exactly half way between the
+        lines of height $8$ and $12$? Explain.
+      + Draw a zoomed in version of the contour plot in the region $2 <= x <= 3$ and $2 <= y <= 3$.
+        Include contours of height $8$, $9$, ..., $16$.
+      + If you drew a contour plot zoomed into the region $2 <= x <= 2.1$ and $2 <= y <= 2.1$, what
+        would it look like?
+    ],
+  )
 ]
 
-#slide(siefken_num: auto)[
+#slide(siefken_num: auto, two_columns: false)[
+  #grid(
+    columns: (auto, 1fr),
+    column-gutter: 1.5em,
+    {
+      let a = lq.diagram(
+        title: [$z=f(x,y)$],
+        width: 4.5cm,
+        height: 4.5cm,
+        lq.contour(
+          levels: (4, 8, 12, 16, 20, 24, 28, 32),
+          lq.linspace(-2, 5, num: 40),
+          lq.linspace(-2, 5, num: 40),
+          (x, y) => x * x + y * y,
+          map: color.map.icefire,
+        ),
+        xlim: (-0, 4),
+        ylim: (-0, 4),
+        xaxis: (ticks: lq.arange(-4, 5, step: 1)),
+        yaxis: (ticks: lq.arange(-4, 5, step: 1)),
+        // lq.place(3.5, 3.5, $5$),
+        lq.place(2.9, 2.9, $16$),
+        lq.place(2.1, 2.1, $8$),
+        lq.place(2., 2.9, $12$),
+        // lq.place(1.5, 1.5, $2$),
+        // lq.place(.9, .9, $1$),
+      )
+      a
+    },
+    [
+      To the left is a contour plot of $f(x,y)=x^2+y^2$. Let $cal(P)$ be the *tangent plane* to
+      $z=f(x,y)$ at the point $(2,2,8)$.
 
-  #{
-    let a = lq.diagram(
-      title: [$z=f(x,y)$],
-      width: 6cm,
-      height: 6cm,
-      lq.contour(
-        levels: (4, 8, 12, 16, 20, 24, 28, 32),
-        lq.linspace(-2, 5, num: 40),
-        lq.linspace(-2, 5, num: 40),
-        (x, y) => x * x + y * y,
-        map: color.map.icefire,
-      ),
-      xlim: (-0, 4),
-      ylim: (-0, 4),
-      xaxis: (ticks: lq.arange(-4, 5, step: 1)),
-      yaxis: (ticks: lq.arange(-4, 5, step: 1)),
-      // lq.place(3.5, 3.5, $5$),
-      lq.place(2.9, 2.9, $16$),
-      lq.place(2.1, 2.1, $8$),
-      lq.place(2., 2.9, $12$),
-      // lq.place(1.5, 1.5, $2$),
-      // lq.place(.9, .9, $1$),
-    )
-    set align(center)
-    a
-  }
-  To the left is a contour plot of $f(x,y)=x^2+y^2$. Let $cal(P)$ be the *tangent plane* to
-  $z=f(x,y)$ at the point $(2,2,8)$.
-
-  + What is the slope of $cal(P)$ in the $arrow(i)$ direction?
-  + What is the slope of $cal(P)$ in the $arrow(j)$ direction?
-  + Add contour lines for $cal(P)$ to the diagram.
-  + Find an equation for $cal(P)$.
+      + What is the slope of $cal(P)$ in the $arrow(i)$ direction?
+      + What is the slope of $cal(P)$ in the $arrow(j)$ direction?
+      + Add contour lines for $cal(P)$ to the diagram.
+      + Find an equation for $cal(P)$.
+    ],
+  )
 ]
 
 #slide(siefken_num: auto)[
@@ -235,7 +253,6 @@
 
 #slide(siefken_num: auto)[
 
-  #show: columns.with(2)
   The *directional derivative* of a function $f: RR^2 ->RR$ at the point $arrow(p)$ *in the
   direction $arrow(v)$* is
   $
@@ -261,7 +278,6 @@
 
 #slide(siefken_num: auto)[
 
-  #show: columns.with(2)
   #text(weight: "bold", [Theorem]): If function $f: RR^2 ->RR$ is *differentiable* at the point
   $arrow(p)$, the directional derivatives of $f$ at $arrow(p)$ match the directional derivatives of
   the tangent plane to $z=f(x,y)$ at $arrow(p)$.
@@ -296,7 +312,6 @@
 
 #slide(siefken_num: auto)[
 
-  #show: columns.with(2)
   Let $arrow(v)=mat(v_1; v_2)$. Recall, for $f(x,y) = x^2 + y^2 + 3$ that
   $
     f_(arrow(v))(1,2) = 2 v_1 + 4 v_2
@@ -314,83 +329,91 @@
     Find a similar expression for $f(arrow(p) + Delta arrow(v))$.
 ]
 
-#slide(siefken_num: auto)[
+#slide(siefken_num: auto, two_columns: false)[
+  #grid(
+    columns: (auto, 1fr),
+    column-gutter: 1.5em,
+    {
+      let a = lq.diagram(
+        title: [$z=f(x,y)$],
+        width: 4.5cm,
+        height: 4.5cm,
+        lq.contour(
+          levels: (4, 8, 12, 16, 20, 24, 28, 32),
+          lq.linspace(-2, 5, num: 40),
+          lq.linspace(-2, 5, num: 40),
+          (x, y) => x * x + y * y,
+          map: color.map.icefire,
+        ),
+        xlim: (-0, 4),
+        ylim: (-0, 4),
+        xaxis: (ticks: lq.arange(-4, 5, step: 1)),
+        yaxis: (ticks: lq.arange(-4, 5, step: 1)),
+        // lq.place(3.5, 3.5, $5$),
+        lq.place(1.5, 3.6, $16$),
+        lq.place(.5, 2.6, $8$),
+        lq.place(1, 3.2, $12$),
+        lq.place(2, 2, lq.mark(stroke: 5pt + black)),
+        lq.place(2.15, 2, $arrow(p)$, align: left),
+        // lq.place(1.5, 1.5, $2$),
+        // lq.place(.9, .9, $1$),
+      )
+      a
+    },
+    [
+      To the left is a contour plot of $f(x,y)$.
 
-  #{
-    let a = lq.diagram(
-      title: [$z=f(x,y)$],
-      width: 6cm,
-      height: 6cm,
-      lq.contour(
-        levels: (4, 8, 12, 16, 20, 24, 28, 32),
-        lq.linspace(-2, 5, num: 40),
-        lq.linspace(-2, 5, num: 40),
-        (x, y) => x * x + y * y,
-        map: color.map.icefire,
-      ),
-      xlim: (-0, 4),
-      ylim: (-0, 4),
-      xaxis: (ticks: lq.arange(-4, 5, step: 1)),
-      yaxis: (ticks: lq.arange(-4, 5, step: 1)),
-      // lq.place(3.5, 3.5, $5$),
-      lq.place(1.5, 3.6, $16$),
-      lq.place(.5, 2.6, $8$),
-      lq.place(1, 3.2, $12$),
-      lq.place(2, 2, lq.mark(stroke: 5pt + black)),
-      lq.place(2.15, 2, $arrow(p)$, align: left),
-      // lq.place(1.5, 1.5, $2$),
-      // lq.place(.9, .9, $1$),
-    )
-    set align(center)
-    a
-  }
-  To the left is a contour plot of $f(x,y)$.
-
-  + In what direction(s) is $f_(arrow(u))(arrow(p))$ positive? Negative?
-  + In what direction(s) is $f_(arrow(u))(arrow(p))$ largest? Smallest?
-  + In what direction(s) is $f_(arrow(u))(arrow(p))$ zero?
-  + Estimate the largest possible value of $f_(arrow(u))(arrow(p))$ when $arrow(u)$ is a unit
-    vector.
+      + In what direction(s) is $f_(arrow(u))(arrow(p))$ positive? Negative?
+      + In what direction(s) is $f_(arrow(u))(arrow(p))$ largest? Smallest?
+      + In what direction(s) is $f_(arrow(u))(arrow(p))$ zero?
+      + Estimate the largest possible value of $f_(arrow(u))(arrow(p))$ when $arrow(u)$ is a unit
+        vector.
+    ],
+  )
 ]
 
-#slide(siefken_num: auto)[
+#slide(siefken_num: auto, two_columns: false)[
+  #grid(
+    columns: (auto, 1fr),
+    column-gutter: 1.5em,
+    {
+      let a = lq.diagram(
+        title: [$z=f(x,y)$],
+        width: 4.5cm,
+        height: 4.5cm,
+        lq.contour(
+          levels: (4, 8, 12, 16, 20, 24, 28, 32),
+          lq.linspace(-2, 5, num: 40),
+          lq.linspace(-2, 5, num: 40),
+          (x, y) => x * x + y * y,
+          map: color.map.icefire,
+        ),
+        xlim: (-0, 4),
+        ylim: (-0, 4),
+        xaxis: (ticks: lq.arange(-4, 5, step: 1)),
+        yaxis: (ticks: lq.arange(-4, 5, step: 1)),
+        // lq.place(3.5, 3.5, $5$),
+        lq.place(1.5, 3.6, $16$),
+        lq.place(.5, 2.6, $8$),
+        lq.place(1, 3.2, $12$),
+        lq.place(2, 2, lq.mark(stroke: 5pt + black)),
+        lq.place(2.15, 2, $arrow(p)$, align: left),
+        // lq.place(1.5, 1.5, $2$),
+        // lq.place(.9, .9, $1$),
+      )
+      a
+    },
+    [
+      To the left is a contour plot of $f(x,y)$.
 
-  #{
-    let a = lq.diagram(
-      title: [$z=f(x,y)$],
-      width: 6cm,
-      height: 6cm,
-      lq.contour(
-        levels: (4, 8, 12, 16, 20, 24, 28, 32),
-        lq.linspace(-2, 5, num: 40),
-        lq.linspace(-2, 5, num: 40),
-        (x, y) => x * x + y * y,
-        map: color.map.icefire,
-      ),
-      xlim: (-0, 4),
-      ylim: (-0, 4),
-      xaxis: (ticks: lq.arange(-4, 5, step: 1)),
-      yaxis: (ticks: lq.arange(-4, 5, step: 1)),
-      // lq.place(3.5, 3.5, $5$),
-      lq.place(1.5, 3.6, $16$),
-      lq.place(.5, 2.6, $8$),
-      lq.place(1, 3.2, $12$),
-      lq.place(2, 2, lq.mark(stroke: 5pt + black)),
-      lq.place(2.15, 2, $arrow(p)$, align: left),
-      // lq.place(1.5, 1.5, $2$),
-      // lq.place(.9, .9, $1$),
-    )
-    set align(center)
-    a
-  }
-  To the left is a contour plot of $f(x,y)$.
+      + How does $nabla f(arrow(p))$ relate to a directional derivative of $f$. Explain.#v(1em)
+      + What is $nabla f(arrow(p)) dot mat(1; -1)$? How do you know?
 
-  + How does $nabla f(arrow(p))$ relate to a directional derivative of $f$. Explain.#v(1em)
-  + What is $nabla f(arrow(p)) dot mat(1; -1)$? How do you know?
+      + Draw $nabla f(arrow(p))$ on the contour plot.
 
-  + Draw $nabla f(arrow(p))$ on the contour plot.
-
-  + Estimate $a$ and $b$ in the following expression $nabla f(arrow(p)) = (a,b)$.
+      + Estimate $a$ and $b$ in the following expression $nabla f(arrow(p)) = (a,b)$.
+    ],
+  )
 ]
 
 #slide(siefken_num: auto)[
