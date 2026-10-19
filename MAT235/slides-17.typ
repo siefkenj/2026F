@@ -228,32 +228,42 @@
 
 #slide(siefken_num: auto)[
 
-  The gradient of a function $f:RR^n -> RR$ is also a vector field.
-
-  + Draw $nabla f$ where $f(x,y)=x^2+y^2$
-  + Draw $nabla g$ where $g(x,y)=x + y$
-  + Draw $nabla h$ (where it's defined) where $h(x,y)= abs(x) + y$
-  + Could the following vector field be the gradient of a function? Why or why not?
-
-    #{
-      set align(center)
-      let width = 4cm
-      let height = width
-      let plot(f, title: none) = {
-        lq.diagram(
-          title: title,
-          width: width,
-          height: height,
-          lq.quiver(
-            lq.arange(-2, 3, step: .75),
-            lq.arange(-2, 3, step: .75),
-            f,
-          ),
-          xaxis: none,
-          yaxis: none,
-        )
-      }
-
-      plot((x, y) => (-y, x))
-    }
+  + Sketch the graph of a *discontinuous* function $f: RR -> RR$.
+  + Sketch a contour map of a *discontinuous* function $g: RR^2 -> RR$.
+  + Sketch a vector field for a *discontinuous* function $arrow(h):RR^2 -> RR^2$.
+  + Functions like $q(x)=1/x$ are said to have a _singularity_ at the origin. Physicists sometimes
+    describe a tornado as having a singularity at its center. What do you imagine a singularity in a
+    vector field looks like (when graphed)?
 ]
+
+// #slide(siefken_num: auto)[
+
+//   The gradient of a function $f:RR^n -> RR$ is also a vector field.
+
+//   + Draw $nabla f$ where $f(x,y)=x^2+y^2$
+//   + Draw $nabla g$ where $g(x,y)=x + y$
+//   + Draw $nabla h$ (where it's defined) where $h(x,y)= abs(x) + y$
+//   + Could the following vector field be the gradient of a function? Why or why not?
+
+//     #{
+//       set align(center)
+//       let width = 4cm
+//       let height = width
+//       let plot(f, title: none) = {
+//         lq.diagram(
+//           title: title,
+//           width: width,
+//           height: height,
+//           lq.quiver(
+//             lq.arange(-2, 3, step: .75),
+//             lq.arange(-2, 3, step: .75),
+//             f,
+//           ),
+//           xaxis: none,
+//           yaxis: none,
+//         )
+//       }
+
+//       plot((x, y) => (-y, x))
+//     }
+// ]
