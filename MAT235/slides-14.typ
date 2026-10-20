@@ -6,6 +6,8 @@
   Consider the function $f(x,y) = x^2-x y+1+y^2$.
 
   + Visualize the graph of this function using a contour map and slices.
+
+    (You may use Desmos, but _only in 2d graphing mode_. No Desmos 3d right now.)
   + Let $z=s(y)$ be the slice of $z=f(x,y)$ that you get by setting $x=2$.
 
     Find an equation for $s(y)$.
@@ -69,8 +71,8 @@
       + Estimate $partial/(partial x) f(2,2)$.#v(1em)
       + Estimate $partial/(partial y) f(2,2)$.#v(1em)
       + Find formulas for $partial/(partial x) f(x,y)$ and $partial/(partial y) f(x,y)$.#v(.7em)
-      + Starting at $(2,2)$, if you moved $10$ units in the $arrow(i)$ direction and $3$ units in the
-        $arrow(j)$ direction, what would your elevation be?
+      + Starting at $(2,2)$, if you moved $10$ units in the $arrow(i)$ direction and $3$ units in
+        the $arrow(j)$ direction, what would your elevation be?
     ],
   )
 ]
@@ -120,8 +122,7 @@
 
       #image("images/guitar-neck.jpg", width: 7cm)
 
-      Let $L$ be the distance down the down the fret board and let $W$ be distance across the
-      neck.
+      Let $L$ be the distance down the down the fret board and let $W$ be distance across the neck.
     ],
     [
       The displacement of a guitar string at time t (seconds) is given by
@@ -147,8 +148,8 @@
   + If you are at position $(0,0,6)$ inside the earth, what do you expect to be largest:
     $(partial T)/(partial x)$, $(partial T)/(partial y)$, or $(partial T)/(partial z)$? (Hint: you
     can do this without computing.)
-  + The point $(a,b,c)$ inside the earth lies on a level curve of $T$. Is it true that at
-    $(a,b,c)$, at least one of $(partial T)/(partial x)$, $(partial T)/(partial y)$, or
+  + The point $(a,b,c)$ inside the earth lies on a level curve of $T$. Is it true that at $(a,b,c)$,
+    at least one of $(partial T)/(partial x)$, $(partial T)/(partial y)$, or
     $(partial T)/(partial z)$ is zero? Explain.
 
 ]
@@ -185,8 +186,8 @@
     [
       To the left is a contour plot of $f(x,y)=x^2+y^2$.
 
-      + Add a contour line for height $10$ to the diagram. Should it lie exactly half way between the
-        lines of height $8$ and $12$? Explain.
+      + Add a contour line for height $10$ to the diagram. Should it lie exactly half way between
+        the lines of height $8$ and $12$? Explain.
       + Draw a zoomed in version of the contour plot in the region $2 <= x <= 3$ and $2 <= y <= 3$.
         Include contours of height $8$, $9$, ..., $16$.
       + If you drew a contour plot zoomed into the region $2 <= x <= 2.1$ and $2 <= y <= 2.1$, what
@@ -425,14 +426,13 @@
 
   You are currently standing at position $(1,3)$.
 
-  + Is there a direction you can walk so that your elevation doesn't change? What is that
-    direction?
+  + Is there a direction you can walk so that your elevation doesn't change? What is that direction?
   + You want a challenge: you'd like to walk up the hill the steepest way possible. What direction
     should you walk?
 
   + Baldwin St, NZ is the steepest street in the world with a slope of 0.35. You'd like to
-    experience the steepness of Baldwin St. What direction should you walk up the hill? (You can
-    use Desmos to help)
+    experience the steepness of Baldwin St. What direction should you walk up the hill? (You can use
+    Desmos to help)
 
 ]
 
@@ -482,8 +482,8 @@
   The multi-variable chain rule *should not be memorized*. Instead, use tangent planes to derive
   correct expressions.
 
-  Let $f: RR^2 -> RR$, $g: RR -> RR$, and $h: RR -> RR$. Define $p(t) = f(g(t), h(t))$. We'd like
-  to compute $p'(t)$.
+  Let $f: RR^2 -> RR$, $g: RR -> RR$, and $h: RR -> RR$. Define $p(t) = f(g(t), h(t))$. We'd like to
+  compute $p'(t)$.
 
   + Find a formula for $z=T(x,y)$, the tangent plane to $f$ at the point $(a,b)$.
 
@@ -501,20 +501,20 @@
 
   Let $f,g,h$ be functions from $RR^2$ to $RR$. Define $p(x,y) = f(g(x,y), h(x,y))$.
 
-  + Use a tangent plane approximation of $f$ to find a formula that approximates $p$ near the
-    point $(a,b)$.
+  + Use a tangent plane approximation of $f$ to find a formula that approximates $p$ near the point
+    $(a,b)$.
   + Find $(partial p)/(partial x) (a,b)$#v(1em)
   + Find $(partial p)/(partial y) (a,b)$#v(1em)
   + Find $nabla p (a,b)$
   + Find $nabla p (x,y)$
-  + Why do we make a tangent plane approximation at the point $(a,b)$ instead of the point
-    $(x,y)$? Explain.
+  + Why do we make a tangent plane approximation at the point $(a,b)$ instead of the point $(x,y)$?
+    Explain.
 ]
 
 #slide(siefken_num: auto)[
 
-  The temperature of inside the earth at position
-  The temperature at position $(x,y,z)$ inside the earth given by
+  The temperature of inside the earth at position The temperature at position $(x,y,z)$ inside the
+  earth given by
   $
     T(x,y,z) = -2(sqrt(x^2 + y^2 + z^2) - 3)^(1/3)+2
   $
@@ -556,8 +556,8 @@
   Let $arrow(u)=(u_1,u_2)$
   + Find $f_(arrow(u))(0,0)$.
   + Find all critical points of $f$.
-  + Find a formula for the *second directional derivative* of $f$ in the direction $arrow(u)$ at
-    the point $(0,0)$.
+  + Find a formula for the *second directional derivative* of $f$ in the direction $arrow(u)$ at the
+    point $(0,0)$.
 
   // #colbreak()
   // #set enum(numbering: "(a)")
@@ -567,8 +567,8 @@
 
     What does the multivariable second derivative test tell us about $f$ at $(0,0)$?
 
-  + Find a general formula for the second directional derivative of a function $g$ in the
-    direction $arrow(u)$ at the point $(x,y)$.
+  + Find a general formula for the second directional derivative of a function $g$ in the direction
+    $arrow(u)$ at the point $(x,y)$.
 ]
 
 #slide(siefken_num: auto)[
@@ -596,8 +596,8 @@
 
   Let $g(x,y)=cos(x+y)+cos(y)$.
 
-  + A general *second degree* polynomial in one variable is $a x^2 + b x + c$. Write down a
-    general second degree polynomial in *two* variables. Call your polynomial $Q(x,y)$.
+  + A general *second degree* polynomial in one variable is $a x^2 + b x + c$. Write down a general
+    second degree polynomial in *two* variables. Call your polynomial $Q(x,y)$.
 
   + Find $Q(0,0)$ as well as all first *and* second order partial derivatives of $Q$ at $(0,0)$.
 
@@ -632,8 +632,8 @@
     lim_(arrow(h) -> arrow(0)) (f(arrow(p) + arrow(h)) - L(arrow(p) + arrow(h))) / norm(arrow(h)) = 0.
   $
 
-  + "$f(arrow(p) + arrow(h)) - L(arrow(p)+arrow(h))$" is sometimes called an *error term*. Why?
-    Does the terminology make sense?
+  + "$f(arrow(p) + arrow(h)) - L(arrow(p)+arrow(h))$" is sometimes called an *error term*. Why? Does
+    the terminology make sense?
 
   + Let $C(x,y) = -sqrt(1/4 x^2 + 1/4 y^2)$. Use Desmos to graph $C$.
   + Define $z=L(x,y)$ to be a horizontal plane through the origin.
@@ -650,7 +650,8 @@
 
   Open the demos applet
 
-  https://www.desmos.com/calculator/gocmdy79gy
+
+  #text(size: 0.9em)[https://www.desmos.com/calculator/gocmdy79gy]
 
   + Explore the surface by adjusting $h$. Where are the maxes and mins?
   + Sketch gradient vectors on the contour map. Where are they longest? Shortest?
@@ -664,7 +665,7 @@
 
   Open the demos applet
 
-  https://www.desmos.com/calculator/gocmdy79gy
+  #text(size: 0.9em)[https://www.desmos.com/calculator/gocmdy79gy]
 
   + Estimate $f_x$ and $f_y$ at $(2,0)$.
   + What can you say about the sign of $f_(x x)$ and $f_(y y)$ at $(2,0)$?
