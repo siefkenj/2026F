@@ -65,6 +65,40 @@
     in your proof.
 ]
 
+#let line_number_proof(body) = {
+  block(stroke: (paint: blue, thickness: 1pt, dash: "dashed"), inset: 1em, width: 100%)[
+    #set enum(numbering: d => text(fill: blue.darken(50%))[(#d)#h(1em)])
+
+    #body
+  ]
+}
+
+#slide(title: [Warmup: An Induction Proof])[
+  #block(width: 100%, height: 100%)[
+    #set text(size: .9em)
+
+    The following proof "explains algebra". Rewrite it so the argument flows left-to-right with a
+    string of equalities.
+
+    *Claim:* $display(sum_(i=1)^n i) = T_n = (n(n+1))/2$. #h(1em) *Proof:* \
+
+    #line_number_proof[
+      #show: columns
+      + Define the proposition $P(n):=$"$display(sum_(i=1)^n i) = T_n = (n(n+1))/2$".
+      + Notice that $P(1)$ is true since $1 = (1(1+1))/2$.
+      + We want to show $P(n) ==> P(n+1)$ for all $n$.
+      + Let $n$ be arbitrary and assume $P(n)$ is true.
+      + Then, $sum_(i=1)^n i = (n(n+1))/2$. Adding $n+1$ to both sides we have \
+        $(sum_(i=1)^n i) + n+1 = (n(n+1))/2 + n+1$.
+      + Simplifying the left side we get that it equals $sum_(i=1)^(n+1) i$.\
+        Simplifying the right side we get $(n(n+1))/2 + n+1 = (n(n+1) + 2(n+1))/2 = ((n+1)(n+2))/2$
+      + Since the right side equals the left side, we have $P(n) ==> P(n+1)$.
+      + By induction, since $P(1)$ is true and $P(n) ==> P(n+1)$ is true, we have that $P(n)$ is
+        true for all $n$.
+    ]
+  ]
+]
+
 #exercise(
   title: [Induction --- Writing Inductive Proofs],
   source: 71,
