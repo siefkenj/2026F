@@ -265,7 +265,7 @@
   Suppose the earth is centered at $(0,0,0)$. The temperature of inside the earth at position
   $(x,y,z)$ (in units of thousands of km) is approximately given by
   $
-    T(x,y,z) = -2(sqrt(x^2 + y^2 + z^2) - 3)^(1/3)+2
+    T(x,y,z) = -2(sqrt(x^2 + y^2 + z^2) - 5)^(1/3)+2
   $
   in units of thousands of degrees Celsius.
 
