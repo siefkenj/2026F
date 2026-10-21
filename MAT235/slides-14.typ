@@ -80,6 +80,7 @@
 ]
 
 #slide(siefken_num: auto)[
+  #set text(size: .9em)
 
   For this question, $Delta$ represents a small number.
 
@@ -142,7 +143,7 @@
 
   Recall that the temperature inside the earth at position $(x,y,z)$ is (approximately) given by
   $
-    T(x,y,z) = -2(sqrt(x^2 + y^2 + z^2) - 3)^(1/3)+2
+    T(x,y,z) = -2(sqrt(x^2 + y^2 + z^2) - 5)^(1/3)+2
   $
   In this model, $(0,0,6.3)$ represents the North Pole and $(0,0,-6.3)$ represents the South Pole.
 
@@ -150,7 +151,7 @@
   + If you are at position $(0,0,6)$ inside the earth, what do you expect to be largest:
     $(partial T)/(partial x)$, $(partial T)/(partial y)$, or $(partial T)/(partial z)$? (Hint: you
     can do this without computing.)
-  + The point $(a,b,c)$ inside the earth lies on a level curve of $T$. Is it true that at $(a,b,c)$,
+  + The point $(a,b,c)$ inside the earth lies on a level set of $T$. Is it true that at $(a,b,c)$,
     at least one of $(partial T)/(partial x)$, $(partial T)/(partial y)$, or
     $(partial T)/(partial z)$ is zero? Explain.
 
