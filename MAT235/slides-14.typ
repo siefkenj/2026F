@@ -8,9 +8,11 @@
   + Visualize the graph of this function using a contour map and slices.
 
     (You may use Desmos, but _only in 2d graphing mode_. No Desmos 3d right now.)
+    #v(1em)
   + Let $z=s(y)$ be the slice of $z=f(x,y)$ that you get by setting $x=2$.
 
     Find an equation for $s(y)$.
+    #v(1em)
   + Graph $z=s'(y)$, where $s'$ indicates the derivative of $s$.
 ]
 
