@@ -12,10 +12,19 @@
 // the PDF, so the digraphs below are drawn here with `digraph` and are not
 // pixel-copies of the handout's.
 
+// Infix relation symbols, e.g. `$n #R m$`. Single letters in math are not
+// variables, so plain `$n R m$` sets "nRm" with no space; these add a hairline
+// space on each side.
+#let rel(name) = $space.hair #name space.hair$
+#let R = rel($R$)
+#let S = rel($S$)
+#let C = rel($C$)
+#let D = rel($D$)
+#let N = rel($N$)
 
 #slide(title: [Where We Are Going])[
-  A *relation* is nothing more than a subset of $A times B$ --- but that bare definition supports a
-  surprising amount of structure.
+  A *relation* is a subset of $A times B$ --- but that bare definition supports a surprising amount
+  of structure.
 
   - *Relations* and their properties: reflexive, symmetric, transitive, antisymmetric.
   - *Equivalence relations* and *equivalence classes*.
@@ -35,16 +44,17 @@
 #exercise(
   title: [Relations --- Describing Relations],
   source: 91,
-  goal: [Three common ways of depicting a relation: as a set, as a digraph, and as a logical table.],
+  goal: [Three common ways of depicting a relation: as a set, as a digraph, and as a logical
+    table.],
   num_prefix: auto,
 )[
-  Let $X = {1, 2, dots, 10}$ and $Y = {a, b, c, d, e}$. Define a relation $R$ from $X$ to $Y$ by:
+  Let $X = {1, 2, 3, 4}$ and $Y = {a, b, c, d, e}$. Define a relation $R$ from $X$ to $Y$ by:
 
   - $a$ is related to every element;
   - $b$ is related to the even elements and to no odd element;
-  - $3 R c$, $6 R c$, and $9 R c$;
-  - $4 R d$ and $8 R d$;
-  - $5 R e$ and $10 R e$.
+  - $3 #R c$;
+  - $3 #R d$ and $4 #R d$;
+  - $1 #R e$ and $4 #R e$.
 
   + Is $R subset X times Y$ or $R subset Y times X$?
   + Write out the set $R$.
@@ -59,23 +69,28 @@
   goal: [Practice the common properties of relations. We will meet them again in later sections.],
   num_prefix: auto,
 )[
-  Let $S$ be the set of all students at the University of Toronto, and define relations on $S$:
-  - $a C b$ #h(.4em) iff $a$ has taken more courses than $b$.
-  - $a D b$ #h(.4em) iff $a$ and $b$ are in the same degree program.
-  - $a N b$ #h(.4em) iff $a$ and $b$ have no course in common this semester.
-  - $a S b$ #h(.4em) iff $a$ and $b$ have at least one course in common.
+  + Explain in words what the terms *reflexive*, *symmetric*, and *transitive* mean in the context
+    of relations.
 
-  For each relation, determine *with an explanation* which of the properties below it has.
+  + Define relations on $S$, the set of all students at the U of T by:
+    #[#set text(size: .9em)
+      - $a #C b$ #h(.4em) iff#footnote[Recall, "iff" is an abbreviation for "if and only if".] $a$
+        has taken more courses than $b$.
+      - $a #D b$ #h(.4em) iff $a$ and $b$ are in the same degree program.
+      - $a #N b$ #h(.4em) iff $a$ and $b$ have no course in common this semester.
+      - $a #R b$ #h(.4em) iff $a$ and $b$ have at least one course in common.
+    ]
+    For each relation, determine *with an explanation* which of the properties below it has.
 
-  #align(center, table(
-    columns: 4,
-    align: center,
-    [], [reflexive], [symmetric], [transitive],
-    [$C$], [], [], [],
-    [$D$], [], [], [],
-    [$N$], [], [], [],
-    [$S$], [], [], [],
-  ))
+    #align(center, table(
+      columns: 4,
+      align: center,
+      [], [reflexive], [symmetric], [transitive],
+      [$C$], [], [], [],
+      [$D$], [], [], [],
+      [$N$], [], [], [],
+      [$R$], [], [], [],
+    ))
 ]
 
 #exercise(
@@ -90,8 +105,8 @@
   + Suppose $R$ is a *reflexive* relation on $A$. How would you fill the logical table to reflect
     this? How would you modify the digraph?
   + Suppose you must determine whether a relation is reflexive. How would you do it if the relation
-    is given as a set? As a digraph? As a logical table? Which description would you rather
-    receive, and why?
+    is given as a set? As a digraph? As a logical table? Which description would you rather receive,
+    and why?
 ]
 
 #exercise(
@@ -145,7 +160,8 @@
 #exercise(
   title: [Relations --- Strict Ordering],
   source: 96,
-  goal: [Think of the difference between $<=$ and $<$. Each definition can be derived from the other.],
+  goal: [Think of the difference between $<=$ and $<$. Each definition can be derived from the
+    other.],
   num_prefix: auto,
 )[
   #definition(title: [Asymmetric / Strict Ordering])[
@@ -156,10 +172,10 @@
 
   + Prove that $<$ on $NN$ is a strict ordering.
   + Prove that a strict ordering is necessarily *irreflexive*: for all $a in A$, $not (a R a)$.
-  + Let $R$ be a weak ordering on $A$. Define $S$ by $a S b <==> (a R b "and" a != b)$. Prove $S$
-    is a strict ordering on $A$.
-  + Let $S$ be a strict ordering on $A$. Define $R$ by $a R b <==> (a S b "or" a = b)$. Prove $R$
-    is a weak ordering on $A$.
+  + Let $R$ be a weak ordering on $A$. Define $S$ by $a S b <==> (a R b "and" a != b)$. Prove $S$ is
+    a strict ordering on $A$.
+  + Let $S$ be a strict ordering on $A$. Define $R$ by $a R b <==> (a S b "or" a = b)$. Prove $R$ is
+    a weak ordering on $A$.
 ]
 
 // ---------------------------------------------------------------------------
@@ -204,8 +220,8 @@
   Let $S$ be the set of all words in the English language. For $w_1, w_2 in S$, define
   $w_1 tilde.op w_2$ if they have the same length (number of letters).
 
-  So $"cat" tilde.op "dog"$, since each has exactly $3$ letters. But
-  $"cat" tilde.not "bird"$, since $"cat"$ has length $3$ while $"bird"$ has length $4$.
+  So $"cat" tilde.op "dog"$, since each has exactly $3$ letters. But $"cat" tilde.not "bird"$, since
+  $"cat"$ has length $3$ while $"bird"$ has length $4$.
 
   Prove that $tilde.op$ is an equivalence relation, and describe its equivalence classes.
 ]
@@ -242,6 +258,7 @@
       loops: ("a", "b", "c", "d"),
       scale: 1.1,
     ),
+
     [(a)], [(b)], [(c)],
   ))
 ]
@@ -340,7 +357,8 @@
 #exercise(
   title: [Partitions --- Find the Partitions],
   source: 105,
-  goal: [Practice the definition of a set partition. Try to recall it before consulting your notes!],
+  goal: [Practice the definition of a set partition. Try to recall it before consulting your
+    notes!],
   num_prefix: auto,
 )[
   For each set $A_i$ and each collection $Omega_j$, determine whether $Omega_j$ is a partition of
@@ -402,15 +420,16 @@
 #exercise(
   title: [Partitions --- Constructing Partitions],
   source: 107,
-  goal: [Among the infinitely many partitions of $NN$, find some with specific properties. (A variation on Exercise 7.56 in the text.)],
+  goal: [Among the infinitely many partitions of $NN$, find some with specific properties. (A
+    variation on Exercise 7.56 in the text.)],
   num_prefix: auto,
 )[
   + Find a partition of $NN$ with exactly $3$ blocks, where $2$ blocks are finite and the third is
     infinite.
   + Find a partition of $NN$ with infinitely many blocks.
   + Find a partition of $NN$ with exactly $3$ blocks, each of which is infinite.
-  + Our definition of a partition requires three conditions. For *each* condition, find a
-    collection of subsets of $NN$ that fails that condition but satisfies the other two.
+  + Our definition of a partition requires three conditions. For *each* condition, find a collection
+    of subsets of $NN$ that fails that condition but satisfies the other two.
 ]
 
 #exercise(
@@ -462,7 +481,8 @@
 #exercise(
   title: [Partitions --- Relations and Partitions II],
   source: 110,
-  goal: [Every partition gives an equivalence relation. Now the converse (Theorem 7.59 in the text).],
+  goal: [Every partition gives an equivalence relation. Now the converse (Theorem 7.59 in the
+    text).],
   num_prefix: auto,
 )[
   Suppose $R$ is an equivalence relation on $A$.
@@ -491,8 +511,8 @@
     $Omega_1$) that is a refinement of $Omega_2$.
   + Let $P_1, P_2, P_3$ be partitions of a set $B$ with $P_1$ a refinement of $P_2$ and $P_2$ a
     refinement of $P_3$. Prove, or give a counterexample: $P_1$ is a refinement of $P_3$.
-  + Each partition corresponds to an equivalence relation. How does "$Q_1$ is a refinement of
-    $Q_2$" translate into a relationship between $R_(Q_1)$ and $R_(Q_2)$? Explain.
+  + Each partition corresponds to an equivalence relation. How does "$Q_1$ is a refinement of $Q_2$"
+    translate into a relationship between $R_(Q_1)$ and $R_(Q_2)$? Explain.
 ]
 
 // ---------------------------------------------------------------------------
@@ -531,14 +551,15 @@
 #exercise(
   title: [Representatives --- Operations],
   source: 113,
-  goal: [Defining an operation on classes via representatives --- carefully, because it can fail to make sense!],
+  goal: [Defining an operation on classes via representatives --- carefully, because it can fail to
+    make sense!],
   num_prefix: auto,
 )[
   Consider $equiv_10$ on $ZZ$: $a equiv_10 b$ if and only if $10 divides (b - a)$ (equivalently, $a$
   and $b$ have the same last digit).
 
-  Suppose $plus.square_i$ is a binary operation on $ZZ$, and define $plus.o_i$ on
-  $ZZ\/equiv_10$ by $[a] plus.o_i [b] = [a plus.square_i b]$.
+  Suppose $plus.square_i$ is a binary operation on $ZZ$, and define $plus.o_i$ on $ZZ\/equiv_10$ by
+  $[a] plus.o_i [b] = [a plus.square_i b]$.
 
   In each case, determine *with proof* whether $plus.o_i$ is well-defined --- that is, whether
   $[a] = [a']$ and $[b] = [b']$ imply $[a] plus.o_i [b] = [a'] plus.o_i [b']$.
@@ -553,18 +574,19 @@
 #exercise(
   title: [Representatives --- Inherited Properties],
   source: 114,
-  goal: [Properties of the operation on representatives are inherited by the operation on classes. Generalizes Theorems 7.92--7.93.],
+  goal: [Properties of the operation on representatives are inherited by the operation on classes.
+    Generalizes Theorems 7.92--7.93.],
   num_prefix: auto,
 )[
   Let $X$ be a set with a binary operation $plus.square$, and let $R$ be an equivalence relation on
   $X$ such that $[a] plus.o [b] = [a plus.square b]$ is well-defined.
 
   + Suppose $plus.square$ is *associative*: $(x plus.square y) plus.square z = x plus.square (y
-    plus.square z)$ for all $x, y, z in X$. Prove $plus.o$ is associative on $X\/R$.
-  + Suppose $plus.square$ is *commutative*: $x plus.square y = y plus.square x$. Prove
-    $plus.o$ is commutative on $X\/R$.
-  + Suppose $o in X$ is an *identity*: $o plus.square x = x$ for all $x in X$. Prove $plus.o$
-    also has an identity element --- what is it?
+      plus.square z)$ for all $x, y, z in X$. Prove $plus.o$ is associative on $X\/R$.
+  + Suppose $plus.square$ is *commutative*: $x plus.square y = y plus.square x$. Prove $plus.o$ is
+    commutative on $X\/R$.
+  + Suppose $o in X$ is an *identity*: $o plus.square x = x$ for all $x in X$. Prove $plus.o$ also
+    has an identity element --- what is it?
   + Suppose every $x in X$ has an *inverse*: some $y in X$ with $x plus.square y = o$. Prove every
     class $A in X\/R$ also has an inverse.
   + Which parts of your proofs use the fact that $plus.o$ is well-defined?
@@ -596,8 +618,8 @@
 
   + Prove that $tilde.op$ is an equivalence relation.
   + Prove that $[(n, 0)]$ for $n in NN union {0}$, together with $[(0, n)]$ for $n in NN$, form a
-    *complete system of representatives*: every $(a, b) in cal(Z)$ lies in one of these classes,
-    and no two of these classes coincide.
+    *complete system of representatives*: every $(a, b) in cal(Z)$ lies in one of these classes, and
+    no two of these classes coincide.
 
   This lets us *define* the integers as the set of equivalence classes of $tilde.op$: we identify
   $n in NN union {0}$ with $[(n, 0)]$, and define the symbol $-n$ to mean $[(0, n)]$.
@@ -651,8 +673,7 @@
   $
 
   + Prove that $tilde.op$ is an equivalence relation on $cal(Q)$.
-  + Define $times.o$ by $[(a,b)] times.o [(c,d)] = [(a c, b d)]$. Prove $times.o$ is
-    well-defined.
+  + Define $times.o$ by $[(a,b)] times.o [(c,d)] = [(a c, b d)]$. Prove $times.o$ is well-defined.
   + Prove that this operation works well with the identification of $z in ZZ$ with $[(z, 1)]$.
   + Use the definition of the symbol $a/b$ to prove that for any $z in ZZ without {0}$ we have
     $z times 1/z = 1$.
