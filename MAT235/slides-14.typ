@@ -99,7 +99,7 @@
     information do you need?
   + Suppose $g_y (2,2)=L$.
 
-    Approximate $g(2-Delta, 2+Delta)$
+    Approximate $g(2+a Delta, 2+ b Delta)$, where $a$ and $b$ are unknown, but small, constants.
 ]
 
 #slide(siefken_num: auto)[
