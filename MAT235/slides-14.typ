@@ -99,20 +99,23 @@
     information do you need?
   + Suppose $g_y (2,2)=L$.
 
-    Approximate $g(2+a Delta, 2+ b Delta)$, where $a$ and $b$ are unknown, but small, constants.
+    Approximate $g(2+Delta_a, 2+ Delta_b)$, where $Delta_a$ and $Delta_b$ are unknown, but small, constants.
 ]
 
 #slide(siefken_num: auto)[
 
   Suppose the graph of $z=f(x,y)$ is a plane with normal vector $mat(1; 2; 3)$.
 
-  + Find $partial/(partial x) f(x,y)$.#v(1em)
-  + Find $partial/(partial y) f(x,y)$.
+  + Find direction vectors for the plane of the form $mat(1;0;??)$ and $mat(0;1;??)$.
 
-    Suppose the graph of $z=g(x,y)$ is a plane and $partial /(partial x) g (x,y)=4$ and
+  + How could a direction vector be used to find $partial/(partial x) f(x,y)$? Find it.#v(1em)
+  + How could a direction vector be used to find $partial/(partial y) f(x,y)$? Find it.#v(1em)
+  // + Find $partial/(partial y) f(x,y)$.
+
+  Suppose the graph of $z=g(x,y)$ is a plane through the origin and $partial /(partial x) g (x,y)=4$ and
     $partial /(partial y) g (x,y)=2$.
 
-  + Find an equation for the plane.
+  4. Find an equation for the plane.
   + Find a normal vector for the plane.
 ]
 
