@@ -401,8 +401,9 @@
 
   + Does $S$ has a least element? What are the consequences if it does or does not?
 
-    Let $m = min(S)$, if it exists.
-  + Is $m-1 in S$? Why or why not?
+  Let $m = min(S)$, if it exists.
+  
+  2. Is $m-1 in S$? Why or why not?
   + Is $m-1 in NN$? Why or why not?
   + Use what you know about $m-1$ to show that $m$ is even or odd.
   + Assemble your observations into a proof that every natural number is even or odd.
