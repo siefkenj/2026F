@@ -38,8 +38,8 @@
   - *Equivalence relations* and *equivalence classes*.
   - *Partitions* --- and the fact that partitions and equivalence relations are two descriptions of
     the same thing.
-  - *Modular arithmetic*: when can we define an operation on equivalence classes by working with
-    representatives?
+  // - *Modular arithmetic*: when can we define an operation on equivalence classes by working with
+  // representatives?
 
   We finish by using equivalence classes to model clock arithmetic and to build the (positive)
   rationals out of pairs of natural numbers.
@@ -57,15 +57,15 @@
 )[
   Let $X = {1, 2, 3}$ and $Y = {a, b, c}$. Define a relation $R$ from $X$ to $Y$ by:
 
-  - $a$ is related to every element;
-  - $b$ is related to the odd elements and to no even element;
+  - Every element is related to $a$.
+  - The odd elements and to no even element are related to $b$.
   - $2 #R c$.
 
   + Is $R subset X times Y$ or $R subset Y times X$?
   + Write out the set $R$.
   + Draw a directed graph (digraph) depicting $R$.
   + Complete the *logical table* for $R$: the elements of $X$ label the rows and those of $Y$ the
-    columns; the cell in row $x$ and column $y$ holds $1$ if $x #R y$, and $0$ otherwise.
+    columns; the cell in row $x$ and column $y$ is $1$ if $x #R y$, and $0$ otherwise.
 ]
 
 // #slide(title: [Relations --- Describing Relations (warm-up): Digraph])[
@@ -146,12 +146,15 @@
   title: [Ordering],
   num_prefix: auto,
 )[
-  + Let $<$ be a relation on $NN$, interpreted in the usual way. Is $<$ reflexive? Symmetric?
-    Transitive?
-  + Let $>=$ be a relation on $NN$, interpreted in the usual way. Is $>=$ reflexive? Symmetric?
-    Transitive?
-  + Let $=$ be a relation on $NN$, interpreted in the usual way. Is $=$ reflexive? Symmetric?
-    Transitive?
+  + Let $<$ be a relation on $NN$, interpreted in the usual way.
+
+    Is $<$ reflexive? Symmetric? Transitive?#v(1em)
+  + Let $>=$ be a relation on $NN$, interpreted in the usual way.
+
+    Is $>=$ reflexive? Symmetric? Transitive?#v(1em)
+  + Let $=$ be a relation on $NN$, interpreted in the usual way.
+
+    Is $=$ reflexive? Symmetric? Transitive?#v(1em)
   + Prove your answers to the previous parts.
 ]
 
@@ -368,11 +371,12 @@
 
   + Is ${E, O}$ a partition of $NN$? Prove your answer.
   + Is ${E, O}$ a partition of $RR$? Prove your answer.
-  + Define a relation $triangle$ on $NN$ by $a class("relation", triangle) b$ iff $a,b in E$ or $a,b in O$.
+  + Define a relation $triangle$ on $NN$ by $a class("relation", triangle) b$ iff $a,b in E$ or
+    $a,b in O$.
 
     Is $triangle$ symmetric? Reflexive? Transitive?
-  + Define a relation $square$ on $RR$ by $a class("relation", square) b$ iff
-    $a,b in E$ or $a,b in O$.
+  + Define a relation $square$ on $RR$ by $a class("relation", square) b$ iff $a,b in E$ or
+    $a,b in O$.
 
     Is $square$ symmetric? Reflexive? Transitive?
 
@@ -474,7 +478,8 @@
 
     For each of these situations, what is the total amount of time that will have passed since *the
     beginning of time*?
-  + Given two absolute times (measured since the beginning of time), how can you determine whether their clock time is the same?
+  + Given two absolute times (measured since the beginning of time), how can you determine whether
+    their clock time is the same?
   + Rephrase your rule in terms of equivalence relations.
   + Can you define a "clock arithmetic" (i.e. ways to add and subtract times shown on a clock)? If
     so, come up with a definition. Use the mathematical tools/notation that we have developed to
