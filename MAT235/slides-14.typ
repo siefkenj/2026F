@@ -99,21 +99,22 @@
     information do you need?
   + Suppose $g_y (2,2)=L$.
 
-    Approximate $g(2+Delta_a, 2+ Delta_b)$, where $Delta_a$ and $Delta_b$ are unknown, but small, constants.
+    Approximate $g(2+Delta_a, 2+ Delta_b)$, where $Delta_a$ and $Delta_b$ are unknown, but small,
+    constants.
 ]
 
 #slide(siefken_num: auto)[
 
   Suppose the graph of $z=f(x,y)$ is a plane with normal vector $mat(1; 2; 3)$.
 
-  + Find direction vectors for the plane of the form $mat(1;0;??)$ and $mat(0;1;??)$.
+  + Find direction vectors for the plane of the form $mat(1; 0; ??)$ and $mat(0; 1; ??)$.
 
   + How could a direction vector be used to find $partial/(partial x) f(x,y)$? Find it.#v(1em)
   + How could a direction vector be used to find $partial/(partial y) f(x,y)$? Find it.#v(1em)
   // + Find $partial/(partial y) f(x,y)$.
 
-  Suppose the graph of $z=g(x,y)$ is a plane through the origin and $partial /(partial x) g (x,y)=4$ and
-    $partial /(partial y) g (x,y)=2$.
+  Suppose the graph of $z=g(x,y)$ is a plane through the origin and $partial /(partial x) g (x,y)=4$
+  and $partial /(partial y) g (x,y)=2$.
 
   4. Find an equation for the plane.
   + Find a normal vector for the plane.
@@ -232,8 +233,12 @@
       a
     },
     [
-      To the left is a contour plot of $f(x,y)=x^2+y^2$. Let $cal(P)$ be the *tangent plane* to
-      $z=f(x,y)$ at the point $(2,2,8)$.
+      To the left is a contour plot of $f(x,y)=x^2+y^2$.
+
+      Let $cal(P)$ be the *tangent plane* to $z=f(x,y)$ at the point $(2,2,8)$.
+
+      _Recall:_ the slope of the tangent plane matches the original function *in every direction* at
+      the point of tangency.
 
       + What is the slope of $cal(P)$ in the $arrow(i)$ direction?
       + What is the slope of $cal(P)$ in the $arrow(j)$ direction?
