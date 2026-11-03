@@ -567,7 +567,7 @@
       + What are the possible motions and deformations of the inch worm?
 
       Let $arrow(p)$ and $arrow(q)$ indicate where the inch worm's tail and head touch the water.
-      + How could you tell if the inch worm will get *pushed* in a particular direction? (Express
+      2. How could you tell if the inch worm will get *pushed* in a particular direction? (Express
         your answer in terms of $arrow(F)$, $arrow(p)$, and $arrow(q)$.)
       + How can you tell if the inch worm will get *stretched*?
       + How can you tell if the inch worm will get *rotated*?
@@ -611,7 +611,7 @@
       )
     },
     [
-      Imagine the inch worm is aligned horizontally and currently has length $Delta$
+      Imagine the inch worm is aligned horizontally and currently has length $Delta$.
 
       Let $arrow(F)(x,y)=mat(f(x,y); g(x,y))$ represent the force applied to the floating inch worm.
       // The inch worm has turned so that it is lying horizontally: its tail touches the water at
@@ -619,9 +619,10 @@
 
       + If the tail of the inch worm is at $arrow(p)$, where is the head of the inch worm located?
       + What is the stretching force on the inch worm?
-      + What is the stretching for *per unit of length* of the inch worm?
-      + Find a formula for the stretching force per unit of length of a *vertically aligned* inch
-        worm. We call this the *normalized* stretching force.
+      + What is the stretching force *per unit of length* of the inch worm? (We call this the
+        *normalized* stretching force.)
+      + Find a formula for the stretching force per unit of length (i.e., normalized stretching
+        force) of a *vertically aligned* inch worm.
       + What happens if you take a limit as $Delta -> 0$? Do any familiar derivatives appear?
     ],
   )
@@ -630,15 +631,15 @@
 #slide(siefken_num: auto, title: [§19.3])[
 
   Given a vector field $arrow(F)$, the *divergence* of $arrow(F)$ at the point is the infinitesimal
-  stretching force at that point and is written $"div"(arrow(F))$ or $arrow(nabla) dot arrow(F)$.
+  stretching force at that point and is written $"div"(arrow(F))$ or $nabla dot arrow(F)$.
 
   $"div"(arrow(F))$ can be computed by adding together the stretching forces in the $x$ and $y$
   directions.
 
   + Suppose $arrow(F)(x,y)=mat(f(x,y); g(x,y))$. Find a formula for $"div"(arrow(F))(x,y)$, and
     explain where the parts of your formula come from.
-  + Physicists think of "$arrow(nabla) = mat(partial/(partial x); partial/(partial y))$". Explain
-    why $arrow(nabla) dot arrow(F)$ makes sense as notation for $"div"(arrow(F))$.
+  + Physicists think of "$nabla = mat(partial/(partial x); partial/(partial y))$". Explain why
+    $nabla dot arrow(F)$ makes sense as notation for $"div"(arrow(F))$.
 
 ]
 
@@ -695,8 +696,9 @@
       + List coordinates of locations where $"div"(arrow(F))$ is positive/negative.
       + List coordinates of locations where $"div"(arrow(F))$ is zero.
       + Your friend (who is in a different section of MAT235) learned about divergence today. They
-        excitedly tell you "if $arrow(F)$ represents the surface of a point the divergence of
-        $arrow(F)$ is zero, then a drop of oil placed on the pond won't change shape!"
+        excitedly tell you #text(fill: blue)["if $arrow(F)$ represents the surface of a pond and the
+          divergence of $arrow(F)$ is zero, then a drop of oil placed on the pond won't change
+          shape!"]
 
         Do you agree with your friend? Is there a different version of the statement you would agree
         with?
@@ -787,7 +789,7 @@
       Let $arrow(F)(x,y)=mat(f(x,y); g(x,y))$ represent the force applied to the floating inch worm.
 
       + If you wanted to rotate the inch worm *counter-clockwise* without moving or stretching it,
-        which way would you push on its tail? It's head?
+        which way would you push on its tail? Its head?
       + Write down an expression for the total *counter-clockwise* rotational force applied to the
         inch worm by $arrow(F)$.
       + What is the rotational force *per unit length* applied to the inch worm? I.e., what is the
@@ -802,19 +804,19 @@
 #slide(siefken_num: auto, title: [§20.1])[
   Given a vector field $arrow(F): RR^2 -> RR^2$, the *curl* of $arrow(F)$ at a point is the
   infinitesimal counter-clockwise rotational force at that point. It is written $"curl"(arrow(F))$
-  or $arrow(nabla) times arrow(F)$.
+  or $nabla times arrow(F)$.
 
-  $"curl"(arrow(F))$ can be computed by adding together the rotational forces that push on tiny
-  horizontally-oriented bar and a tiny vertically-oriented bar.
+  $"curl"(arrow(F))$ can be computed by adding together the rotational forces that push on a tiny
+  horizontally-oriented inch worm and a tiny vertically-oriented inch worm.
 
   + Suppose $arrow(F)(x,y)=mat(f(x,y); g(x,y))$. Find a formula for $"curl"(arrow(F))(x,y)$, and
     explain where the parts of your formula come from.
-  + Physicists think of "$arrow(nabla) = mat(partial/(partial x); partial/(partial y))$", and in
-    $RR^2$ they think of "$times$" as a determinant. So
+  + Physicists think of "$nabla = mat(partial/(partial x); partial/(partial y))$", and in $RR^2$
+    they think of "$times$" as a determinant. So
     $
-      arrow(nabla) times arrow(F) = det mat(partial/(partial x), f(x,y); partial/(partial y), g(x,y)).
+      nabla times arrow(F) = det mat(partial/(partial x), f(x,y); partial/(partial y), g(x,y)).
     $
-    Explain why $arrow(nabla) times arrow(F)$ makes sense as notation for $"curl"(arrow(F))$.
+    Explain why $nabla times arrow(F)$ makes sense as notation for $"curl"(arrow(F))$.
 ]
 
 #slide(siefken_num: auto, title: [§20.1])[
@@ -822,7 +824,8 @@
   Suppose $arrow(F):RR^3 -> RR^3$ given by
   $arrow(F)(arrow(p)) = mat(f(arrow(p)); g(arrow(p)); h(arrow(p)))$.
 
-  In $RR^3$ curl is represented by a vector pointing along an _axis of rotation_.
+  In $RR^3$ *curl* is represented by a vector pointing along an _axis of rotation_ and whose sign is
+  given by the _right-hand rule_.
 
   // Let $arrow(p)$ be a point. Let $arrow(v)$ be the axis around which the circulation density of
   // $arrow(F)$ is *greatest*.
