@@ -49,7 +49,7 @@
 #let _prefix_display() = context _format_num(_prefix_counter.get())
 
 /// The counter a slide draws its number from, or `none` when the slide is unnumbered. `siefken_num`
-/// wins when both are set, since it replaces the title outright.
+/// wins when both are set.
 #let _slide_counter(it) = if it.at("siefken_num", default: none) != none {
   _siefken_counter
 } else if it.at("num_prefix", default: none) != none {
@@ -58,13 +58,18 @@
   none
 }
 
-/// The title a slide shows. A `siefken_num` slide names itself. A `num_prefix` slide keeps its
-/// title and puts the number in front of it, or shows the bare number when it has no title.
-/// Otherwise the explicit `title` is used, which may itself be `none`.
+/// The title a slide shows. A `siefken_num` slide names itself, with its title (if any) set off to
+/// the right. A `num_prefix` slide keeps its title and puts the number in front of it, or shows the
+/// bare number when it has no title. Otherwise the explicit `title` is used, which may itself be
+/// `none`.
 #let _slide_title(it) = {
   let title = it.at("title", default: none)
   if it.at("siefken_num", default: none) != none {
     [Siefken #_siefken_display()]
+    if title != none {
+      h(1fr)
+      text(weight: "regular", title)
+    }
   } else if it.at("num_prefix", default: none) != none {
     if title == none { _prefix_display() } else { _prefix_display() + [. ] + title }
   } else {
@@ -84,7 +89,7 @@
 ///   layout to two columns or one.
 /// - `siefken_num`: A number identifying the slide. When set, the slide is titled `Siefken X` and
 ///   its top-level enumeration is numbered `X.y` rather than `1.`; deeper levels are unaffected.
-///   Takes precedence over `title`. `auto` continues from the previous numbered slide, stepping the
+///   A `title` is shown at the right of the header, after `Siefken X`. `auto` continues from the previous numbered slide, stepping the
 ///   last level of its number, so `2.1` is followed by `2.2` and `7` by `8`. Defaults to `none`.
 /// - `num_prefix`: A number identifying the slide, like `siefken_num`, but which *keeps* the title
 ///   and puts the number in front of it, as `X. Title`. A slide with no title shows the bare
