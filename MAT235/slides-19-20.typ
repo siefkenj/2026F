@@ -146,7 +146,8 @@
       )
     },
     [
-      Imagine the inch worm is aligned horizontally and currently has length $Delta$.
+      Imagine the inch worm is aligned horizontally and currently and the distance between where it
+      touches the water is $Delta$.
 
       Let $arrow(F)(x,y)=mat(f(x,y); g(x,y))$ represent the force applied to the floating inch worm.
       // The inch worm has turned so that it is lying horizontally: its tail touches the water at
@@ -171,10 +172,18 @@
   $"div"(arrow(F))$ can be computed by adding together the stretching forces in the $x$ and $y$
   directions.
 
-  + Suppose $arrow(F)(x,y)=mat(f(x,y); g(x,y))$. Find a formula for $"div"(arrow(F))(x,y)$, and
+  + Suppose $arrow(F)(x,y)=mat(f(x,y); g(x,y))$. Find a formula for $"div"arrow(F)(x,y)$, and
     explain where the parts of your formula come from.
-  + Physicists think of "$nabla = mat(partial/(partial x); partial/(partial y))$". Explain why
-    $nabla dot arrow(F)$ makes sense as notation for $"div"(arrow(F))$.
+  + Physicists think use the pneumonic:
+
+    #align(center)[
+      "#box(width: 1em) #text[
+        $nabla = mat(partial/(partial x); partial/(partial y))$ and
+        $"div"arrow(F) = nabla dot arrow(F)$
+      ]#box(width: 1em)"
+    ]
+
+    Explain why $nabla dot arrow(F)$ this notation makes sense.
 
 ]
 
@@ -228,8 +237,8 @@
     [
       The vector field $arrow(F)$ is pictured to the left.
 
-      + List coordinates of locations where $"div"(arrow(F))$ is positive/negative.
-      + List coordinates of locations where $"div"(arrow(F))$ is zero.
+      + List coordinates of locations where $"div"arrow(F)$ is positive/negative.
+      + List coordinates of locations where $"div"arrow(F)$ is zero.
       + Your friend (who is in a different section of MAT235) learned about divergence today. They
         excitedly tell you #text(fill: blue)["if $arrow(F)$ represents the surface of a pond and the
           divergence of $arrow(F)$ is zero, then a drop of oil placed on the pond won't change
