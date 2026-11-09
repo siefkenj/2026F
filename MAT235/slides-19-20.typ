@@ -177,8 +177,8 @@
   + Physicists think use the pneumonic:
 
     #align(center)[
-      "#box(width: 1em) #text[
-        $nabla = mat(partial/(partial x); partial/(partial y))$ and
+      "#box(width: 1em) #text(fill: blue.darken(10%))[
+        $nabla = mat(partial/(partial x); partial/(partial y))$ ~~and~~
         $"div"arrow(F) = nabla dot arrow(F)$
       ]#box(width: 1em)"
     ]
