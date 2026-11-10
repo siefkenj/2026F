@@ -397,8 +397,9 @@
 
   Let $X$ be a non-empty set and let $Omega$ be a partition of $X$.
 
-  For $x, y in X$, define a predicate $P(x,y) :=$
-  "$"there exists" E in Omega "s.t." x in E "and" y in E$".
+  For $x, y in X$, define a predicate $P(x,y) :=$ "#box(
+    width: 1em,
+  )$"there exists" E in Omega "s.t." x in E "and" y in E$#box(width: 1em)".
 
   3. Can $P$ be used to define a relation on $X$? If so, call this relation $~$.
   + Prove that $~$ is an _equivalence_ relation.
