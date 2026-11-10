@@ -174,7 +174,7 @@
 
   + Suppose $arrow(F)(x,y)=mat(f(x,y); g(x,y))$. Find a formula for $"div"arrow(F)(x,y)$, and
     explain where the parts of your formula come from.
-  + Physicists think use the pneumonic:
+  + Physicists think use the mnemonic:
 
     #align(center)[
       "#box(width: 1em) #text(fill: blue.darken(10%))[
