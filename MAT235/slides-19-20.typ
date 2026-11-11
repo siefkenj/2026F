@@ -328,7 +328,8 @@
       )
     },
     [
-      Imagine an inch worm is aligned horizontally and currently has length $Delta$.
+      Imagine the inch worm is aligned horizontally and the distance between where it touches the
+      water is $Delta$.
 
       Let $arrow(F)(x,y)=mat(f(x,y); g(x,y))$ represent the force applied to the floating inch worm.
 
