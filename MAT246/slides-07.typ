@@ -461,7 +461,7 @@
   + Which of the following are equal to each other: $[0]$, $[1]$, $[2]$, $[3]$?
   + Define $plus.o$ on $ZZ\/class("normal", ~)$ by $[a] plus.o [b] := [a + b]$.
 
-    Is this definition *well defined*? That is, if $[a]=[x]$ and $[b]=[y]$, is it true that
+    Is $plus.o$ *well defined*? That is, if $[a]=[x]$ and $[b]=[y]$, is it true that
     $[a] plus.o [b] = [x] plus.o [y]$?
 ]
 
