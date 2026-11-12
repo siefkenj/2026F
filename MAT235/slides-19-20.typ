@@ -187,6 +187,69 @@
 
 ]
 
+// #slide(siefken_num: auto, title: [§19.3], two_columns: false)[
+//   #grid(
+//     columns: (auto, 1fr),
+//     column-gutter: 1.5em,
+//     {
+//       let width = 5.5cm
+//       let height = width
+
+//       // Each feature is a simple field, centered at `(a, b)` and faded out by a bump that is flat at
+//       // its center, so the divergence at each center is that of the simple field.
+//       let feature(a, b, f) = (x, y) => {
+//         let (u, v) = (x - a, y - b)
+//         let bump = calc.exp(-(u * u + v * v) / 0.8)
+//         f(u, v).map(c => c * bump)
+//       }
+//       let features = (
+//         feature(-2, 2, (u, v) => (2 * u, 2 * v)), // source
+//         feature(2, 2, (u, v) => (-2 * u, -2 * v)), // sink
+//         feature(-2, -2, (u, v) => (2 * u, -2 * v)), // stretch in x, compress in y
+//         feature(2, -2, (u, v) => (-2 * v, 2 * u)), // rotation
+//         feature(0, 0, (u, v) => (1.1, 0)), // flowing to the right
+//       )
+//       let F = (x, y) => features.map(f => f(x, y)).fold((0, 0), ((s, t), (u, v)) => (s + u, t + v))
+//       // Arrows are drawn in the direction of F with length 0.5 + |F|^0.5, so that every arrow is
+//       // visible while stronger flow still gets a longer arrow.
+//       let F-shown = (x, y) => {
+//         let (u, v) = F(x, y)
+//         let len = calc.sqrt(u * u + v * v)
+//         if len < 1e-6 { (0, 0) } else { (u, v).map(c => c * (0.5 + calc.pow(len, 0.5)) / len) }
+//       }
+
+//       lq.diagram(
+//         title: $arrow(F):RR^2 -> RR^2$,
+//         width: width,
+//         height: height,
+//         xlim: (-3.4, 3.4),
+//         ylim: (-3.4, 3.4),
+//         xaxis: (ticks: range(-3, 4), subticks: none),
+//         yaxis: (ticks: range(-3, 4), subticks: none),
+//         lq.quiver(
+//           lq.arange(-3, 3.5, step: .5),
+//           lq.arange(-3, 3.5, step: .5),
+//           F-shown,
+//           scale: 0.3,
+//         ),
+//       )
+//     },
+//     [
+//       The vector field $arrow(F)$ is pictured to the left.
+
+//       + List coordinates of locations where $"div"arrow(F)$ is positive/negative.
+//       + List coordinates of locations where $"div"arrow(F)$ is zero.
+//       + Your friend (who is in a different section of MAT235) learned about divergence today. They
+//         excitedly tell you #text(fill: blue)["if $arrow(F)$ represents the surface of a pond and the
+//           divergence of $arrow(F)$ is zero, then a drop of oil placed on the pond won't change
+//           shape!"]
+
+//         Do you agree with your friend? Is there a different version of the statement you would agree
+//         with?
+//     ],
+//   )
+// ]
+
 #slide(siefken_num: auto, title: [§19.3], two_columns: false)[
   #grid(
     columns: (auto, 1fr),
@@ -199,7 +262,7 @@
       // its center, so the divergence at each center is that of the simple field.
       let feature(a, b, f) = (x, y) => {
         let (u, v) = (x - a, y - b)
-        let bump = calc.exp(-(u * u + v * v) / 0.8)
+        let bump = calc.exp(-(u * u + v * v) / 2)
         f(u, v).map(c => c * bump)
       }
       let features = (
@@ -210,12 +273,33 @@
         feature(0, 0, (u, v) => (1.1, 0)), // flowing to the right
       )
       let F = (x, y) => features.map(f => f(x, y)).fold((0, 0), ((s, t), (u, v)) => (s + u, t + v))
-      // Arrows are drawn in the direction of F with length 0.5 + |F|^0.5, so that every arrow is
-      // visible while stronger flow still gets a longer arrow.
-      let F-shown = (x, y) => {
-        let (u, v) = F(x, y)
-        let len = calc.sqrt(u * u + v * v)
-        if len < 1e-6 { (0, 0) } else { (u, v).map(c => c * (0.5 + calc.pow(len, 0.5)) / len) }
+      // lilaq's quiver draws every arrowhead at the same size, so short arrows look about as long
+      // as long ones. Instead, draw each arrow by hand, centered on its grid point, with a head
+      // proportional to the arrow's length. The length grows like |F|^1.5 (reaching `max-len` at
+      // the strongest flow, |F| ≈ `max-F`), so arrows shrink noticeably as F weakens.
+      let (max-F, max-len) = (1.45, 0.45)
+      let arrows = ()
+      for x in lq.arange(-3, 3.5, step: .5) {
+        for y in lq.arange(-3, 3.5, step: .5) {
+          let (fx, fy) = F(x, y)
+          let mag = calc.sqrt(fx * fx + fy * fy)
+          let len = max-len * calc.pow(mag / max-F, 1.5)
+          if len < 1e-3 { continue }
+          let (dx, dy) = (fx / mag, fy / mag)
+          let (u, v) = (len * dx, len * dy)
+          let tip = (x + u / 2, y + v / 2)
+          let base = (tip.at(0) - 0.4 * len * dx, tip.at(1) - 0.4 * len * dy)
+          let w = 0.18 * len
+          arrows.push(lq.path((x - u / 2, y - v / 2), base, stroke: 0.6pt))
+          arrows.push(lq.path(
+            tip,
+            (base.at(0) - w * dy, base.at(1) + w * dx),
+            (base.at(0) + w * dy, base.at(1) - w * dx),
+            closed: true,
+            fill: black,
+            stroke: none,
+          ))
+        }
       }
 
       lq.diagram(
@@ -226,12 +310,7 @@
         ylim: (-3.4, 3.4),
         xaxis: (ticks: range(-3, 4), subticks: none),
         yaxis: (ticks: range(-3, 4), subticks: none),
-        lq.quiver(
-          lq.arange(-3, 3.5, step: .5),
-          lq.arange(-3, 3.5, step: .5),
-          F-shown,
-          scale: 0.3,
-        ),
+        ..arrows,
       )
     },
     [
