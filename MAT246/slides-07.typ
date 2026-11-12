@@ -447,7 +447,7 @@
   + Is $~$ an equivalence relation? Why or why not?
   + What is $[0]$, the equivalence class of $0$?
 
-    #definition(title: "Definition of Modulo")[
+    #definition(title: "Modulo")[
       For an equivalence relation $R$ on a set $X$, we may write $X\/R$ (read as "$X$ modulo $R$" or
       "$X$ mod $R$") to mean $"Rel"(R)$.
 
