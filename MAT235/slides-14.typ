@@ -459,6 +459,8 @@
   + Complete the formula: $f(3+Delta, 4) approx ...$
   + Based on the information you have, which of the following can you compute _exactly_? $g(3,4)$,
     $g(3/2,4)$, $g(6,4)$.
+  + We know $g(x,y)=f(2x,y)$. Use your approximation for $f(x+Delta, y)$ to get an approximation for
+    $g(x+Delta, y)$.
   + Fill in the $?$ so that you have a valid approximation:
     $
       g(??? + Delta, 4) approx space.thin g(??,4) + space.thin ? Delta
@@ -481,6 +483,9 @@
   Let $f(x,y)=??$ be an unknown function and define $g(x,y)=f(h(x),y)$ for an unknown but
   differentiable function $h$.
 
+  + Write down an approximation for $h(x+Delta)$.
+  + Write down an approximation for $f(x+Delta, y)$.
+  + Combine your approximations to find an approximation for $g(x+Delta, y)$.
   + Find a formula for $(partial g)/(partial x)(x,y)$ in terms of $(partial f)/(partial x)$ and
     $(dif h)/(dif x)$.
   + Find a formula for $(partial g)/(partial y)(x,y)$.
@@ -544,7 +549,7 @@
   Consider the function $f(x,y) = x^2+y^2 - 4x y$.
 
   A *critical point* for a multivariable function is a point where all directional derivatives are
-  zero (or undefined).
+  zero (or some are undefined).
 
   Let $arrow(u)=(u_1,u_2)$
   + Find $f_(arrow(u))(x,y)$.
