@@ -455,7 +455,7 @@
     $g_(arrow(i))(x,y)$ and $f_(arrow(i))(2x,y)$. Are any of them equal?
 
     #v(1em)
-    Suppose $f(3,4)=10$ and $f_(arrow(i)) (3,4) = 5$.
+    Suppose $f(3,4)=11$ and $f_(arrow(i)) (3,4) = 5$.
   + Complete the formula: $f(3+Delta, 4) approx ...$
   + Based on the information you have, which of the following can you compute _exactly_? $g(3,4)$,
     $g(3/2,4)$, $g(6,4)$.
