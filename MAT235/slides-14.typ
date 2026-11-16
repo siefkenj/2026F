@@ -549,7 +549,7 @@
   Consider the function $f(x,y) = x^2+y^2 - 4x y$.
 
   A *critical point* for a multivariable function is a point where all directional derivatives are
-  zero (or some are undefined).
+  zero or where the function has no tangent plane approximation.
 
   Let $arrow(u)=(u_1,u_2)$
   + Find $f_(arrow(u))(x,y)$.
@@ -569,7 +569,7 @@
 
   Consider the function $f(x,y) = x^2+y^2 - 4x y$.
 
-  Let $arrow(u)=(u_1,u_2)$
+  Let $arrow(u)=(u_1,u_2)$ be a non-zero vector.
   + Find $f_(arrow(u))(0,0)$.
   + Find all critical points of $f$.
   + Find a formula for the *second directional derivative* of $f$ in the direction $arrow(u)$ at the
@@ -582,9 +582,20 @@
     positive and a local max if *all* second directional derivatives are negative.
 
     What does the multivariable second derivative test tell us about $f$ at $(0,0)$?
+]
+
+#slide(siefken_num: auto)[
+
+  Let $g: RR^2 -> RR$ be an unknown function, and let
+  $arrow(u) = (u_1,u_2)$ be a non-zero vector.
+
+  + Write down a formula for $g_(arrow(u))(x,y)$ in terms of partial derivatives.
 
   + Find a general formula for the second directional derivative of a function $g$ in the direction
-    $arrow(u)$ at the point $(x,y)$.
+    $arrow(u)$ at the point $(x,y)$ in terms of partial derivatives.
+
+  + If $partial/(partial x) partial/(partial y) g = partial/(partial y) partial/(partial x) g$, does
+    your formula simplify? What if they are not equal?
 ]
 
 #slide(siefken_num: auto)[
