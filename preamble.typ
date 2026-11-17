@@ -87,6 +87,26 @@
 // The handful of exercises whose parts are interrupted by a paragraph of
 // set-up prose resume their numbering with an explicit marker (`3.`) on the
 // first item after the break.
+//
+// A slide may renumber one list with a pattern, e.g. `#set enum(numbering:
+// "(i)")`. The decks number lists with `full: true` (so the numbering can tell
+// the levels apart, and so a numbered slide can prefix its top level `X.y`),
+// and under `full: true` a pattern with a single counting symbol is applied to
+// every level's number, giving "(i(i)". A single-level pattern can only mean
+// "this list's own number", so `single-level-enums` numbers such a list with
+// `full: false`. Multi-level patterns such as "1.a." are left alone.
+#let _counting-symbol = regex("[1aAiIαΑ一壹あいアイא가ㄱ*①⓵]")
+#let single-level-enums(body) = {
+  show enum: it => {
+    if it.full and type(it.numbering) == str and it.numbering.matches(_counting-symbol).len() == 1 {
+      let fields = it.fields()
+      let children = fields.remove("children")
+      let _ = fields.remove("label", default: none)
+      enum(..fields, full: false, ..children)
+    } else { it }
+  }
+  body
+}
 
 // ---------------------------------------------------------------------------
 // Attribution
@@ -282,6 +302,7 @@
       numbering(pattern, n.pos().last())
     },
   )
+  show: single-level-enums
   set par(justify: false)
   // Pin the body font rather than relying on Typst's default, so the decks
   // render the same everywhere given the fonts vendored in `fonts/`.
