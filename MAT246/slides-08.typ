@@ -418,7 +418,7 @@
     - We call $g$ an *inverse* of $f$ if it is both a left and a right inverse of $f$.
   ]
 
-  Let $f: RR -> [0, oo)$ be given by $f(x) = x^2$, and $g: [0, oo) -> RR$ by $g(x) = sqrt(x)$.
+  Let $f: RR -> [0, oo)$ be given by \ #h(1em)$f(x) = x^2$,\ and $g: [0, oo) -> RR$ by\ #h(1em)$g(x) = sqrt(x)$.
 
   + Are $g compose f$ and $f compose g$ *well defined*? That is, are they functions?
   + Is $g$ a left inverse of $f$? A right inverse of $f$?
