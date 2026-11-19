@@ -344,11 +344,14 @@
   title: [Functions --- Counting Preimages],
   num_prefix: auto,
 )[
-  The *cardinality* of a set is the number of elements it contains.
+  + Come up with a function $f: NN -> NN$ that is one-to-one, but *not* onto.
+  + Come up with a function $g: NN -> NN$ that is onto, but *not* one-to-one.
+  + Find $f^(-1)({1})$, $f^(-1)({2})$, $f^(-1)({3})$, and $g^(-1)({1})$, $g^(-1)({2})$,
+    $g^(-1)({3})$ for the functions you came up with.
 
-  Let $f:X -> Y$ be a function and consider the statement,
+  Let $X$ and $Y$ be non-empty sets, and let $h:X -> Y$ be a function. Consider the statement,
   #align(center)[
-    "#box(width: 1em)#text(fill: blue)[The cardinality of the set $f^(-1)({y})$ is #box(
+    "#box(width: 1em)#text(fill: blue)[For all $y in Y$, the set $h^(-1)({y})$ has size #box(
         width: 5em,
         stroke: (
           bottom: 1pt + blue,
@@ -356,7 +359,7 @@
       )[]]#box(width: 1em)".
   ]
 
-  + Complete the statement to give an equivalent condition to "$f$ is one-to-one".
+  4. Complete the statement to give an equivalent condition to "$f$ is one-to-one".
   + Complete the statement to give an equivalent condition to "$f$ is onto".
   + Complete the statement to give an equivalent condition to "$f$ is bijective".
   + Can you find equivalent statements using $f({x})$ instead of $f^(-1)({y})$?
@@ -418,7 +421,9 @@
     - We call $g$ an *inverse* of $f$ if it is both a left and a right inverse of $f$.
   ]
 
-  Let $f: RR -> [0, oo)$ be given by \ #h(1em)$f(x) = x^2$,\ and $g: [0, oo) -> RR$ by\ #h(1em)$g(x) = sqrt(x)$.
+  Let $f: RR -> [0, oo)$ be given by \ #h(1em)$f(x) = x^2$,\ and $g: [0, oo) -> RR$ by\ #h(
+    1em,
+  )$g(x) = sqrt(x)$.
 
   + Are $g compose f$ and $f compose g$ *well defined*? That is, are they functions?
   + Is $g$ a left inverse of $f$? A right inverse of $f$?
@@ -445,8 +450,8 @@
 
     _Hint: remember the fundamental theorem of calculus._
   + Let $L(p) = integral p(x) dif x$ be the _indefinite_ integral of $p$, and recall that in
-    calculus class you are taught to say #box[$L(p)(x) = ?? + C$]. That is, you are taught to always write
-    "plus $C$" when evaluating an indefinite integral.
+    calculus class you are taught to say #box[$L(p)(x) = ?? + C$]. That is, you are taught to always
+    write "plus $C$" when evaluating an indefinite integral.
 
     Is $L$ a function from $P$ to $P$? Why or why not?
 
