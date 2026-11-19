@@ -22,7 +22,7 @@
 }
 
 #slide(title: [Where We Are Going])[
-  *Cardinality* is the formalizes the "size" of a set, allowing infinite sets as well.
+  *Cardinality* formalizes the "size" of a set, allowing infinite sets as well.
 
   Everything rests on Chapter 8: we compare sets by asking which *functions* exist between them.
 
@@ -39,20 +39,21 @@
 // 9.1 Introduction to cardinality
 // ---------------------------------------------------------------------------
 
-#slide(title: [Same Cardinality])[
+// #slide(title: [Same Cardinality])[
 
-  Note we have *not* defined $"card"(A)$ on its own. The expression $"card"(A) = "card"(B)$ is a
-  statement about the *existence of a function*, nothing more.
+//   Note we have *not* defined $"card"(A)$ on its own. The expression $"card"(A) = "card"(B)$ is a
+//   statement about the *existence of a function*, nothing more.
 
-  Since $f$ is a bijection $A -> B$ exactly when $f^(-1)$ is a bijection $B -> A$, you may build
-  whichever direction is easier. Often one direction is much easier than the other --- a limitation
-  of the human mind rather than of the mathematics.
-]
+//   Since $f$ is a bijection $A -> B$ exactly when $f^(-1)$ is a bijection $B -> A$, you may build
+//   whichever direction is easier. Often one direction is much easier than the other --- a limitation
+//   of the human mind rather than of the mathematics.
+// ]
 
 #exercise(
   title: [Cardinality --- Warm-Up Bijections],
   book: [Problem 9.6],
-  goal: [In each case, build an explicit bijection and briefly justify that it is one.],
+  goal: [Think about what the definition says; then build explicit bijections and briefly justify
+    them.],
   num_prefix: auto,
 )[
   #definition(title: [Definition 9.1])[
@@ -75,15 +76,15 @@
 ]
 
 #exercise(
-  title: [Cardinality --- Products and Functions],
-  book: [Problems 9.9],
+  title: [Cardinality --- Functions and Power Sets],
+  book: [Problem 9.9],
   goal: [Two short problems that will pay off later in the chapter.],
   num_prefix: auto,
 )[
   // + If $A$ is a set, do $A$ and $A times {x}$ have the same cardinality? Justify your answer.
   Let $cal(F)$ denote the set of functions from $NN$ to ${0, 1}$.
 
-  + Describe at least three functions in $cal(F)$.,
+  + Describe at least three functions in $cal(F)$.
   + Prove that $cal(F)$ and $cal(P)(NN)$ have the same cardinality.
 
   // _Hint: define $phi: cal(F) -> cal(P)(NN)$ so that $phi(f)$ is the subset of $NN$ determined by
@@ -119,13 +120,13 @@
   goal: [The bookkeeping results. None should be surprising --- but each needs a bijection built.],
   num_prefix: auto,
 )[
-  Let $A$, $B$, $C$ be non-empty sets.
+  Let $A$ and $B$ be non-empty sets.
 
   + Prove that $"card"(A) = "card"(A)$.
   + Prove that if $"card"(A) = "card"(B)$ then $"card"(B) = "card"(A)$.
   // + Prove that if $"card"(A) = "card"(B)$ and $"card"(B) = "card"(C)$ then $"card"(A) = "card"(C)$.
-  + Show that "has the same cardinality as" is an *equivalence relation* on sets.
-  + If $"card"(A) != "card"(B)$ could $A=B$?
+  + Show that "has the same cardinality as" is an *equivalence relation*.
+  + If $"card"(A) != "card"(B)$, could $A=B$?
   // + Suppose $"card"(A) = "card"(C)$ and $"card"(B) = "card"(D)$. Prove that if $A, B$ are disjoint
   //   and $C, D$ are disjoint, then $"card"(A union B) = "card"(C union D)$.
   // + With the same hypotheses, prove $"card"(A times B) = "card"(C times D)$.
@@ -183,13 +184,13 @@
   + Prove that if $A$ is finite and $"card"(A) = "card"(B)$, then $B$ is finite.
 
   #theorem(title: "Pigeonhole Principle")[Let $a,b in NN$ with $a > b$ and let $f:[a] -> [b]$ be a
-    function. Then, $f$ is not one-to-one.]
+    function. Then $f$ is not one-to-one.]
 
-  4. Prove that $"card"([a]) < "card"([a+1])$ using the pigeonhole principle.
+  4. Prove that $"card"([a]) < "card"([a+1])$ for all $a$, using the pigeonhole principle.
 
     How could you approach a proof without the pigeonhole principle?
 
-  + Prove every subset of a finite set is finite.
+  + Prove that every subset of a finite set is finite.
 ]
 
 // #exercise(
@@ -267,7 +268,7 @@
     + the even naturals
     + $ZZ$
     + ${1/2^n : n in NN}$
-    + $NN times {a}$.
+    + $NN times {a}$
 ]
 
 #exercise(
@@ -382,7 +383,7 @@
   goal: [Play the role of peer-reviewer.],
   num_prefix: auto,
 )[
-  Consider the following proof that the set $QQ^+$, the positive rationals, are *uncountable*.
+  Consider the following proof that the set $QQ^+$, the positive rationals, is *uncountable*.
 
   #line_number_proof[
     + Since $NN subset.eq QQ^+$ there is an injection from $NN$ to $QQ^+$, so $QQ^+$ is infinite.
@@ -401,22 +402,23 @@
         [$2$], [$1\/2$], [$2\/2$], [$3\/2$], [$dots$],
         [$dots.v$], [$dots.v$], [$dots.v$], [$dots.v$], [],
       ))))
-    + Notice that the first row of the table is $1/1$, $2/1$, $3/1$, etc. has the cardinality of
-      $NN$, so any injective function $f: NN -> QQ^+$ that outputs along the rows only covers
-      fractions with denominator $1$.
-    + Similarly, the first column of the table is $1/1$, $1/2$, $1/3$, etc. has the cardinality of
-      $NN$, so any injective function $f: NN -> QQ^+$ that outputs along the columns only covers
-      fractions with numerator $1$.
-
-    + Since we cannot find an injective function $f : NN -> QQ^+$, it must be that $QQ^+$ is
+    + Notice that the first row, $1\/1, 2\/1, 3\/1, dots$, has the cardinality of $NN$, so any
+      injective function $f: NN -> QQ^+$ that outputs along the rows only covers fractions with
+      denominator $1$.
+    + Similarly, the first column, $1\/1, 1\/2, 1\/3, dots$, has the cardinality of $NN$, so any
+      injective function $f: NN -> QQ^+$ that outputs along the columns only covers fractions with
+      numerator $1$.
+    + Since we cannot find a surjective function $f : NN -> QQ^+$, it must be that $QQ^+$ is
       uncountable.
   ]
-  + Is the proof correct? If not, fix it.
+  + Is the proof correct?
+  + Do you believe that $QQ^+$ is uncountable? Prove your claim.
 ]
 
 #exercise(
-  title: [Countable Rationals],
-  goal: [Play the role of peer-reviewer.],
+  title: [Countable --- The Rationals],
+  book: [Theorem 9.44],
+  goal: [Perhaps the most counterintuitive result so far.],
   num_prefix: auto,
 )[
   In the previous question, we proved that $QQ^+$ is countable.
@@ -424,12 +426,14 @@
 ]
 
 #exercise(
-  title: [Decimals],
+  title: [Uncountable --- Decimals],
+  book: [Problem 9.51],
+  goal: [Turn real numbers into sequences of digits.],
   num_prefix: auto,
 )[
   Let $D:= {0,1,2,3,4,5,6,7,8,9}$ and define
   $D^n := underbrace(D times D times dots.c times D, n "times")$. Further, define $D^(aleph_0)$ to
-  be the set of denumerable sequences of $D$.
+  be the set of denumerable sequences of elements in $D$.
 
   Let $I=[0,1] subset.eq RR$.
 
@@ -451,17 +455,19 @@
 ]
 
 #exercise(
-  title: [Uncountable Sets?],
+  title: [Uncountable --- Binary Sequences],
+  book: [Problem 9.61],
+  goal: [Find a set strictly bigger than $NN$.],
   num_prefix: auto,
 )[
   #set text(size: 0.85em)
-  Cantor opened the flood gates when he was the first to prove that there are infinite sets strictly
-  bigger than countable! Let's see if we can find one.
+  Cantor opened the floodgates when he was the first to prove that there are infinite sets strictly
+  bigger than countable sets! Let's see if we can find one.
 
   Let $B := {0, 1}$, and define $B^(aleph_0)$ to be the set of denumerable sequences of $0$'s and
   $1$'s.
 
-  + Prove $"card"(B^(aleph_0)) >= "card"(NN)$.
+  + Prove $"card"(NN) <= "card"(B^(aleph_0))$.
 
   Next we will prove there is no bijection $phi: NN -> B^(aleph_0)$.
 
@@ -486,8 +492,7 @@
   ))
 
   2. What does $b_(n,1)b_(n,2)b_(n,3)dots.c$ mean in the table?
-  + Assume $phi$ is a bijection, does the table contain every element of $B^(aleph_0)$? Why or why
-    not?
+  + If $phi$ is a bijection, does the table contain every element of $B^(aleph_0)$? Why or why not?
   Construct $c = c_1 c_2 c_3 dots.c$ as follows: $c_i = 1 - b_(i,i)$.
   4. Is $c in B^(aleph_0)$? Why or why not?
   + Is $c$ on the table? Write down the definition of what that means and then prove your answer.
@@ -500,7 +505,7 @@
   goal: [Combine the previous two questions.],
   num_prefix: auto,
 )[
-  Let $I:= [0,1] subset.eq RR$ and let $D := {0, 1, 2, dots, 9}$, and define $D^(aleph_0)$ as in the
+  Let $I:= [0,1] subset.eq RR$, let $D := {0, 1, 2, dots, 9}$, and define $D^(aleph_0)$ as in the
   previous questions.
 
   + Use a (Cantor) diagonal argument to show that $D^(aleph_0)$ is *uncountable* (i.e., is not
@@ -522,7 +527,7 @@
   ]
 
   + Prove that $"card"(NN) < "card"(cal(P)(NN))$. (_Hint: you've done all the work in previous
-    questions_)
+    questions._)
 
   Now let $A$ be any set. We will prove Cantor's theorem in steps.
 
@@ -530,7 +535,7 @@
   // + Prove Cantor's theorem if $"card"(A)$ is $0$ or $"card"(A) in NN$.
 
   We proceed by contradiction: suppose there exists $phi: A -> cal(P)(A)$ that is a bijection.
-  3. Define $S := {x in A : x in.not f(x)}$. Explain why $S = f(a)$ for some $a in A$.
+  3. Define $S := {x in A : x in.not phi(x)}$. Explain why $S = phi(a)$ for some $a in A$.
   + Fix such an $a$. Is $a in S$? Is $a in.not S$? Must one of those statements be true?
   + What can you say about $"card"(A)$ and $"card"(cal(P)(A))$?
 
