@@ -642,7 +642,9 @@
 
   Open
 
-  https://www.desmos.com/3d/j2qkb0agxt
+  https://www.desmos.com/3d/8htjnpvz2c
+  // The "e" is 2.718 instead of a variable
+  //https://www.desmos.com/3d/j2qkb0agxt
 
   which has a general second degree polynomial.
 
@@ -653,7 +655,7 @@
 
 #slide(siefken_num: auto)[
 
-  A function $f:RR^2 -> RR^2$ is *differentiable* at the point $arrow(p)$ if there exists a plane
+  A function $f:RR^2 -> RR$ is *differentiable* at the point $arrow(p)$ if there exists a plane
   $z=L(x,y)$ such that $f(arrow(p)) = L(arrow(p))$ _and_
   $
     lim_(arrow(h) -> arrow(0)) (f(arrow(p) + arrow(h)) - L(arrow(p) + arrow(h))) / norm(arrow(h)) = 0.
