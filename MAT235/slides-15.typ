@@ -99,13 +99,16 @@
 
 #slide(siefken_num: auto)[
 
-  The second derivative test for multivariable functions relies on the theorem: if a function $f$
-  is twice differentiable and $Q$ is a quadratic approximation to $f$ at $arrow(p)$, then
+  The second derivative test for multivariable functions relies on the following theorem.
 
-  - If $Q$ has a *unique* max (or min) at $arrow(p)$, then $f$ has a unique *local* max (or min)
-    at $arrow(p)$.
+  #theorem(title: [Quadratic Approximation])[If a function $f$ is twice differentiable and $Q$ is a quadratic approximation to $f$
+    at $arrow(p)$, then
 
-  - If $Q$ has a saddle point at $arrow(p)$, then $f$ has a saddle point at $arrow(p)$.
+    - If $Q$ has a *unique* max (or min) at $arrow(p)$, then $f$ has a unique *local* max (or min)
+      at $arrow(p)$.
+
+    - If $Q$ has a saddle point at $arrow(p)$, then $f$ has a saddle point at $arrow(p)$.
+  ]
 
   Below $Q$ is a quadratic approximation to $f$ centered at $arrow(0)$.
 
