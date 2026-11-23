@@ -61,7 +61,7 @@
     between $A$ and $B$. In this case we write $"card"(A) = "card"(B)$.
   ]
 
-  + Based on Definition 9.1, does it make sense to say "$"card"({1,2,3})$" is three? Why or why not?
+  + Based on Definition 9.1, does it make sense to say "$"card"({1,2,3})$ is three"? Why or why not?
   Prove each of the following.
   2. $"card"({a,b,c}) = "card"({x,y,z})$
   + $"card"(NN) = "card"({2n+1 : n in NN})$
