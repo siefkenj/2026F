@@ -99,21 +99,26 @@
 
 #slide(siefken_num: auto)[
 
-  The second derivative test for multivariable functions relies on the following theorem.
+  // The second derivative test for multivariable functions relies on the following theorem.
 
-  #theorem(title: [Quadratic Approximation])[If a function $f$ is twice differentiable and $Q$ is a quadratic approximation to $f$
-    at $arrow(p)$, then
+  #theorem(title: [Quadratic Approximation])[
+    Suppose $f:RR^n -> RR$ is twice differentiable and $arrow(p)$ is a critical point of $f$.
+    Let $Q$ be a quadratic approximation to $f$ at $arrow(p)$. //THEN,
+    // If a function $f$ is twice differentiable and $Q$ is a
+    // quadratic approximation to $f$ at $arrow(p)$ *and* $arrow(p)$ is a critical point of $f$, then
 
     - If $Q$ has a *unique* max (or min) at $arrow(p)$, then $f$ has a unique *local* max (or min)
       at $arrow(p)$.
 
-    - If $Q$ has a saddle point at $arrow(p)$, then $f$ has a saddle point at $arrow(p)$.
+    - If $Q$ has a *saddle* point at $arrow(p)$, then $f$ has a saddle point at $arrow(p)$.
+
+    - *Otherwise*, we cannot draw a conclusion.
   ]
 
   Below $Q$ is a quadratic approximation to $f$ centered at $arrow(0)$.
 
-  Use https://desmos.com/3d to graph each quadratic approximation to decide if the original
-  function has a local max/min/saddle at $arrow(p)=arrow(0)$.
+  Use https://desmos.com/3d to graph each quadratic approximation to decide if the original function
+  has a local max/min/saddle at $arrow(p)=arrow(0)$.
 
   + $f$ where $Q(x,y) = 2x^2+1/2 y^2$
   + $f$ where $Q(x,y) = 2x^2-1/2 y^2$
@@ -130,8 +135,8 @@
     at $arrow(0)$? Explain.
   + If $a>0$ and $b < 0$, is it possible for $p$ to have a local min/max at $arrow(0)$? What if
     $a <0$ and $b > 0$?
-  + Use Desmos to graph a quadratic $a x^2 + b y^2 + c x y$. Keeping $a,b > 0$, can you find
-    values of $a,b,c$ such that there
+  + Use Desmos to graph a quadratic $a x^2 + b y^2 + c x y$. Keeping $a,b > 0$, can you find values
+    of $a,b,c$ such that there
     #set enum(numbering: "(i)")
     + *is* a local minimum?
     + *is* a local maximum?
@@ -288,7 +293,8 @@
       The height of a camp ground is given by
       $h(x,y) & =1/10 (-x^2+y(y-6)^2) = 1/10 (-x^2 +y^3 - 12y^2+36 y)$
 
-      The boundary of the camp ground is given by $x^2 + (y - 4)^2 = 4^2$ and is plotted to the left.
+      The boundary of the camp ground is given by $x^2 + (y - 4)^2 = 4^2$ and is plotted to the
+      left.
 
       + Identify all places *on the boundary* where $h$ could have a local extreme.
       + At the places you identified, what is the relationship between the boundary and the level
@@ -339,7 +345,8 @@
       The height of a camp ground is given by
       $h(x,y) & =1/10 (-x^2+y(y-6)^2) = 1/10 (-x^2 +y^3 - 12y^2+36 y)$
 
-      The boundary of the camp ground is given by $x^2 + (y - 4)^2 = 4^2$ and is plotted to the left.
+      The boundary of the camp ground is given by $x^2 + (y - 4)^2 = 4^2$ and is plotted to the
+      left.
 
       Define $g(x,y)=x^2+(y-4)^2$.
 
