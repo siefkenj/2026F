@@ -419,9 +419,10 @@
     - We call $g$ a *left inverse* of $f$ if $g compose f = i_X$.
     - We call $g$ a *right inverse* of $f$ if $f compose g = i_Y$.
     - We call $g$ an *inverse* of $f$ if it is both a left and a right inverse of $f$.
+
+    If there exists an inverse of $f$, we call $f$ *invertible*.
   ]
 
-  #set text(size: 0.87em)
   Let $f: RR -> [0, oo)$ be given by \ #h(1em)$f(x) = x^2$,\ and $g: [0, oo) -> RR$ by\ #h(
     1em,
   )$g(x) = sqrt(x)$.
@@ -429,10 +430,21 @@
   + Are $g compose f$ and $f compose g$ *well defined*? That is, are they functions?
   + Is $g$ a left inverse of $f$? A right inverse of $f$?
   + Is $f$ a left inverse of $g$? A right inverse of $g$?
-  + Does $f$ have an inverse?
+  + Is $g$ an inverse of $f$? Does that mean that $f$ is not invertible?
   + In the definition of inverse, why can't we say "If there exists a $g$ such that
     $f compose g = g compose f = "identity function"$, then $f$ is invertible"?
-  + Prove that a function is invertible if and only if it is a bijection.
+]
+
+#exercise(
+  title: [Inverses --- Left, Right, and Two-Sided 2],
+  goal: [Characterize one-to-one, onto, and bijective functions by their inverses.],
+  num_prefix: auto,
+)[
+  Let $f: X -> Y$ be a function.
+
+  + Prove that $f$ is one-to-one if and only if there exists a left inverse of $f$.
+  + Prove that $f$ is onto if and only if there exists a right inverse of $f$.
+  + Prove that $f$ is invertible if and only if it is a bijection.
 ]
 
 #exercise(
