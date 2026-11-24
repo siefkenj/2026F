@@ -421,6 +421,7 @@
     - We call $g$ an *inverse* of $f$ if it is both a left and a right inverse of $f$.
   ]
 
+  #set text(size: 0.87em)
   Let $f: RR -> [0, oo)$ be given by \ #h(1em)$f(x) = x^2$,\ and $g: [0, oo) -> RR$ by\ #h(
     1em,
   )$g(x) = sqrt(x)$.
@@ -431,6 +432,7 @@
   + Does $f$ have an inverse?
   + In the definition of inverse, why can't we say "If there exists a $g$ such that
     $f compose g = g compose f = "identity function"$, then $f$ is invertible"?
+  + Prove that a function is invertible if and only if it is a bijection.
 ]
 
 #exercise(
