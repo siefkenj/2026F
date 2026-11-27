@@ -154,17 +154,17 @@
 
   I.e., we can classify $q(x,y)=a x^2 + b y^2 + c x y$.
 
+  #colbreak()
   We will start out simple and assume $a=b=1$.
 
-  + Let $arrow(u)=mat(u_1; u_2)$ be a unit vector.
-    #set enum(numbering: "(a)")
-    + Which of the following are possible:
-      #set enum(numbering: "(i)")
-      + $q$ has a unique min at $arrow(0)$
-      + $q$ has a unique max at $arrow(0)$
-      + $q$ has a saddle point at $arrow(0)$
-    + Find the second directional derivative of $q$ at $arrow(0)$ in the direction of $arrow(u)$.
-    + What condition(s) must be true for $q$ to have a unique min at $arrow(0)$?
+  Let $arrow(u)=mat(u_1; u_2)$ be a unit vector.
+  + Which of the following are possible:
+    #set enum(numbering: "(i)")
+    + $q$ has a unique min at $arrow(0)$
+    + $q$ has a unique max at $arrow(0)$
+    + $q$ has a saddle point at $arrow(0)$
+  + Find the second directional derivative of $q$ at $arrow(0)$ in the direction of $arrow(u)$.
+  + What condition(s) must be true for $q$ to have a unique min at $arrow(0)$?
 
   //  Consider the general case where $q(x,y)=a x^2 + b y^2 + c x y$.
   //  Assume $a,b>0$.
