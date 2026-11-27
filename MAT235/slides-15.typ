@@ -1,5 +1,6 @@
 #import "preamble.typ": *
 #show: mat235-slides.with([Chapter 15])
+#show: e.prepare()
 
 
 #slide(siefken_num: 1, two_columns: false)[
@@ -102,8 +103,8 @@
   // The second derivative test for multivariable functions relies on the following theorem.
 
   #theorem(title: [Quadratic Approximation])[
-    Suppose $f:RR^n -> RR$ is twice differentiable and $arrow(p)$ is a critical point of $f$.
-    Let $Q$ be a quadratic approximation to $f$ at $arrow(p)$. //THEN,
+    Suppose $f:RR^n -> RR$ is twice differentiable and $arrow(p)$ is a critical point of $f$. Let
+    $Q$ be a quadratic approximation to $f$ at $arrow(p)$. //THEN,
     // If a function $f$ is twice differentiable and $Q$ is a
     // quadratic approximation to $f$ at $arrow(p)$ *and* $arrow(p)$ is a critical point of $f$, then
 
@@ -143,7 +144,7 @@
     + *is no* local minimum or maximum?
 ]
 
-#slide(siefken_num: auto)[
+#slide(siefken_num: auto, label: <q_classify>)[
 
   Let $p(x,y) = a x^2 + b y^2 +c x y + d x +e y +f$.
 
@@ -181,7 +182,7 @@
   + How does the graph of $z=1/a q(x,y)$ relate to the graph of $z=q(x,y)$? Does the behaviour at
     $arrow(0)$ change depending on what $a$ is?
 
-    _Hint_: Use Desmos to check you're not sure.
+    _Hint_: Use Desmos to check if you're not sure.
 
   + How does the graph of $z=q(x, m y)$ relate to the graph of $z=q(x,y)$? Does the behaviour at
     $arrow(0)$ change depending on what $m$ is?
@@ -194,7 +195,7 @@
 
     How does the behaviour of $r$ at $arrow(0)$ relate to the behaviour of $q$ at $arrow(0)$?
 
-  + Classify the behaviour of $r$ at $arrow(0)$ (based on the previous slide).
+  + Classify the behaviour of $r$ at $arrow(0)$ (based on your work in the previous slide) //Question 4//@q_clasify    ).
 
   + Classify the behaviour of $q$ at $arrow(0)$.
 
@@ -249,7 +250,7 @@
     },
     [
       The height of a camp ground is given by
-      $h(x,y) & =1/10 (-x^2+y(y-6)^2) = 1/10 (-x^2 +y^3 - 12y^2+36 y)$
+      $ h(x,y) & =1/10 (-x^2+y(y-6)^2) = 1/10 (-x^2 +y^3 - 12y^2+36 y) $
 
       + On the contour plot, label the critical points you found.
       + The lines of the contour plot are at integer levels (e.g., $1$, $2$, $-1$, etc.). Label the
@@ -290,8 +291,9 @@
       a
     },
     [
+      #set text(size: 0.9em)
       The height of a camp ground is given by
-      $h(x,y) & =1/10 (-x^2+y(y-6)^2) = 1/10 (-x^2 +y^3 - 12y^2+36 y)$
+      $ h(x,y) & =1/10 (-x^2+y(y-6)^2) = 1/10 (-x^2 +y^3 - 12y^2+36 y) $
 
       The boundary of the camp ground is given by $x^2 + (y - 4)^2 = 4^2$ and is plotted to the
       left.
@@ -343,7 +345,7 @@
     },
     [
       The height of a camp ground is given by
-      $h(x,y) & =1/10 (-x^2+y(y-6)^2) = 1/10 (-x^2 +y^3 - 12y^2+36 y)$
+      $ h(x,y) & =1/10 (-x^2+y(y-6)^2) = 1/10 (-x^2 +y^3 - 12y^2+36 y) $
 
       The boundary of the camp ground is given by $x^2 + (y - 4)^2 = 4^2$ and is plotted to the
       left.
